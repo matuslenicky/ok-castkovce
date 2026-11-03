@@ -718,3 +718,4 @@ a.wk-team:focus-visible { outline: none; }
 .js-filtering .mlist-wrap { visibility: hidden; }
 /* nadpis nad názvom na tmavých hlavičkách podstránok: červená mala na tmavej len 3,5:1, zlatá ako v úvode */
 .phero .kicker { color: var(--gold); }
+.grid-more { margin-top: 18px; }
