@@ -87,6 +87,8 @@ let done = 0, have = 0, fail = 0;
 async function get(j) {
   const dest = path.join(j.dir, j.name);
   if (fs.existsSync(dest) && fs.statSync(dest).size > 10000) { have++; return; }
+  // vyradené pri výbere (scripts/vyber-foto.py) znova nesťahovať; po tomto skripte spusti výber znova
+  if (fs.existsSync(path.join(ROOT, 'media', 'galerie-vyradene', path.basename(j.dir), j.name))) { have++; return; }
   for (let i = 0; i < 4; i++) {
     const r = await fetch(`https://drive.google.com/thumbnail?id=${encodeURIComponent(j.id)}&sz=s${SIZE}`).catch(() => null);
     if (r?.ok && (r.headers.get('content-type') || '').startsWith('image/')) {
