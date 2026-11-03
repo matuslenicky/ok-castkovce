@@ -1,0 +1,6 @@
+dist/
+media/
+.pages/
+.impeccable/
+node_modules/
+*.log

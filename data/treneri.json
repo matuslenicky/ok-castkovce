@@ -1,0 +1,8 @@
+{
+  "zdroj": "https://okcastkovce.sk/klub/vedenie-klubu (časť Tréneri, doslovne; prípravky majú vedenie priamo v súpiske)",
+  "skupiny": [
+    { "nazov": "A muži", "timy": ["a-muzstvo"], "mena": ["Mgr. Roman Koňušík"] },
+    { "nazov": "Dorast", "timy": ["u19-starsi-dorast", "u17-mladsi-dorast"], "mena": ["Michal Vereš", "Pavel Šido"] },
+    { "nazov": "Žiaci", "timy": ["u15-starsi-ziaci", "u15-starsi-ziaci-b", "u13-mladsi-ziaci", "u13-mladsi-ziaci-b"], "mena": ["Marek Ladický", "Marek Mišák", "Branislav Milata", "Vladimír Korytina"] }
+  ]
+}

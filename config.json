@@ -1,0 +1,16 @@
+{
+  "_pozn": "Verejná konfigurácia webu. Kľúč Supabase je publishable (verejný), zápis chráni RLS.",
+  "siteUrl": "",
+  "basePath": "/",
+  "noindex": true,
+  "ukazka": true,
+  "_ukazka": "true = žltý pás „Návrh webu, nie oficiálna stránka klubu“ v hlavičke (verejná ukážka); pri ostrom spustení dať false",
+  "galerie": {
+    "mode": "local",
+    "base": "https://okcastkovce.sk/img/public/fotogalerie"
+  },
+  "supabase": {
+    "url": null,
+    "key": null
+  }
+}

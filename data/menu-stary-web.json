@@ -1,0 +1,154 @@
+[
+ [
+  {
+   "i": 291,
+   "u": "/klub",
+   "t": "Klub",
+   "s": [
+    {
+     "i": 292,
+     "u": "/klub/stadion",
+     "t": "Štadión"
+    },
+    {
+     "i": 337,
+     "u": "/klub/historia",
+     "t": "História"
+    },
+    {
+     "i": 338,
+     "u": "/klub/vedenie-klubu",
+     "t": "Vedenie klubu"
+    },
+    {
+     "i": 339,
+     "u": "/klub/prenajom-umelej-travy",
+     "t": "Prenájom umelej trávy"
+    },
+    {
+     "i": 340,
+     "u": "/klub/kontakty",
+     "t": "Kontakty"
+    }
+   ]
+  },
+  {
+   "i": 287,
+   "u": "/a-muzstvo",
+   "t": "A-Mužstvo",
+   "s": [
+    {
+     "i": 297,
+     "u": "/a-muzstvo/supiska",
+     "t": "Súpiska"
+    },
+    {
+     "i": 298,
+     "u": "/a-muzstvo/rozpis-zapasov",
+     "t": "Rozpis zápasov"
+    },
+    {
+     "i": 299,
+     "u": "/a-muzstvo/vysledky",
+     "t": "Výsledky"
+    },
+    {
+     "i": 300,
+     "u": "/a-muzstvo/tabulky",
+     "t": "Tabuľky"
+    }
+   ]
+  },
+  {
+   "i": 288,
+   "u": "/mladez",
+   "t": "Mládež",
+   "s": [
+    {
+     "i": 428,
+     "u": "/mladez/u7-pripravka",
+     "t": "U7-prípravka"
+    },
+    {
+     "i": 401,
+     "u": "/mladez/u9-pripravka",
+     "t": "U9-prípravka"
+    },
+    {
+     "i": 399,
+     "u": "/mladez/u10-pripravka",
+     "t": "U10-prípravka"
+    },
+    {
+     "i": 424,
+     "u": "/mladez/u11-pripravka",
+     "t": "U11-Prípravka"
+    },
+    {
+     "i": 302,
+     "u": "/mladez/u13-mladsi-ziaci",
+     "t": "U13-mladší žiaci"
+    },
+    {
+     "i": 497,
+     "u": "/mladez/u13-mladsi-ziaci-b",
+     "t": "U13-mladší žiaci B"
+    },
+    {
+     "i": 308,
+     "u": "/mladez/u15-starsi-ziaci",
+     "t": "U15-starší žiaci"
+    },
+    {
+     "i": 431,
+     "u": "/mladez/u15-starsi-ziaci-b",
+     "t": "U15-starší žiaci B"
+    },
+    {
+     "i": 310,
+     "u": "/mladez/u17-mladsi-dorast",
+     "t": "U17-mladší dorast"
+    },
+    {
+     "i": 311,
+     "u": "/mladez/u19-starsi-dorast",
+     "t": "U19-starší dorast"
+    }
+   ]
+  }
+ ],
+ [
+  {
+   "i": 289,
+   "u": "/fanzona",
+   "t": "Fanzona",
+   "s": [
+    {
+     "i": 341,
+     "u": "/fanzona/fanshop",
+     "t": "FANSHOP"
+    },
+    {
+     "i": 460,
+     "u": "/fanzona/oblecenie",
+     "t": "Oblečenie"
+    }
+   ]
+  },
+  {
+   "i": 212,
+   "u": "/video",
+   "t": "Video"
+  },
+  {
+   "i": 290,
+   "u": "/fotogaleria",
+   "t": "Fotogaléria"
+  },
+  {
+   "i": 285,
+   "u": "/spravy",
+   "t": "Správy"
+  }
+ ]
+]

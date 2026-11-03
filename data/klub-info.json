@@ -1,0 +1,25 @@
+{
+  "_zdroj": "Všetky údaje sú prevzaté z okcastkovce.sk (3. 11. 2026): pätička, /klub/kontakty, /klub/vedenie-klubu, /klub/prenajom-umelej-travy, /ochrana-sukromia, banner na úvodnej stránke. Instagram z odkazu od zadávateľa.",
+  "nazov": "OK Častkovce",
+  "pravnyNazov": "Obecný klub Častkovce",
+  "ihrisko": ["OK ČASTKOVCE, Ihrisko", "916 27 Častkovce"],
+  "adresa": ["Častkovce č. 355", "916 27 Častkovce", "Slovensko"],
+  "telefon": "+421 903 422 451",
+  "telefonKlub": "0949 373 648",
+  "email": "okcastkovce@okcastkovce.sk",
+  "ico": "31102697",
+  "dic": "2021057313",
+  "ucet": "5811803002/5600",
+  "facebook": "https://facebook.com/okcastkovce/",
+  "instagram": "https://www.instagram.com/okcastkovce/",
+  "ocenenie": "Najlepší amatérsky klub 2022–2023",
+  "stadion": {
+    "kapacita": "1500",
+    "sedenie": "300",
+    "hlavna": "100 x 65 m",
+    "vedlajsia": "83 x 55 m",
+    "umela": "30 x 10 m",
+    "rekonstrukcia": "2015"
+  },
+  "sportnet": "https://sportnet.sme.sk/search/?q=OK Častkovce"
+}

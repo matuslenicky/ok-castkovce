@@ -1,0 +1,483 @@
+[
+ {
+  "slug": "a-muzstvo",
+  "name": "A-Mužstvo",
+  "oldTeamId": 204,
+  "roster": [],
+  "league": "Slovnaft Cup"
+ },
+ {
+  "slug": "u7-pripravka",
+  "name": "U7-prípravka",
+  "oldTeamId": 429,
+  "roster": [
+   {
+    "title": "Hráči",
+    "people": [
+     {
+      "name": "Viktor Cagala",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Lucas Drlička",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": "/img/archiv/muzstva/u7-pripravka/Lucas-Drlicka.jpg"
+     },
+     {
+      "name": "Adam Haverič",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Marek Herák",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Janko Hevier",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": "/img/archiv/muzstva/u7-pripravka/Janko-Hevier.jpg"
+     },
+     {
+      "name": "Alex Ivanič",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Dominik Jurčo",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": "/img/archiv/muzstva/u7-pripravka/Dominik-Jurco.jpg"
+     },
+     {
+      "name": "Filip Masár",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": "/img/archiv/muzstva/u7-pripravka/Filip-Masar.jpg"
+     },
+     {
+      "name": "Matteo Mrázik",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Matteo Paller",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Jonáš Súčanský",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": "/img/archiv/muzstva/u7-pripravka/Jonas-Sucansky.jpg"
+     },
+     {
+      "name": "Patrik Torák",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Filiip Buček",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     }
+    ]
+   },
+   {
+    "title": "Vedenie",
+    "people": [
+     {
+      "name": "Peter Ďuriš",
+      "nationality": "Slovensko",
+      "tag": "HT",
+      "photo": null
+     },
+     {
+      "name": "Liliana Macháčová",
+      "nationality": "Slovensko",
+      "tag": "AT",
+      "photo": null
+     }
+    ]
+   }
+  ],
+  "league": null
+ },
+ {
+  "slug": "u9-pripravka",
+  "name": "U9-prípravka",
+  "oldTeamId": 205,
+  "roster": [
+   {
+    "title": "Hráči",
+    "people": [
+     {
+      "name": "Lukáš Olach",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Tobias Bielko",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Teodor Cagala",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Šimon Kubalík",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Adam Masár",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Dominik Šulek",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Šimon Mitošinka",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Sebastian Mrázik",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Samuel Šimo",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Václav Zeman",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Fábio Žažo",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     }
+    ]
+   },
+   {
+    "title": "Vedenie",
+    "people": [
+     {
+      "name": "Alex Ďuriš",
+      "nationality": "Slovensko",
+      "tag": "HT",
+      "photo": null
+     },
+     {
+      "name": "Alexej Mizerák",
+      "nationality": "Slovensko",
+      "tag": "AT",
+      "photo": null
+     }
+    ]
+   }
+  ],
+  "league": "Prípravka II. liga U09 Macron | yoursport ZsFZ"
+ },
+ {
+  "slug": "u10-pripravka",
+  "name": "U10-prípravka",
+  "oldTeamId": 210,
+  "roster": [
+   {
+    "title": "Hráči",
+    "people": [
+     {
+      "name": "Erik Klčo",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Mateo Majtaz",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Matias Ciffra",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Eduard Čavojský",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Oskar Hevier",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Matúš Kubica",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Matúš Madro",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Patrik Makarský",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Michal Mitošinka",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "David Pagáč",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Filip Šimo",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Jaroslav Toráč",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Matúš Olach",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     }
+    ]
+   },
+   {
+    "title": "Vedenie",
+    "people": [
+     {
+      "name": "Patrik Paldauf",
+      "nationality": "Slovensko",
+      "tag": "HT",
+      "photo": null
+     },
+     {
+      "name": "Filip Majerník",
+      "nationality": "Slovensko",
+      "tag": "AT",
+      "photo": null
+     }
+    ]
+   }
+  ],
+  "league": "Prípravka II. liga U10 Macron | yoursport ZsFZ"
+ },
+ {
+  "slug": "u11-pripravka",
+  "name": "U11-Prípravka",
+  "oldTeamId": 211,
+  "roster": [
+   {
+    "title": "Hráči",
+    "people": [
+     {
+      "name": "Oliver Augustín",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Nikolas Balaj",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Juraj Bittner",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Adam Bučko",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Samuel Čechvala",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Filip Gono",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Mattias Jurčo",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Tomáš Kerak",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Marko Kolník",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Jakub Kostelán",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Maxim Kucharovič",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Jonáš Pavlovič",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Damián Sedlák",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Simon Sládek",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Sebastian Strečko",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     },
+     {
+      "name": "Ella Ščepková",
+      "nationality": "Slovensko",
+      "tag": null,
+      "photo": null
+     }
+    ]
+   },
+   {
+    "title": "Vedenie",
+    "people": [
+     {
+      "name": "Marek Mišák",
+      "nationality": "Slovensko",
+      "tag": "HT",
+      "photo": null
+     }
+    ]
+   }
+  ],
+  "league": "Prípravka II. liga U11 Macron | yoursport ZsFZ"
+ },
+ {
+  "slug": "u13-mladsi-ziaci",
+  "name": "U13-mladší žiaci",
+  "oldTeamId": 206,
+  "roster": [],
+  "league": "II. liga U13 Macron | yoursport ZsFZ"
+ },
+ {
+  "slug": "u13-mladsi-ziaci-b",
+  "name": "U13-mladší žiaci B",
+  "oldTeamId": 502,
+  "roster": [],
+  "league": "III. liga U13 skupina \"B\""
+ },
+ {
+  "slug": "u15-starsi-ziaci",
+  "name": "U15-starší žiaci",
+  "oldTeamId": 207,
+  "roster": [],
+  "league": "II. liga U15 Macron | yoursport ZsFZ"
+ },
+ {
+  "slug": "u15-starsi-ziaci-b",
+  "name": "U15-starší žiaci B",
+  "oldTeamId": 430,
+  "roster": [],
+  "league": "III. liga U15 skupina \"B\""
+ },
+ {
+  "slug": "u17-mladsi-dorast",
+  "name": "U17-mladší dorast",
+  "oldTeamId": 208,
+  "roster": [],
+  "league": "II. liga mladší dorast - Západ"
+ },
+ {
+  "slug": "u19-starsi-dorast",
+  "name": "U19-starší dorast",
+  "oldTeamId": 209,
+  "roster": [],
+  "league": "II. liga starší dorast - Západ"
+ }
+]
