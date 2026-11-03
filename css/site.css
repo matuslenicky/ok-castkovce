@@ -705,14 +705,15 @@ a.wk-team:focus-visible { outline: none; }
 
 /* úvod s fotkou celého klubu: fotka bez textu cez ľudí, názov prekrýva len stmavený spodok fotky (trávnik) */
 .hero--photo { display: block; min-height: 0; background-image: none; } /* bez textúry: prechod fotky do tmavej nesmie mať šev */
-.hero-media { position: relative; isolation: isolate; aspect-ratio: 16 / 7; max-height: 74vh; min-height: 280px; overflow: hidden; }
+/* vždy celá šírka; výška 16:7, no najviac 74 % okna (pomer strán + max-height by fotku pri nízkom okne zúžili) */
+.hero-media { position: relative; isolation: isolate; width: 100%; height: clamp(280px, 43.75vw, 74vh); overflow: hidden; }
 .hero-media::after { content: ''; position: absolute; inset: auto 0 0; height: 42%; z-index: -1; background: linear-gradient(180deg, rgba(18, 19, 23, 0), var(--ink)); }
 .hero-media-in { position: relative; padding-top: 22px; }
 .hero-bar { position: relative; display: grid; gap: 26px; margin-top: clamp(-96px, -6vw, -40px); padding-bottom: clamp(36px, 5vw, 60px); }
 .hero--photo .display { font-size: clamp(52px, 9vw, 128px); }
 .hero--photo .hnext { margin-top: 0; }
-@media (min-width: 960px) { .hero-bar { grid-template-columns: minmax(0, 1fr) minmax(0, 480px); align-items: end; } }
-@media (max-width: 699.98px) { .hero-media { aspect-ratio: 4 / 3; max-height: none; min-height: 0; } .hero-bar { margin-top: -30px; } }
+@media (min-width: 1200px) { .hero-bar { grid-template-columns: minmax(0, 1fr) minmax(0, 480px); align-items: end; } } /* užšie: nadpis by sa vedľa bloku zápasu lámal */
+@media (max-width: 699.98px) { .hero-media { height: 75vw; } .hero-bar { margin-top: -30px; } }
 
 /* odkaz s filtrom (?kategoria= / ?kde=): zoznamy sa ukážu až prefiltrované, inak by poskočili */
 .js-filtering .mlist-wrap { visibility: hidden; }
