@@ -22,7 +22,8 @@ const matches = rd('zapasy.json', []);
 const news = rd('spravy.json', []).sort((a, b) => b.date.localeCompare(a.date));
 const videos = rd('videa.json', []).sort((a, b) => b.date.localeCompare(a.date));
 const partneri = rd('partneri.json', { partneri: [] }).partneri;
-const gals = rd('galerie.json', []).sort((a, b) => b.date.localeCompare(a.date));
+// galérie zo starého webu + zápasové fotky od fotografa (scripts/galerie-foto.mjs; matchId = zápas v rozpise)
+const gals = [...rd('galerie.json', []), ...rd('galerie-foto.json', [])].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 const TODAY = process.env.TODAY || todayISO();
 
 // ---- tímy -----------------------------------------------------------------------------------
@@ -65,7 +66,10 @@ function pairMatch(title, date) {
   if (a.length) return a.sort((x, y) => dayDiff(x.date, date) - dayDiff(y.date, date))[0];
   return c.length === 1 ? c[0] : null;
 }
-for (const g of gals) { const m = pairMatch(g.title, g.date); if (m && !m.gal) m.gal = `fotogaleria/${g.slug}/`; }
+for (const g of gals) {
+  const m = g.matchId ? matches.find((x) => x.id === g.matchId) : g.date ? pairMatch(g.title, g.date) : null;
+  if (m && !m.gal) m.gal = `fotogaleria/${g.slug}/`;
+}
 for (const v of videos) { const m = pairMatch(v.title, v.date); if (m && !m.yt) { m.yt = v.youtube; m.ytTitle = v.title; } }
 
 // ---- kalendár (.ics, RFC 5545) ----------------------------------------------------------------
@@ -287,7 +291,7 @@ function newsCard(n, R, { big = false, h = 'h3', eager = false, first = false, s
 function galCard(g, R, { h = 'h3', eager = false, first = false, sizes = CARD_SIZES } = {}) {
   return `<article class="card card--gal"><a class="card-a" href="${R}fotogaleria/${g.slug}/">
   <div class="card-img">${cardImg(galCover(g, R), R, { eager, first, sizes })}<span class="card-count">${I.photos}${g.files.length}</span></div>
-  <div class="card-body"><p class="card-k"><time datetime="${g.date}">${fmtDate(g.date)}</time></p><${h} class="card-t">${esc(g.title)}</${h}></div></a></article>`;
+  <div class="card-body"><p class="card-k">${g.date ? `<time datetime="${g.date}">${fmtDate(g.date)}</time>` : 'Sezóna 2026/27'}</p><${h} class="card-t">${esc(g.title)}</${h}></div></a></article>`;
 }
 function videoCard(v, R, { eager = false, first = false, sizes = CARD_SIZES } = {}) {
   return `<article class="card card--video"><button type="button" class="card-a vplay" data-yt="${esc(v.youtube)}" data-title="${esc(v.title)}">
@@ -495,8 +499,10 @@ function teamPage(t) {
       const list = teamMatches(t.slug);
       const { past, next } = splitMatches(list, TODAY);
       const img = hasPic('tim-' + t.slug) ? pic('tim-' + t.slug, R, { cls: 'phero-img', eager: true, sizes: PHERO_SIZES }) : '';
+      // fotky tohto tímu (galérie od fotografa majú tím; zo starého webu len cez spárovaný zápas)
+      const tg = gals.filter((g) => g.team === t.slug || (g.matchId == null && list.some((m) => m.gal === `fotogaleria/${g.slug}/`)));
       return `${pageHero({ kicker: t.isA ? 'Muži' : t.sub, title: t.isA ? 'A-mužstvo' : t.short, sub: t.league, R, img, crumbs: t.isA ? [[null, 'A-mužstvo']] : [['mladez/', 'Mládež'], [null, t.short]] })}
-<nav class="subnav" aria-label="Sekcie"><div class="wrap"><a href="#supiska">Súpiska</a><a href="#program">Program</a><a href="#vysledky">Výsledky</a></div></nav>
+<nav class="subnav" aria-label="Sekcie"><div class="wrap"><a href="#supiska">Súpiska</a><a href="#program">Program</a><a href="#vysledky">Výsledky</a>${tg.length ? '<a href="#fotky">Fotky</a>' : ''}</div></nav>
 <section class="sec sec--first" aria-labelledby="mc-h"><div class="wrap">
   <h2 class="sr" id="mc-h">Prehľad zápasov</h2>
   <div class="mc-grid" role="region" tabindex="0" aria-labelledby="mc-h" data-team="${t.slug}">${matchCentre(list, TODAY, crestUrl(R), R)}</div>
@@ -510,6 +516,10 @@ function teamPage(t) {
   <section id="program" aria-labelledby="pr-h"><h2 class="h3" id="pr-h">Program</h2><div class="mlist-wrap" data-list="next" data-team="${t.slug}">${matchList(next, { crest: crestUrl(R), today: TODAY, root: R })}</div></section>
   <section id="vysledky" aria-labelledby="vy-h"><h2 class="h3" id="vy-h">Výsledky</h2><div class="mlist-wrap" data-list="past" data-team="${t.slug}">${matchList([...past].reverse(), { crest: crestUrl(R), today: TODAY, root: R })}</div></section>
 </div><div class="wrap"><p class="note">Výsledky si môžete pozrieť aj na <a href="${info.sportnet}" rel="noopener">sportnet.sme.sk</a>.</p></div></section>
+${tg.length ? `<section class="sec" id="fotky" aria-labelledby="tf-h"><div class="wrap">
+  ${secHead('Fotogaléria', 'tf-h', null, R)}
+  <div class="rail" data-rail>${railNav('Galérie')}<div class="rail-track">${tg.slice(0, 12).map((g) => galCard(g, R, { sizes: RAIL_SIZES })).join('')}</div></div>
+</div></section>` : ''}
 ${videoDialog()}`;
     },
   });
@@ -561,11 +571,11 @@ news.forEach((n, i) => {
 add('fotogaleria/', {
   title: 'Fotogaléria', active: 'fotogaleria/', desc: 'Fotogalérie zo zápasov a podujatí OK Častkovce.',
   body: (R) => `${pageHero({ kicker: 'OK Častkovce', title: 'Fotogaléria', R, crumbs: [[null, 'Fotogaléria']] })}
-<section class="sec sec--first"><div class="wrap"><div class="grid grid--gal">${gals.map((g, i) => galCard(g, R, { h: 'h2', first: i === 0 })).join('')}</div></div></section>`,
+<section class="sec sec--first"><div class="wrap"><div class="grid grid--gal" data-paged="12" data-more="Zobraziť ďalšie galérie">${gals.map((g, i) => galCard(g, R, { h: 'h2', first: i === 0 })).join('')}</div></div></section>`,
 });
 gals.forEach((g) => add(`fotogaleria/${g.slug}/`, {
   title: g.title, active: 'fotogaleria/', desc: `Fotogaléria: ${g.title}`,
-  body: (R) => `${pageHero({ kicker: `${fmtDate(g.date)} · ${g.files.length} fotiek`, title: g.title, R, crumbs: [['fotogaleria/', 'Fotogaléria'], [null, g.title]] })}
+  body: (R) => `${pageHero({ kicker: `${g.date ? fmtDate(g.date) + ' · ' : ''}${g.files.length} fotiek`, title: g.title, R, crumbs: [['fotogaleria/', 'Fotogaléria'], [null, g.title]] })}
 <section class="sec sec--first"><div class="wrap">
   <ul class="photos" data-lightbox>${g.files.map((f, i) => `<li><a href="${galImg(g, f, R)}" data-i="${i}"><img src="${galImg(g, f, R, true)}" alt="${esc(g.title)} – fotka ${i + 1}"${i === 0 ? ' fetchpriority="high"' : i < 6 ? '' : ' loading="lazy"'} decoding="async"></a></li>`).join('')}</ul>
 </div></section>

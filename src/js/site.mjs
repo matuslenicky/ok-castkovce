@@ -198,6 +198,33 @@ if (filter) {
 // odkaz s filtrom: zoznamy boli do prefiltrovania skryté (inline skript v <head>), aby neposkočili (CLS)
 document.documentElement.classList.remove('js-filtering');
 
+// ---- dlhé mriežky (galérie) po častiach: data-paged="12" ----
+$$('[data-paged]').forEach((grid) => {
+  const step = Number(grid.dataset.paged) || 12;
+  const items = [...grid.children];
+  if (items.length <= step) return;
+  let shown = step;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'btn btn--line-dark btn--sm mlist-more grid-more';
+  const show = () => {
+    items.forEach((el, i) => { el.hidden = i >= shown; });
+    const rest = items.length - shown;
+    btn.hidden = rest <= 0;
+    btn.textContent = `${grid.dataset.more || 'Zobraziť ďalšie'} (${rest})`;
+  };
+  btn.addEventListener('click', () => {
+    const first = items[shown];
+    shown += step;
+    show();
+    // fokus na prvú pridanú položku (inak by po skrytí tlačidla padol na <body>)
+    const link = first && first.querySelector('a, button');
+    if (link) link.focus({ preventScroll: true });
+  });
+  grid.after(btn);
+  show();
+});
+
 // ---- zdieľanie správy ----
 $$('[data-share]').forEach((p) => {
   const btn = $('button', p), msg = $('.share-msg', p);

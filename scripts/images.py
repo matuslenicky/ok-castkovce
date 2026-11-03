@@ -106,7 +106,8 @@ for f in sorted((img_src / 'archiv' / 'partneri').glob('*.png')):
 #   media/galerie/<slug>/<obálka> -> media/galerie-web/<slug>/m/<obálka>.webp (800 × 500, výrez 16:10 v 25 % výšky, kde sú tváre
 #   ako .card-img s object-fit: cover; fotka na výšku by inak mala 800 × 1200 a zbytočne spomalila LCP)
 import json
-for g in json.loads((ROOT / 'data' / 'galerie.json').read_text(encoding='utf-8')):
+_gal_lists = [ROOT / 'data' / 'galerie.json', ROOT / 'data' / 'galerie-foto.json']  # starý web + zápasové fotky od fotografa
+for g in [x for p in _gal_lists if p.exists() for x in json.loads(p.read_text(encoding='utf-8'))]:
     slug = g['path'].rstrip('/').split('/')[-1]
     f = gal_src / slug / g['cover']
     if not f.exists():
