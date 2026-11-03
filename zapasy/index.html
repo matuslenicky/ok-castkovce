@@ -14,7 +14,7 @@
 <link rel="preload" href="../fonts/barlow-condensed-800i.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="../fonts/barlow-400.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="../css/site.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(d){d.classList.add('js');if(/[?&](kategoria|kde)=/.test(location.search)){d.classList.add('js-filtering');setTimeout(function(){d.classList.remove('js-filtering')},3000)}})(document.documentElement)</script>
 <script type="module" src="../js/site.mjs"></script>
 </head>
 <body>

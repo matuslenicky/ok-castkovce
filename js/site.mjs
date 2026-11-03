@@ -123,23 +123,59 @@ document.addEventListener('keydown', (e) => {
 // ---- filter zápasov: kategória a doma/vonku ----
 const filter = $('[data-match-filter]');
 const state = { team: '', ha: '' };
+// zoznamy zápasov po častiach: prvých 8, potom po 12 (na mobile by inak stránka mala desiatky tisíc pixelov)
+const FIRST = 8, STEP = 12;
+const limits = new WeakMap();
+function layoutList(wrap) {
+  const rows = $$('.mrow', wrap);
+  const fits = rows.filter((r) => (!state.team || r.dataset.team === state.team) && (!state.ha || r.dataset.ha === state.ha));
+  const limit = limits.get(wrap) || FIRST;
+  rows.forEach((r) => { r.hidden = true; });
+  fits.slice(0, limit).forEach((r) => { r.hidden = false; });
+  $$('.mlist', wrap).forEach((ol) => {
+    const any = $$('.mrow', ol).some((r) => !r.hidden);
+    ol.hidden = !any;
+    const h = ol.previousElementSibling;
+    if (h && h.classList.contains('mlist-month')) h.hidden = !any;
+  });
+  let none = $('.mlist-none', wrap);
+  const empty = rows.length && !fits.length;
+  if (empty && !none) { none = document.createElement('p'); none.className = 'empty mlist-none'; none.textContent = 'Pre tento výber tu nie je žiadny zápas.'; wrap.append(none); }
+  if (none) none.hidden = !empty;
+  let more = wrap.nextElementSibling?.classList.contains('mlist-more') ? wrap.nextElementSibling : null;
+  const rest = fits.length - Math.min(limit, fits.length);
+  if (rest > 0 && !more) {
+    more = document.createElement('button');
+    more.type = 'button';
+    more.className = 'btn btn--line-dark btn--sm mlist-more';
+    more.addEventListener('click', () => {
+      const before = new Set($$('.mrow:not([hidden])', wrap));
+      limits.set(wrap, (limits.get(wrap) || FIRST) + STEP);
+      layoutList(wrap);
+      // posledné načítanie tlačidlo skryje: fokus by spadol na <body>, presunie sa na prvý pridaný zápas
+      if (more.hidden) {
+        const first = $$('.mrow:not([hidden])', wrap).find((r) => !before.has(r));
+        if (first) { first.tabIndex = -1; first.focus({ preventScroll: true }); }
+      }
+    });
+    wrap.after(more);
+  }
+  if (more) {
+    more.hidden = rest <= 0;
+    more.textContent = rest === 1 ? 'Zobraziť ďalší zápas' : `Zobraziť ďalšie zápasy (${rest})`;
+  }
+}
+const layoutLists = (reset) => $$('.mlist-wrap').forEach((w) => { if (reset) limits.delete(w); layoutList(w); });
+// HTML zoznamov z buildu pred skrátením: layoutList mení atribúty hidden, takže innerHTML sa už s novým výpočtom
+// nedá porovnať a refreshMatches by zoznamy zbytočne prekreslil (na /zapasy/ stovky riadkov, drobný posun obsahu)
+const rendered = new WeakMap();
+$$('.mlist-wrap').forEach((w) => rendered.set(w, w.innerHTML));
+layoutLists();
 const applyFilter = () => {
   if (!filter) return;
   $$('.chip[data-filter]', filter).forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === state.team)));
   $$('.chip[data-ha]', filter).forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.ha === state.ha)));
-  $$('.mlist-wrap').forEach((wrap) => {
-    $$('.mrow', wrap).forEach((r) => { r.hidden = (!!state.team && r.dataset.team !== state.team) || (!!state.ha && r.dataset.ha !== state.ha); });
-    $$('.mlist', wrap).forEach((ol) => {
-      const any = $$('.mrow', ol).some((r) => !r.hidden);
-      ol.hidden = !any;
-      const h = ol.previousElementSibling;
-      if (h && h.classList.contains('mlist-month')) h.hidden = !any;
-    });
-    let none = $('.mlist-none', wrap);
-    const empty = $$('.mrow', wrap).length && !$$('.mrow', wrap).some((r) => !r.hidden);
-    if (empty && !none) { none = document.createElement('p'); none.className = 'empty mlist-none'; none.textContent = 'Pre tento výber tu nie je žiadny zápas.'; wrap.append(none); }
-    if (none) none.hidden = !empty;
-  });
+  layoutLists(true);
   const box = $('[data-cal]', filter);
   if (box) setCal(box, state.team ? `${state.team}.ics` : 'vsetky.ics');
   const u = new URL(location.href);
@@ -154,7 +190,13 @@ if (filter) {
   if ($$('.chip[data-filter]', filter).some((c) => c.dataset.filter === q.get('kategoria'))) state.team = q.get('kategoria');
   state.ha = { doma: 'h', vonku: 'a' }[q.get('kde')] || '';
   if (state.team || state.ha) applyFilter();
+  // odkaz s ?kategoria=: zvolená kategória má byť vidieť aj v posúvateľnom riadku na mobile (bez posunu stránky)
+  const on = $('.chip[data-filter][aria-pressed="true"]', filter);
+  const row = on && on.parentElement;
+  if (state.team && row.scrollWidth > row.clientWidth) row.scrollLeft += on.getBoundingClientRect().left - row.getBoundingClientRect().left - (row.clientWidth - on.offsetWidth) / 2;
 }
+// odkaz s filtrom: zoznamy boli do prefiltrovania skryté (inline skript v <head>), aby neposkočili (CLS)
+document.documentElement.classList.remove('js-filtering');
 
 // ---- zdieľanie správy ----
 $$('[data-share]').forEach((p) => {
@@ -234,7 +276,15 @@ async function loadMatches() {
   const r = await fetch(`${ROOT}data/zapasy.json`);
   return r.ok ? r.json() : null;
 }
-const setHTML = (el, html) => { if (el.innerHTML !== html) el.innerHTML = html; };
+// porovnáva sa serializované HTML (prehliadač zapisuje <path …/> ako <path …></path>, surový reťazec by sa nezhodol nikdy)
+const tpl = document.createElement('template');
+const setHTML = (el, html) => {
+  tpl.innerHTML = html;
+  const next = tpl.innerHTML;
+  const prev = rendered.has(el) ? rendered.get(el) : el.innerHTML;
+  rendered.set(el, next);
+  if (prev !== next) el.innerHTML = html;
+};
 async function refreshMatches() {
   const targets = $$('.mc-grid[data-team], .mlist-wrap[data-list], [data-form], [data-week], [data-next], [data-matchday]');
   if (!targets.length) return;
@@ -259,7 +309,7 @@ async function refreshMatches() {
     el.hidden = !n;
     $('[data-matchday-t]', el).textContent = `Dnes hráme${n > 1 ? ` · ${n} ${n >= 5 ? 'zápasov' : 'zápasy'}` : ''}`;
   });
-  if (filter && (state.team || state.ha)) applyFilter();
+  if (filter && (state.team || state.ha)) applyFilter(); else layoutLists();
   tick();
 }
 refreshMatches();

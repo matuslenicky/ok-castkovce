@@ -14,7 +14,7 @@
 <link rel="preload" href="../fonts/barlow-condensed-800i.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="../fonts/barlow-400.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="../css/site.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(d){d.classList.add('js');if(/[?&](kategoria|kde)=/.test(location.search)){d.classList.add('js-filtering');setTimeout(function(){d.classList.remove('js-filtering')},3000)}})(document.documentElement)</script>
 <script type="module" src="../js/site.mjs"></script>
 </head>
 <body>
@@ -43,7 +43,7 @@
     <p class="kicker">Obecný klub Častkovce</p><h1 class="display display--page">Klub</h1>
   </div></section><nav class="subnav" aria-label="Klub"><div class="wrap"><a href="../klub/stadion/">Štadión</a><a href="../klub/historia/">História</a><a href="../klub/vedenie-klubu/">Vedenie klubu</a><a href="../klub/prenajom-umelej-travy/">Prenájom umelej trávy</a><a href="../klub/kontakty/">Kontakty</a></div></nav>
 <section class="sec sec--first"><div class="wrap"><ul class="kgrid">
-  <li><a class="kcard" href="../klub/stadion/"><img src="../img/archiv/ostatne/stadion/Tribuna.jpg" srcset="../img/opt/archiv/ostatne/stadion/Tribuna-640.webp 640w, ../img/opt/archiv/ostatne/stadion/Tribuna-800.webp 800w" sizes="(min-width: 900px) 33vw, 100vw" alt="" fetchpriority="high" decoding="async"><span><b>Štadión</b><span>Kapacita 1500 osôb, 300 miest na sedenie</span></span></a></li>
+  <li><a class="kcard" href="../klub/stadion/"><picture><source type="image/webp" srcset="../foto/stadion-tribuna-480.webp 480w, ../foto/stadion-tribuna-800.webp 800w, ../foto/stadion-tribuna-1200.webp 1200w, ../foto/stadion-tribuna-1600.webp 1600w, ../foto/stadion-tribuna-2000.webp 2000w" sizes="(min-width: 900px) 33vw, 100vw"><img src="../foto/stadion-tribuna-2000.jpg" srcset="../foto/stadion-tribuna-480.jpg 480w, ../foto/stadion-tribuna-800.jpg 800w, ../foto/stadion-tribuna-1200.jpg 1200w, ../foto/stadion-tribuna-1600.jpg 1600w, ../foto/stadion-tribuna-2000.jpg 2000w" sizes="(min-width: 900px) 33vw, 100vw" width="2000" height="2664" alt="" fetchpriority="high" style="object-position:50% 55%"></picture><span><b>Štadión</b><span>Kapacita 1500 osôb, 300 miest na sedenie</span></span></a></li>
   <li><a class="kcard" href="../klub/historia/"><img src="../img/archiv/ostatne/historia/02.jpg" srcset="../img/opt/archiv/ostatne/historia/02-640.webp 640w, ../img/opt/archiv/ostatne/historia/02-800.webp 800w" sizes="(min-width: 900px) 33vw, 100vw" alt="" decoding="async"><span><b>História</b><span>Súťažne organizovaný futbal sa začal v r. 1962.</span></span></a></li>
   <li><a class="kcard kcard--text" href="../klub/vedenie-klubu/"><span><b>Vedenie klubu</b><span>Predseda klubu, tréneri a funkcionári</span></span></a></li>
   <li><a class="kcard kcard--text" href="../klub/prenajom-umelej-travy/"><span><b>Prenájom umelej trávy</b><span>+421 903 422 451</span></span></a></li>
