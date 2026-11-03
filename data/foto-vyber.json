@@ -1,0 +1,6 @@
+{
+  "_pozn": "Výber fotiek od fotografa pre úvod a štadión (cesta = priečinok na Disku). Spracuje python -I scripts/photos.py.",
+  "hero": { "subor": "ŠTADIÓN/6..JPG", "pos": "50% 58%", "alt": "Hráči a tréneri všetkých tímov OK Častkovce pred tribúnou" },
+  "stadion-tribuna": { "subor": "ŠTADIÓN/IMG_3869.JPG", "pos": "50% 55%", "alt": "Tribúna štadióna v Častkovciach" },
+  "stadion-dron": { "subor": "ŠTADIÓN/DJI_0234.JPG", "pos": "50% 50%", "alt": "Areál štadióna v Častkovciach z dronu" }
+}

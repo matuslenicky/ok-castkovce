@@ -98,14 +98,19 @@ function ics(list, calName) {
 
 // ---- obrázky ----------------------------------------------------------------------------------
 // Fotky od fotografa: data/foto.json (vyrába scripts/photos.py) -> dist/foto/<kľúč>-<šírka>.webp/.jpg
-function pic(key, R, { sizes = '100vw', cls = '', alt = '', eager = false } = {}) {
+// alt: neuvedený = popis z foto.json, '' = dekoratívna fotka (pozadie)
+function pic(key, R, { sizes = '100vw', cls = '', alt, eager = false } = {}) {
   const f = foto.obrazky?.[key];
   if (!f) return '';
   const srcset = (ext) => f.widths.map((w) => `${R}foto/${key}-${w}.${ext} ${w}w`).join(', ');
   const largest = f.widths[f.widths.length - 1];
-  return `<picture${cls ? ` class="${cls}"` : ''}><source type="image/webp" srcset="${srcset('webp')}" sizes="${sizes}"><img src="${R}foto/${key}-${largest}.jpg" srcset="${srcset('jpg')}" sizes="${sizes}" width="${f.w}" height="${f.h}" alt="${esc(alt || f.alt || '')}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}${f.pos ? ` style="object-position:${f.pos}"` : ''}></picture>`;
+  return `<picture${cls ? ` class="${cls}"` : ''}><source type="image/webp" srcset="${srcset('webp')}" sizes="${sizes}"><img src="${R}foto/${key}-${largest}.jpg" srcset="${srcset('jpg')}" sizes="${sizes}" width="${f.w}" height="${f.h}" alt="${esc(alt === undefined ? f.alt || '' : alt)}"${eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"'}${f.pos ? ` style="object-position:${f.pos}"` : ''}></picture>`;
 }
 const hasPic = (key) => !!foto.obrazky?.[key];
+// sizes podľa skutočne vykreslenej šírky fotky 16:9 pri object-fit: cover (orez do užšieho rámu ju zväčší):
+// hlavička podstránky na telefóne ~390×280–320 px -> fotka ~500–565 px; dlaždica 4:5 -> 2,2× šírka dlaždice;
+// karta mládeže na telefóne má obrázok 112×112 -> fotka ~200 px
+const PHERO_SIZES = '(max-width: 479.98px) 145vw, 100vw';
 const G = config.galerie;
 const galDir = (g) => g.path.split('/').pop();
 // local = zmenšeniny z media/galerie-web (scripts/images.py) priamo na webe; storage = Supabase Storage; old-site = starý web
@@ -215,7 +220,7 @@ ${config.noindex ? '<meta name="robots" content="noindex">\n' : ''}${canon ? `<l
 <link rel="preload" href="${R}fonts/barlow-condensed-800i.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="${R}fonts/barlow-400.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="${R}css/site.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(d){d.classList.add('js');if(/[?&](kategoria|kde)=/.test(location.search)){d.classList.add('js-filtering');setTimeout(function(){d.classList.remove('js-filtering')},3000)}})(document.documentElement)</script>
 <script type="module" src="${R}js/site.mjs"></script>
 ${ld}</head>
 <body>
@@ -320,26 +325,36 @@ add('', {
   title: 'oficiálna stránka futbalového klubu', active: '',
   body: (R) => {
     const tabTeams = teams.filter((t) => teamMatches(t.slug).length);
-    const hero = hasPic('hero') ? pic('hero', R, { cls: 'hero-img', eager: true, alt: 'Hráči OK Častkovce' }) : '';
+    const hero = hasPic('hero') ? pic('hero', R, { cls: 'hero-img', eager: true, sizes: '(max-width: 699.98px) 134vw, 100vw' }) : '';
     const youthTiles = youth.map((t) => `<li class="ytile"><a href="${R}${t.url}">
-      <span class="ytile-img">${hasPic('tim-' + t.slug) ? pic('tim-' + t.slug, R, { sizes: '(min-width: 1100px) 260px, (min-width: 700px) 30vw, 46vw' }) : `<span class="ph-crest"></span>`}</span>
+      <span class="ytile-img">${hasPic('tim-' + t.slug) ? pic('tim-' + t.slug, R, { sizes: '(min-width: 1240px) 525px, (min-width: 1100px) 39vw, (min-width: 700px) 66vw, 86vw' }) : `<span class="ph-crest"></span>`}</span>
       <span class="ytile-t"><b>${esc(t.short)}</b><span>${esc(t.sub)}</span></span></a></li>`).join('');
     const dnes = todayMatches(matches, TODAY);
     const wkOpts = { labels, urls: Object.fromEntries(teams.map((t) => [t.slug, t.url])), root: R };
     const nextA = nextHTML(teamMatches('a-muzstvo'), TODAY, { label: 'A-mužstvo', root: R });
-    return `
-<section class="hero${hero ? '' : ' hero--plain'}" aria-labelledby="hero-h">
-  ${hero}<span class="hero-shade" aria-hidden="true"></span>
-  <img class="hero-crest" src="${R}img/logo.svg" alt="" width="560" height="560" aria-hidden="true"${hero ? '' : ' fetchpriority="high"'}>
-  <div class="wrap hero-in">
-    <a class="matchday" href="#tyzden" data-matchday${dnes.length ? '' : ' hidden'}><span class="matchday-dot" aria-hidden="true"></span><span data-matchday-t>Dnes hráme${dnes.length > 1 ? ` · ${dnes.length} ${dnes.length >= 5 ? 'zápasov' : 'zápasy'}` : ''}</span></a>
-    <p class="kicker kicker--light">Futbalový klub</p>
+    const matchday = `<a class="matchday" href="#tyzden" data-matchday${dnes.length ? '' : ' hidden'}><span class="matchday-dot" aria-hidden="true"></span><span data-matchday-t>Dnes hráme${dnes.length > 1 ? ` · ${dnes.length} ${dnes.length >= 5 ? 'zápasov' : 'zápasy'}` : ''}</span></a>`;
+    const heroText = `<p class="kicker kicker--light">Futbalový klub</p>
     <h1 class="display" id="hero-h">OK Častkovce</h1>
     <p class="hero-sub">${esc(info.ocenenie)}</p>
-    <div class="hero-cta"><a class="btn btn--red" href="${R}zapasy/">Zápasy a výsledky${I.arrow}</a><a class="btn btn--light" href="${R}a-muzstvo/">A-mužstvo</a></div>
-    <aside class="hnext" data-next="a-muzstvo" data-label="A-mužstvo" aria-label="Najbližší zápas A-mužstva"${nextA ? '' : ' hidden'}>${nextA}</aside>
+    <div class="hero-cta"><a class="btn btn--red" href="${R}zapasy/">Zápasy a výsledky${I.arrow}</a><a class="btn btn--light" href="${R}a-muzstvo/">A-mužstvo</a></div>`;
+    const nextBox = `<aside class="hnext" data-next="a-muzstvo" data-label="A-mužstvo" aria-label="Najbližší zápas A-mužstva"${nextA ? '' : ' hidden'}>${nextA}</aside>`;
+    // s fotkou celého klubu: fotka bez textu cez ľudí, názov a najbližší zápas v tmavom páse pod ňou
+    return `${hero ? `
+<section class="hero hero--photo" aria-labelledby="hero-h">
+  <div class="hero-media">${hero}<div class="wrap hero-media-in">${matchday}</div></div>
+  <div class="wrap hero-bar">
+    <div class="hero-lead">${heroText}</div>
+    ${nextBox}
   </div>
-</section>
+</section>` : `
+<section class="hero hero--plain" aria-labelledby="hero-h">
+  <img class="hero-crest" src="${R}img/logo.svg" alt="" width="560" height="560" aria-hidden="true" fetchpriority="high">
+  <div class="wrap hero-in">
+    ${matchday}
+    ${heroText}
+    ${nextBox}
+  </div>
+</section>`}
 
 <section class="sec mc" aria-labelledby="mc-h">
   <div class="wrap">
@@ -403,7 +418,7 @@ add('', {
   </div>
 </section>
 
-<section class="sec band band--dark stad" aria-labelledby="st-h">
+<section class="sec band band--dark stad${hasPic('stadion-dron') ? ' stad--img' : ''}" aria-labelledby="st-h">${hasPic('stadion-dron') ? pic('stadion-dron', R, { cls: 'stad-img', alt: '' }) : ''}
   <div class="wrap stad-in">
     <div class="stad-text">
       <p class="kicker kicker--light">Štadión</p>
@@ -479,7 +494,7 @@ function teamPage(t) {
     body: (R) => {
       const list = teamMatches(t.slug);
       const { past, next } = splitMatches(list, TODAY);
-      const img = hasPic('tim-' + t.slug) ? pic('tim-' + t.slug, R, { cls: 'phero-img', eager: true, alt: `${t.short} OK Častkovce` }) : '';
+      const img = hasPic('tim-' + t.slug) ? pic('tim-' + t.slug, R, { cls: 'phero-img', eager: true, sizes: PHERO_SIZES }) : '';
       return `${pageHero({ kicker: t.isA ? 'Muži' : t.sub, title: t.isA ? 'A-mužstvo' : t.short, sub: t.league, R, img, crumbs: t.isA ? [[null, 'A-mužstvo']] : [['mladez/', 'Mládež'], [null, t.short]] })}
 <nav class="subnav" aria-label="Sekcie"><div class="wrap"><a href="#supiska">Súpiska</a><a href="#program">Program</a><a href="#vysledky">Výsledky</a></div></nav>
 <section class="sec sec--first" aria-labelledby="mc-h"><div class="wrap">
@@ -509,7 +524,7 @@ add('mladez/', {
     const { next } = splitMatches(teamMatches(t.slug), TODAY);
     const players = (t.roster || []).find((g) => g.title === 'Hráči');
     return `<li class="tcard"><a href="${R}${t.url}">
-      <span class="tcard-img">${hasPic('tim-' + t.slug) ? pic('tim-' + t.slug, R, { sizes: '(min-width: 1100px) 340px, (min-width: 700px) 45vw, 92vw' }) : `<span class="ph-crest"></span>`}<span class="tcard-u">${esc(t.short)}</span></span>
+      <span class="tcard-img">${hasPic('tim-' + t.slug) ? pic('tim-' + t.slug, R, { sizes: '(min-width: 1240px) 405px, (min-width: 1100px) 30vw, (min-width: 700px) 45vw, 200px' }) : `<span class="ph-crest"></span>`}<span class="tcard-u">${esc(t.short)}</span></span>
       <span class="tcard-b"><span class="tcard-t">${esc(t.sub)}</span>${t.league ? `<span class="tcard-l">${esc(t.league)}</span>` : ''}
       <span class="tcard-m">${players ? `<span>Hráčov na súpiske: <b>${players.people.length}</b></span>` : ''}${next[0] ? `<span>Najbližší zápas: <b>${fmtDay(next[0].date)} ${fmtDate(next[0].date)}</b></span>` : ''}</span></span></a></li>`;
   }).join('')}</ul>
@@ -574,7 +589,7 @@ add('klub/', {
   title: 'Klub', active: 'klub/', desc: 'OK Častkovce – štadión, história, vedenie klubu a kontakty.',
   body: (R) => `${pageHero({ kicker: info.pravnyNazov, title: 'Klub', R, crumbs: [[null, 'Klub']] })}${klubNav(R, '')}
 <section class="sec sec--first"><div class="wrap"><ul class="kgrid">
-  <li><a class="kcard" href="${R}klub/stadion/">${cardImg(`${R}img/archiv/ostatne/stadion/Tribuna.jpg`, R, { sizes: '(min-width: 900px) 33vw, 100vw', first: true })}<span><b>Štadión</b><span>Kapacita ${info.stadion.kapacita} osôb, ${info.stadion.sedenie} miest na sedenie</span></span></a></li>
+  <li><a class="kcard" href="${R}klub/stadion/">${hasPic('stadion-tribuna') ? pic('stadion-tribuna', R, { sizes: '(min-width: 900px) 33vw, 100vw', eager: true, alt: '' }) : cardImg(`${R}img/archiv/ostatne/stadion/Tribuna.jpg`, R, { sizes: '(min-width: 900px) 33vw, 100vw', first: true })}<span><b>Štadión</b><span>Kapacita ${info.stadion.kapacita} osôb, ${info.stadion.sedenie} miest na sedenie</span></span></a></li>
   <li><a class="kcard" href="${R}klub/historia/">${cardImg(`${R}img/archiv/ostatne/historia/02.jpg`, R, { sizes: '(min-width: 900px) 33vw, 100vw', eager: true })}<span><b>História</b><span>Súťažne organizovaný futbal sa začal v r. 1962.</span></span></a></li>
   <li><a class="kcard kcard--text" href="${R}klub/vedenie-klubu/"><span><b>Vedenie klubu</b><span>Predseda klubu, tréneri a funkcionári</span></span></a></li>
   <li><a class="kcard kcard--text" href="${R}klub/prenajom-umelej-travy/"><span><b>Prenájom umelej trávy</b><span>${esc(info.telefon)}</span></span></a></li>
@@ -592,7 +607,8 @@ for (const [slug, title] of KLUB) {
       const cls = slug === 'vedenie-klubu' || slug === 'kontakty' ? ' prose--facts' : slug === 'historia' ? ' prose--history' : slug === 'prenajom-umelej-travy' ? ' prose--rent' : '';
       const map = slug === 'kontakty' ? `<p class="note"><a class="btn btn--line-dark btn--sm" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Častkovce 355, 916 27 Častkovce')}" rel="noopener">${I.pin}Otvoriť adresu v mapách</a></p>`
         : slug === 'stadion' ? `<p class="note">${navBtn('btn btn--line-dark btn--sm')}</p>` : '';
-      return `${pageHero({ kicker: 'Klub', title, R, crumbs: [['klub/', 'Klub'], [null, title]] })}${klubNav(R, slug)}
+      const img = slug === 'stadion' && hasPic('stadion-dron') ? pic('stadion-dron', R, { cls: 'phero-img', eager: true, sizes: PHERO_SIZES }) : '';
+      return `${pageHero({ kicker: 'Klub', title, R, img, crumbs: [['klub/', 'Klub'], [null, title]] })}${klubNav(R, slug)}
 <section class="sec sec--first"><div class="wrap"><div class="prose${cls}">${html}</div>${map}</div></section>`;
     },
   });

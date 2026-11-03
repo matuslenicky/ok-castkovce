@@ -521,6 +521,8 @@ dialog { padding: 0; border: 0; }
 .ftr p { margin: 0; }
 .ftr a { text-decoration: none; display: inline-block; padding: 3px 0; }
 .ftr a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.ftr .social a { display: grid; padding: 0; } /* všeobecné .ftr a by inak zrušilo centrovanie ikony v krúžku */
+.ftr .social a:hover { text-decoration: none; }
 .ftr-small { margin-top: 14px !important; font-size: 14px; color: #9da0a7; }
 .ftr-links { list-style: none; margin: 0; padding: 0; }
 .ftr-links a { padding: 6px 0; }
@@ -563,9 +565,11 @@ dialog { padding: 0; border: 0; }
 
 /* tento týždeň: zápasy všetkých kategórií po dňoch */
 .wk { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 14px; align-items: start; }
-.wk-day { padding: 16px 18px 6px; background: #fff; border-radius: var(--radius); border-top: 4px solid var(--ink); }
-.wk-day--today { border-top-color: var(--red); }
-.wk-h { margin: 0 0 4px; font: 700 18px/1.1 var(--f-disp); letter-spacing: .08em; text-transform: uppercase; }
+.wk-day { padding: 16px 18px 6px; background: #fff; border: 2px solid transparent; border-radius: var(--radius); }
+.wk-day--today { border-color: var(--red); }
+.wk-h { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; font: 700 18px/1.1 var(--f-disp); letter-spacing: .08em; text-transform: uppercase; }
+.wk-h::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+.wk-day--today .wk-h::before { background: var(--red); }
 .wk-day--today .wk-h { color: var(--red-d); }
 .wk-list { list-style: none; margin: 0; padding: 0; }
 .wk-row { display: grid; grid-template-columns: 56px minmax(0, 1fr); grid-template-areas: 't team' 't opp'; gap: 2px 12px; padding: 11px 0; border-top: 1px solid var(--line); }
@@ -621,4 +625,87 @@ a.wk-team:hover { text-decoration: underline; text-underline-offset: 3px; }
 .art-share { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 28px 0 0; }
 .share-msg { color: var(--muted); font-size: 15px; overflow-wrap: anywhere; }
 
+/* ---------- ovládanie na mobile ---------- */
+/* dlhé zoznamy zápasov sa ukazujú po častiach (site.mjs) */
+.mlist-more { display: flex; width: 100%; margin-top: 4px; }
+@media (min-width: 700px) { .mlist-more { width: auto; } }
+
+/* dotykové plochy aspoň 44 px na dotykových zariadeniach */
+@media (pointer: coarse) {
+  .crumbs a, .crumbs span { min-height: 44px; }
+  .crumbs { margin-top: -8px; margin-bottom: clamp(14px, 3vw, 26px); }
+  .ftr-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0; }
+  .ftr-bar a { min-height: 44px; }
+  .mmedia { min-height: 44px; padding: 0 14px; }
+  .ftr p a { display: inline-flex; align-items: center; min-height: 44px; padding: 0; }
+}
+
+@media (max-width: 699.98px) {
+  /* úvod: tlačidlá na celú šírku, rovnako veľké */
+  .hero-cta { display: grid; }
+  .hero-cta .btn { width: 100%; }
+  /* filter zápasov: popis nad voľbami, kategórie v jednom posúvateľnom riadku */
+  .filter { display: grid; gap: 14px; margin-bottom: 24px; }
+  .filter-g { display: grid; gap: 8px; min-width: 0; }
+  .filter .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--gut)); padding: 2px var(--gut); scroll-padding: 0 var(--gut); }
+  .filter .chips::-webkit-scrollbar { display: none; }
+  .filter .chip { flex: none; }
+  .filter .cal { margin-left: 0; justify-self: start; }
+  .filter .cal-pop { left: 0; right: auto; }
+  /* riadky zápasov o niečo hustejšie */
+  .mrow { padding: 12px 14px; gap: 6px; }
+  /* mládež: kompaktné karty s malým obrázkom vľavo namiesto vysokých dlaždíc */
+  .tlist { gap: 10px; }
+  .tcard a { flex-direction: row; align-items: stretch; }
+  .tcard-img { flex: none; width: 112px; aspect-ratio: auto; min-height: 112px; }
+  .tcard .ph-crest::after { background-position: 50% 30%; background-size: auto 46%; }
+  .tcard-u { left: 0; right: 0; bottom: 10px; text-align: center; font-size: 34px; }
+  .tcard-b { justify-content: center; gap: 3px; padding: 12px 14px; min-width: 0; }
+  .tcard-t { font-size: 20px; }
+  .tcard-l, .tcard-m { font-size: 14px; }
+  .tcard-m { margin-top: 2px; }
+}
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+/* tento týždeň: celý riadok je odkaz na tím (väčšia dotyková plocha než samotný názov) */
+.wk-row { position: relative; }
+a.wk-team::after { content: ''; position: absolute; inset: 0; }
+.wk-row:has(a.wk-team:hover) { background: linear-gradient(90deg, var(--tint), transparent); }
+a.wk-team:focus-visible { outline: none; }
+.wk-row:has(a.wk-team:focus-visible) { outline: 3px solid var(--ink); outline-offset: 2px; border-radius: 6px; }
+/* omrvinky: širšia plocha bez posunu textu */
+.crumbs a { padding: 0 8px; margin: 0 -8px; }
+
+/* fotky od fotografa: štadión z dronu ako pozadie sekcie, <picture> v dlaždiciach */
+.stad--img { position: relative; isolation: isolate; overflow: hidden; }
+.stad-img, .stad-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.stad--img::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 13, 16, .95) 0%, rgba(12, 13, 16, .86) 45%, rgba(12, 13, 16, .6) 100%); }
+@media (max-width: 899.98px) { .stad--img::before { background: rgba(12, 13, 16, .86); } }
+.tcard-img picture, .ytile-img picture { position: absolute; inset: 0; }
+.tcard-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* text cez fotku: označenie tímu na bielych dresoch malo kontrast 2,4:1, omrvinky 2,1:1, červený nadpis 1,7–3,7:1 */
+.tcard-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(12, 13, 16, .72)); }
+.tcard-u { z-index: 1; }
+.phero--img .crumbs, .phero--img .kicker { text-shadow: 0 1px 2px rgba(0, 0, 0, .85), 0 0 14px rgba(0, 0, 0, .55); }
+.phero--img .crumbs { color: #e6e7ea; }
+.phero--img .kicker { color: var(--gold); }
+.phero--img .kicker::before { box-shadow: 0 1px 2px rgba(0, 0, 0, .6); }
+.kcard picture { display: block; aspect-ratio: 16 / 10; overflow: hidden; }
+.kcard picture img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+
+/* úvod s fotkou celého klubu: fotka bez textu cez ľudí, názov prekrýva len stmavený spodok fotky (trávnik) */
+.hero--photo { display: block; min-height: 0; background-image: none; } /* bez textúry: prechod fotky do tmavej nesmie mať šev */
+.hero-media { position: relative; isolation: isolate; aspect-ratio: 16 / 7; max-height: 74vh; min-height: 280px; overflow: hidden; }
+.hero-media::after { content: ''; position: absolute; inset: auto 0 0; height: 42%; z-index: -1; background: linear-gradient(180deg, rgba(18, 19, 23, 0), var(--ink)); }
+.hero-media-in { position: relative; padding-top: 22px; }
+.hero-bar { position: relative; display: grid; gap: 26px; margin-top: clamp(-96px, -6vw, -40px); padding-bottom: clamp(36px, 5vw, 60px); }
+.hero--photo .display { font-size: clamp(52px, 9vw, 128px); }
+.hero--photo .hnext { margin-top: 0; }
+@media (min-width: 960px) { .hero-bar { grid-template-columns: minmax(0, 1fr) minmax(0, 480px); align-items: end; } }
+@media (max-width: 699.98px) { .hero-media { aspect-ratio: 4 / 3; max-height: none; min-height: 0; } .hero-bar { margin-top: -30px; } }
+
+/* odkaz s filtrom (?kategoria= / ?kde=): zoznamy sa ukážu až prefiltrované, inak by poskočili */
+.js-filtering .mlist-wrap { visibility: hidden; }
+/* nadpis nad názvom na tmavých hlavičkách podstránok: červená mala na tmavej len 3,5:1, zlatá ako v úvode */
+.phero .kicker { color: var(--gold); }

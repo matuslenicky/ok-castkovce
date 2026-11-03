@@ -1,0 +1,190 @@
+{
+ "_zdroj": "fotky od fotografa (Disk Google klubu), spracúva scripts/photos.py",
+ "obrazky": {
+  "tim-a-muzstvo": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "A-mužstvo OK Častkovce, tímová fotka",
+   "zdroj": "MUŽI/2026/2027/TÍMOVÉ FOTENIE/MUZI.jpg"
+  },
+  "tim-u19-starsi-dorast": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U19 starší dorast OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U19/TÍMOVÉ FOTENIE/U19.jpg"
+  },
+  "tim-u17-mladsi-dorast": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U17 mladší dorast OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U17/TÍMOVÉ FOTENIE/U17.jpg"
+  },
+  "tim-u15-starsi-ziaci": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U15 starší žiaci OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U15/TÍMOVÉ FOTENIE/U15.jpg"
+  },
+  "tim-u15-starsi-ziaci-b": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U15 B starší žiaci OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U14/TÍMOVÉ FOTENIE/U14.jpg"
+  },
+  "tim-u13-mladsi-ziaci": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U13 mladší žiaci OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U13/TÍMOVÉ FOTENIE/U13.jpg"
+  },
+  "tim-u13-mladsi-ziaci-b": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U13 B mladší žiaci OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U12/TÍMOVÉ FOTENIE/U12.jpg"
+  },
+  "tim-u11-pripravka": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U11 prípravka OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U11/TÍMOVÉ FOTENIE/U11.jpg"
+  },
+  "tim-u10-pripravka": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U10 prípravka OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U10/TÍMOVÉ FOTENIE/U10.jpg"
+  },
+  "tim-u9-pripravka": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U9 prípravka OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U9/TÍMOVÉ FOTENIE/U9.jpg"
+  },
+  "tim-u7-pripravka": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "U7 prípravka OK Častkovce, tímová fotka",
+   "zdroj": "MLÁDEŽ/2026/2027/U8/TÍMOVÉ FOTENIE/U8.jpg"
+  },
+  "hero": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1126,
+   "alt": "Hráči a tréneri všetkých tímov OK Častkovce pred tribúnou",
+   "pos": "50% 58%",
+   "zdroj": "ŠTADIÓN/6..JPG"
+  },
+  "stadion-tribuna": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 2664,
+   "alt": "Tribúna štadióna v Častkovciach",
+   "pos": "50% 55%",
+   "zdroj": "ŠTADIÓN/IMG_3869.JPG"
+  },
+  "stadion-dron": {
+   "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+   ],
+   "w": 2000,
+   "h": 1125,
+   "alt": "Areál štadióna v Častkovciach z dronu",
+   "pos": "50% 50%",
+   "zdroj": "ŠTADIÓN/DJI_0234.JPG"
+  }
+ }
+}
