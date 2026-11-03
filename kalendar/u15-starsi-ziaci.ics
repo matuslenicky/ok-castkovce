@@ -1,0 +1,469 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//OK Castkovce//Zapasy//SK
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:OK Častkovce – U15 Starší žiaci
+X-WR-TIMEZONE:Europe/Bratislava
+BEGIN:VTIMEZONE
+TZID:Europe/Bratislava
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:zapas-115@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20250802T100000
+DURATION:PT2H
+SUMMARY:U15: OFK Dynamo Malženice – OK Častkovce 0:8
+DESCRIPTION:Zápas vonku\ngól: Uváček\, Ševčík\, Duračka 3\, A. Pal
+ ler 2\, Klčo
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-116@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20250809T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – Spartak Myjava 2:1
+DESCRIPTION:Domáci zápas\ngól: Klčo\, Rozvadský
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-186@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;VALUE=DATE:20250817
+SUMMARY:U15: MFK Baník Handlová – OK Častkovce 0:12
+DESCRIPTION:Zápas vonku\nRozvadský 2\, Uváček\, Šido\, Duračka 3\, K
+ lčo 2\, Paller R. 2\, Ševčík
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-118@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20250823T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – FK AŠK Slávia Trnava 5:1
+DESCRIPTION:Domáci zápas\nDuračka 2\, Turkovič\, Šido\, Klčo
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-119@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20250827T100000
+DURATION:PT2H
+SUMMARY:U15: OFK Baník Lehota pod Vtáčnikom – OK Častkovce 0:7
+DESCRIPTION:Zápas vonku\nPaller\, Rozvadský 2\, Duračka\, Šedovič\, K
+ lčo\, Ševčík
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-120@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20250830T100000
+DURATION:PT2H
+SUMMARY:U15: TJ Iskra Holíč – OK Častkovce 1:8
+DESCRIPTION:Zápas vonku\nUváček 3\, Škrabák\, Duračka\, Ševčík\, 
+ Madro\, Bradáč (vl.)
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-155@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20250906T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – ZFC 1939 Trenčín 10:1
+DESCRIPTION:Domáci zápas\nŠkrabák\, Dobeš (vl.)\, Uváček 4\, Durač
+ ka 3\, Rozvadský
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-156@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20250913T100000
+DURATION:PT2H
+SUMMARY:U15: FŠ Róberta Hanka – OK Častkovce 0:13
+DESCRIPTION:Zápas vonku\nMadro\, Ševčík\, Škrabák\, Uváček 3\, Dur
+ ačka 2\, Klčo 3\, A. Paller\, Rozvadský
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-157@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20250920T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – FK Iskra Nováky 37:0
+DESCRIPTION:Domáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-158@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20250927T100000
+DURATION:PT2H
+SUMMARY:U15: TMTJ Nitrianske Pravno – OK Častkovce 0:8
+DESCRIPTION:Zápas vonku\nUváček 2\, A. Paller 3\, Rozvadský\, Duračka
+  2
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-159@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20251004T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – MFK Stará Turá 15:1
+DESCRIPTION:Domáci zápas\nUváček 6\, Ďuračka 5\, A.Paller 2\, Rozvad
+ ský\, Klčo
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-160@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20251012T100000
+DURATION:PT2H
+SUMMARY:U15: ŠK LR Crystal – OK Častkovce 0:15
+DESCRIPTION:Zápas vonku\nUváček 3\, Rozvadský 2\, Šido 3\, R. Paller 
+ \, Ševčík\, Madro\, Klčo 3\, Šedovič
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-161@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20251018T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – FK Junior Kanianka 13:0
+DESCRIPTION:Domáci zápas\nUváček\, Rozvadský 3\, Klčo 2\, Madro 2\, 
+ A. Paller\, Duračka 3\, Hladký\, Uhrín (VL.)
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-162@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20251026T100000
+DURATION:PT2H
+SUMMARY:U15: FK Nová Dubnica – OK Častkovce 0:11
+DESCRIPTION:Zápas vonku\nRozvadský\, Uváček 4\, Šedovič\, Šido\, Du
+ račka 2\, Klčo\, Beňačka
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-163@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20251030T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – OFK Trebatice 9:0
+DESCRIPTION:Domáci zápas\nRozvadský 2\, Duračka 3\, Uváček 3\, Škra
+ bák
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-164@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20251102T100000
+DURATION:PT2H
+SUMMARY:U15: OFK Solčany – OK Častkovce 0:3
+DESCRIPTION:Zápas vonku\nĎuračka 2\, Uváček
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-239@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20251108T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – FK Bestrent Horná Krupá 11:1
+DESCRIPTION:Domáci zápas\nUváček 2\, Madro\, Rozvadský\, Duračka 3\,
+  Škrabák\, Klčo 3
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-241@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260307T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – OFK Dynamo Malženice 6:0
+DESCRIPTION:Domáci zápas\nKlčo\, Uváček\, R.Paller 2\, Duračka\, Še
+ dovič
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-244@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260314T100000
+DURATION:PT2H
+SUMMARY:U15: Spartak Myjava – OK Častkovce 1:5
+DESCRIPTION:Zápas vonku\nUváček\, Duračka\, Madro\, Škrabák
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-249@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260318T163000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – OFK Baník Lehota pod Vtáčnikom 15:0
+DESCRIPTION:Domáci zápas\nRozvadský 4\, Chalupka 2\, R. Paller 3\, Madr
+ o\, Škrabák 2\, Pažitka3
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-245@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260321T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – MFK Baník Handlová 22:0
+DESCRIPTION:Domáci zápas\nŠkrabák 4\, Ďuračka 4\, Rozvadský\, Uvá
+ ček 4\, Klčo 5\, Šedovič\, Chalupka 2\, Pažitka
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-247@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260328T100000
+DURATION:PT2H
+SUMMARY:U15: FK AŠK Slávia Trnava – OK Častkovce 0:10
+DESCRIPTION:Zápas vonku\nKlčo\, Uváček 2\, Duračka 3\, Rozvadský 2\,
+  Škrabák\, Líška
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-253@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260411T100000
+DURATION:PT2H
+SUMMARY:U15: ZFC 1939 Trenčín – OK Častkovce 2:4
+DESCRIPTION:Zápas vonku\nDuračka\, Pažitka\, Sádecký (vl.)\, Rozvadsk
+ ý
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-251@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260415T150000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – TJ Iskra Holíč 17:1
+DESCRIPTION:Domáci zápas\nKomínek (vl.)\, Uváček 4\, Ševčík 1\, Du
+ račka 2\,. Rozvadský 2\, Pažitka 2\, Klčo 4\, Šedovič
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-255@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260418T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – FŠ Róberta Hanka 22:0
+DESCRIPTION:Domáci zápas\nRozvadský 5\, Pažitka 4\, Duračka 5\, Uvá
+ ček 5\, Líška 2\, Klčo
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-258@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260425T100000
+DURATION:PT2H
+SUMMARY:U15: FK Iskra Nováky – OK Častkovce 0:14
+DESCRIPTION:Zápas vonku\nŠramek (vl.)\, Baláž (vl.)\, Rozvadský 2\, U
+ váček 3\, Ševčík\, Pažitka 4\, Klčo 2
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-260@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260502T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – MTJ Nitrianske Pravno 26:0
+DESCRIPTION:Domáci zápas\nMadro\, Chalupka\, Rozvadský 2\, Duračka 7\,
+  Pažitka 8\, Uváček 3\, Masár\, Klčo 2\, Šlabiar (vl.)
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-313@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260509T100000
+DURATION:PT2H
+SUMMARY:U15: MFK Stará Turá – OK Častkovce 0:8
+DESCRIPTION:Zápas vonku\nRozvadský 3\, Pažitka 2\, Klčo 2\, Peterka
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-264@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260516T114500
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – ŠK LR Crystal 7:2
+DESCRIPTION:Domáci zápas\nŠkrabák 2\, A. Paller\, Uváček\, Šedovič
+ m Klčo\, Pažitka
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-266@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260523T100000
+DURATION:PT2H
+SUMMARY:U15: FK Junior Kanianka – OK Častkovce 0:7
+DESCRIPTION:Zápas vonku\nChalupka 2\, Rozvadský\, Duračka 2\, Klčo 2
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-268@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260527T160000
+DURATION:PT2H
+SUMMARY:U15: OFK Trebatice – OK Častkovce 3:6
+DESCRIPTION:Zápas vonku\nMikuš\, Ševčík 2\, Škrabák\, Klčo\, Uvá
+ ček
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-269@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260530T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – FK Nová Dubnica 10:0
+DESCRIPTION:Domáci zápas\nUváček\, Pažitka 3\, Duračka 4\, Rozvadsk
+ ý 2
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-271@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260606T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – OFK Solčany 22:0
+DESCRIPTION:Domáci zápas\nŠkrabák 2\, Uváček 3\, Ševčík 5\, Rozva
+ dský 5\, Klčo 5\, Šedovič 2
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-273@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260613T100000
+DURATION:PT2H
+SUMMARY:U15: FK Bestrent Horná Krupá – OK Častkovce 0:7
+DESCRIPTION:Zápas vonku\nŠkrabák\, Uváček 3\, Pažitka\, Duračka 2
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-367@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260808T100000
+DURATION:PT2H
+SUMMARY:U15: FK Beluša – OK Častkovce 1:11
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nZápas vonku\nMadro\, Š
+ evčík\, A.Paller\, Letko\, Berlanský 2\, Podolský 2\, Biriuk\, Peterk
+ a 2
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-365@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260823T100000
+DURATION:PT2H
+SUMMARY:U15: FK Senica – OK Častkovce 2:2
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nZápas vonku\nBerlanský
+ \, R.Paller
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-368@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260829T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – PFK Piešťany 2:0
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nDomáci zápas\nBerlansk
+ ý\, Mikuš
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-369@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260906T100000
+DURATION:PT2H
+SUMMARY:U15: FK Lokomotíva – OK Častkovce 1:3
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nZápas vonku\nBerlanský
+  2\, R. Paller
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-366@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260909T160000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – AFC Nové Mesto nad Váhom 9:0
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nDomáci zápas\nPodolsk
+ ý 2\, Ševčík\, Bezek\, Berlanský\, Beňačka\, Paller\, Rojkovič\, 
+ Paller
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-370@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260912T100000
+DURATION:PT2H
+SUMMARY:U15: MFC SPARTAK Bánovce nad Bebravou – OK Častkovce 1:8
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nZápas vonku\nMasár\, B
+ erlanský 3\, Podolský 2\, Beňačka 2
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-371@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260919T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – TJ Slovan Nitra-Chrenová 14:1
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nDomáci zápas\nBerlansk
+ ý 4\, Podolský 3\, Mikuš\, Bezek\, Biriuk\, Letko\, Peterka 3
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-372@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20260927T100000
+DURATION:PT2H
+SUMMARY:U15: FC Nitra B – OK Častkovce 0:1
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nZápas vonku\nBerlanský
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-373@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20261003T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – FK Nitra 4:0
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nDomáci zápas\nPodolsk
+ ý 3\, Berlanský
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-374@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20261010T100000
+DURATION:PT2H
+SUMMARY:U15: FK TEMPO Partizánske – OK Častkovce 0:1
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nZápas vonku\nMadro
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-375@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20261017T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – ŠKF Sereď 4:0
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nDomáci zápas\nBezek 2\
+ , Podolský\, Peterka
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-376@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20261025T100000
+DURATION:PT2H
+SUMMARY:U15: ZFC 1939 Trenčín – OK Častkovce 1:1
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nZápas vonku\nRojkovič
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-378@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20261107T100000
+DURATION:PT2H
+SUMMARY:U15: FKM Nové Zámky – OK Častkovce
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-379@okcastkovce.sk
+DTSTAMP:20261103T171729Z
+DTSTART;TZID=Europe/Bratislava:20261114T100000
+DURATION:PT2H
+SUMMARY:U15: OK Častkovce – Futbalová Akadémia Matúšova zem Horné 
+ Saliby/Tomášikovo
+DESCRIPTION:II. liga U15 Macron | yoursport ZsFZ\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+END:VCALENDAR

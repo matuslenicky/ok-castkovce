@@ -1,5 +1,5 @@
 // Správanie webu OK Častkovce (bez knižníc).
-import { matchCentre, matchList, splitMatches, todayISO } from './shared.mjs';
+import { matchCentre, matchList, splitMatches, todayISO, formHTML, weekHTML, nextHTML, todayMatches, countdownParts, countdownText } from './shared.mjs';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -102,29 +102,81 @@ $$('[data-rail]').forEach((rail) => {
   update();
 });
 
-// ---- filter zápasov podľa kategórie ----
+// ---- kalendár zápasov: odber cez webcal a Google Kalendár (potrebujú úplnú adresu .ics) ----
+const setCal = (box, file) => {
+  const ics = $('[data-ics]', box);
+  if (file) ics.href = ics.href.replace(/[^/]+\.ics$/, file);
+  const abs = new URL(ics.getAttribute('href'), location.href);
+  if (!/^https?:$/.test(abs.protocol)) return;
+  const webcal = abs.href.replace(/^https?:/, 'webcal:');
+  const w = $('[data-webcal]', box), g = $('[data-gcal]', box);
+  w.href = webcal; w.hidden = false;
+  g.href = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcal)}`; g.hidden = false;
+};
+$$('[data-cal]').forEach((box) => setCal(box));
+document.addEventListener('click', (e) => { $$('[data-cal][open]').forEach((d) => { if (!d.contains(e.target)) d.open = false; }); });
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  $$('[data-cal][open]').forEach((d) => { d.open = false; $('summary', d).focus(); });
+});
+
+// ---- filter zápasov: kategória a doma/vonku ----
 const filter = $('[data-match-filter]');
-if (filter) {
-  const chips = $$('.chip', filter);
-  const apply = (team) => {
-    chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === team)));
-    $$('.mlist-wrap').forEach((wrap) => {
-      $$('.mrow', wrap).forEach((r) => { r.hidden = !!team && r.dataset.team !== team; });
-      $$('.mlist', wrap).forEach((ol) => {
-        const any = $$('.mrow', ol).some((r) => !r.hidden);
-        ol.hidden = !any;
-        const h = ol.previousElementSibling;
-        if (h && h.classList.contains('mlist-month')) h.hidden = !any;
-      });
+const state = { team: '', ha: '' };
+const applyFilter = () => {
+  if (!filter) return;
+  $$('.chip[data-filter]', filter).forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === state.team)));
+  $$('.chip[data-ha]', filter).forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.ha === state.ha)));
+  $$('.mlist-wrap').forEach((wrap) => {
+    $$('.mrow', wrap).forEach((r) => { r.hidden = (!!state.team && r.dataset.team !== state.team) || (!!state.ha && r.dataset.ha !== state.ha); });
+    $$('.mlist', wrap).forEach((ol) => {
+      const any = $$('.mrow', ol).some((r) => !r.hidden);
+      ol.hidden = !any;
+      const h = ol.previousElementSibling;
+      if (h && h.classList.contains('mlist-month')) h.hidden = !any;
     });
-    const u = new URL(location.href);
-    if (team) u.searchParams.set('kategoria', team); else u.searchParams.delete('kategoria');
-    history.replaceState(null, '', u);
-  };
-  chips.forEach((c) => c.addEventListener('click', () => apply(c.dataset.filter)));
-  const start = new URL(location.href).searchParams.get('kategoria');
-  if (start && chips.some((c) => c.dataset.filter === start)) apply(start);
+    let none = $('.mlist-none', wrap);
+    const empty = $$('.mrow', wrap).length && !$$('.mrow', wrap).some((r) => !r.hidden);
+    if (empty && !none) { none = document.createElement('p'); none.className = 'empty mlist-none'; none.textContent = 'Pre tento výber tu nie je žiadny zápas.'; wrap.append(none); }
+    if (none) none.hidden = !empty;
+  });
+  const box = $('[data-cal]', filter);
+  if (box) setCal(box, state.team ? `${state.team}.ics` : 'vsetky.ics');
+  const u = new URL(location.href);
+  if (state.team) u.searchParams.set('kategoria', state.team); else u.searchParams.delete('kategoria');
+  if (state.ha) u.searchParams.set('kde', state.ha === 'h' ? 'doma' : 'vonku'); else u.searchParams.delete('kde');
+  history.replaceState(null, '', u);
+};
+if (filter) {
+  $$('.chip[data-filter]', filter).forEach((c) => c.addEventListener('click', () => { state.team = c.dataset.filter; applyFilter(); }));
+  $$('.chip[data-ha]', filter).forEach((c) => c.addEventListener('click', () => { state.ha = c.dataset.ha; applyFilter(); }));
+  const q = new URL(location.href).searchParams;
+  if ($$('.chip[data-filter]', filter).some((c) => c.dataset.filter === q.get('kategoria'))) state.team = q.get('kategoria');
+  state.ha = { doma: 'h', vonku: 'a' }[q.get('kde')] || '';
+  if (state.team || state.ha) applyFilter();
 }
+
+// ---- zdieľanie správy ----
+$$('[data-share]').forEach((p) => {
+  const btn = $('button', p), msg = $('.share-msg', p);
+  p.hidden = false;
+  btn.addEventListener('click', async () => {
+    const data = { title: document.title, url: location.href.split('#')[0] };
+    if (navigator.share) { try { await navigator.share(data); } catch { /* zrušené */ } return; }
+    try { await navigator.clipboard.writeText(data.url); msg.textContent = 'Odkaz je skopírovaný.'; } catch { msg.textContent = data.url; }
+  });
+});
+
+// ---- odpočet do výkopu (každých 30 s, bez animácie) ----
+const tick = () => {
+  $$('.cd[data-kickoff]').forEach((el) => {
+    const p = countdownParts(new Date(el.dataset.kickoff).getTime() - Date.now());
+    const b = $$('b', el);
+    if (b.length === 3) { b[0].textContent = p.d; b[0].nextSibling.textContent = p.d === 1 ? 'deň' : p.d >= 2 && p.d <= 4 ? 'dni' : 'dní'; b[1].textContent = String(p.h).padStart(2, '0'); b[2].textContent = String(p.m).padStart(2, '0'); }
+    el.setAttribute('aria-label', `Do výkopu ${countdownText(p)}`);
+  });
+};
+if ($('.cd[data-kickoff]')) setInterval(tick, 30000);
 
 // ---- fotky na celú obrazovku ----
 $$('[data-lightbox]').forEach((grid) => {
@@ -151,43 +203,63 @@ $$('[data-lightbox]').forEach((grid) => {
   dlg.addEventListener('touchend', (e) => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1)); x0 = null; });
 });
 
-// ---- video (YouTube sa načíta až po kliknutí) ----
+// ---- video (YouTube sa načíta až po kliknutí; delegované, lebo riadky zápasov sa prekresľujú) ----
 const vdlg = $('#vdlg');
 if (vdlg && vdlg.showModal) {
   const frame = $('.vdlg-frame', vdlg);
-  $$('.vplay').forEach((b) => b.addEventListener('click', () => {
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.vplay');
+    if (!b) return;
     frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(b.dataset.yt)}?autoplay=1&rel=0" title="${b.dataset.title.replace(/"/g, '&quot;')}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
     $('.vdlg-t', vdlg).textContent = b.dataset.title;
     vdlg.showModal();
-  }));
+  });
   const stop = () => { frame.innerHTML = ''; };
   vdlg.addEventListener('close', stop);
   $('[data-close]', vdlg).addEventListener('click', () => vdlg.close());
   vdlg.addEventListener('click', (e) => { if (e.target === vdlg) vdlg.close(); });
 }
 
-// ---- čerstvé zápasy zo Supabase (ak je nastavená) ----
-async function refreshMatches() {
+// ---- zápasy podľa dnešného dátumu ----
+// Stránky sú zostavené k dátumu buildu; prehliadač si rozpis načíta (Supabase, ak je nastavená, inak data/zapasy.json)
+// a „najbližší zápas“, „tento týždeň“, formu a zoznamy prepočíta k dnešku. Keď sa nič nezmenilo, nič neprekresľuje.
+const ROOT = document.documentElement.dataset.root || './';
+const CREST = `${ROOT}img/logo.svg`;
+async function loadMatches() {
   const db = window.OKC_DB;
-  if (!db || !db.url || !db.key || new URLSearchParams(location.search).has('nodb')) return;
-  const grids = $$('.mc-grid[data-team]');
-  const lists = $$('.mlist-wrap[data-list]');
-  if (!grids.length && !lists.length) return;
-  try {
+  if (db && db.url && db.key && !new URLSearchParams(location.search).has('nodb')) {
     const r = await fetch(`${db.url}/rest/v1/zapasy?select=id,tim,datum,cas,super,doma,liga,skore,poznamka&order=datum.asc,cas.asc`, { headers: { apikey: db.key, Authorization: `Bearer ${db.key}` } });
-    if (!r.ok) return;
-    const rows = await r.json();
-    const all = rows.map((m) => ({ id: m.id, team: m.tim, date: m.datum, time: m.cas, opponent: m.super, home: m.doma, league: m.liga, score: m.skore, note: m.poznamka }));
-    const today = todayISO();
-    const labels = Object.fromEntries($$('.chip[data-filter]').filter((c) => c.dataset.filter).map((c) => [c.dataset.filter, c.textContent.trim()]));
-    grids.forEach((g) => { g.innerHTML = matchCentre(all.filter((m) => m.team === g.dataset.team), today, db.crest); });
-    lists.forEach((w) => {
-      const own = w.dataset.team ? all.filter((m) => m.team === w.dataset.team) : all;
-      const { past, next } = splitMatches(own, today);
-      w.innerHTML = matchList(w.dataset.list === 'next' ? next : [...past].reverse(), { crest: db.crest, labels: w.dataset.team ? null : labels, today });
-    });
-    const active = $('.chip[aria-pressed="true"]');
-    if (active && active.dataset.filter) active.click();
-  } catch { /* zostanú dáta z buildu */ }
+    if (r.ok) return { matches: (await r.json()).map((m) => ({ id: m.id, team: m.tim, date: m.datum, time: m.cas, opponent: m.super, home: m.doma, league: m.liga, score: m.skore, note: m.poznamka })) };
+  }
+  const r = await fetch(`${ROOT}data/zapasy.json`);
+  return r.ok ? r.json() : null;
+}
+const setHTML = (el, html) => { if (el.innerHTML !== html) el.innerHTML = html; };
+async function refreshMatches() {
+  const targets = $$('.mc-grid[data-team], .mlist-wrap[data-list], [data-form], [data-week], [data-next], [data-matchday]');
+  if (!targets.length) return;
+  let data;
+  try { data = await loadMatches(); } catch { return; } // zostanú dáta z buildu
+  if (!data || !data.matches) return;
+  const all = data.matches;
+  const today = todayISO();
+  const teams = data.teams || {};
+  const labels = Object.fromEntries(Object.entries(teams).map(([k, t]) => [k, t.short]));
+  const own = (slug) => all.filter((m) => m.team === slug);
+  $$('.mc-grid[data-team]').forEach((g) => setHTML(g, matchCentre(own(g.dataset.team), today, CREST, ROOT)));
+  $$('[data-form]').forEach((el) => setHTML(el, formHTML(own(el.dataset.form), today)));
+  $$('.mlist-wrap[data-list]').forEach((w) => {
+    const { past, next } = splitMatches(w.dataset.team ? own(w.dataset.team) : all, today);
+    setHTML(w, matchList(w.dataset.list === 'next' ? next : [...past].reverse(), { crest: CREST, labels: w.dataset.team ? null : labels, today, root: ROOT }));
+  });
+  $$('[data-week]').forEach((el) => setHTML(el, weekHTML(all, today, { labels, urls: Object.fromEntries(Object.entries(teams).map(([k, t]) => [k, t.url])), root: ROOT })));
+  $$('[data-next]').forEach((el) => { const html = nextHTML(own(el.dataset.next), today, { label: el.dataset.label, root: ROOT }); setHTML(el, html); el.hidden = !html; });
+  $$('[data-matchday]').forEach((el) => {
+    const n = todayMatches(all, today).length;
+    el.hidden = !n;
+    $('[data-matchday-t]', el).textContent = `Dnes hráme${n > 1 ? ` · ${n} ${n >= 5 ? 'zápasov' : 'zápasy'}` : ''}`;
+  });
+  if (filter && (state.team || state.ha)) applyFilter();
+  tick();
 }
 refreshMatches();
