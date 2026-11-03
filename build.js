@@ -144,7 +144,8 @@ function layout({ route, title, desc, body, active }) {
     ? `<li class="has-sub"><a href="${R}${n.u}"${isActive(n.u)}>${n.t}</a><button class="sub-btn" type="button" aria-expanded="false" aria-controls="sub-${i}" aria-label="${n.t}: podstránky">${I.down}</button>
       <ul class="sub" id="sub-${i}">${n.sub.map((s) => `<li><a href="${R}${s.u}">${esc(s.t)}</a></li>`).join('')}</ul></li>`
     : `<li><a href="${R}${n.u}"${isActive(n.u)}>${n.t}</a></li>`).join('');
-  const fullTitle = route ? `${title} | ${info.nazov}` : `${info.nazov} – ${title}`;
+  // verejná ukážka: aj titulok a náhľad pri zdieľaní hovoria, že ide o návrh (úvod má od klubu „oficiálna stránka…“)
+  const fullTitle = (config.ukazka ? 'Návrh webu · ' : '') + (route ? `${title} | ${info.nazov}` : `${info.nazov} – ${title}`);
   const canon = config.siteUrl ? `${config.siteUrl}${route}` : '';
   const ld = route ? '' : `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org', '@type': 'SportsClub', name: info.nazov, legalName: info.pravnyNazov, sport: 'Futbal',
