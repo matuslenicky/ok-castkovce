@@ -87,6 +87,21 @@ for f in sorted([*img_src.glob('archiv/**/*'), *img_src.glob('video/*')]):
         fit_width(im, w).save(dst, 'WEBP', quality=76, method=5)
         made += 1
 
+# logá partnerov: orezať priehľadné okraje (niektoré súbory majú logo uprostred veľkého prázdneho štvorca)
+#   src/img/archiv/partneri/<logo>.png -> src/img/opt/partneri/<logo>.png
+par_out = opt_out / 'partneri'
+for f in sorted((img_src / 'archiv' / 'partneri').glob('*.png')):
+    dst = par_out / f.name
+    if fresh(f, dst):
+        continue
+    im = Image.open(f).convert('RGBA')
+    box = im.getchannel('A').getbbox()
+    if box:
+        im = im.crop(box)
+    par_out.mkdir(parents=True, exist_ok=True)
+    im.save(dst, optimize=True)
+    made += 1
+
 # obálky galérií v kartách: náhľad 480 px je na veľkej karte (až 780 px, 2× displej) rozmazaný
 #   media/galerie/<slug>/<obálka> -> media/galerie-web/<slug>/m/<obálka>.webp (800 × 500, výrez 16:10 v 25 % výšky, kde sú tváre
 #   ako .card-img s object-fit: cover; fotka na výšku by inak mala 800 × 1200 a zbytočne spomalila LCP)

@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { esc, fmtDate, fmtDay, todayISO, splitMatches, matchCentre, matchList } from './src/js/shared.mjs';
+import { esc, fmtDate, fmtDay, todayISO, splitMatches, matchCentre, matchList, formHTML, weekHTML, nextHTML, todayMatches } from './src/js/shared.mjs';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, 'src');
@@ -21,6 +21,7 @@ const foto = rd('foto.json', { obrazky: {} });
 const matches = rd('zapasy.json', []);
 const news = rd('spravy.json', []).sort((a, b) => b.date.localeCompare(a.date));
 const videos = rd('videa.json', []).sort((a, b) => b.date.localeCompare(a.date));
+const partneri = rd('partneri.json', { partneri: [] }).partneri;
 const gals = rd('galerie.json', []).sort((a, b) => b.date.localeCompare(a.date));
 const TODAY = process.env.TODAY || todayISO();
 
@@ -50,6 +51,50 @@ const bySlug = Object.fromEntries(teams.map((t) => [t.slug, t]));
 const youth = teams.filter((t) => !t.isA);
 const labels = Object.fromEntries(teams.map((t) => [t.slug, t.short]));
 const teamMatches = (slug) => matches.filter((m) => m.team === slug);
+
+// ---- fotky a video k výsledkom ----------------------------------------------------------------
+// galéria alebo video „OK Častkovce - FK Beluša“ patrí k odohranému zápasu s týmto súperom do 7 dní;
+// keď hralo so súperom viac tímov, má prednosť A-mužstvo, inak sa pri nejednoznačnosti nepáruje
+const norm = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+const dayDiff = (a, b) => Math.abs(Date.parse(a) - Date.parse(b)) / 864e5;
+function pairMatch(title, date) {
+  const t = norm(title);
+  if (!t.includes('castkovce')) return null;
+  const c = matches.filter((m) => m.score && norm(m.opponent).length > 3 && t.includes(norm(m.opponent)) && dayDiff(m.date, date) <= 7);
+  const a = c.filter((m) => m.team === 'a-muzstvo');
+  if (a.length) return a.sort((x, y) => dayDiff(x.date, date) - dayDiff(y.date, date))[0];
+  return c.length === 1 ? c[0] : null;
+}
+for (const g of gals) { const m = pairMatch(g.title, g.date); if (m && !m.gal) m.gal = `fotogaleria/${g.slug}/`; }
+for (const v of videos) { const m = pairMatch(v.title, v.date); if (m && !m.yt) { m.yt = v.youtube; m.ytTitle = v.title; } }
+
+// ---- kalendár (.ics, RFC 5545) ----------------------------------------------------------------
+const icsEsc = (s) => String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
+const icsFold = (line) => { // riadky najviac 75 bajtov
+  const out = []; let cur = '';
+  for (const ch of line) { if (Buffer.byteLength(cur + ch) > 74) { out.push(cur); cur = ' ' + ch; } else cur += ch; }
+  out.push(cur);
+  return out.join('\r\n');
+};
+const VTZ = ['BEGIN:VTIMEZONE', 'TZID:Europe/Bratislava',
+  'BEGIN:DAYLIGHT', 'TZOFFSETFROM:+0100', 'TZOFFSETTO:+0200', 'TZNAME:CEST', 'DTSTART:19700329T020000', 'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU', 'END:DAYLIGHT',
+  'BEGIN:STANDARD', 'TZOFFSETFROM:+0200', 'TZOFFSETTO:+0100', 'TZNAME:CET', 'DTSTART:19701025T030000', 'RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU', 'END:STANDARD',
+  'END:VTIMEZONE'];
+function ics(list, calName) {
+  const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '');
+  const events = list.map((m) => {
+    const [h, a] = m.home ? [info.nazov, m.opponent] : [m.opponent, info.nazov];
+    const d = m.date.replace(/-/g, '');
+    const t = (m.time || '').slice(0, 5);
+    const when = t ? [`DTSTART;TZID=Europe/Bratislava:${d}T${t.replace(':', '')}00`, 'DURATION:PT2H'] : [`DTSTART;VALUE=DATE:${d}`];
+    const desc = [m.league, m.home ? 'Domáci zápas' : 'Zápas vonku', m.note].filter(Boolean).join('\n');
+    return ['BEGIN:VEVENT', `UID:zapas-${m.id}@okcastkovce.sk`, `DTSTAMP:${stamp}`, ...when,
+      `SUMMARY:${icsEsc(`${labels[m.team] || ''}: ${h} – ${a}${m.score ? ` ${m.score}` : ''}`)}`,
+      desc && `DESCRIPTION:${icsEsc(desc)}`, m.home && `LOCATION:${icsEsc(info.ihrisko.join(', '))}`, 'END:VEVENT'].filter(Boolean);
+  });
+  return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//OK Castkovce//Zapasy//SK', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+    `X-WR-CALNAME:${icsEsc(calName)}`, 'X-WR-TIMEZONE:Europe/Bratislava', ...VTZ, ...events.flat(), 'END:VCALENDAR'].map(icsFold).join('\r\n') + '\r\n';
+}
 
 // ---- obrázky ----------------------------------------------------------------------------------
 // Fotky od fotografa: data/foto.json (vyrába scripts/photos.py) -> dist/foto/<kľúč>-<šírka>.webp/.jpg
@@ -119,6 +164,9 @@ const I = {
   pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
   play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor"/></svg>',
   photos: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="9" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
+  cal: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4m8-4v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  route: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8-8-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+  share: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
 };
 
 // ---- rozloženie -------------------------------------------------------------------------------
@@ -153,7 +201,7 @@ function layout({ route, title, desc, body, active }) {
     sameAs: [info.facebook, info.instagram], logo: canon ? canon + 'img/logo.svg' : undefined,
   })}</script>`;
   return `<!doctype html>
-<html lang="sk"${config.ukazka ? ' class="has-demo"' : ''}>
+<html lang="sk" data-root="${R}"${config.ukazka ? ' class="has-demo"' : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -190,6 +238,10 @@ ${ld}</head>
 <main id="obsah">
 ${body}
 </main>
+${partneri.length ? `<section class="partners" aria-labelledby="partneri-h"><div class="wrap">
+  <h2 class="partners-h" id="partneri-h">Partneri klubu</h2>
+  <ul class="plogos">${partneri.map((p) => `<li${p.tmave ? ' class="plogo--dark"' : ''}><img src="${R}img/${fs.existsSync(path.join(SRC, 'img', 'opt', 'partneri', p.file)) ? 'opt' : 'archiv'}/partneri/${encodeURIComponent(p.file)}" alt="${esc(p.alt)}" loading="lazy" decoding="async"></li>`).join('')}</ul>
+</div></section>` : ''}
 <footer class="ftr">
   <div class="wrap ftr-grid">
     <div class="ftr-club">
@@ -243,6 +295,18 @@ const pageHero = ({ kicker, title, sub, R, crumbs = [], img = '' }) => `<section
     ${kicker ? `<p class="kicker">${esc(kicker)}</p>` : ''}<h1 class="display display--page">${esc(title)}</h1>${sub ? `<p class="phero-sub">${esc(sub)}</p>` : ''}
   </div></section>`;
 
+// kalendár zápasov: odber (webcal/Google doplní site.mjs podľa adresy webu) alebo stiahnutie .ics
+const calBox = (file, R, id) => `<details class="cal" data-cal id="${id}">
+  <summary class="cal-btn">${I.cal}<span>Kalendár zápasov</span></summary>
+  <div class="cal-pop">
+    <a class="cal-o" data-webcal href="${R}kalendar/${file}" hidden><b>Odoberať v telefóne</b><span>iPhone, Mac, Outlook – rozpis sa v kalendári sám aktualizuje</span></a>
+    <a class="cal-o" data-gcal href="${R}kalendar/${file}" rel="noopener" hidden><b>Pridať do Google Kalendára</b><span>aj pre Android</span></a>
+    <a class="cal-o" data-ics href="${R}kalendar/${file}" download><b>Stiahnuť súbor .ics</b><span>jednorazovo, bez aktualizácií</span></a>
+  </div>
+</details>`;
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(info.ihrisko.join(', '))}`;
+const navBtn = (cls = 'btn btn--light btn--sm') => `<a class="${cls}" href="${mapsUrl}" rel="noopener">${I.route}Navigovať na štadión</a>`;
+
 function videoDialog() {
   return `<dialog class="vdlg" id="vdlg" aria-label="Video"><div class="vdlg-in"><button type="button" class="vdlg-x" data-close aria-label="Zavrieť video">✕</button><div class="vdlg-frame"></div><p class="vdlg-t"></p></div></dialog>`;
 }
@@ -260,15 +324,20 @@ add('', {
     const youthTiles = youth.map((t) => `<li class="ytile"><a href="${R}${t.url}">
       <span class="ytile-img">${hasPic('tim-' + t.slug) ? pic('tim-' + t.slug, R, { sizes: '(min-width: 1100px) 260px, (min-width: 700px) 30vw, 46vw' }) : `<span class="ph-crest"></span>`}</span>
       <span class="ytile-t"><b>${esc(t.short)}</b><span>${esc(t.sub)}</span></span></a></li>`).join('');
+    const dnes = todayMatches(matches, TODAY);
+    const wkOpts = { labels, urls: Object.fromEntries(teams.map((t) => [t.slug, t.url])), root: R };
+    const nextA = nextHTML(teamMatches('a-muzstvo'), TODAY, { label: 'A-mužstvo', root: R });
     return `
 <section class="hero${hero ? '' : ' hero--plain'}" aria-labelledby="hero-h">
   ${hero}<span class="hero-shade" aria-hidden="true"></span>
   <img class="hero-crest" src="${R}img/logo.svg" alt="" width="560" height="560" aria-hidden="true"${hero ? '' : ' fetchpriority="high"'}>
   <div class="wrap hero-in">
+    <a class="matchday" href="#tyzden" data-matchday${dnes.length ? '' : ' hidden'}><span class="matchday-dot" aria-hidden="true"></span><span data-matchday-t>Dnes hráme${dnes.length > 1 ? ` · ${dnes.length} ${dnes.length >= 5 ? 'zápasov' : 'zápasy'}` : ''}</span></a>
     <p class="kicker kicker--light">Futbalový klub</p>
     <h1 class="display" id="hero-h">OK Častkovce</h1>
     <p class="hero-sub">${esc(info.ocenenie)}</p>
     <div class="hero-cta"><a class="btn btn--red" href="${R}zapasy/">Zápasy a výsledky${I.arrow}</a><a class="btn btn--light" href="${R}a-muzstvo/">A-mužstvo</a></div>
+    <aside class="hnext" data-next="a-muzstvo" data-label="A-mužstvo" aria-label="Najbližší zápas A-mužstva"${nextA ? '' : ' hidden'}>${nextA}</aside>
   </div>
 </section>
 
@@ -276,7 +345,17 @@ add('', {
   <div class="wrap">
     ${secHead('Zápasy', 'mc-h', ['zapasy/', 'Všetky zápasy'], R)}
     <div class="tabs" role="tablist" aria-label="Kategória">${tabTeams.map((t, i) => `<button type="button" role="tab" id="tab-${t.slug}" aria-controls="mc-${t.slug}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>${esc(t.short)}</button>`).join('')}</div>
-    ${tabTeams.map((t, i) => `<div class="mc-grid" role="tabpanel" tabindex="0" id="mc-${t.slug}" aria-labelledby="tab-${t.slug}" data-team="${t.slug}"${i ? ' hidden' : ''}>${matchCentre(teamMatches(t.slug), TODAY, crestUrl(R))}</div>`).join('')}
+    ${tabTeams.map((t, i) => `<div class="mc-panel" role="tabpanel" id="mc-${t.slug}" aria-labelledby="tab-${t.slug}"${i ? ' hidden' : ''}>
+      <div class="mc-grid" role="region" tabindex="0" aria-label="Zápasy ${esc(t.short)}" data-team="${t.slug}">${matchCentre(teamMatches(t.slug), TODAY, crestUrl(R), R)}</div>
+      <div class="team-bar"><div data-form="${t.slug}">${formHTML(teamMatches(t.slug), TODAY)}</div><a class="more" href="${R}${t.url}">${t.isA ? 'A-mužstvo' : esc(t.short)}${I.arrow}</a></div>
+    </div>`).join('')}
+  </div>
+</section>
+
+<section class="sec sec--tint" id="tyzden" aria-labelledby="wk-h">
+  <div class="wrap">
+    ${secHead('Tento týždeň hráme', 'wk-h', ['zapasy/', 'Celý program'], R)}
+    <div data-week>${weekHTML(matches, TODAY, wkOpts)}</div>
   </div>
 </section>
 
@@ -330,7 +409,7 @@ add('', {
       <p class="kicker kicker--light">Štadión</p>
       <h2 class="h2 h2--light" id="st-h">Areál v Častkovciach</h2>
       <p>Areál futbalového štadióna v Častkovciach tvoria dve zatrávnené ihriská. Hlavná hracia trávnatá plocha, vedľajšia hracia trávnatá plocha a jedno multifunkčné ihrisko s umelým trávnikom a mantinelmi.</p>
-      <a class="btn btn--light btn--sm" href="${R}klub/stadion/">O štadióne${I.arrow}</a>
+      <div class="stad-cta"><a class="btn btn--light btn--sm" href="${R}klub/stadion/">O štadióne${I.arrow}</a>${navBtn('btn btn--line-light btn--sm')}</div>
     </div>
     <dl class="stats">
       <div><dt>Kapacita štadióna</dt><dd>${info.stadion.kapacita}</dd></div>
@@ -352,13 +431,18 @@ add('zapasy/', {
     const chips = teams.filter((t) => teamMatches(t.slug).length).map((t) => `<button type="button" class="chip" data-filter="${t.slug}" aria-pressed="false">${esc(t.short)}</button>`).join('');
     return `${pageHero({ kicker: 'Všetky kategórie', title: 'Zápasy', R, crumbs: [[null, 'Zápasy']] })}
 <section class="sec sec--first"><div class="wrap">
-  <div class="filter" data-match-filter><span class="filter-l" id="fl">Kategória</span><div class="chips" role="group" aria-labelledby="fl"><button type="button" class="chip" data-filter="" aria-pressed="true">Všetky</button>${chips}</div></div>
+  <div class="filter" data-match-filter>
+    <div class="filter-g"><span class="filter-l" id="fl">Kategória</span><div class="chips" role="group" aria-labelledby="fl"><button type="button" class="chip" data-filter="" aria-pressed="true">Všetky</button>${chips}</div></div>
+    <div class="filter-g"><span class="filter-l" id="fha">Kde</span><div class="chips" role="group" aria-labelledby="fha"><button type="button" class="chip" data-ha="" aria-pressed="true">Všade</button><button type="button" class="chip" data-ha="h" aria-pressed="false">Doma</button><button type="button" class="chip" data-ha="a" aria-pressed="false">Vonku</button></div></div>
+    ${calBox('vsetky.ics', R, 'cal-zapasy')}
+  </div>
   <div class="mcols">
-    <section aria-labelledby="pr-h"><h2 class="h3" id="pr-h">Program</h2><div class="mlist-wrap" data-list="next">${matchList(next, { crest: crestUrl(R), labels, today: TODAY })}</div></section>
-    <section aria-labelledby="vy-h"><h2 class="h3" id="vy-h">Výsledky</h2><div class="mlist-wrap" data-list="past">${matchList([...past].reverse(), { crest: crestUrl(R), labels, today: TODAY })}</div></section>
+    <section aria-labelledby="pr-h"><h2 class="h3" id="pr-h">Program</h2><div class="mlist-wrap" data-list="next">${matchList(next, { crest: crestUrl(R), labels, today: TODAY, root: R })}</div></section>
+    <section aria-labelledby="vy-h"><h2 class="h3" id="vy-h">Výsledky</h2><div class="mlist-wrap" data-list="past">${matchList([...past].reverse(), { crest: crestUrl(R), labels, today: TODAY, root: R })}</div></section>
   </div>
   <p class="note">Výsledky si môžete pozrieť aj na <a href="${info.sportnet}" rel="noopener">sportnet.sme.sk</a>.</p>
-</div></section>`;
+</div></section>
+${videoDialog()}`;
   },
 });
 
@@ -400,16 +484,18 @@ function teamPage(t) {
 <nav class="subnav" aria-label="Sekcie"><div class="wrap"><a href="#supiska">Súpiska</a><a href="#program">Program</a><a href="#vysledky">Výsledky</a></div></nav>
 <section class="sec sec--first" aria-labelledby="mc-h"><div class="wrap">
   <h2 class="sr" id="mc-h">Prehľad zápasov</h2>
-  <div class="mc-grid" role="region" tabindex="0" aria-labelledby="mc-h" data-team="${t.slug}">${matchCentre(list, TODAY, crestUrl(R))}</div>
+  <div class="mc-grid" role="region" tabindex="0" aria-labelledby="mc-h" data-team="${t.slug}">${matchCentre(list, TODAY, crestUrl(R), R)}</div>
+  <div class="team-bar"><div data-form="${t.slug}">${formHTML(list, TODAY)}</div>${list.length ? calBox(`${t.slug}.ics`, R, 'cal-tim') : ''}</div>
 </div></section>
 <section class="sec" id="supiska" aria-labelledby="sup-h"><div class="wrap">
   ${secHead('Súpiska', 'sup-h', null, R)}
   ${rosterHtml(t, R)}
 </div></section>
 <section class="sec sec--tint" aria-labelledby="pr-h"><div class="wrap mcols">
-  <section id="program" aria-labelledby="pr-h"><h2 class="h3" id="pr-h">Program</h2><div class="mlist-wrap" data-list="next" data-team="${t.slug}">${matchList(next, { crest: crestUrl(R), today: TODAY })}</div></section>
-  <section id="vysledky" aria-labelledby="vy-h"><h2 class="h3" id="vy-h">Výsledky</h2><div class="mlist-wrap" data-list="past" data-team="${t.slug}">${matchList([...past].reverse(), { crest: crestUrl(R), today: TODAY })}</div></section>
-</div><div class="wrap"><p class="note">Výsledky si môžete pozrieť aj na <a href="${info.sportnet}" rel="noopener">sportnet.sme.sk</a>.</p></div></section>`;
+  <section id="program" aria-labelledby="pr-h"><h2 class="h3" id="pr-h">Program</h2><div class="mlist-wrap" data-list="next" data-team="${t.slug}">${matchList(next, { crest: crestUrl(R), today: TODAY, root: R })}</div></section>
+  <section id="vysledky" aria-labelledby="vy-h"><h2 class="h3" id="vy-h">Výsledky</h2><div class="mlist-wrap" data-list="past" data-team="${t.slug}">${matchList([...past].reverse(), { crest: crestUrl(R), today: TODAY, root: R })}</div></section>
+</div><div class="wrap"><p class="note">Výsledky si môžete pozrieť aj na <a href="${info.sportnet}" rel="noopener">sportnet.sme.sk</a>.</p></div></section>
+${videoDialog()}`;
     },
   });
 }
@@ -447,6 +533,7 @@ news.forEach((n, i) => {
   ${pageHero({ kicker: fmtDate(n.date), title: n.title, R, crumbs: [['spravy/', 'Správy'], [null, n.title.length > 40 ? n.title.slice(0, 38) + '…' : n.title]] })}
   <div class="wrap art-in">
     <div class="prose">${fixBody}</div>
+    <p class="art-share" data-share hidden><button type="button" class="btn btn--line-dark btn--sm">${I.share}Zdieľať správu</button><span class="share-msg" role="status"></span></p>
     ${g ? `<a class="art-gal" href="${R}fotogaleria/${g.slug}/"><img src="${galCover(g, R)}" alt="" loading="lazy"><span><span class="kicker">Fotogaléria</span><b>${esc(g.title)}</b><span>${g.files.length} fotiek</span></span>${I.arrow}</a>` : ''}
     <nav class="art-nav" aria-label="Ďalšie správy">${prev ? `<a href="${R}spravy/${prev.slug}/"><span>Staršia správa</span><b>${esc(prev.title)}</b></a>` : '<span></span>'}${next ? `<a class="art-nav-next" href="${R}spravy/${next.slug}/"><span>Novšia správa</span><b>${esc(next.title)}</b></a>` : ''}</nav>
   </div>
@@ -503,7 +590,8 @@ for (const [slug, title] of KLUB) {
       html = html.replace(/<a href="tel:[^"]*">([^<]+)<\/a>/g, (_, n) => `<a href="${tel(n)}">${n}</a>`);
       if (slug === 'kontakty') html = html.replace(/E mail:&nbsp;okcastkovce@okcastkovce\.sk/, `E mail: <a href="mailto:${info.email}">${info.email}</a>`).replace(/Tel: (0949 373 648)/, (_, n) => `Tel: <a href="${tel(n)}">${n}</a>`);
       const cls = slug === 'vedenie-klubu' || slug === 'kontakty' ? ' prose--facts' : slug === 'historia' ? ' prose--history' : slug === 'prenajom-umelej-travy' ? ' prose--rent' : '';
-      const map = slug === 'kontakty' ? `<p class="note"><a class="btn btn--line-dark btn--sm" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Častkovce 355, 916 27 Častkovce')}" rel="noopener">${I.pin}Otvoriť adresu v mapách</a></p>` : '';
+      const map = slug === 'kontakty' ? `<p class="note"><a class="btn btn--line-dark btn--sm" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Častkovce 355, 916 27 Častkovce')}" rel="noopener">${I.pin}Otvoriť adresu v mapách</a></p>`
+        : slug === 'stadion' ? `<p class="note">${navBtn('btn btn--line-dark btn--sm')}</p>` : '';
       return `${pageHero({ kicker: 'Klub', title, R, crumbs: [['klub/', 'Klub'], [null, title]] })}${klubNav(R, slug)}
 <section class="sec sec--first"><div class="wrap"><div class="prose${cls}">${html}</div>${map}</div></section>`;
     },
@@ -576,4 +664,20 @@ const BASE = process.env.BASE_PATH || config.basePath || '/'; // nasadenie na Gi
 const notFound = fs.readFileSync(path.join(OUT, '404', 'index.html'), 'utf8').replace(/(href|src)="(\.\.\/)+/g, `$1="${BASE}`);
 fs.writeFileSync(path.join(OUT, '404.html'), notFound);
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
+
+// rozpis pre prehliadač: web si „dnes“ prepočíta sám, aj keď sa dlho nezostavuje (site.mjs)
+fs.mkdirSync(path.join(OUT, 'data'), { recursive: true });
+fs.writeFileSync(path.join(OUT, 'data', 'zapasy.json'), JSON.stringify({
+  teams: Object.fromEntries(teams.map((t) => [t.slug, { short: t.short, url: t.url }])),
+  matches: matches.map(({ id, team, date, time, opponent, home, league, score, note, gal, yt, ytTitle }) => ({ id, team, date, time, opponent, home, league, score, note, gal, yt, ytTitle })),
+}));
+
+// kalendáre .ics: každý tím, všetky zápasy a jednotlivé budúce zápasy
+fs.mkdirSync(path.join(OUT, 'kalendar'), { recursive: true });
+for (const t of teams) {
+  const list = teamMatches(t.slug);
+  if (list.length) fs.writeFileSync(path.join(OUT, 'kalendar', `${t.slug}.ics`), ics(list, `${info.nazov} – ${t.isA ? 'A-mužstvo' : `${t.short} ${t.sub}`}`));
+}
+fs.writeFileSync(path.join(OUT, 'kalendar', 'vsetky.ics'), ics(matches, `${info.nazov} – všetky zápasy`));
+for (const m of splitMatches(matches, TODAY).next) fs.writeFileSync(path.join(OUT, 'kalendar', `zapas-${m.id}.ics`), ics([m], `${info.nazov} – ${labels[m.team]}`));
 console.log(`Hotovo: ${pages.length} stránok -> dist/ (dnes = ${TODAY})`);

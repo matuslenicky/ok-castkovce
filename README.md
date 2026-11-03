@@ -17,6 +17,7 @@ Statický generátor bez závislostí (Node 20+, Python 3 s Pillow na obrázky):
 ```
 node scripts/import-old-site.mjs        # obsah zo starého webu do data/
 node scripts/download-galleries.mjs     # originály galérií do media/galerie (nie sú v repozitári)
+node scripts/partneri.mjs               # logá partnerov z pätičky starého webu (popisy v data/partneri.json)
 python -I scripts/images.py             # webp zmenšeniny: media/galerie-web, src/img/opt, src/img/video
 node build.js                           # data/ + src/ -> dist/ (TODAY=2026-11-03 prepíše dnešný dátum)
 node scripts/serve.mjs dist 5260        # náhľad na http://127.0.0.1:5260/

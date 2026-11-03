@@ -10,7 +10,7 @@ const port = Number(process.argv[3]) || 5250;
 const types = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png',
-  '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.woff': 'font/woff', '.woff2': 'font/woff2', '.ico': 'image/x-icon'
+  '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.ics': 'text/calendar; charset=utf-8', '.woff': 'font/woff', '.woff2': 'font/woff2', '.ico': 'image/x-icon'
 };
 const clients = new Set();
 const snippet = '<script>(()=>{const s=new EventSource("/__lr");s.onmessage=()=>location.reload();})()</script>';
