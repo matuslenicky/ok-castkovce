@@ -198,6 +198,29 @@ if (filter) {
 // odkaz s filtrom: zoznamy boli do prefiltrovania skryté (inline skript v <head>), aby neposkočili (CLS)
 document.documentElement.classList.remove('js-filtering');
 
+// ---- fotky produktu vo fanshope: posúvanie ako príspevok na IG (bodky, počítadlo, šípky na počítači) ----
+$$('[data-gal]').forEach((gal) => {
+  const track = $('.prod-track', gal);
+  const n = track.children.length;
+  const dots = $$('.prod-dots i', gal), count = $('.prod-count', gal);
+  const prev = $('.prod-prev', gal), next = $('.prod-next', gal);
+  let cur = 0;
+  const set = () => {
+    const i = Math.round(track.scrollLeft / track.clientWidth);
+    if (i === cur && count.textContent) return;
+    cur = Math.max(0, Math.min(n - 1, i));
+    dots.forEach((d, k) => d.classList.toggle('on', k === cur));
+    count.textContent = `${cur + 1}/${n}`;
+    prev.disabled = cur === 0;
+    next.disabled = cur === n - 1;
+  };
+  const go = (d) => track.scrollTo({ left: (cur + d) * track.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  prev.addEventListener('click', () => go(-1));
+  next.addEventListener('click', () => go(1));
+  track.addEventListener('scroll', () => requestAnimationFrame(set), { passive: true });
+  track.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') { e.preventDefault(); go(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); } });
+});
+
 // ---- dlhé mriežky (galérie) po častiach: data-paged="12" ----
 $$('[data-paged]').forEach((grid) => {
   const step = Number(grid.dataset.paged) || 12;

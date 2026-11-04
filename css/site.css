@@ -753,3 +753,31 @@ a.wk-team:focus-visible { outline: none; }
 .player-img--card { aspect-ratio: 15 / 16; }
 .player-img--card img, .player-img--card picture { object-position: 50% 50%; }
 .roster--staff .player-img--card img { object-position: 50% 0; transform: scale(1.9); transform-origin: 50% 12%; }
+
+/* fanshop 2: všetky fotky produktu na posúvanie (ako príspevok na IG), objednávka na jednom mieste */
+.shop-head { grid-template-columns: minmax(0, 1fr); gap: 20px 40px; align-items: end; }
+@media (min-width: 900px) { .shop-head { grid-template-columns: minmax(0, 1fr) minmax(0, 420px); } }
+.shop-order { display: grid; gap: 10px; justify-items: start; padding: 18px 20px; border-radius: var(--radius); background: var(--tint); }
+.shop-order p { margin: 0; font-size: 15px; line-height: 1.5; }
+.shop-order a:not(.btn) { color: var(--red-d); font-weight: 600; }
+.shop-order-t { font: 700 15px/1 var(--f-disp) !important; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.shop-order .btn svg { width: 18px; height: 18px; }
+/* menšie karty = fotky z letákov sa menej zväčšujú (sú to len stovky px) */
+@media (min-width: 900px) { .prods, .shop-head { max-width: 1040px; } }
+.prod-gal { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--tint); }
+.prod-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.prod-track::-webkit-scrollbar { display: none; }
+.prod-track:focus-visible { outline: 3px solid var(--ink); outline-offset: -3px; }
+.prod-slide { flex: 0 0 100%; aspect-ratio: 4 / 5; scroll-snap-align: start; }
+.prod-slide img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.prod-count { position: absolute; top: 10px; right: 10px; padding: 3px 9px; border-radius: 999px; background: rgba(18, 19, 23, .62); color: #fff; font: 600 13px/1.4 var(--f-body); font-variant-numeric: tabular-nums; pointer-events: none; }
+.prod-dots { position: absolute; left: 0; right: 0; bottom: 10px; display: flex; justify-content: center; gap: 5px; pointer-events: none; }
+.prod-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 255, 255, .55); box-shadow: 0 0 2px rgba(0, 0, 0, .4); transition: background .2s, transform .2s; }
+.prod-dots i.on { background: #fff; transform: scale(1.25); }
+.prod-nav { position: absolute; top: 50%; translate: 0 -50%; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .9); color: var(--ink); box-shadow: 0 2px 10px rgba(0, 0, 0, .2); cursor: pointer; opacity: 0; transition: opacity .2s; }
+.prod-nav svg { width: 20px; height: 20px; }
+.prod-prev { left: 8px; } .prod-next { right: 8px; }
+.prod-nav:disabled { visibility: hidden; }
+.prod-gal:hover .prod-nav, .prod-nav:focus-visible { opacity: 1; }
+@media (pointer: coarse) { .prod-nav { display: none; } }  /* na telefóne sa posúva prstom */
+.prod-img { display: none; }
