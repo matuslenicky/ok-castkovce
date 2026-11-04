@@ -251,14 +251,15 @@ if ($('.cd[data-kickoff]')) setInterval(tick, 30000);
 $$('[data-lightbox]').forEach((grid) => {
   const dlg = $('#lb');
   if (!dlg || !dlg.showModal) return;
-  const links = $$('a', grid);
+  // vo fanshope otvára fotku len odkaz „Leták“ (data-lb), nie „Objednať“
+  const links = $$('a[data-lb]', grid).length ? $$('a[data-lb]', grid) : $$('a', grid);
   const img = $('.lb-img', dlg);
   const cap = $('.lb-c', dlg);
   let i = 0;
   const show = (n) => {
     i = (n + links.length) % links.length;
     img.src = links[i].href;
-    img.alt = $('img', links[i]).alt;
+    img.alt = $('img', links[i])?.alt || `Leták: ${links[i].textContent.replace(/^Leták:?\s*/, '').trim()}`;
     cap.textContent = `${i + 1} / ${links.length}`;
   };
   links.forEach((a, n) => a.addEventListener('click', (e) => { e.preventDefault(); show(n); dlg.showModal(); }));

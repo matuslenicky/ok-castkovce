@@ -634,19 +634,36 @@ add('fanzona/', {
     const FLYER = { 'fan-10': 'Mikina, 40 Eur', 'fan-2': 'Dámske tričko, 25 Eur', 'fan-20': 'Streetwear mikina, 28 Eur', 'fan-3': 'Dámske šaty, 25 Eur', 'fan-30': 'Dáždnik, 15 Eur', 'fan-4': 'Pánske tričko, 25 Eur', 'fan-40': 'Detská šiltovka 9 Eur, tričko detské biele 15 Eur', 'fan-5': 'Pánske tričko, 25 Eur', 'fan-7': 'Šiltovka, 15 Eur' };
     const flyerAlt = (src) => { const k = src.split('/').pop().replace(/\.\w+$/, ''); return FLYER[k] ? `Leták: ${FLYER[k]}` : 'Klubové oblečenie OK Častkovce'; };
     const dni = ['pondelok', 'utorok', 'streda', 'štvrtok', 'piatok', 'sobota', 'nedeľa'];
+    void imgs; void flyerAlt;
+    // produkty ako karty e-shopu (názvy, ceny, farby a veľkosti z letákov, data/fanshop.json; fotky scripts/fanshop.py)
+    const shop = rd('fanshop.json', { produkty: [] });
+    const order = (p) => `mailto:${info.email}?subject=${encodeURIComponent(`Objednávka: ${p.nazov}`)}&body=${encodeURIComponent(`Dobrý deň,\nmám záujem o: ${p.nazov} (${p.cena} €)\nVeľkosť:\nFarba:\nMeno a telefón:\n`)}`;
+    const prod = (p) => `<li class="prod">
+    <div class="prod-img"><picture><source type="image/webp" srcset="${R}img/fanshop/${p.slug}.webp"><img src="${R}img/fanshop/${p.slug}.jpg" alt="${esc(p.nazov)} OK Častkovce" width="640" height="800" loading="lazy" decoding="async"></picture></div>
+    <div class="prod-body">
+      <h3 class="prod-t">${esc(p.nazov)}</h3>
+      <dl class="prod-v">${p.farba ? `<div><dt>Varianta</dt><dd>${esc(p.farba)}</dd></div>` : ''}${p.velkost ? `<div><dt>Veľkosť</dt><dd>${esc(p.velkost)}</dd></div>` : ''}</dl>
+      <p class="prod-p">${p.cena} €</p>
+      <div class="prod-act"><a class="btn btn--red btn--sm prod-buy" href="${order(p)}">Objednať<span class="sr">: ${esc(p.nazov)}</span></a><a class="prod-flyer" href="${R}img/archiv/fanshop/${p.letak}" data-lb>Leták<span class="sr">: ${esc(p.nazov)}</span></a></div>
+    </div>
+  </li>`;
     return `${pageHero({ kicker: 'Fanzóna', title: 'Fanshop', R, crumbs: [[null, 'Fanzóna']] })}
-<section class="sec sec--first"><div class="wrap fan">
+<section class="sec sec--first" aria-labelledby="ob-h"><div class="wrap">
+  <div class="shop-head">
+    <h2 class="h2" id="ob-h">Oblečenie</h2>
+    <p class="shop-lead">„Obleč sa ako pravý fanúšik!“ Kúpou produktov podporuješ mladé talenty v našom klube.</p>
+  </div>
+  <ul class="prods" data-lightbox>${shop.produkty.map(prod).join('')}</ul>
+  ${shop.pozn ? `<p class="note">${esc(shop.pozn)}</p>` : ''}
+</div></section>
+<section class="sec sec--tint" aria-labelledby="kup-h"><div class="wrap fan">
   <div class="fan-text">
-    <p class="lead">„Obleč sa ako pravý fanúšik!“<br>Kúpou produktov podporuješ mladé talenty v našom klube.</p>
+    <h2 class="h3" id="kup-h">Ako nakúpiť</h2>
     <p>Produkty si môžeš zakúpiť priamo v bufete na našom futbalovom štadióne alebo si svoju objednávku vybav vopred e-mailom na: <a href="mailto:${info.email}">${info.email}</a></p>
     <p>Počas zápasov prvého mužstva funguje predajňa suvenírov priamo na futbalovom štadióne.</p>
   </div>
   <div class="hours"><h2 class="h3">Otváracie hodiny nášho FANSHOP</h2><dl>${dni.map((d) => `<div><dt>${d}</dt><dd>12.00 – 20.00 h</dd></div>`).join('')}</dl>
     <h2 class="h3">Otváracie hodiny FANSHOP na štadióne</h2><p>v čase zápasov prvého mužstva</p></div>
-</div></section>
-<section class="sec sec--tint" aria-labelledby="ob-h"><div class="wrap">
-  ${secHead('Oblečenie', 'ob-h', null, R)}
-  <ul class="fan-grid" data-lightbox>${imgs.map((src, i) => `<li><a href="${R}${src}" data-i="${i}"><img src="${R}${src}" alt="${esc(flyerAlt(src))}" width="1680" height="945" loading="lazy" decoding="async"></a></li>`).join('')}</ul>
 </div></section>
 <dialog class="lb" id="lb" aria-label="Fotka"><button type="button" class="lb-x" data-close aria-label="Zavrieť">✕</button><button type="button" class="lb-btn lb-prev" aria-label="Predchádzajúca fotka">${I.left}</button><img class="lb-img" alt=""><button type="button" class="lb-btn lb-next" aria-label="Ďalšia fotka">${I.right}</button><p class="lb-c" aria-live="polite"></p></dialog>`;
   },
