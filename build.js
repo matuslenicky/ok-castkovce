@@ -628,44 +628,53 @@ for (const [slug, title] of KLUB) {
 add('fanzona/', {
   title: 'Fanzóna', active: 'fanzona/', desc: 'Fanshop a klubové oblečenie OK Častkovce.',
   body: (R) => {
-    // fan-1 je len pás s textom „Obleč sa ako pravý fanúšik…“, ten je na stránke ako text
-    const imgs = [...fan.oblecenie.matchAll(/src="\/(img\/archiv\/fanshop\/[^"]+)"/g)].map((m) => m[1]).filter((s) => !/\/fan-1\.jpg$/.test(s));
-    // popis letáku pre čítačky (názov a cena presne podľa letáku)
-    const FLYER = { 'fan-10': 'Mikina, 40 Eur', 'fan-2': 'Dámske tričko, 25 Eur', 'fan-20': 'Streetwear mikina, 28 Eur', 'fan-3': 'Dámske šaty, 25 Eur', 'fan-30': 'Dáždnik, 15 Eur', 'fan-4': 'Pánske tričko, 25 Eur', 'fan-40': 'Detská šiltovka 9 Eur, tričko detské biele 15 Eur', 'fan-5': 'Pánske tričko, 25 Eur', 'fan-7': 'Šiltovka, 15 Eur' };
-    const flyerAlt = (src) => { const k = src.split('/').pop().replace(/\.\w+$/, ''); return FLYER[k] ? `Leták: ${FLYER[k]}` : 'Klubové oblečenie OK Častkovce'; };
     const dni = ['pondelok', 'utorok', 'streda', 'štvrtok', 'piatok', 'sobota', 'nedeľa'];
-    void imgs; void flyerAlt;
-    // produkty ako karty e-shopu (názvy, ceny, farby a veľkosti z letákov, data/fanshop.json; fotky scripts/fanshop.py)
+    // produkty ako karty e-shopu: názvy, ceny, farby a veľkosti z letákov (data/fanshop.json),
+    // všetky fotky produktu z letákov na posúvanie ako príspevok na IG (scripts/fanshop.py -> data/fanshop-foto.json)
     const shop = rd('fanshop.json', { produkty: [] });
-    const order = (p) => `mailto:${info.email}?subject=${encodeURIComponent(`Objednávka: ${p.nazov}`)}&body=${encodeURIComponent(`Dobrý deň,\nmám záujem o: ${p.nazov} (${p.cena} €)\nVeľkosť:\nFarba:\nMeno a telefón:\n`)}`;
-    const prod = (p) => `<li class="prod">
-    <div class="prod-img"><picture><source type="image/webp" srcset="${R}img/fanshop/${p.slug}.webp"><img src="${R}img/fanshop/${p.slug}.jpg" alt="${esc(p.nazov)} OK Častkovce" width="640" height="800" loading="lazy" decoding="async"></picture></div>
+    const fotky = rd('fanshop-foto.json', {});
+    const slide = (p, f, i, n) => `<picture class="prod-slide"><source type="image/webp" srcset="${R}img/fanshop/${f.subor}.webp"><img src="${R}img/fanshop/${f.subor}.jpg" alt="${esc(p.nazov)} OK Častkovce${n > 1 ? `, fotka ${i + 1} z ${n}` : ''}" width="${f.w}" height="${f.h}"${i ? ' loading="lazy"' : ''} decoding="async"></picture>`;
+    const prod = (p) => {
+      const fs = fotky[p.slug] || [];
+      const n = fs.length;
+      return `<li class="prod">
+    <div class="prod-gal"${n > 1 ? ' data-gal' : ''}>
+      <div class="prod-track"${n > 1 ? ` tabindex="0" role="region" aria-label="Fotky: ${esc(p.nazov)} (${n}), posúvajte do strán"` : ''}>${fs.map((f, i) => slide(p, f, i, n)).join('')}</div>
+      ${n > 1 ? `<span class="prod-count" aria-hidden="true">1/${n}</span>
+      <button type="button" class="prod-nav prod-prev" aria-label="Predchádzajúca fotka: ${esc(p.nazov)}" disabled>${I.left}</button><button type="button" class="prod-nav prod-next" aria-label="Ďalšia fotka: ${esc(p.nazov)}">${I.right}</button>
+      <span class="prod-dots" aria-hidden="true">${fs.map((_, i) => `<i${i ? '' : ' class="on"'}></i>`).join('')}</span>` : ''}
+    </div>
     <div class="prod-body">
       <h3 class="prod-t">${esc(p.nazov)}</h3>
       <dl class="prod-v">${p.farba ? `<div><dt>Varianta</dt><dd>${esc(p.farba)}</dd></div>` : ''}${p.velkost ? `<div><dt>Veľkosť</dt><dd>${esc(p.velkost)}</dd></div>` : ''}</dl>
       <p class="prod-p">${p.cena} €</p>
-      <div class="prod-act"><a class="btn btn--red btn--sm prod-buy" href="${order(p)}">Objednať<span class="sr">: ${esc(p.nazov)}</span></a><a class="prod-flyer" href="${R}img/archiv/fanshop/${p.letak}" data-lb>Leták<span class="sr">: ${esc(p.nazov)}</span></a></div>
     </div>
   </li>`;
+    };
     return `${pageHero({ kicker: 'Fanzóna', title: 'Fanshop', R, crumbs: [[null, 'Fanzóna']] })}
 <section class="sec sec--first" aria-labelledby="ob-h"><div class="wrap">
   <div class="shop-head">
-    <h2 class="h2" id="ob-h">Oblečenie</h2>
-    <p class="shop-lead">„Obleč sa ako pravý fanúšik!“ Kúpou produktov podporuješ mladé talenty v našom klube.</p>
+    <div class="shop-intro">
+      <h2 class="h2" id="ob-h">Oblečenie</h2>
+      <p class="shop-lead">„Obleč sa ako pravý fanúšik!“ Kúpou produktov podporuješ mladé talenty v našom klube.</p>
+    </div>
+    <div class="shop-order">
+      <p class="shop-order-t">Ako objednať</p>
+      <p>Produkty si môžeš zakúpiť priamo v bufete na našom futbalovom štadióne alebo si svoju objednávku vybav vopred e-mailom na: <a href="mailto:${info.email}">${info.email}</a></p>
+      <a class="btn btn--red btn--sm" href="mailto:${info.email}?subject=${encodeURIComponent('Objednávka z fanshopu')}">${I.mail}Objednať e-mailom</a>
+    </div>
   </div>
-  <ul class="prods" data-lightbox>${shop.produkty.map(prod).join('')}</ul>
+  <ul class="prods">${shop.produkty.map(prod).join('')}</ul>
   ${shop.pozn ? `<p class="note">${esc(shop.pozn)}</p>` : ''}
 </div></section>
-<section class="sec sec--tint" aria-labelledby="kup-h"><div class="wrap fan">
+<section class="sec sec--tint" aria-labelledby="hod-h"><div class="wrap fan">
   <div class="fan-text">
-    <h2 class="h3" id="kup-h">Ako nakúpiť</h2>
-    <p>Produkty si môžeš zakúpiť priamo v bufete na našom futbalovom štadióne alebo si svoju objednávku vybav vopred e-mailom na: <a href="mailto:${info.email}">${info.email}</a></p>
+    <h2 class="h3" id="hod-h">Predajňa na štadióne</h2>
     <p>Počas zápasov prvého mužstva funguje predajňa suvenírov priamo na futbalovom štadióne.</p>
   </div>
   <div class="hours"><h2 class="h3">Otváracie hodiny nášho FANSHOP</h2><dl>${dni.map((d) => `<div><dt>${d}</dt><dd>12.00 – 20.00 h</dd></div>`).join('')}</dl>
     <h2 class="h3">Otváracie hodiny FANSHOP na štadióne</h2><p>v čase zápasov prvého mužstva</p></div>
-</div></section>
-<dialog class="lb" id="lb" aria-label="Fotka"><button type="button" class="lb-x" data-close aria-label="Zavrieť">✕</button><button type="button" class="lb-btn lb-prev" aria-label="Predchádzajúca fotka">${I.left}</button><img class="lb-img" alt=""><button type="button" class="lb-btn lb-next" aria-label="Ďalšia fotka">${I.right}</button><p class="lb-c" aria-live="polite"></p></dialog>`;
+</div></section>`;
   },
 });
 

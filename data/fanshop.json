@@ -1,5 +1,5 @@
 {
-  "_zdroj": "letáky na okcastkovce.sk/fanzona/oblecenie (src/img/archiv/fanshop); názvy, ceny, farby a veľkosti doslovne z letákov. vyrez = časť letáku [x0, y0, x1, y1] v podiele šírky/výšky, z ktorej scripts/fanshop.py urobí fotku produktu.",
+  "_zdroj": "letáky na okcastkovce.sk/fanzona/oblecenie (najlepšia kvalita v src/img/archiv/fanshop-hq); názvy, ceny, farby a veľkosti doslovne z letákov. fotky = letáky, z ktorých scripts/fanshop.py vyberie všetky fotky produktu (poradie = výber fotiek zľava pri letáku s viacerými produktmi).",
   "pozn": "Nie sme platcami DPH.",
   "produkty": [
     {
@@ -8,14 +8,10 @@
       "cena": 40,
       "farba": "čierna farba",
       "velkost": "L, XL, XXL",
-      "letak": "fan-10.jpg",
-      "vyrez": [
-        [
-          0.059,
-          0.099,
-          0.321,
-          0.796
-        ]
+      "fotky": [
+        {
+          "letak": "fan-10.jpg"
+        }
       ]
     },
     {
@@ -24,14 +20,16 @@
       "cena": 28,
       "farba": "biela a modrá farba",
       "velkost": "viac veľkostí, podľa dohody",
-      "letak": "fan-20.jpg",
-      "vyrez": [
-        [
-          0.604,
-          0.104,
-          0.861,
-          0.796
-        ]
+      "fotky": [
+        {
+          "letak": "fan-20.jpg",
+          "hlavna": [
+            0.6045,
+            0.104,
+            0.861,
+            0.796
+          ]
+        }
       ]
     },
     {
@@ -40,14 +38,10 @@
       "cena": 25,
       "farba": "biela a čierna farba",
       "velkost": "S, M, L",
-      "letak": "fan-2.jpg",
-      "vyrez": [
-        [
-          0.604,
-          0.099,
-          0.858,
-          0.796
-        ]
+      "fotky": [
+        {
+          "letak": "fan-2.jpg"
+        }
       ]
     },
     {
@@ -56,14 +50,10 @@
       "cena": 25,
       "farba": "čierna farba",
       "velkost": "S, M, L",
-      "letak": "fan-3.jpg",
-      "vyrez": [
-        [
-          0.059,
-          0.099,
-          0.321,
-          0.796
-        ]
+      "fotky": [
+        {
+          "letak": "fan-3.jpg"
+        }
       ]
     },
     {
@@ -72,15 +62,13 @@
       "cena": 25,
       "farba": "biela a čierna farba",
       "velkost": "S, M, L, XL, XXL",
-      "letak": "fan-5.jpg",
-      "dalsiLetak": "fan-4.jpg",
-      "vyrez": [
-        [
-          0.604,
-          0.099,
-          0.858,
-          0.796
-        ]
+      "fotky": [
+        {
+          "letak": "fan-5.jpg"
+        },
+        {
+          "letak": "fan-4.jpg"
+        }
       ]
     },
     {
@@ -89,28 +77,23 @@
       "cena": 15,
       "farba": "čierna farba",
       "velkost": "Uni",
-      "letak": "fan-7.jpg",
-      "vyrez": [
-        [
-          0.604,
-          0.099,
-          0.858,
-          0.796
-        ]
+      "fotky": [
+        {
+          "letak": "fan-7.jpg"
+        }
       ]
     },
     {
       "slug": "detska-siltovka",
       "nazov": "Detská šiltovka",
       "cena": 9,
-      "letak": "fan-40.jpg",
-      "vyrez": [
-        [
-          0.059,
-          0.099,
-          0.321,
-          0.692
-        ]
+      "fotky": [
+        {
+          "letak": "fan-40.jpg",
+          "poradie": [
+            0
+          ]
+        }
       ]
     },
     {
@@ -118,14 +101,13 @@
       "nazov": "Tričko detské biele",
       "cena": 15,
       "velkost": "viac veľkostí, podľa dohody",
-      "letak": "fan-40.jpg",
-      "vyrez": [
-        [
-          0.382,
-          0.099,
-          0.624,
-          0.692
-        ]
+      "fotky": [
+        {
+          "letak": "fan-40.jpg",
+          "poradie": [
+            1
+          ]
+        }
       ]
     },
     {
@@ -133,20 +115,10 @@
       "nazov": "Dáždnik",
       "cena": 15,
       "farba": "čierna a modrá farba",
-      "letak": "fan-30.jpg",
-      "vyrez": [
-        [
-          0.076,
-          0.137,
-          0.321,
-          0.604
-        ],
-        [
-          0.357,
-          0.137,
-          0.603,
-          0.604
-        ]
+      "fotky": [
+        {
+          "letak": "fan-30.jpg"
+        }
       ]
     }
   ]

@@ -1,0 +1,265 @@
+{
+ "mikina": [
+  {
+   "subor": "mikina-1",
+   "w": 442,
+   "h": 671
+  },
+  {
+   "subor": "mikina-2",
+   "w": 237,
+   "h": 296
+  },
+  {
+   "subor": "mikina-3",
+   "w": 238,
+   "h": 300
+  },
+  {
+   "subor": "mikina-4",
+   "w": 234,
+   "h": 300
+  },
+  {
+   "subor": "mikina-5",
+   "w": 237,
+   "h": 295
+  },
+  {
+   "subor": "mikina-6",
+   "w": 238,
+   "h": 295
+  },
+  {
+   "subor": "mikina-7",
+   "w": 235,
+   "h": 291
+  }
+ ],
+ "streetwear-mikina": [
+  {
+   "subor": "streetwear-mikina-1",
+   "w": 430,
+   "h": 654
+  },
+  {
+   "subor": "streetwear-mikina-2",
+   "w": 230,
+   "h": 303
+  },
+  {
+   "subor": "streetwear-mikina-3",
+   "w": 238,
+   "h": 296
+  },
+  {
+   "subor": "streetwear-mikina-4",
+   "w": 238,
+   "h": 291
+  },
+  {
+   "subor": "streetwear-mikina-5",
+   "w": 238,
+   "h": 291
+  },
+  {
+   "subor": "streetwear-mikina-6",
+   "w": 223,
+   "h": 291
+  }
+ ],
+ "damske-tricko": [
+  {
+   "subor": "damske-tricko-1",
+   "w": 444,
+   "h": 671
+  },
+  {
+   "subor": "damske-tricko-2",
+   "w": 239,
+   "h": 306
+  },
+  {
+   "subor": "damske-tricko-3",
+   "w": 237,
+   "h": 306
+  },
+  {
+   "subor": "damske-tricko-4",
+   "w": 240,
+   "h": 306
+  },
+  {
+   "subor": "damske-tricko-5",
+   "w": 239,
+   "h": 295
+  },
+  {
+   "subor": "damske-tricko-6",
+   "w": 237,
+   "h": 295
+  },
+  {
+   "subor": "damske-tricko-7",
+   "w": 241,
+   "h": 295
+  }
+ ],
+ "damske-saty": [
+  {
+   "subor": "damske-saty-1",
+   "w": 442,
+   "h": 671
+  },
+  {
+   "subor": "damske-saty-2",
+   "w": 238,
+   "h": 294
+  },
+  {
+   "subor": "damske-saty-3",
+   "w": 237,
+   "h": 294
+  },
+  {
+   "subor": "damske-saty-4",
+   "w": 238,
+   "h": 294
+  }
+ ],
+ "panske-tricko": [
+  {
+   "subor": "panske-tricko-1",
+   "w": 452,
+   "h": 671
+  },
+  {
+   "subor": "panske-tricko-2",
+   "w": 237,
+   "h": 298
+  },
+  {
+   "subor": "panske-tricko-3",
+   "w": 239,
+   "h": 298
+  },
+  {
+   "subor": "panske-tricko-4",
+   "w": 239,
+   "h": 298
+  },
+  {
+   "subor": "panske-tricko-5",
+   "w": 237,
+   "h": 295
+  },
+  {
+   "subor": "panske-tricko-6",
+   "w": 234,
+   "h": 291
+  },
+  {
+   "subor": "panske-tricko-7",
+   "w": 241,
+   "h": 295
+  },
+  {
+   "subor": "panske-tricko-8",
+   "w": 444,
+   "h": 671
+  },
+  {
+   "subor": "panske-tricko-9",
+   "w": 238,
+   "h": 306
+  },
+  {
+   "subor": "panske-tricko-10",
+   "w": 238,
+   "h": 306
+  },
+  {
+   "subor": "panske-tricko-11",
+   "w": 235,
+   "h": 306
+  },
+  {
+   "subor": "panske-tricko-12",
+   "w": 235,
+   "h": 295
+  },
+  {
+   "subor": "panske-tricko-13",
+   "w": 238,
+   "h": 295
+  },
+  {
+   "subor": "panske-tricko-14",
+   "w": 235,
+   "h": 295
+  }
+ ],
+ "siltovka": [
+  {
+   "subor": "siltovka-1",
+   "w": 444,
+   "h": 671
+  },
+  {
+   "subor": "siltovka-2",
+   "w": 241,
+   "h": 304
+  },
+  {
+   "subor": "siltovka-3",
+   "w": 239,
+   "h": 301
+  },
+  {
+   "subor": "siltovka-4",
+   "w": 238,
+   "h": 300
+  },
+  {
+   "subor": "siltovka-5",
+   "w": 240,
+   "h": 295
+  },
+  {
+   "subor": "siltovka-6",
+   "w": 238,
+   "h": 291
+  },
+  {
+   "subor": "siltovka-7",
+   "w": 236,
+   "h": 291
+  }
+ ],
+ "detska-siltovka": [
+  {
+   "subor": "detska-siltovka-1",
+   "w": 446,
+   "h": 559
+  }
+ ],
+ "tricko-detske-biele": [
+  {
+   "subor": "tricko-detske-biele-1",
+   "w": 414,
+   "h": 559
+  }
+ ],
+ "dazdnik": [
+  {
+   "subor": "dazdnik-1",
+   "w": 422,
+   "h": 452
+  },
+  {
+   "subor": "dazdnik-2",
+   "w": 422,
+   "h": 451
+  }
+ ]
+}
