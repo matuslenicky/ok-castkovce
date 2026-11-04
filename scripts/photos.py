@@ -67,5 +67,32 @@ for key, (rel, pos, alt) in MAP.items():
     obr[key] = {'widths': widths, 'w': min(big, im.width), 'h': hh, 'alt': alt, **({'pos': pos} if pos else {}), 'zdroj': rel}
     im.close()
 
+# portréty hráčov (scripts/hraci-foto.mjs): media/foto-orig/hraci/<tím>/Meno_Priezvisko.jpg -> kľúč hrac-<tím>-<meno-priezvisko>
+import re
+import unicodedata
+def _slug(s):
+    s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode()
+    return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
+for team_dir in sorted((SRC / 'hraci').glob('*')) if (SRC / 'hraci').exists() else []:
+    for f in sorted(team_dir.glob('*.jp*g')):
+        name = unicodedata.normalize('NFC', f.stem).replace('_', ' ')
+        key = f'hrac-{team_dir.name}-{_slug(name)}'
+        im = ImageOps.exif_transpose(Image.open(f)).convert('RGB')
+        widths = []
+        for w in (320, 640):
+            ww = min(w, im.width)  # súbor aj srcset podľa skutočnej šírky (karty majú 600 px)
+            w = ww
+            dst_w, dst_j = OUT / f'{key}-{w}.webp', OUT / f'{key}-{w}.jpg'
+            if not (dst_w.exists() and dst_w.stat().st_mtime >= f.stat().st_mtime and dst_j.exists()):
+                r = im.resize((ww, round(im.height * ww / im.width)), Image.LANCZOS) if ww < im.width else im
+                r.save(dst_w, 'WEBP', quality=80, method=5)
+                r.save(dst_j, 'JPEG', quality=84, optimize=True, progressive=True)
+                made += 1
+            widths.append(w)
+            if ww >= im.width:
+                break
+        obr[key] = {'widths': widths, 'w': min(widths[-1], im.width), 'h': round(im.height * min(widths[-1], im.width) / im.width), 'alt': name, 'zdroj': f'hraci/{team_dir.name}/{f.name}'}
+        im.close()
+
 fj.write_text(json.dumps({'_zdroj': 'fotky od fotografa (Disk Google klubu), spracúva scripts/photos.py', 'obrazky': obr}, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 print('fotiek:', len(obr), '· nových súborov:', made)

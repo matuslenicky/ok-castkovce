@@ -1,0 +1,105 @@
+{
+  "_zdroj": "Súpisky doplnené z podkladov klubu (nie zo starého webu, kde sú prázdne).",
+  "timy": {
+    "u19-starsi-dorast": {
+      "zdroj": "Portréty a mená od fotografa klubu (Disk klubu, priečinok U19, 4. 11. 2026). Tréneri dorastu podľa okcastkovce.sk/klub/vedenie-klubu; Peter Udvorka je na portréte v klubovom tričku, funkcia neuvedená.",
+      "roster": [
+        {
+          "title": "Hráči",
+          "people": [
+            {
+              "name": "Oleksandr Doroshenko",
+              "foto": "hrac-u19-starsi-dorast-oleksandr-doroshenko"
+            },
+            {
+              "name": "Peter Dunár",
+              "foto": "hrac-u19-starsi-dorast-peter-dunar"
+            },
+            {
+              "name": "Samir Forouhar",
+              "foto": "hrac-u19-starsi-dorast-samir-forouhar"
+            },
+            {
+              "name": "Oliver Harmady",
+              "foto": "hrac-u19-starsi-dorast-oliver-harmady"
+            },
+            {
+              "name": "Nicolas Haško",
+              "foto": "hrac-u19-starsi-dorast-nicolas-hasko"
+            },
+            {
+              "name": "Juraj Hladký",
+              "foto": "hrac-u19-starsi-dorast-juraj-hladky"
+            },
+            {
+              "name": "Lucas Hrabal",
+              "foto": "hrac-u19-starsi-dorast-lucas-hrabal"
+            },
+            {
+              "name": "Patrik Hudec",
+              "foto": "hrac-u19-starsi-dorast-patrik-hudec"
+            },
+            {
+              "name": "Kevin Huray",
+              "foto": "hrac-u19-starsi-dorast-kevin-huray"
+            },
+            {
+              "name": "Martin Kunda",
+              "foto": "hrac-u19-starsi-dorast-martin-kunda"
+            },
+            {
+              "name": "Michal Murin",
+              "foto": "hrac-u19-starsi-dorast-michal-murin"
+            },
+            {
+              "name": "Simon Nešťák",
+              "foto": "hrac-u19-starsi-dorast-simon-nestak"
+            },
+            {
+              "name": "Peter Opatovský",
+              "foto": "hrac-u19-starsi-dorast-peter-opatovsky"
+            },
+            {
+              "name": "Daniel Páleník",
+              "foto": "hrac-u19-starsi-dorast-daniel-palenik"
+            },
+            {
+              "name": "Matej Podhorský",
+              "foto": "hrac-u19-starsi-dorast-matej-podhorsky"
+            },
+            {
+              "name": "Matej Pozor",
+              "foto": "hrac-u19-starsi-dorast-matej-pozor"
+            },
+            {
+              "name": "Peter Šimek",
+              "foto": "hrac-u19-starsi-dorast-peter-simek"
+            },
+            {
+              "name": "Filip Tóth",
+              "foto": "hrac-u19-starsi-dorast-filip-toth"
+            }
+          ]
+        },
+        {
+          "title": "Vedenie",
+          "people": [
+            {
+              "name": "Pavel Šido",
+              "foto": "hrac-u19-starsi-dorast-pavel-sido",
+              "position": "Tréner"
+            },
+            {
+              "name": "Michal Vereš",
+              "position": "Tréner"
+            },
+            {
+              "name": "Peter Udvorka",
+              "foto": "hrac-u19-starsi-dorast-peter-udvorka"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

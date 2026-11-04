@@ -487,7 +487,7 @@ function rosterHtml(t, R) {
       : p.photo ? `<img src="${R}${p.photo.replace(/^\//, '')}" alt="${esc(p.name)}" loading="lazy" decoding="async">`
         : `<span class="ph-player" aria-hidden="true"></span>`;
     const role = p.tag && ROLE[p.tag] ? ROLE[p.tag] : p.position || '';
-    return `<li class="player"><div class="player-img">${photo}${p.number ? `<span class="player-no">${esc(p.number)}</span>` : ''}</div>
+    return `<li class="player"><div class="player-img${key && hasPic(key) ? ' player-img--card' : ''}">${photo}${p.number ? `<span class="player-no">${esc(p.number)}</span>` : ''}</div>
       <p class="player-n"><span>${esc(parts.join(' '))}</span> <b>${esc(last)}</b></p>${role ? `<p class="player-r">${esc(role)}</p>` : ''}</li>`;
   }).join('')}</ul>`).join('');
 }

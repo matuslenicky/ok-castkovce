@@ -739,3 +739,8 @@ a.wk-team:focus-visible { outline: none; }
 @media (max-width: 559.98px) { .prod-t { font-size: 17px; } .prod-p { font-size: 22px; } .prod-buy { width: 100%; } .prod-act { gap: 0 12px; } }
 .sec--tint .hours { background: #fff; }
 @media (min-width: 900px) { .prods { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 28px; } } /* 9 produktov = 3 plné rady */
+
+/* portréty hráčov od fotografa: hotová grafika 600 × 640 s menom – celá, bez orezania; vo vedení výrez na tvár */
+.player-img--card { aspect-ratio: 15 / 16; }
+.player-img--card img, .player-img--card picture { object-position: 50% 50%; }
+.roster--staff .player-img--card img { object-position: 50% 0; transform: scale(1.9); transform-origin: 50% 12%; }

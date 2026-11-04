@@ -185,6 +185,206 @@
    "alt": "Areál štadióna v Častkovciach z dronu",
    "pos": "50% 50%",
    "zdroj": "ŠTADIÓN/DJI_0234.JPG"
+  },
+  "hrac-u19-starsi-dorast-daniel-palenik": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Daniel Páleník",
+   "zdroj": "hraci/u19-starsi-dorast/Daniel_Páleník.jpg"
+  },
+  "hrac-u19-starsi-dorast-filip-toth": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Filip Tóth",
+   "zdroj": "hraci/u19-starsi-dorast/Filip_Tóth.jpg"
+  },
+  "hrac-u19-starsi-dorast-juraj-hladky": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Juraj Hladký",
+   "zdroj": "hraci/u19-starsi-dorast/Juraj_Hladký.jpg"
+  },
+  "hrac-u19-starsi-dorast-kevin-huray": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Kevin Huray",
+   "zdroj": "hraci/u19-starsi-dorast/Kevin_Huray.jpg"
+  },
+  "hrac-u19-starsi-dorast-lucas-hrabal": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Lucas Hrabal",
+   "zdroj": "hraci/u19-starsi-dorast/Lucas_Hrabal.jpg"
+  },
+  "hrac-u19-starsi-dorast-martin-kunda": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Martin Kunda",
+   "zdroj": "hraci/u19-starsi-dorast/Martin_Kunda.jpg"
+  },
+  "hrac-u19-starsi-dorast-matej-podhorsky": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Matej Podhorský",
+   "zdroj": "hraci/u19-starsi-dorast/Matej_Podhorský.jpg"
+  },
+  "hrac-u19-starsi-dorast-matej-pozor": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Matej Pozor",
+   "zdroj": "hraci/u19-starsi-dorast/Matej_Pozor.jpg"
+  },
+  "hrac-u19-starsi-dorast-michal-murin": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Michal Murin",
+   "zdroj": "hraci/u19-starsi-dorast/Michal_Murin.jpg"
+  },
+  "hrac-u19-starsi-dorast-nicolas-hasko": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Nicolas Haško",
+   "zdroj": "hraci/u19-starsi-dorast/Nicolas_Haško.jpg"
+  },
+  "hrac-u19-starsi-dorast-oleksandr-doroshenko": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Oleksandr Doroshenko",
+   "zdroj": "hraci/u19-starsi-dorast/Oleksandr_Doroshenko.jpg"
+  },
+  "hrac-u19-starsi-dorast-oliver-harmady": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Oliver Harmady",
+   "zdroj": "hraci/u19-starsi-dorast/Oliver_Harmady.jpg"
+  },
+  "hrac-u19-starsi-dorast-patrik-hudec": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Patrik Hudec",
+   "zdroj": "hraci/u19-starsi-dorast/Patrik_Hudec.jpg"
+  },
+  "hrac-u19-starsi-dorast-pavel-sido": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Pavel Šido",
+   "zdroj": "hraci/u19-starsi-dorast/Pavel_Šido.jpg"
+  },
+  "hrac-u19-starsi-dorast-peter-dunar": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Peter Dunár",
+   "zdroj": "hraci/u19-starsi-dorast/Peter_Dunár.jpg"
+  },
+  "hrac-u19-starsi-dorast-peter-opatovsky": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Peter Opatovský",
+   "zdroj": "hraci/u19-starsi-dorast/Peter_Opatovský.jpg"
+  },
+  "hrac-u19-starsi-dorast-peter-udvorka": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Peter Udvorka",
+   "zdroj": "hraci/u19-starsi-dorast/Peter_Udvorka.jpg"
+  },
+  "hrac-u19-starsi-dorast-peter-simek": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Peter Šimek",
+   "zdroj": "hraci/u19-starsi-dorast/Peter_Šimek.jpg"
+  },
+  "hrac-u19-starsi-dorast-samir-forouhar": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Samir Forouhar",
+   "zdroj": "hraci/u19-starsi-dorast/Samir_Forouhar.jpg"
+  },
+  "hrac-u19-starsi-dorast-simon-nestak": {
+   "widths": [
+    320,
+    600
+   ],
+   "w": 600,
+   "h": 640,
+   "alt": "Simon Nešťák",
+   "zdroj": "hraci/u19-starsi-dorast/Simon_Nešťák.jpg"
   }
  }
 }
