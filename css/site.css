@@ -827,3 +827,7 @@ a.wk-team:focus-visible { outline: none; }
 .pro-nav a:hover b { text-decoration: underline; text-underline-offset: 3px; }
 .pro-nav .pro-next { text-align: right; }
 .pro-nav .pro-back { justify-self: center; padding: 0 20px; border: 2px solid var(--ink); border-radius: 999px; font: 700 15px/1 var(--f-disp); letter-spacing: .06em; text-transform: uppercase; }
+/* ukážkové údaje v profiloch: viditeľné označenie, aby si ich nikto nepomýlil so skutočnými */
+.pro-sample { display: inline-flex; margin: 24px 0 0; padding: 5px 10px; border: 1px dashed rgba(255, 255, 255, .45); border-radius: 8px; color: #dcdde1; font: 600 13px/1.3 var(--f-body); }
+.pro-sample + .pro-facts { margin-top: 10px; }
+.pro-sample--light { margin: 0 0 12px; border-color: var(--muted-l); color: var(--muted); }
