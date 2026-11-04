@@ -139,7 +139,7 @@ const newsImage = (n, R) => {
 const CARD_SIZES = '(min-width: 1240px) 380px, (min-width: 700px) 50vw, 100vw';
 const dirCache = new Map();
 const listDir = (d) => { if (!dirCache.has(d)) dirCache.set(d, fs.existsSync(d) ? fs.readdirSync(d) : []); return dirCache.get(d); };
-function cardImg(url, R, { sizes = CARD_SIZES, eager = false, first = false, alt = '' } = {}) {
+function cardImg(url, R, { sizes = CARD_SIZES, eager = false, first = false, alt = '', dims = null } = {}) {
   let cands = [];
   if (url.startsWith(R + 'img/')) {
     // src/img/opt/<cesta>/<meno>-<šírka>.webp (640, 1280, prípadne plná šírka užšieho originálu)
@@ -157,7 +157,50 @@ function cardImg(url, R, { sizes = CARD_SIZES, eager = false, first = false, alt
   }
   const srcset = cands.length ? ` srcset="${cands.map(([u, w]) => `${u} ${w}w`).join(', ')}" sizes="${sizes}"` : '';
   const load = first ? ' fetchpriority="high"' : eager ? '' : ' loading="lazy"';
-  return `<img src="${url}"${srcset} alt="${esc(alt)}"${load} decoding="async">`;
+  const wh = dims ? ` width="${dims.w}" height="${dims.h}"` : '';
+  return `<img src="${url}"${srcset}${wh} alt="${esc(alt)}"${load} decoding="async">`;
+}
+
+// logo partnera: orezaná kópia zo scripts/images.py (menší zo súborov .webp/.png), inak originál zo starého webu
+const partnerCache = new Map();
+function partnerSrc(file) {
+  if (!partnerCache.has(file)) {
+    const png = path.join(SRC, 'img', 'opt', 'partneri', file), webp = png.replace(/\.png$/i, '.webp');
+    const size = (f) => (fs.existsSync(f) ? fs.statSync(f).size : Infinity);
+    const pick = !fs.existsSync(png) ? `archiv/partneri/${file}` : size(webp) < size(png) ? `opt/partneri/${path.basename(webp)}` : `opt/partneri/${file}`;
+    partnerCache.set(file, pick.split('/').map(encodeURIComponent).join('/'));
+  }
+  return partnerCache.get(file);
+}
+
+// rozmery JPG/PNG z hlavičky súboru (width/height pri obrázku v texte, aby text pod ním pri načítaní neposkočil)
+function imgDims(file) {
+  try {
+    const b = fs.readFileSync(file);
+    if (b.toString('latin1', 1, 4) === 'PNG') return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+    if (b[0] !== 0xff || b[1] !== 0xd8) return null;
+    for (let i = 2; i + 9 < b.length;) {
+      if (b[i] !== 0xff) return null;
+      const m = b[i + 1];
+      if (m === 0xff) { i++; continue; }
+      if (m >= 0xc0 && m <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(m)) return { h: b.readUInt16BE(i + 5), w: b.readUInt16BE(i + 7) };
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  } catch { /* chýbajúci súbor: obrázok ostane bez rozmerov */ }
+  return null;
+}
+
+// obrázky v texte správy a klubových stránok (starý web vkladá celé JPG) -> zmenšeniny webp; .prose má najviac 74ch (740 px)
+// prvý obrázok dostane prednosť pri sťahovaní, ak hlavička stránky nemá vlastnú fotku (firstPriority: false)
+const PROSE_SIZES = '(min-width: 800px) 740px, calc(100vw - 32px)';
+function proseImgs(html, R, { firstPriority = true } = {}) {
+  let n = firstPriority ? 0 : 1;
+  return html.replace(/<img\b[^>]*>/g, (tag) => {
+    const src = tag.match(/\ssrc="\/(img\/[^"]+)"/)?.[1];
+    if (!src) return tag;
+    const alt = (tag.match(/\salt="([^"]*)"/)?.[1] ?? '').replace(/&(quot|amp|lt|gt|#39);/g, (_, e) => ({ quot: '"', amp: '&', lt: '<', gt: '>', '#39': "'" })[e]);
+    return cardImg(R + src, R, { sizes: PROSE_SIZES, first: n++ === 0, alt, dims: imgDims(path.join(SRC, decodeURI(src))) });
+  });
 }
 
 // ---- ikony -------------------------------------------------------------------------------------
@@ -249,7 +292,7 @@ ${body}
 </main>
 ${partneri.length ? `<section class="partners" aria-labelledby="partneri-h"><div class="wrap">
   <h2 class="partners-h" id="partneri-h">Partneri klubu</h2>
-  <ul class="plogos">${partneri.map((p) => `<li${p.tmave ? ' class="plogo--dark"' : ''}><img src="${R}img/${fs.existsSync(path.join(SRC, 'img', 'opt', 'partneri', p.file)) ? 'opt' : 'archiv'}/partneri/${encodeURIComponent(p.file)}" alt="${esc(p.alt)}" loading="lazy" decoding="async"></li>`).join('')}</ul>
+  <ul class="plogos">${partneri.map((p) => `<li${p.tmave ? ' class="plogo--dark"' : ''}><img src="${R}img/${partnerSrc(p.file)}" alt="${esc(p.alt)}" loading="lazy" decoding="async"></li>`).join('')}</ul>
 </div></section>` : ''}
 <footer class="ftr">
   <div class="wrap ftr-grid">
@@ -278,12 +321,16 @@ const railNav = (label) => `<div class="rail-nav" hidden><button type="button" c
 
 // karty v rail-e na úvode: 250 px na telefóne, 2,4 karty od 700 px, 4 karty od 1000 px (site.css .rail-track)
 const RAIL_SIZES = '(min-width: 1240px) 295px, (min-width: 1000px) 25vw, (min-width: 700px) 40vw, 250px';
+// mriežka .grid--news/.grid--gal (auto-fill, min. 290 px, medzera 20 px): 1 stĺpec, 2 od 652 px, 3 od 990 px, 4 × 295 px od 1300 px;
+// veľká karta správy má od 900 px span 2 (site.css .card--big)
+const GRID_SIZES = '(min-width: 1300px) 295px, (min-width: 990px) calc(33.4vw - 40px), (min-width: 652px) 46vw, calc(100vw - 32px)';
+const GRID_BIG_SIZES = '(min-width: 1300px) 610px, (min-width: 990px) calc(66.7vw - 60px), (min-width: 900px) 92vw, (min-width: 652px) 46vw, calc(100vw - 32px)';
 // h: na úvode sú karty pod nadpisom sekcie (h2 → h3), na stránkach so zoznamom priamo pod h1 (h2)
 function newsCard(n, R, { big = false, h = 'h3', eager = false, first = false, sizes = CARD_SIZES } = {}) {
   const img = newsImage(n, R);
   return `<article class="card card--news${big ? ' card--big' : ''}">
   <a class="card-a" href="${R}spravy/${n.slug}/">
-    <div class="card-img">${img ? cardImg(img, R, { eager, first, sizes: big ? '(min-width: 1240px) 780px, (min-width: 900px) 66vw, 100vw' : sizes }) : `<span class="ph-crest"></span>`}</div>
+    <div class="card-img">${img ? cardImg(img, R, { eager, first, sizes: big ? GRID_BIG_SIZES : sizes }) : `<span class="ph-crest"></span>`}</div>
     <div class="card-body"><p class="card-k"><span class="tag">Správy</span><time datetime="${n.date}">${fmtDate(n.date)}</time></p><${h} class="card-t">${esc(n.title)}</${h}></div>
   </a>
 </article>`;
@@ -484,7 +531,7 @@ function rosterHtml(t, R) {
     const last = parts.pop();
     const key = p.foto || null;
     const photo = key && hasPic(key) ? pic(key, R, { sizes: '(min-width: 1100px) 240px, (min-width: 700px) 30vw, 46vw', alt: p.name })
-      : p.photo ? `<img src="${R}${p.photo.replace(/^\//, '')}" alt="${esc(p.name)}" loading="lazy" decoding="async">`
+      : p.photo ? cardImg(R + p.photo.replace(/^\//, ''), R, { sizes: '(min-width: 1100px) 240px, (min-width: 700px) 30vw, 46vw', alt: p.name })
         : `<span class="ph-player" aria-hidden="true"></span>`;
     const role = p.tag && ROLE[p.tag] ? ROLE[p.tag] : p.position || '';
     const inner = `<div class="player-img${key && hasPic(key) ? ' player-img--card' : ''}">${photo}${p.number ? `<span class="player-no">${esc(p.number)}</span>` : ''}</div>
@@ -537,6 +584,8 @@ function sampleProfile(t, p) {
   const pad = (n) => String(n).padStart(2, '0');
   return { narodenie: `${pad(1 + r(28, 5))}.${pad(1 + r(12, 9))}.${t.isA ? 1990 + r(14, 2) : year}`, bydlisko: SAMPLE.obce[r(SAMPLE.obce.length, 11)], narodnost: 'SVK', volnyCas: SAMPLE.volno[r(SAMPLE.volno.length, 13)], klub: SAMPLE.kluby[r(SAMPLE.kluby.length, 17)] };
 }
+// fotka v profile: .pro-photo má width: min(100%, 400px), od 440 px teda vždy 400 px
+const PRO_SIZES = '(min-width: 440px) 400px, calc(100vw - 32px)';
 function profilePages(t) {
   const players = (t.roster || []).flatMap((g) => g.title === 'Hráči' ? g.people : []);
   const season = seasonOf(TODAY);
@@ -567,8 +616,8 @@ function profilePages(t) {
       title: `${p.name} – ${t.short}`, active: t.isA ? 'a-muzstvo/' : 'mladez/',
       desc: `${p.name}, ${t.isA ? 'A-mužstvo' : `${t.short} ${t.sub}`} OK Častkovce.`,
       body: (R) => {
-        const photo = p.foto && hasPic(p.foto) ? pic(p.foto, R, { sizes: '(min-width: 900px) 420px, 80vw', eager: true, alt: p.name })
-          : p.photo ? `<img src="${R}${p.photo.replace(/^\//, '')}" alt="${esc(p.name)}">` : '<span class="ph-player" aria-hidden="true"></span>';
+        const photo = p.foto && hasPic(p.foto) ? pic(p.foto, R, { sizes: PRO_SIZES, eager: true, alt: p.name })
+          : p.photo ? cardImg(R + p.photo.replace(/^\//, ''), R, { sizes: PRO_SIZES, first: true, alt: p.name }) : '<span class="ph-player" aria-hidden="true"></span>';
         return `<section class="pro">
   <div class="wrap pro-in">
     <nav class="crumbs" aria-label="Omrvinky"><a href="${R}">Úvod</a>${t.isA ? '' : `<a href="${R}mladez/">Mládež</a>`}<a href="${R}${t.url}">${esc(t.isA ? 'A-mužstvo' : t.short)}</a><span aria-current="page">${esc(p.name)}</span></nav>
@@ -651,14 +700,14 @@ add('mladez/', {
 add('spravy/', {
   title: 'Správy', active: 'spravy/', desc: 'Správy z diania v OK Častkovce.',
   body: (R) => `${pageHero({ kicker: 'OK Častkovce', title: 'Správy', R, crumbs: [[null, 'Správy']] })}
-<section class="sec sec--first"><div class="wrap"><div class="grid grid--news">${news.map((n, i) => newsCard(n, R, { big: i === 0, h: 'h2', first: i === 0 })).join('')}</div></div></section>`,
+<section class="sec sec--first"><div class="wrap"><div class="grid grid--news">${news.map((n, i) => newsCard(n, R, { big: i === 0, h: 'h2', first: i === 0, sizes: GRID_SIZES })).join('')}</div></div></section>`,
 });
 news.forEach((n, i) => {
   add(`spravy/${n.slug}/`, {
     title: n.title, active: 'spravy/', desc: n.excerpt || n.title,
     body: (R) => {
       const g = galById[NEWS_GAL[n.id]];
-      const fixBody = n.body.replace(/src="\/img\//g, `src="${R}img/`).replace(/href="https?:\/\/(www\.)?okcastkovce\.sk\/fotogaleria\/\d+\/([^"]+)"/g, `href="${R}fotogaleria/$2/"`);
+      const fixBody = proseImgs(n.body, R).replace(/src="\/img\//g, `src="${R}img/`).replace(/href="https?:\/\/(www\.)?okcastkovce\.sk\/fotogaleria\/\d+\/([^"]+)"/g, `href="${R}fotogaleria/$2/"`);
       const prev = news[i + 1], next = news[i - 1];
       return `<article class="art">
   ${pageHero({ kicker: fmtDate(n.date), title: n.title, R, crumbs: [['spravy/', 'Správy'], [null, n.title.length > 40 ? n.title.slice(0, 38) + '…' : n.title]] })}
@@ -677,7 +726,7 @@ news.forEach((n, i) => {
 add('fotogaleria/', {
   title: 'Fotogaléria', active: 'fotogaleria/', desc: 'Fotogalérie zo zápasov a podujatí OK Častkovce.',
   body: (R) => `${pageHero({ kicker: 'OK Častkovce', title: 'Fotogaléria', R, crumbs: [[null, 'Fotogaléria']] })}
-<section class="sec sec--first"><div class="wrap"><div class="grid grid--gal" data-paged="12" data-more="Zobraziť ďalšie galérie">${gals.map((g, i) => galCard(g, R, { h: 'h2', first: i === 0 })).join('')}</div></div></section>`,
+<section class="sec sec--first"><div class="wrap"><div class="grid grid--gal" data-paged="12" data-more="Zobraziť ďalšie galérie">${gals.map((g, i) => galCard(g, R, { h: 'h2', first: i === 0, sizes: GRID_SIZES })).join('')}</div></div></section>`,
 });
 gals.forEach((g) => add(`fotogaleria/${g.slug}/`, {
   title: g.title, active: 'fotogaleria/', desc: `Fotogaléria: ${g.title}`,
@@ -716,7 +765,7 @@ for (const [slug, title] of KLUB) {
   add(`klub/${slug}/`, {
     title, active: 'klub/',
     body: (R) => {
-      let html = klub.pages[slug].replace(/src="\/img\//g, `src="${R}img/`);
+      let html = proseImgs(klub.pages[slug], R, { firstPriority: !(slug === 'stadion' && hasPic('stadion-dron')) }).replace(/src="\/img\//g, `src="${R}img/`);
       // odkaz na telefón má sedieť so zobrazeným číslom
       html = html.replace(/<a href="tel:[^"]*">([^<]+)<\/a>/g, (_, n) => `<a href="${tel(n)}">${n}</a>`);
       if (slug === 'kontakty') html = html.replace(/E mail:&nbsp;okcastkovce@okcastkovce\.sk/, `E mail: <a href="mailto:${info.email}">${info.email}</a>`).replace(/Tel: (0949 373 648)/, (_, n) => `Tel: <a href="${tel(n)}">${n}</a>`);

@@ -64,18 +64,19 @@ for f in sorted(vid_src.glob('*-max.jpg')):
     made += 1
 
 # obrázky v kartách (bannery správ, štadión, história, náhľady videí): menšie webp pre srcset
-#   src/img/<cesta>/<meno>.jpg -> src/img/opt/<cesta>/<meno>-640.webp, -1280.webp (len šírky menšie ako originál)
+#   src/img/<cesta>/<meno>.jpg -> src/img/opt/<cesta>/<meno>-640.webp, -960.webp, -1280.webp (len šírky menšie ako originál)
 img_src = ROOT / 'src' / 'img'
 opt_out = img_src / 'opt'
+STEPS = (640, 960, 1280)  # 960: telefón (~390 px × 2–3) by inak bral rovno 1280
 for f in sorted([*img_src.glob('archiv/**/*'), *img_src.glob('video/*')]):
-    if f.suffix.lower() not in ('.jpg', '.jpeg', '.png') or 'fanshop' in f.parts:
-        continue  # letáky fanshopu majú drobný text s cenami, ostávajú v plnej kvalite
+    if f.suffix.lower() not in ('.jpg', '.jpeg', '.png') or any(p.startswith('fanshop') or p == 'partneri' for p in f.parts):
+        continue  # letáky fanshopu majú drobný text s cenami (plná kvalita), logá partnerov rieši blok nižšie
     rel = f.relative_to(img_src).with_suffix('')
     todo = []
     with Image.open(f) as probe:
         width = probe.size[0]
-    # originál užší ako 1280 (napr. 800 px) dostane aj variant v plnej šírke, inak by telefón s 2× displejom bral len 640
-    for w in (640, 1280, *([width] if 640 < width < 1280 else [])):
+    # originál užší ako 1280 (napr. 800 px, fotky hráčov 600 px) dostane aj variant v plnej šírke, ak nie je blízko kroku
+    for w in (*STEPS, *([width] if width < 1280 and all(width - s > 100 for s in STEPS if s < width) else [])):
         dst = opt_out / rel.parent / f'{rel.name}-{w}.webp'
         if w <= width and not fresh(f, dst):
             todo.append((w, dst))
@@ -88,11 +89,13 @@ for f in sorted([*img_src.glob('archiv/**/*'), *img_src.glob('video/*')]):
         made += 1
 
 # logá partnerov: orezať priehľadné okraje (niektoré súbory majú logo uprostred veľkého prázdneho štvorca)
-#   src/img/archiv/partneri/<logo>.png -> src/img/opt/partneri/<logo>.png
+#   src/img/archiv/partneri/<logo>.png -> src/img/opt/partneri/<logo>.png + .webp (bezstratovo, o ~40 % menšie;
+#   build.js berie menší z dvoch súborov). Logá sa nezmenšujú: ~150 px treba na ostrý telefón (dlaždica ~70 px × 2–3).
 par_out = opt_out / 'partneri'
 for f in sorted((img_src / 'archiv' / 'partneri').glob('*.png')):
     dst = par_out / f.name
-    if fresh(f, dst):
+    dst_w = dst.with_suffix('.webp')
+    if fresh(f, dst) and fresh(f, dst_w):
         continue
     im = Image.open(f).convert('RGBA')
     box = im.getchannel('A').getbbox()
@@ -100,6 +103,7 @@ for f in sorted((img_src / 'archiv' / 'partneri').glob('*.png')):
         im = im.crop(box)
     par_out.mkdir(parents=True, exist_ok=True)
     im.save(dst, optimize=True)
+    im.save(dst_w, 'WEBP', lossless=True, method=6)
     made += 1
 
 # obálky galérií v kartách: náhľad 480 px je na veľkej karte (až 780 px, 2× displej) rozmazaný
