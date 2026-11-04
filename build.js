@@ -522,16 +522,37 @@ function goalsFor(t, player, season) {
   }
   return hits;
 }
+// UKÁŽKA pre klub (config.ukazkaProfilov): vymyslené, ale stále rovnaké údaje podľa mena, na stránke viditeľne označené.
+// Ročník podľa kategórie (U19 ≈ 2008–2009), obce z okolia, odpovede zo zoznamu. Skutočné údaje z data/profily.json ich prepíšu.
+const SAMPLE = {
+  obce: ['Častkovce', 'Horná Streda', 'Brunovce', 'Veľké Orvište', 'Nové Mesto nad Váhom', 'Lubina', 'Hrádok', 'Očkov', 'Modrová', 'Pobedim', 'Kočovce', 'Bošáca', 'Bzince pod Javorinou', 'Stará Lehota'],
+  volno: ['Trénujem, zdokonaľujem sa, pozerám filmy, rád si čítam a chodím do fitka', 'Hrám s kamarátmi futbal aj mimo tréningov a pozerám zápasy', 'Chodím na bicykli, hrám videohry a trávim čas s rodinou', 'Pozerám futbal, chodím plávať a počúvam hudbu', 'Som vonku s kamarátmi, hrám FIFU a chodím na ryby', 'Bicyklujem, hrám tenis a pozerám seriály', 'Trénujem techniku s loptou a pozerám zostrihy zápasov'],
+  kluby: ['Real Madrid', 'FC Barcelona', 'Manchester United', 'Liverpool FC', 'Bayern Mníchov', 'Juventus', 'ŠK Slovan Bratislava', 'AC Miláno', 'Arsenal', 'Paríž Saint-Germain', 'Borussia Dortmund', 'Manchester City'],
+};
+function sampleProfile(t, p) {
+  let h = 2166136261; for (const ch of t.slug + p.name) h = Math.imul(h ^ ch.charCodeAt(0), 16777619) >>> 0;
+  const r = (n, s = 0) => ((h >>> s) ^ (h >>> (s + 7))) % n;
+  const age = Number((t.short.match(/U(\d+)/) || [0, t.isA ? 30 : 15])[1]);
+  const year = new Date(TODAY).getFullYear() - (age - 1) + r(2, 3);
+  const pad = (n) => String(n).padStart(2, '0');
+  return { narodenie: `${pad(1 + r(28, 5))}.${pad(1 + r(12, 9))}.${t.isA ? 1990 + r(14, 2) : year}`, bydlisko: SAMPLE.obce[r(SAMPLE.obce.length, 11)], narodnost: 'SVK', volnyCas: SAMPLE.volno[r(SAMPLE.volno.length, 13)], klub: SAMPLE.kluby[r(SAMPLE.kluby.length, 17)] };
+}
 function profilePages(t) {
   const players = (t.roster || []).flatMap((g) => g.title === 'Hráči' ? g.people : []);
   const season = seasonOf(TODAY);
   players.forEach((p, i) => {
     const slug = playerSlug(p.name);
-    const d = profily[`${t.slug}/${slug}`] || {};
+    // skutočné údaje od klubu (data/profily.json) majú prednosť; kým chýbajú, pri config.ukazkaProfilov ukážka
+    const real = Object.fromEntries(Object.entries(profily[`${t.slug}/${slug}`] || {}).filter(([k, v]) => v && k !== 'meno'));
+    const sample = config.ukazkaProfilov ? sampleProfile(t, p) : {};
+    const d = { ...sample, ...real };
+    const isSample = (k) => !real[k] && !!sample[k];
     const parts = p.name.split(' '); const last = parts.pop();
     const hits = goalsFor(t, p, season.start);
     const goals = hits.reduce((a, h) => a + h.n, 0);
-    const nat = d.narodnost || p.nationality;
+    // národnosť: od klubu, inak zo starého webu (súpisky prípraviek ju majú), až potom ukážka
+    const nat = real.narodnost || p.nationality || d.narodnost;
+    if (p.nationality && !real.narodnost) delete sample.narodnost;
     const facts = [
       d.narodenie && ['Dátum narodenia', esc(d.narodenie)],
       d.bydlisko && ['Bydlisko', esc(d.bydlisko)],
@@ -556,13 +577,13 @@ function profilePages(t) {
       <div class="pro-main">
         <p class="kicker kicker--light">${esc(t.isA ? 'A-mužstvo' : `${t.short} · ${t.sub}`)}</p>
         <h1 class="pro-name"><span>${esc(parts.join(' '))}</span> ${esc(last)}</h1>
-        ${facts.length ? `<dl class="pro-facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>` : ''}
+        ${facts.length ? `${['narodenie', 'bydlisko', 'narodnost'].some(isSample) ? '<p class="pro-sample">Ukážkové údaje – skutočné doplní klub</p>' : ''}<dl class="pro-facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>` : ''}
         ${goals ? `<dl class="pro-stats"><div><dt>Góly v sezóne ${season.label}</dt><dd>${goals}</dd></div></dl>` : ''}
       </div>
     </div>
   </div>
 </section>
-${qa.length ? `<section class="sec sec--first" aria-labelledby="qa-h"><div class="wrap"><h2 class="sr" id="qa-h">Otázky</h2><dl class="pro-qa">${qa.map(([q, a]) => `<div><dt>${q}</dt><dd>${esc(a)}</dd></div>`).join('')}</dl></div></section>` : ''}
+${qa.length ? `<section class="sec sec--first" aria-labelledby="qa-h"><div class="wrap"><h2 class="sr" id="qa-h">Otázky</h2>${['volnyCas', 'klub'].some(isSample) ? '<p class="pro-sample pro-sample--light">Ukážkové odpovede – skutočné doplní klub</p>' : ''}<dl class="pro-qa">${qa.map(([q, a]) => `<div><dt>${q}</dt><dd>${esc(a)}</dd></div>`).join('')}</dl></div></section>` : ''}
 ${hits.length ? `<section class="sec${qa.length ? '' : ' sec--first'}" aria-labelledby="gl-h"><div class="wrap"><h2 class="h3" id="gl-h">Góly v sezóne ${season.label}</h2>
   <ol class="mlist pro-goals">${hits.map(({ m, n }) => { const o = ourScore(m); return `<li class="pro-goal"><time datetime="${m.date}">${fmtDate(m.date)}</time><span>${m.home ? 'doma' : 'vonku'} · ${esc(m.opponent)}</span><b>${o.ours}:${o.theirs}</b><span class="pro-n">${n > 1 ? `${n} góly` : '1 gól'}</span></li>`; }).join('')}</ol>
 </div></section>` : ''}

@@ -5,6 +5,8 @@
   "noindex": true,
   "ukazka": true,
   "_ukazka": "true = žltý pás „Návrh webu, nie oficiálna stránka klubu“ v hlavičke (verejná ukážka); pri ostrom spustení dať false",
+  "ukazkaProfilov": true,
+  "_ukazkaProfilov": "true = profily hráčov majú vymyslené ukážkové údaje (označené na stránke), kým klub nedodá skutočné do data/profily.json; pri ostrom spustení dať false",
   "galerie": {
     "mode": "local",
     "base": "https://okcastkovce.sk/img/public/fotogalerie"
