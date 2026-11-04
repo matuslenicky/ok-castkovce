@@ -1,0 +1,149 @@
+{
+  "_pozn": "Profily hráčov – údaje dopĺňa klub. Zobrazí sa len vyplnené pole. narodnost: SVK (zobrazí vlajku) alebo názov krajiny. meno je len pre orientáciu (berie sa zo súpisky). Pozor: dátum narodenia a bydlisko neplnoletých hráčov zverejňovať len so súhlasom rodičov.",
+  "hraci": {
+    "u19-starsi-dorast/oleksandr-doroshenko": {
+      "meno": "Oleksandr Doroshenko",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/peter-dunar": {
+      "meno": "Peter Dunár",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/samir-forouhar": {
+      "meno": "Samir Forouhar",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/oliver-harmady": {
+      "meno": "Oliver Harmady",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/nicolas-hasko": {
+      "meno": "Nicolas Haško",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/juraj-hladky": {
+      "meno": "Juraj Hladký",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/lucas-hrabal": {
+      "meno": "Lucas Hrabal",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/patrik-hudec": {
+      "meno": "Patrik Hudec",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/kevin-huray": {
+      "meno": "Kevin Huray",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/martin-kunda": {
+      "meno": "Martin Kunda",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/michal-murin": {
+      "meno": "Michal Murin",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/simon-nestak": {
+      "meno": "Simon Nešťák",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/peter-opatovsky": {
+      "meno": "Peter Opatovský",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/daniel-palenik": {
+      "meno": "Daniel Páleník",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/matej-podhorsky": {
+      "meno": "Matej Podhorský",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/matej-pozor": {
+      "meno": "Matej Pozor",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/peter-simek": {
+      "meno": "Peter Šimek",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    },
+    "u19-starsi-dorast/filip-toth": {
+      "meno": "Filip Tóth",
+      "narodenie": "",
+      "bydlisko": "",
+      "narodnost": "",
+      "volnyCas": "",
+      "klub": ""
+    }
+  }
+}

@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { esc, fmtDate, fmtDay, todayISO, splitMatches, matchCentre, matchList, formHTML, weekHTML, nextHTML, todayMatches } from './src/js/shared.mjs';
+import { esc, fmtDate, fmtDay, todayISO, splitMatches, matchCentre, matchList, formHTML, weekHTML, nextHTML, todayMatches, seasonOf, ourScore } from './src/js/shared.mjs';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, 'src');
@@ -487,9 +487,93 @@ function rosterHtml(t, R) {
       : p.photo ? `<img src="${R}${p.photo.replace(/^\//, '')}" alt="${esc(p.name)}" loading="lazy" decoding="async">`
         : `<span class="ph-player" aria-hidden="true"></span>`;
     const role = p.tag && ROLE[p.tag] ? ROLE[p.tag] : p.position || '';
-    return `<li class="player"><div class="player-img${key && hasPic(key) ? ' player-img--card' : ''}">${photo}${p.number ? `<span class="player-no">${esc(p.number)}</span>` : ''}</div>
-      <p class="player-n"><span>${esc(parts.join(' '))}</span> <b>${esc(last)}</b></p>${role ? `<p class="player-r">${esc(role)}</p>` : ''}</li>`;
+    const inner = `<div class="player-img${key && hasPic(key) ? ' player-img--card' : ''}">${photo}${p.number ? `<span class="player-no">${esc(p.number)}</span>` : ''}</div>
+      <p class="player-n"><span>${esc(parts.join(' '))}</span> <b>${esc(last)}</b></p>${role ? `<p class="player-r">${esc(role)}</p>` : ''}`;
+    // hráči majú profil (karta je odkaz), vedenie nie
+    return g.title === 'Hráči' ? `<li class="player"><a class="player-a" href="${R}${t.url}${playerSlug(p.name)}/">${inner}</a></li>` : `<li class="player">${inner}</li>`;
   }).join('')}</ul>`).join('');
+}
+
+// ---- profily hráčov ---------------------------------------------------------------------------
+// údaje od klubu v data/profily.json (zobrazí sa len vyplnené); góly v sezóne sa rátajú zo strelcov pri výsledkoch
+const profily = rd('profily.json', { hraci: {} }).hraci || {};
+const playerSlug = (name) => norm(name).replace(/ /g, '-');
+const NAT = { SVK: 'Slovensko', Slovensko: 'Slovensko', CZE: 'Česko', UKR: 'Ukrajina', HUN: 'Maďarsko' };
+// zjednodušená vlajka SR (trikolóra so štítom), ostatné len text
+const FLAG_SVK = '<svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="2" fill="#fff"/><rect y="2" width="9" height="2" fill="#0b4ea2"/><rect y="4" width="9" height="2" fill="#ee1c25"/><path d="M2.1 1.3h2.3v1.9c0 1-.6 1.6-1.15 1.9-.55-.3-1.15-.9-1.15-1.9z" fill="#ee1c25" stroke="#fff" stroke-width=".18"/><path d="M3.25 1.7v2.1M2.75 2.25h1M2.6 2.8h1.3" stroke="#fff" stroke-width=".22"/><path d="M2.15 3.75c.3-.25.6-.25.75 0 .2-.3.5-.3.7 0 .15-.25.45-.25.75 0-.2.6-.6.95-1.1 1.2-.5-.25-.9-.6-1.1-1.2z" fill="#0b4ea2"/></svg>';
+// strelci z poznámky zápasu: „Janík 3, Opatovský Peter, Vavruš D.“ -> [{slová, počet}]
+function scorers(note) {
+  return String(note || '').split(',').map((s) => s.replace(/\(.*?\)/g, '').trim()).filter(Boolean).map((s) => {
+    const m = s.match(/^(.*?)\s+(\d+)$/);
+    const name = m ? m[1] : s;
+    return { words: norm(name).split(' ').filter(Boolean), raw: name, n: m ? Number(m[2]) : 1 };
+  });
+}
+function goalsFor(t, player, season) {
+  const people = (t.roster || []).flatMap((g) => g.title === 'Hráči' ? g.people : []);
+  const key = (p) => { const w = norm(p.name).split(' '); return { sur: w[w.length - 1], first: w[0] }; };
+  const hits = [];
+  for (const m of teamMatches(t.slug).filter((x) => x.score && x.note && x.date >= season)) {
+    for (const s of scorers(m.note)) {
+      const fits = (p) => { const k = key(p); if (!s.words.includes(k.sur)) return false; const other = s.words.filter((w) => w !== k.sur); return !other.length || other.some((w) => w === k.first || (w.length === 1 && k.first.startsWith(w))); };
+      const all = people.filter(fits);
+      if (all.length === 1 && all[0] === player) hits.push({ m, n: s.n });
+    }
+  }
+  return hits;
+}
+function profilePages(t) {
+  const players = (t.roster || []).flatMap((g) => g.title === 'Hráči' ? g.people : []);
+  const season = seasonOf(TODAY);
+  players.forEach((p, i) => {
+    const slug = playerSlug(p.name);
+    const d = profily[`${t.slug}/${slug}`] || {};
+    const parts = p.name.split(' '); const last = parts.pop();
+    const hits = goalsFor(t, p, season.start);
+    const goals = hits.reduce((a, h) => a + h.n, 0);
+    const nat = d.narodnost || p.nationality;
+    const facts = [
+      d.narodenie && ['Dátum narodenia', esc(d.narodenie)],
+      d.bydlisko && ['Bydlisko', esc(d.bydlisko)],
+      nat && ['Národnosť', `${/^(SVK|Slovensko)$/.test(nat) ? FLAG_SVK : ''}${esc(NAT[nat] || nat)}`],
+    ].filter(Boolean);
+    const qa = [
+      d.volnyCas && ['Čo robíš najradšej vo voľnom čase?', d.volnyCas],
+      d.klub && ['Tvoj najobľúbenejší klub?', d.klub],
+    ].filter(Boolean);
+    const prev = players[i - 1], next = players[i + 1];
+    add(`${t.url}${slug}/`, {
+      title: `${p.name} – ${t.short}`, active: t.isA ? 'a-muzstvo/' : 'mladez/',
+      desc: `${p.name}, ${t.isA ? 'A-mužstvo' : `${t.short} ${t.sub}`} OK Častkovce.`,
+      body: (R) => {
+        const photo = p.foto && hasPic(p.foto) ? pic(p.foto, R, { sizes: '(min-width: 900px) 420px, 80vw', eager: true, alt: p.name })
+          : p.photo ? `<img src="${R}${p.photo.replace(/^\//, '')}" alt="${esc(p.name)}">` : '<span class="ph-player" aria-hidden="true"></span>';
+        return `<section class="pro">
+  <div class="wrap pro-in">
+    <nav class="crumbs" aria-label="Omrvinky"><a href="${R}">Úvod</a>${t.isA ? '' : `<a href="${R}mladez/">Mládež</a>`}<a href="${R}${t.url}">${esc(t.isA ? 'A-mužstvo' : t.short)}</a><span aria-current="page">${esc(p.name)}</span></nav>
+    <div class="pro-grid">
+      <div class="pro-photo${p.foto && hasPic(p.foto) ? ' pro-photo--card' : ''}">${photo}</div>
+      <div class="pro-main">
+        <p class="kicker kicker--light">${esc(t.isA ? 'A-mužstvo' : `${t.short} · ${t.sub}`)}</p>
+        <h1 class="pro-name"><span>${esc(parts.join(' '))}</span> ${esc(last)}</h1>
+        ${facts.length ? `<dl class="pro-facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>` : ''}
+        ${goals ? `<dl class="pro-stats"><div><dt>Góly v sezóne ${season.label}</dt><dd>${goals}</dd></div></dl>` : ''}
+      </div>
+    </div>
+  </div>
+</section>
+${qa.length ? `<section class="sec sec--first" aria-labelledby="qa-h"><div class="wrap"><h2 class="sr" id="qa-h">Otázky</h2><dl class="pro-qa">${qa.map(([q, a]) => `<div><dt>${q}</dt><dd>${esc(a)}</dd></div>`).join('')}</dl></div></section>` : ''}
+${hits.length ? `<section class="sec${qa.length ? '' : ' sec--first'}" aria-labelledby="gl-h"><div class="wrap"><h2 class="h3" id="gl-h">Góly v sezóne ${season.label}</h2>
+  <ol class="mlist pro-goals">${hits.map(({ m, n }) => { const o = ourScore(m); return `<li class="pro-goal"><time datetime="${m.date}">${fmtDate(m.date)}</time><span>${m.home ? 'doma' : 'vonku'} · ${esc(m.opponent)}</span><b>${o.ours}:${o.theirs}</b><span class="pro-n">${n > 1 ? `${n} góly` : '1 gól'}</span></li>`; }).join('')}</ol>
+</div></section>` : ''}
+<section class="sec sec--tint"><div class="wrap pro-nav">
+  ${prev ? `<a href="${R}${t.url}${playerSlug(prev.name)}/"><span>Predchádzajúci hráč</span><b>${esc(prev.name)}</b></a>` : '<span></span>'}
+  <a class="pro-back" href="${R}${t.url}#supiska">Celá súpiska ${esc(t.isA ? 'A-mužstva' : t.short)}</a>
+  ${next ? `<a class="pro-next" href="${R}${t.url}${playerSlug(next.name)}/"><span>Ďalší hráč</span><b>${esc(next.name)}</b></a>` : '<span></span>'}
+</div></section>`;
+      },
+    });
+  });
 }
 function teamPage(t) {
   add(t.url, {
@@ -525,6 +609,7 @@ ${videoDialog()}`;
   });
 }
 teams.forEach(teamPage);
+teams.forEach(profilePages);
 
 add('mladez/', {
   title: 'Mládež', active: 'mladez/', desc: 'Mládežnícke kategórie OK Častkovce od U7 po U19.',
