@@ -123,13 +123,13 @@ export function weekHTML(all, today, { labels = {}, urls = {}, root = '' } = {})
     if (m.date !== day) {
       if (day) out += '</ul></li>';
       const name = m.date === today ? 'Dnes' : m.date === tomorrow ? 'Zajtra' : `${DNI[d(m.date).getDay()]} ${fmtDate(m.date).replace(/ \d{4}$/, '')}`;
-      out += `<li class="wk-day${m.date === today ? ' wk-day--today' : ''}"><h3 class="wk-h"><time datetime="${m.date}">${name}</time></h3><ul class="wk-list">`;
+      out += `<li class="wk-day${m.date === today ? ' wk-day--today' : ''}"><h3 class="wk-h"><time datetime="${esc(m.date)}">${name}</time></h3><ul class="wk-list">`;
       day = m.date;
     }
     const s = ourScore(m);
     const mid = s ? `<span class="wk-score">${s.ours}:${s.theirs}</span>` : `<span class="wk-time">${esc(fmtTime(m.time) || '–')}</span>`;
     const team = labels[m.team] || m.team;
-    const tl = urls[m.team] ? `<a class="wk-team" href="${root}${urls[m.team]}">${esc(team)}</a>` : `<span class="wk-team">${esc(team)}</span>`;
+    const tl = urls[m.team] ? `<a class="wk-team" href="${esc(root + urls[m.team])}">${esc(team)}</a>` : `<span class="wk-team">${esc(team)}</span>`;
     out += `<li class="wk-row">${mid}${tl}<span class="wk-opp">${m.home ? 'doma' : 'vonku'} · ${esc(m.opponent)}</span></li>`;
   }
   return `<ol class="wk">${out}</ul></li></ol>`;
