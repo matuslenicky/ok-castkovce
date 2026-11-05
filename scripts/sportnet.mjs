@@ -1,6 +1,7 @@
 // Výsledky, strelci a karty zo Sportnetu (Futbalnet, verejné API súťaží) -> data/sportnet.json
 //   node scripts/sportnet.mjs            – aktuálna sezóna, detail (góly, karty) len pre zápasy, ktoré ho ešte nemajú
 //   FULL=1 node scripts/sportnet.mjs     – stiahne znova aj detaily už uložených zápasov
+//   node scripts/sportnet.mjs --if-due   – len ak sa podľa rozpisu nejaký zápas skončil a chýba jeho výsledok (GitHub Actions)
 // Zdroj: https://sutaze.api.sportnet.online/api/v2 (bez kľúča, rovnaké údaje ako sportnet.sme.sk/futbalnet/k/ok-castkovce/).
 // Prípravky U9–U11 výsledky nemajú (najmenším sa skóre nezapisuje), U7 na Sportnete nie je.
 import fs from 'node:fs';
@@ -47,7 +48,24 @@ const CARD = { yellow_card: 'yellow', red_card: 'red', second_yellow_card: 'yell
 
 const prev = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : { matches: [] };
 const prevById = new Map(prev.matches.map((m) => [m.id, m]));
-const today = new Date();
+const today = process.env.NOW ? new Date(process.env.NOW) : new Date(); // NOW=2026-11-08T15:30 na skúšku
+
+// --if-due: Sportnet sa kontaktuje, len keď sa podľa uloženého rozpisu nejaký zápas skončil a jeho výsledok ešte nemáme
+// (od 1 h 40 min po výkope do 14 h; neskôr ho zachytí denné úplné stiahnutie). Inak skončí bez sťahovania.
+if (process.argv.includes('--if-due')) {
+  // výkop v slovenskom čase -> okamih (posun časového pásma podľa Intl, platí aj pri letnom čase)
+  const kickoff = (m) => {
+    const [y, mo, d] = m.date.split('-').map(Number), [h, mi] = (m.time || '12:00').split(':').map(Number);
+    const guess = Date.UTC(y, mo - 1, d, h, mi);
+    const [ld, lt] = local.format(new Date(guess)).split(' ');
+    const shown = Date.UTC(...ld.split('-').map((x, i) => Number(x) - (i === 1 ? 1 : 0)), ...lt.split(':').map(Number));
+    return guess - (shown - guess);
+  };
+  const now = today.getTime();
+  const due = prev.matches.filter((m) => (!m.played || !m.detail) && now >= kickoff(m) + 100 * 6e4 && now <= kickoff(m) + 14 * 36e5);
+  if (!due.length) { console.log('Sportnet: žiadny skončený zápas bez výsledku, nesťahujem'); process.exit(0); }
+  console.log(`Sportnet: na kontrolu ${due.map((m) => `${m.team} ${m.date} ${m.time} ${m.opponent}`).join('; ')}`);
+}
 
 const { teams } = await get(`/public/${SPACE}/teams?limit=200`);
 const season = teams.map((t) => t.season).find((s) => new Date(s.dateFrom) <= today && today <= new Date(s.dateTo));

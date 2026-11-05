@@ -1,13 +1,14 @@
-# Výsledky zo Sportnetu každú hodinu: stiahne skóre, strelcov a karty (scripts/sportnet.mjs) a keď sa niečo zmenilo,
-# zostaví web a nasadí ho na gh-pages (scripts/deploy.mjs). Raz denne nasadí aj bez zmeny, aby sedel „dnes“ v rozpise.
-# Fotky (media/) nie sú v repozitári – obnovia sa z nasadeného webu na gh-pages (foto/, galerie/).
-# Ručné spustenie: Actions → Sportnet výsledky → Run workflow.
+# Výsledky zo Sportnetu podľa zápasov: cez deň sa každých 20 min pozrie do uloženého rozpisu (bez kontaktu so Sportnetom)
+# a výsledky stiahne len vtedy, keď sa nejaký zápas skončil a jeho výsledok ešte nemáme (scripts/sportnet.mjs --if-due).
+# Raz denne stiahne celý rozpis (presunuté zápasy, opravy zápisov) a nasadí aj bez zmeny, aby sedel „dnes“ v rozpise.
+# Pri zmene zostaví web a nasadí ho na gh-pages (scripts/deploy.mjs). Fotky (media/) nie sú v repozitári – obnovia sa
+# z nasadeného webu na gh-pages (foto/, galerie/). Ručné spustenie (celé stiahnutie): Actions → Sportnet výsledky → Run workflow.
 name: Sportnet výsledky
 
 on:
   schedule:
-    - cron: '17 * * * *'   # každú hodinu (UTC)
-    - cron: '5 3 * * *'    # denné obnovenie o 4:05/5:05 slovenského času
+    - cron: '*/20 8-23 * * *'  # kontrola rozpisu cez deň (UTC = 9:00 – 0:40 / 10:00 – 1:40 slovenského času)
+    - cron: '5 3 * * *'        # denné úplné stiahnutie o 4:05/5:05 slovenského času
   workflow_dispatch:
 
 permissions:
@@ -40,7 +41,11 @@ jobs:
         id: sn
         run: |
           before=$(sha256sum data/sportnet.json | cut -d' ' -f1)
-          node scripts/sportnet.mjs
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event.schedule }}" = "5 3 * * *" ]; then
+            node scripts/sportnet.mjs
+          else
+            node scripts/sportnet.mjs --if-due
+          fi
           after=$(sha256sum data/sportnet.json | cut -d' ' -f1)
           if [ "$before" != "$after" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event.schedule }}" = "5 3 * * *" ]; then
             echo "deploy=1" >> "$GITHUB_OUTPUT"
