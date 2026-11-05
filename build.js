@@ -114,7 +114,10 @@ const hasPic = (key) => !!foto.obrazky?.[key];
 // sizes podľa skutočne vykreslenej šírky fotky 16:9 pri object-fit: cover (orez do užšieho rámu ju zväčší):
 // hlavička podstránky na telefóne ~390×280–320 px -> fotka ~500–565 px; dlaždica 4:5 -> 2,2× šírka dlaždice;
 // karta mládeže na telefóne má obrázok 112×112 -> fotka ~200 px
-const PHERO_SIZES = '(max-width: 479.98px) 145vw, 100vw';
+// Telefón s 3× displejom (iPhone) by bral 2000 px (~345 KB); fotka je pod tmavým závojom, stačí 1200 px (400 px × 3).
+// Dva zápisy rozlíšenia: neznámu podmienku prehliadač preskočí a použije ďalšiu položku.
+const PHERO_HIDPI = '(max-width: 479.98px) and (min-resolution: 2.5dppx) 400px, (max-width: 479.98px) and (-webkit-min-device-pixel-ratio: 2.5) 400px';
+const PHERO_SIZES = `${PHERO_HIDPI}, (max-width: 479.98px) 145vw, 100vw`;
 const G = config.galerie;
 const galDir = (g) => g.path.split('/').pop();
 // local = zmenšeniny z media/galerie-web (scripts/images.py) priamo na webe; storage = Supabase Storage; old-site = starý web
@@ -266,7 +269,7 @@ ${config.noindex ? '<meta name="robots" content="noindex">\n' : ''}${canon ? `<l
 <link rel="icon" type="image/png" href="${R}img/favicon.png">
 <link rel="preload" href="${R}fonts/barlow-condensed-800i.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="${R}fonts/barlow-400.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="${R}css/site.css">
+${/<(b|strong)\b/.test(body) ? `<link rel="preload" href="${R}fonts/barlow-700.woff" as="font" type="font/woff" crossorigin>\n` : ''}<link rel="stylesheet" href="${R}css/site.css">
 <script>(function(d){d.classList.add('js');if(/[?&](kategoria|kde)=/.test(location.search)){d.classList.add('js-filtering');setTimeout(function(){d.classList.remove('js-filtering')},3000)}})(document.documentElement)</script>
 <script type="module" src="${R}js/site.mjs"></script>
 ${ld}</head>

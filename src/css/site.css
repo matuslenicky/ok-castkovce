@@ -1,8 +1,11 @@
 /* OK Častkovce – štýly webu. Farby z erbu: červená #dc2a1c, žltá #f5cb00, modrá #292d88 (len v náznaku). */
-/* záložné písmo so šírkou Barlow (zmerané na texte webu): kým sa Barlow načíta, text sa nelomí inak (CLS) */
-@font-face { font-family: 'Barlow FB'; font-weight: 400 500; src: local('Arial'), local('ArialMT'); size-adjust: 97%; }
-@font-face { font-family: 'Barlow FB'; font-weight: 600 900; src: local('Arial Bold'), local('Arial-BoldMT'); size-adjust: 91%; }
-@font-face { font-family: 'Barlow Condensed FB'; font-weight: 600 900; src: local('Arial Bold'), local('Arial-BoldMT'); size-adjust: 75%; }
+/* záložné písmo so šírkou a výškou riadku Barlow, kým sa Barlow načíta – text sa potom nelomí inak (CLS).
+   size-adjust = priemerná šírka znaku Barlow / Arial na texte správ a klubu (fontTools); ascent/descent = Barlow (1,0 / 0,2 em)
+   vydelené size-adjust, lebo prehliadač ich ním ešte násobí. */
+@font-face { font-family: 'Barlow FB'; font-weight: 400 500; src: local('Arial'), local('ArialMT'); size-adjust: 95.2%; ascent-override: 105%; descent-override: 21%; line-gap-override: 0%; }
+@font-face { font-family: 'Barlow FB'; font-weight: 600; src: local('Arial Bold'), local('Arial-BoldMT'); size-adjust: 90.7%; ascent-override: 110.3%; descent-override: 22.1%; line-gap-override: 0%; }
+@font-face { font-family: 'Barlow FB'; font-weight: 700 900; src: local('Arial Bold'), local('Arial-BoldMT'); size-adjust: 91.6%; ascent-override: 109.2%; descent-override: 21.8%; line-gap-override: 0%; }
+@font-face { font-family: 'Barlow Condensed FB'; font-weight: 600 900; src: local('Arial Bold'), local('Arial-BoldMT'); size-adjust: 67.5%; ascent-override: 148.1%; descent-override: 29.6%; line-gap-override: 0%; }
 :root {
   --ink: #121317;
   --ink-2: #1c1e24;
