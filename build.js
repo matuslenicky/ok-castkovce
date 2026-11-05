@@ -876,12 +876,40 @@ add('404/', {
 <section class="sec sec--first"><div class="wrap"><p><a class="btn btn--red" href="${R}">Späť na úvod${I.arrow}</a></p></div></section>`,
 });
 
+// ---- ukážka administrácie (dist/admin/): dáta pre src/admin/admin.js ------------------------------
+// výsledky, strelci a karty zo Sportnetu (data/sportnet.json, scripts/sportnet.mjs) + galérie, videá, súpisky a správy webu
+function writeAdminDemo() {
+  const sn = rd('sportnet.json', null);
+  const R = '../';
+  const galFor = (m) => {
+    const g = gals.find((x) => x.team === m.team && x.date === m.date) || (m.score ? gals.find((x) => x.date && pairMatch(x.title, x.date)?.date === m.date && norm(x.title).includes(norm(m.opponent))) : null);
+    if (!g || !g.files?.length) return null;
+    return { url: `fotogaleria/${g.slug}/`, count: g.files.length, thumbs: g.files.slice(0, 5).map((f) => galImg(g, f, R, true)) };
+  };
+  const vidFor = (m) => { const v = m.score && videos.find((x) => dayDiff(x.date, m.date) <= 7 && norm(x.title).includes(norm(m.opponent))); return v ? { id: v.youtube, title: v.title } : null; };
+  const list = (sn?.matches || []).map((m) => ({ ...m, gallery: galFor(m), video: vidFor(m) }));
+  const photoOf = (p) => {
+    const f = p.foto && foto.obrazky?.[p.foto];
+    if (f) return `${R}foto/${p.foto}-${f.widths[0]}.webp`;
+    return p.photo ? R + p.photo.replace(/^\//, '') : null;
+  };
+  const rosters = Object.fromEntries(teams.map((t) => [t.slug, (t.roster || []).filter((g) => /hráči/i.test(g.title)).flatMap((g) => g.people).map((p) => ({ name: p.name, number: p.number || '', photo: photoOf(p) }))]));
+  const demo = {
+    updated: sn?.updated || new Date().toISOString(), season: sn?.season || '',
+    teams: teams.filter((t) => !sn || sn.teams[t.slug]).map((t) => ({ slug: t.slug, short: t.short, sub: t.sub })),
+    matches: list, rosters,
+    news: news.map((n) => ({ id: n.id, title: n.title, date: n.date, img: newsImage(n, R) })),
+  };
+  fs.writeFileSync(path.join(OUT, 'admin', 'demo.json'), JSON.stringify(demo));
+}
+
 // ---- zápis -------------------------------------------------------------------------------------
 fs.rmSync(OUT, { recursive: true, force: true });
 const copy = (from, to) => { if (fs.existsSync(from)) fs.cpSync(from, to, { recursive: true }); };
 copy(path.join(SRC, 'img'), path.join(OUT, 'img'));
 copy(path.join(SRC, 'fonts'), path.join(OUT, 'fonts'));
 copy(path.join(SRC, 'js'), path.join(OUT, 'js'));
+if (config.adminDemo !== false) { copy(path.join(SRC, 'admin'), path.join(OUT, 'admin')); writeAdminDemo(); }
 copy(path.join(ROOT, 'media', 'foto-web'), path.join(OUT, 'foto'));
 if (G.mode === 'local') copy(path.join(ROOT, 'media', 'galerie-web'), path.join(OUT, 'galerie'));
 fs.rmSync(path.join(OUT, 'fonts', 'fonts.css'), { force: true });

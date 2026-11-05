@@ -1,0 +1,8601 @@
+{
+ "source": "Sportnet / Futbalnet",
+ "season": "2026/2027",
+ "updated": "2026-11-05T10:30:42.302Z",
+ "teams": {
+  "a-muzstvo": "6a293936225470a9be3bbc40",
+  "u19-starsi-dorast": "6a2e66f8e4bf121524404b4d",
+  "u17-mladsi-dorast": "6a2e670ae4bf121524406c95",
+  "u15-starsi-ziaci": "6a2ec7ece4bf1215240fee96",
+  "u15-starsi-ziaci-b": "6a2faa40e4bf121524e282ab",
+  "u13-mladsi-ziaci": "6a2ec805e4bf1215241029fe",
+  "u13-mladsi-ziaci-b": "6a2faa4fe4bf121524e2a1e6",
+  "u11-pripravka": "6a3247a1e5a4847e62195f1d",
+  "u10-pripravka": "6a3247b6e5a4847e62198b08",
+  "u9-pripravka": "6a3247cee5a4847e6219b709"
+ },
+ "matches": [
+  {
+   "id": "6a3c3bede5a4847e626b41c4",
+   "team": "a-muzstvo",
+   "date": "2026-08-01",
+   "time": "17:00",
+   "home": false,
+   "opponent": "TJ Slavoj Boleráz",
+   "competition": "Slovnaft Cup",
+   "part": "Slovenský pohár - SLOVNAFT CUP",
+   "round": "1.kolo",
+   "played": true,
+   "score": "2:1",
+   "goals": [
+    {
+     "min": "58",
+     "player": "Patrik Majkút",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "77",
+     "player": "Jakub Krč",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "84",
+     "player": "Daniel Martinka",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "90",
+     "player": "Šimon Leo Náhlik",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "90",
+     "player": "Urban Mazanovský",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Slavoj Boleráz",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928549",
+   "detail": true
+  },
+  {
+   "id": "6a3c4378e5a4847e6278dc37",
+   "team": "a-muzstvo",
+   "date": "2026-08-07",
+   "time": "18:30",
+   "home": false,
+   "opponent": "MŠK Senec",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "1",
+   "played": true,
+   "score": "3:2",
+   "goals": [
+    {
+     "min": "18",
+     "player": "Gabriel Tramontina Pol",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "20",
+     "player": "Jaroslav Šalkovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "41",
+     "player": "Abass Bukunmi Adeyemi",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "64",
+     "player": "Imrich Bedecs",
+     "side": "opp",
+     "kind": "penalty"
+    },
+    {
+     "min": "75",
+     "player": "David Fiala",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "38",
+     "player": "Šimon Held",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "50",
+     "player": "Patrik Paulen",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "69",
+     "player": "David Fiala",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "71",
+     "player": "Šimon Leo Náhlik",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "74",
+     "player": "Patrik Majkút",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "84",
+     "player": "Šimon Leo Náhlik",
+     "side": "our",
+     "kind": "yellow-red"
+    }
+   ],
+   "venue": "NTC Senec",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928652",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e6d14e91f303353949",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-08-08",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK Beluša",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "1",
+   "played": true,
+   "score": "1:11",
+   "goals": [
+    {
+     "min": "3",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "12",
+     "player": "Tomáš Kubiš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "18",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "24",
+     "player": "Samuel Letko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Tomáš Ševčík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "32",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "43",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "52",
+     "player": "Benjamin Peterka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "54",
+     "player": "Adam Roman Paller",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Makar Biriuk",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "62",
+     "player": "Benjamin Peterka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "64",
+     "player": "Mateo Madro",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "TJ Kovo Beluša",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955444",
+   "detail": true
+  },
+  {
+   "id": "6a4f461dd14e91f303377060",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-08-08",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FK Beluša",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "1",
+   "played": true,
+   "score": "3:7",
+   "goals": [
+    {
+     "min": "2",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "5",
+     "player": "Michal Vrbata",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "6",
+     "player": "Tobias Bezek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "14",
+     "player": "Michal Vrbata",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "16",
+     "player": "Adam Gono",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "25",
+     "player": "Alex Valentino Klčo",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "38",
+     "player": "Michal Vrbata",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "49",
+     "player": "Mateo Masár",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "59",
+     "player": "Michal Dendis",
+     "side": "our",
+     "kind": "penalty"
+    }
+   ],
+   "cards": [],
+   "venue": "TJ Kovo Beluša",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955684",
+   "detail": true
+  },
+  {
+   "id": "6a42e944e5a4847e6256eb8c",
+   "team": "u19-starsi-dorast",
+   "date": "2026-08-15",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FKM Karlova Ves Bratislava",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "1",
+   "played": true,
+   "score": "5:2",
+   "goals": [
+    {
+     "min": "39",
+     "player": "Samuel Bobovský",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "45",
+     "player": "Patrik Dulla",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "51",
+     "player": "Patrik Dulla",
+     "side": "opp",
+     "kind": "penalty"
+    },
+    {
+     "min": "52",
+     "player": "Peter Opatovský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "70",
+     "player": "Maximilián Magdolen",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "74",
+     "player": "Martin Janík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "89",
+     "player": "Tomáš Lauko",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "75",
+     "player": "",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FK Lamač Bratislava",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929610",
+   "detail": true
+  },
+  {
+   "id": "6a441463e5a4847e623baba5",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-08-15",
+   "time": "12:30",
+   "home": false,
+   "opponent": "FKM Karlova Ves Bratislava",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "1",
+   "played": true,
+   "score": "2:1",
+   "goals": [
+    {
+     "min": "35",
+     "player": "Michal Konečný",
+     "side": "opp",
+     "kind": "penalty"
+    },
+    {
+     "min": "54",
+     "player": "Denis Fečík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "80",
+     "player": "Oliver Pažitka",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "FK Lamač Bratislava",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930744",
+   "detail": true
+  },
+  {
+   "id": "6a3c4378e5a4847e6278d988",
+   "team": "a-muzstvo",
+   "date": "2026-08-15",
+   "time": "19:00",
+   "home": false,
+   "opponent": "FC Nitra",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "2",
+   "played": true,
+   "score": "3:2",
+   "goals": [
+    {
+     "min": "9",
+     "player": "Abdullahi Aliyu Adam",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "21",
+     "player": "Abass Bukunmi Adeyemi",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "32",
+     "player": "Filip Balaj",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "54",
+     "player": "Filip Balaj",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "81",
+     "player": "Gabriel Tramontina Pol",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "58",
+     "player": "Richard Žákech",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "79",
+     "player": "Abdullahi Aliyu Adam",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FC Nitra",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928653",
+   "detail": true
+  },
+  {
+   "id": "6a4bd34c5b0f57d4f481e750",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-08-16",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC ViOn Zlaté Moravce - Vráble B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "2",
+   "played": true,
+   "score": "5:1",
+   "goals": [
+    {
+     "min": "8",
+     "player": "Filip Orihel",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "27",
+     "player": "Sebastián Andrísek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Lucas Horváth",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "35",
+     "player": "Marco Čentéš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "46",
+     "player": "Lucas Balaj",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "60",
+     "player": "Peter Masár",
+     "side": "our",
+     "kind": "penalty"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941418",
+   "detail": true
+  },
+  {
+   "id": "6a4bd3715b0f57d4f48282b4",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-08-16",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FC ViOn Zlaté Moravce - Vráble B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "2",
+   "played": true,
+   "score": "6:3",
+   "goals": [
+    {
+     "min": "12",
+     "player": "Timotej Drahoš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "23",
+     "player": "Ján Fábik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "24",
+     "player": "Alex Valentino Klčo",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "31",
+     "player": "Karter Tubzoo Lee",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "38",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "43",
+     "player": "Tobias Bezek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "47",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "52",
+     "player": "Karter Tubzoo Lee",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "59",
+     "player": "Alex Valentino Klčo",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942030",
+   "detail": true
+  },
+  {
+   "id": "6a3c4379e5a4847e6278de21",
+   "team": "a-muzstvo",
+   "date": "2026-08-22",
+   "time": "16:30",
+   "home": false,
+   "opponent": "FC Baník Prievidza",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "3",
+   "played": true,
+   "score": "4:2",
+   "goals": [
+    {
+     "min": "10",
+     "player": "Boris Todorović",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "42",
+     "player": "Abass Bukunmi Adeyemi",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "45",
+     "player": "Filip Škrteľ",
+     "side": "opp",
+     "kind": "penalty"
+    },
+    {
+     "min": "47",
+     "player": "Jozef Balčirák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "65",
+     "player": "Gabriel Tramontina Pol",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "87",
+     "player": "Nikolas Valo",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "41",
+     "player": "Martin Filkorn",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "45",
+     "player": "Alexej Mizerák",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "72",
+     "player": "Dmytro Laktionov",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "79",
+     "player": "Patrik Majkút",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "81",
+     "player": "Erik Kramár",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "89",
+     "player": "Filip Škrteľ",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Mestský futbalový štadión Prievidza",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928668",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e6d14e91f303353b3f",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-08-23",
+   "time": "10:00",
+   "home": false,
+   "opponent": "Futbalový klub Senica",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "3",
+   "played": true,
+   "score": "2:2",
+   "goals": [
+    {
+     "min": "53",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "60",
+     "player": "Filip Brian Pritchard",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "66",
+     "player": "Adam Roman Paller",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "69",
+     "player": "Denis Koch",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "13",
+     "player": "Lucas Bartoš",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "34",
+     "player": "Senol Kirdaroglu",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FK Senica",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955461",
+   "detail": true
+  },
+  {
+   "id": "6a4bd34c5b0f57d4f481e78b",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-08-23",
+   "time": "10:00",
+   "home": false,
+   "opponent": "Futbalový klub Senica B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "3",
+   "played": true,
+   "score": "1:4",
+   "goals": [
+    {
+     "min": "9",
+     "player": "Samuel Kubíček",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "20",
+     "player": "Peter Masár",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "33",
+     "player": "Eliáš Vaňovič",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "40",
+     "player": "Jakub Nosko",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "61",
+     "player": "Lucas Balaj",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Čáčov",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941426",
+   "detail": true
+  },
+  {
+   "id": "6a42e944e5a4847e6256eb87",
+   "team": "u19-starsi-dorast",
+   "date": "2026-08-23",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK Lokomotíva Trnava",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "2",
+   "played": true,
+   "score": "6:0",
+   "goals": [
+    {
+     "min": "13",
+     "player": "Simon Nešťák",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "21",
+     "player": "Martin Janík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "62",
+     "player": "Martin Janík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "66",
+     "player": "Martin Janík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "80",
+     "player": "Matej Podhorský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "90",
+     "player": "Michal Murin",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "22",
+     "player": "",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "56",
+     "player": "Timur Hečko",
+     "side": "opp",
+     "kind": "red"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929617",
+   "detail": true
+  },
+  {
+   "id": "6a4f461ed14e91f3033771b1",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-08-23",
+   "time": "11:45",
+   "home": false,
+   "opponent": "Futbalový klub Senica",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "3",
+   "played": true,
+   "score": "9:1",
+   "goals": [
+    {
+     "min": "6",
+     "player": "Ondrej Vizváry",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "16",
+     "player": "Patrik Wallner",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Matiáš Žúrek",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "34",
+     "player": "Marek Flajžík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "36",
+     "player": "Sebastián Deák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "37",
+     "player": "Patrik Wallner",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "39",
+     "player": "Sebastián Deák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "43",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "47",
+     "player": "Dominik Lenko",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "48",
+     "player": "Marek Flajžík",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "FK Senica",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955701",
+   "detail": true
+  },
+  {
+   "id": "6a4bd3745b0f57d4f48289b2",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-08-23",
+   "time": "11:45",
+   "home": false,
+   "opponent": "Futbalový klub Senica B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "3",
+   "played": true,
+   "score": "5:3",
+   "goals": [
+    {
+     "min": "12",
+     "player": "Tobias Bezek",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "23",
+     "player": "Erik Liška",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "24",
+     "player": "Erik Liška",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Ján Fábik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "30",
+     "player": "Mathias Kutlak",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "32",
+     "player": "Jakub Wolf",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "45",
+     "player": "Ján Fábik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "60",
+     "player": "Jozef Chovančík",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Čáčov",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942038",
+   "detail": true
+  },
+  {
+   "id": "6a441463e5a4847e623bab12",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-08-23",
+   "time": "13:00",
+   "home": true,
+   "opponent": "FK Lokomotíva Trnava",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "2",
+   "played": true,
+   "score": "1:4",
+   "goals": [
+    {
+     "min": "52",
+     "player": "Christian Michal Krajčovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "54",
+     "player": "Tadeáš Falis",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "63",
+     "player": "Matej Rozvadský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "79",
+     "player": "Kristian Vlk",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "80",
+     "player": "Andrej Žitnák",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930751",
+   "detail": true
+  },
+  {
+   "id": "6a4e294fd14e91f30379ccd6",
+   "team": "u10-pripravka",
+   "date": "2026-08-29",
+   "time": "10:00",
+   "home": true,
+   "opponent": "",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "1",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e294fd14e91f30379ccd6/"
+  },
+  {
+   "id": "6a4f44e6d14e91f303353a25",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-08-29",
+   "time": "10:00",
+   "home": true,
+   "opponent": "PFK Piešťany",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "4",
+   "played": true,
+   "score": "2:0",
+   "goals": [
+    {
+     "min": "21",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "46",
+     "player": "Patrik Mikuš",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955464",
+   "detail": true
+  },
+  {
+   "id": "6a4e2891d14e91f3037878ad",
+   "team": "u9-pripravka",
+   "date": "2026-08-29",
+   "time": "10:00",
+   "home": true,
+   "opponent": "",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "1",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2891d14e91f3037878ad/"
+  },
+  {
+   "id": "6a3c4378e5a4847e6278db8a",
+   "team": "a-muzstvo",
+   "date": "2026-08-29",
+   "time": "10:30",
+   "home": false,
+   "opponent": "FK DAC 1904 Dunajská Streda B",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "4",
+   "played": true,
+   "score": "1:3",
+   "goals": [
+    {
+     "min": "27",
+     "player": "Nino Žiga",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "33",
+     "player": "Gabriel Tramontina Pol",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "70",
+     "player": "Richard Žákech",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "90",
+     "player": "Alex Ďuriš",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "10",
+     "player": "Adam Lábo",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "13",
+     "player": "Tomáš Horniak",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "69",
+     "player": "Denis Valko",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "74",
+     "player": "Filip Koritina",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "83",
+     "player": "Urban Mazanovský",
+     "side": "our",
+     "kind": "red"
+    },
+    {
+     "min": "92",
+     "player": "Marcell Hogenbuch",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "DAC Academy - ihrisko č.1",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928670",
+   "detail": true
+  },
+  {
+   "id": "6a4f461ed14e91f30337722a",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-08-29",
+   "time": "11:45",
+   "home": true,
+   "opponent": "PFK Piešťany",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "4",
+   "played": true,
+   "score": "1:11",
+   "goals": [
+    {
+     "min": "7",
+     "player": "Xavier Marek",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "10",
+     "player": "Xavier Marek",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "12",
+     "player": "Xavier Marek",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "14",
+     "player": "Jonáš Selecký",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "17",
+     "player": "Filip Koyš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "18",
+     "player": "Filip Koyš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "20",
+     "player": "Filip Koyš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "22",
+     "player": "Filip Koyš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "32",
+     "player": "Matej Horváth",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "39",
+     "player": "Filip Koyš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "44",
+     "player": "Xavier Marek",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "49",
+     "player": "Matej Horváth",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955704",
+   "detail": true
+  },
+  {
+   "id": "6a4e353ed14e91f3038f4462",
+   "team": "u11-pripravka",
+   "date": "2026-08-30",
+   "time": "10:00",
+   "home": true,
+   "opponent": "",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "1",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353ed14e91f3038f4462/"
+  },
+  {
+   "id": "6a4bd34c5b0f57d4f481e972",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-08-30",
+   "time": "10:00",
+   "home": true,
+   "opponent": "OFK Dynamo Malženice B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "4",
+   "played": true,
+   "score": "1:3",
+   "goals": [
+    {
+     "min": "16",
+     "player": "Alex Lukačovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "34",
+     "player": "Filip Kudlej",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "41",
+     "player": "Matej Dudáš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "63",
+     "player": "Alex Lukačovič",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "65",
+     "player": "Lucas Balaj",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941429",
+   "detail": true
+  },
+  {
+   "id": "6a42e944e5a4847e6256ed4b",
+   "team": "u19-starsi-dorast",
+   "date": "2026-08-30",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK Spartak Dubnica nad Váhom",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "3",
+   "played": true,
+   "score": "4:2",
+   "goals": [
+    {
+     "min": "26",
+     "player": "Filip Belko",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "32",
+     "player": "Denis Ružička",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "57",
+     "player": "Dávid Didi",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "67",
+     "player": "Samuel Škuta",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "82",
+     "player": "Simon Nešťák",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "89",
+     "player": "Simon Nešťák",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "56",
+     "player": "Adrian Pagáč",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Mestský športový areál Dubnica nad Váhom",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929627",
+   "detail": true
+  },
+  {
+   "id": "6a4bd35b5b0f57d4f482275d",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-08-30",
+   "time": "11:45",
+   "home": true,
+   "opponent": "OFK Dynamo Malženice B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "4",
+   "played": true,
+   "score": "3:0",
+   "goals": [
+    {
+     "min": "26",
+     "player": "Alex Valentino Klčo",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "61",
+     "player": "Tomáš Šimek",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942041",
+   "detail": true
+  },
+  {
+   "id": "6a441464e5a4847e623bb1e4",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-08-30",
+   "time": "12:30",
+   "home": false,
+   "opponent": "FK Spartak Dubnica nad Váhom",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "3",
+   "played": true,
+   "score": "2:2",
+   "goals": [
+    {
+     "min": "29",
+     "player": "Oliver Pecho",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "47",
+     "player": "Samuel Laš",
+     "side": "opp",
+     "kind": "penalty"
+    },
+    {
+     "min": "69",
+     "player": "Michal Škuta",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "80",
+     "player": "Matej Adamovič",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "24",
+     "player": "Eliáš Šido",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "33",
+     "player": "Matej Adamovič",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "34",
+     "player": "Maximilián Kapko",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "34",
+     "player": "Marko Beňačka",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "46",
+     "player": "Marek Janega",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "47",
+     "player": "Samuel Laš",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "49",
+     "player": "Tomáš Maník",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "77",
+     "player": "Jakub Jobbágy",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Mestský športový areál Dubnica nad Váhom",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930761",
+   "detail": true
+  },
+  {
+   "id": "6a3c4379e5a4847e6278dfc1",
+   "team": "a-muzstvo",
+   "date": "2026-09-05",
+   "time": "16:00",
+   "home": true,
+   "opponent": "FK Slovan Duslo Šaľa",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "5",
+   "played": true,
+   "score": "1:1",
+   "goals": [
+    {
+     "min": "7",
+     "player": "Chidiebere Romanus Madubuegwu",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "82",
+     "player": "Peter Vavruš",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "6",
+     "player": "Šimon Leo Náhlik",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "15",
+     "player": "René Roháč",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "36",
+     "player": "Dominik Bohmer",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "43",
+     "player": "Dominik Bohmer",
+     "side": "opp",
+     "kind": "yellow-red"
+    },
+    {
+     "min": "45",
+     "player": "",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "66",
+     "player": "Alexej Mizerák",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "87",
+     "player": "Lukáš Hennel",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928683",
+   "detail": true
+  },
+  {
+   "id": "6a4e294fd14e91f30379cd27",
+   "team": "u10-pripravka",
+   "date": "2026-09-06",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC Slovan Hlohovec",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "2",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947939",
+   "detail": true
+  },
+  {
+   "id": "6a4e353ed14e91f3038f43fc",
+   "team": "u11-pripravka",
+   "date": "2026-09-06",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC Slovan Hlohovec",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "2",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/948683",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e6d14e91f303353d27",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-09-06",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK Lokomotíva Trnava",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "5",
+   "played": true,
+   "score": "1:3",
+   "goals": [
+    {
+     "min": "8",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Matej Královič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "62",
+     "player": "Adam Roman Paller",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "70",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "37",
+     "player": "Martin Levčík",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "39",
+     "player": "Mateo Madro",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "62",
+     "player": "Adam Roman Paller",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FK Lokomotíva Trnava",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955478",
+   "detail": true
+  },
+  {
+   "id": "6a4bd34c5b0f57d4f481eadd",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-09-06",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FC Nitra C",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "5",
+   "played": true,
+   "score": "1:3",
+   "goals": [
+    {
+     "min": "15",
+     "player": "Lucas Balaj",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Boris Paulovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "52",
+     "player": "Oliver Mišík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "61",
+     "player": "Lucas Horváth",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "FC Nitra - náhradná hracia plocha-ihrisko č.1",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941439",
+   "detail": true
+  },
+  {
+   "id": "6a42e944e5a4847e6256ecba",
+   "team": "u19-starsi-dorast",
+   "date": "2026-09-06",
+   "time": "10:00",
+   "home": true,
+   "opponent": "MŠK Púchov",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "4",
+   "played": true,
+   "score": "5:4",
+   "goals": [
+    {
+     "min": "5",
+     "player": "Michal Kubena",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "41",
+     "player": "Martin Janík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "45",
+     "player": "Alexej Košík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Matúš Belas",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "61",
+     "player": "Patrik Veteška",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "69",
+     "player": "Samir Forouhar",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "84",
+     "player": "Samir Forouhar",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "86",
+     "player": "René Gábor Očovský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "92",
+     "player": "Daniel Páleník",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "40",
+     "player": "Milan Daňo",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "44",
+     "player": "Matúš Belas",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "69",
+     "player": "Samir Forouhar",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "69",
+     "player": "Adam Medňanský",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "69",
+     "player": "Nathan Richard Groma",
+     "side": "opp",
+     "kind": "red"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929632",
+   "detail": true
+  },
+  {
+   "id": "6a4e2891d14e91f30378792a",
+   "team": "u9-pripravka",
+   "date": "2026-09-06",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC Slovan Hlohovec",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "2",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947549",
+   "detail": true
+  },
+  {
+   "id": "6a4f461ed14e91f30337732f",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-09-06",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FK Lokomotíva Trnava",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "5",
+   "played": true,
+   "score": "13:0",
+   "goals": [
+    {
+     "min": "1",
+     "player": "Michal Bajtoš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "10",
+     "player": "Martin Žbodák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "17",
+     "player": "Michal Bajtoš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "19",
+     "player": "Martin Žbodák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "22",
+     "player": "Alex Harasník",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Martin Žbodák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "41",
+     "player": "Dávid Demovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "46",
+     "player": "Maximilián Anetta",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "48",
+     "player": "Alex Harasník",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "51",
+     "player": "Kristian Císar",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Max Neština",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "59",
+     "player": "Alex Harasník",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "60",
+     "player": "Kristian Císar",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "FK Lokomotíva Trnava",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955718",
+   "detail": true
+  },
+  {
+   "id": "6a4bd35f5b0f57d4f4823a59",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-09-06",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FC Nitra C",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "5",
+   "played": true,
+   "score": "5:3",
+   "goals": [
+    {
+     "min": "3",
+     "player": "Krištof Vaľko",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "4",
+     "player": "Richard  Gašpar Klčo",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "7",
+     "player": "Ľuboš Lieskovský",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "18",
+     "player": "Jakub Kozel",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "21",
+     "player": "Matúš Munk",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "35",
+     "player": "Tomáš Šimek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "37",
+     "player": "Maximilán Slávka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "38",
+     "player": "Oliver Mitošinka",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "FC Nitra - náhradná hracia plocha-ihrisko č.1",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942051",
+   "detail": true
+  },
+  {
+   "id": "6a441465e5a4847e623bb6e4",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-09-06",
+   "time": "12:30",
+   "home": true,
+   "opponent": "MŠK Púchov",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "4",
+   "played": true,
+   "score": "0:1",
+   "goals": [
+    {
+     "min": "11",
+     "player": "Tomáš Ďurica",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "35",
+     "player": "Valentín Raček",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "35",
+     "player": "Tobias Škrabák",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "51",
+     "player": "Oliver Pecho",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "79",
+     "player": "Marek Janega",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930766",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e5d14e91f3033538a1",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-09-09",
+   "time": "16:00",
+   "home": true,
+   "opponent": "AFC Nové Mesto nad Váhom",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "2",
+   "played": true,
+   "score": "9:0",
+   "goals": [
+    {
+     "min": "11",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "13",
+     "player": "Tomáš Ševčík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "22",
+     "player": "Lukáš Bezek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "32",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "34",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "45",
+     "player": "Hugo Beňačka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "55",
+     "player": "Adam Roman Paller",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "63",
+     "player": "Lukáš Rojkovič",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "65",
+     "player": "Adam Roman Paller",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955449",
+   "detail": true
+  },
+  {
+   "id": "6a4f461ed14e91f303377124",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-09-09",
+   "time": "17:45",
+   "home": true,
+   "opponent": "AFC Nové Mesto nad Váhom",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "2",
+   "played": true,
+   "score": "1:10",
+   "goals": [
+    {
+     "min": "19",
+     "player": "Michal Dendis",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "24",
+     "player": "Viliam Balažovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "25",
+     "player": "Viliam Balažovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Damián Červeňanský",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "30",
+     "player": "Viliam Balažovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "34",
+     "player": "Marek Jambor",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "37",
+     "player": "Mário Toráč",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "42",
+     "player": "Viliam Balažovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "49",
+     "player": "Mário Toráč",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "50",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "55",
+     "player": "Ondrej Košťál",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955689",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e7d14e91f303353fcc",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-09-12",
+   "time": "10:00",
+   "home": false,
+   "opponent": "MFC SPARTAK Bánovce nad Bebravou",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "6",
+   "played": true,
+   "score": "1:8",
+   "goals": [
+    {
+     "min": "14",
+     "player": "Marco Masár",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "34",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "44",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "49",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "58",
+     "player": "Radovan Mášik",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "60",
+     "player": "Hugo Beňačka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "63",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "67",
+     "player": "Hugo Beňačka",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "26",
+     "player": "Rudolf Líška",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "26",
+     "player": "Tobias Pisklák",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "26",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "26",
+     "player": "Tomáš Ševčík",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "26",
+     "player": "Matúš Klačko",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión MFC Spartak",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955479",
+   "detail": true
+  },
+  {
+   "id": "6a42e945e5a4847e6256eeee",
+   "team": "u19-starsi-dorast",
+   "date": "2026-09-12",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK Inter Bratislava",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "5",
+   "played": true,
+   "score": "4:0",
+   "goals": [
+    {
+     "min": "3",
+     "player": "Matej Pokus",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "38",
+     "player": "Prince Kwabena Prempeh",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "42",
+     "player": "Timofyi Riabokon",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "46",
+     "player": "Prince Kwabena Prempeh",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "45",
+     "player": "Samir Forouhar",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "59",
+     "player": "Patrik Hudec",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "61",
+     "player": "Benjamín Noga",
+     "side": "our",
+     "kind": "red"
+    },
+    {
+     "min": "81",
+     "player": "Adam Elsaka",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "ZŠ Kalinčiakova - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929644",
+   "detail": true
+  },
+  {
+   "id": "6a4f461ed14e91f3033774ce",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-09-12",
+   "time": "11:45",
+   "home": false,
+   "opponent": "MFC SPARTAK Bánovce nad Bebravou",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "6",
+   "played": true,
+   "score": "2:2",
+   "goals": [
+    {
+     "min": "8",
+     "player": "Adam Ševčík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "24",
+     "player": "Michal Dendis",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "30",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "59",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "45",
+     "player": "Denis Mihálech",
+     "side": "opp",
+     "kind": "red"
+    },
+    {
+     "min": "47",
+     "player": "Timotej Janovič",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión MFC Spartak",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955719",
+   "detail": true
+  },
+  {
+   "id": "6a441464e5a4847e623bb3ea",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-09-12",
+   "time": "12:30",
+   "home": false,
+   "opponent": "FK Inter Bratislava",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "5",
+   "played": true,
+   "score": "4:1",
+   "goals": [
+    {
+     "min": "6",
+     "player": "Oliver Havrilla",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "7",
+     "player": "Peter Szabó",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "19",
+     "player": "Ivan Porro",
+     "side": "opp",
+     "kind": "penalty"
+    },
+    {
+     "min": "44",
+     "player": "Branko Majerský",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "62",
+     "player": "Jakub Jobbágy",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "32",
+     "player": "Sebastian Ladislav Šindler",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "39",
+     "player": "Oliver Havrilla",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "46",
+     "player": "Šimon Kubla",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "ZŠ Kalinčiakova - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930778",
+   "detail": true
+  },
+  {
+   "id": "6a4e294fd14e91f30379cd81",
+   "team": "u10-pripravka",
+   "date": "2026-09-12",
+   "time": "14:30",
+   "home": false,
+   "opponent": "Futbalová škola Róberta Hanka",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "3",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Ihrisko za kostolom",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947941",
+   "detail": true
+  },
+  {
+   "id": "6a4e353ed14e91f3038f4303",
+   "team": "u11-pripravka",
+   "date": "2026-09-12",
+   "time": "14:30",
+   "home": false,
+   "opponent": "Futbalová škola Róberta Hanka",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "3",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Ihrisko za kostolom",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/948685",
+   "detail": true
+  },
+  {
+   "id": "6a4e2892d14e91f303787a8d",
+   "team": "u9-pripravka",
+   "date": "2026-09-12",
+   "time": "14:30",
+   "home": false,
+   "opponent": "Futbalová škola Róberta Hanka",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "3",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Ihrisko za kostolom",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947551",
+   "detail": true
+  },
+  {
+   "id": "6a4bd34d5b0f57d4f481ed85",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-09-13",
+   "time": "10:00",
+   "home": false,
+   "opponent": "AFC Nové Mesto nad Váhom B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "6",
+   "played": true,
+   "score": "2:1",
+   "goals": [
+    {
+     "min": "16",
+     "player": "Adam Janžo",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "58",
+     "player": "Alex Dovina",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "65",
+     "player": "Filip Kudlej",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Mestký štadión Nové mesto nad Váhom",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941440",
+   "detail": true
+  },
+  {
+   "id": "6a4bd35f5b0f57d4f4823c00",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-09-13",
+   "time": "11:45",
+   "home": false,
+   "opponent": "AFC Nové Mesto nad Váhom B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "6",
+   "played": true,
+   "score": "2:0",
+   "goals": [
+    {
+     "min": "15",
+     "player": "Tobias Volf",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "50",
+     "player": "Tobias Jozef Šicko",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Mestký štadión Nové mesto nad Váhom",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942052",
+   "detail": true
+  },
+  {
+   "id": "6a3c4379e5a4847e6278ddc1",
+   "team": "a-muzstvo",
+   "date": "2026-09-13",
+   "time": "16:00",
+   "home": true,
+   "opponent": "FK Rača Bratislava",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "6",
+   "played": true,
+   "score": "3:3",
+   "goals": [
+    {
+     "min": "17",
+     "player": "Peter Vavruš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "27",
+     "player": "Tomáš Horniak",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "40",
+     "player": "Zoumana Ky",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "57",
+     "player": "Oliver Kubka",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "69",
+     "player": "Oliver Kubka",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "87",
+     "player": "Nikolas Valo",
+     "side": "our",
+     "kind": "penalty"
+    }
+   ],
+   "cards": [
+    {
+     "min": "70",
+     "player": "Daniel Pástor",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "72",
+     "player": "Erik Urbaniek",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "90",
+     "player": "Richard Žákech",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "90",
+     "player": "",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928687",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e7d14e91f303354045",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-09-19",
+   "time": "10:00",
+   "home": true,
+   "opponent": "TJ Slovan Nitra-Chrenová",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "7",
+   "played": true,
+   "score": "14:1",
+   "goals": [
+    {
+     "min": "14",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "20",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "23",
+     "player": "Patrik Mikuš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Lukáš Bezek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Samuel Letko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "31",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "37",
+     "player": "Benjamin Peterka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "40",
+     "player": "Šimon Lulei",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "42",
+     "player": "Benjamin Peterka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "43",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "47",
+     "player": "Benjamin Peterka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "60",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "65",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "67",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "69",
+     "player": "Makar Biriuk",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "20",
+     "player": "Matúš Drgoňa",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955494",
+   "detail": true
+  },
+  {
+   "id": "6a4f461ed14e91f3033774ec",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-09-19",
+   "time": "11:45",
+   "home": true,
+   "opponent": "TJ Slovan Nitra-Chrenová",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "7",
+   "played": true,
+   "score": "9:2",
+   "goals": [
+    {
+     "min": "3",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "6",
+     "player": "Michal Lulei",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "9",
+     "player": "Richard Belovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "12",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "14",
+     "player": "Matúš Hazda",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "35",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "44",
+     "player": "Nikolaj Tiščenko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "50",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "57",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "55",
+     "player": "Kamil Morvay",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955734",
+   "detail": true
+  },
+  {
+   "id": "6a3c4379e5a4847e6278e1f0",
+   "team": "a-muzstvo",
+   "date": "2026-09-19",
+   "time": "15:30",
+   "home": true,
+   "opponent": "KFC Komárno futbal B",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "7",
+   "played": true,
+   "score": "3:2",
+   "goals": [
+    {
+     "min": "13",
+     "player": "Abass Bukunmi Adeyemi",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "38",
+     "player": "Abass Bukunmi Adeyemi",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "81",
+     "player": "Zsombor Mitring",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "83",
+     "player": "David Neštrák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "90",
+     "player": "Ales Jair Gonzalez Quiñonez",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "37",
+     "player": "Istvan Vojtko",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "40",
+     "player": "Filip Koritina",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "45",
+     "player": "Patrik Majkút",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "50",
+     "player": "David Neštrák",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "59",
+     "player": "Alex Lacza",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "66",
+     "player": "Alex Lacza",
+     "side": "opp",
+     "kind": "yellow-red"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928698",
+   "detail": true
+  },
+  {
+   "id": "6a4e2950d14e91f30379cef9",
+   "team": "u10-pripravka",
+   "date": "2026-09-20",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalový klub Nová Dubnica",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "4",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947946",
+   "detail": true
+  },
+  {
+   "id": "6a4e353ed14e91f3038f4540",
+   "team": "u11-pripravka",
+   "date": "2026-09-20",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalový klub Nová Dubnica",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "4",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/948690",
+   "detail": true
+  },
+  {
+   "id": "6a4bd34c5b0f57d4f481e980",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-09-20",
+   "time": "10:00",
+   "home": true,
+   "opponent": "PFK Piešťany B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "7",
+   "played": true,
+   "score": "2:2",
+   "goals": [
+    {
+     "min": "4",
+     "player": "Xavier Marek",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "5",
+     "player": "Martin Petráš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Lucas Horváth",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Lucas Horváth",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941451",
+   "detail": true
+  },
+  {
+   "id": "6a42e945e5a4847e6256f09c",
+   "team": "u19-starsi-dorast",
+   "date": "2026-09-20",
+   "time": "10:00",
+   "home": true,
+   "opponent": "MŠK Senec",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "6",
+   "played": true,
+   "score": "5:2",
+   "goals": [
+    {
+     "min": "12",
+     "player": "Martin Janík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "21",
+     "player": "Martin Janík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "34",
+     "player": "Martin Janík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "53",
+     "player": "Radoslav Liďák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "61",
+     "player": "Simon Nešťák",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "64",
+     "player": "Oleksandr Doroshenko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "86",
+     "player": "Matej Strečka",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "66",
+     "player": "Nicolas Haško",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "66",
+     "player": "Jan Havliček",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929647",
+   "detail": true
+  },
+  {
+   "id": "6a4e2891d14e91f3037878b6",
+   "team": "u9-pripravka",
+   "date": "2026-09-20",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalový klub Nová Dubnica",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "4",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947556",
+   "detail": true
+  },
+  {
+   "id": "6a4bd3655b0f57d4f4825142",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-09-20",
+   "time": "11:45",
+   "home": true,
+   "opponent": "PFK Piešťany B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "7",
+   "played": true,
+   "score": "1:5",
+   "goals": [
+    {
+     "min": "3",
+     "player": "Marek Šilhavík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "10",
+     "player": "Marek Šilhavík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "14",
+     "player": "Branislav Wágner",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "26",
+     "player": "Jakub Horváth",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "32",
+     "player": "Marek Šilhavík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "52",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942063",
+   "detail": true
+  },
+  {
+   "id": "6a441464e5a4847e623bb1e8",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-09-20",
+   "time": "12:30",
+   "home": true,
+   "opponent": "MŠK Senec",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "6",
+   "played": true,
+   "score": "2:0",
+   "goals": [
+    {
+     "min": "11",
+     "player": "Samko Duračka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "73",
+     "player": "Matej Adamovič",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "10",
+     "player": "Matej Adamovič",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "58",
+     "player": "Adam Roman Paller",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930781",
+   "detail": true
+  },
+  {
+   "id": "6a4e2950d14e91f30379ce5c",
+   "team": "u10-pripravka",
+   "date": "2026-09-26",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK Borovce",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "5",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "ŠK Borovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947950",
+   "detail": true
+  },
+  {
+   "id": "6a4e353ed14e91f3038f44f5",
+   "team": "u11-pripravka",
+   "date": "2026-09-26",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK Borovce",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "5",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "ŠK Borovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/948694",
+   "detail": true
+  },
+  {
+   "id": "6a4bd3515b0f57d4f482010f",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-09-26",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FKM Nové Zámky B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "8",
+   "played": true,
+   "score": "0:10",
+   "goals": [
+    {
+     "min": "10",
+     "player": "Lucas Horváth",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "23",
+     "player": "Tomáš Vido",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "35",
+     "player": "Alex Bohovic",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "41",
+     "player": "Oliver Mišík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "43",
+     "player": "Oliver Mišík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "50",
+     "player": "Tomáš Vido",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "52",
+     "player": "Sebastián Andrísek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "60",
+     "player": "Filip Kudlej",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "65",
+     "player": "Filip Orihel",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "68",
+     "player": "Filip Kudlej",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "TJ Imeľ",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941453",
+   "detail": true
+  },
+  {
+   "id": "6a4e2892d14e91f303787b9b",
+   "team": "u9-pripravka",
+   "date": "2026-09-26",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK Borovce",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "5",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "ŠK Borovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947560",
+   "detail": true
+  },
+  {
+   "id": "6a4bd3655b0f57d4f4825400",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-09-26",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FKM Nové Zámky B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "8",
+   "played": true,
+   "score": "5:3",
+   "goals": [
+    {
+     "min": "6",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "10",
+     "player": "Maximilán Slávka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "20",
+     "player": "Filipe Soares De Carvalho",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "36",
+     "player": "Peter Šima",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "46",
+     "player": "Viktor Kocsis",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "51",
+     "player": "Peter Šima",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "54",
+     "player": "Marko Mészáros",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "58",
+     "player": "Marko Mészáros",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "TJ Imeľ",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942065",
+   "detail": true
+  },
+  {
+   "id": "6a3c4379e5a4847e6278e255",
+   "team": "a-muzstvo",
+   "date": "2026-09-26",
+   "time": "15:30",
+   "home": false,
+   "opponent": "OFK Dunajská Lužná",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "8",
+   "played": true,
+   "score": "1:0",
+   "goals": [
+    {
+     "min": "61",
+     "player": "Patrik Bartoš",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "44",
+     "player": "Abass Bukunmi Adeyemi",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "76",
+     "player": "Adrián Pančík",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "81",
+     "player": "Adam Meliš",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "88",
+     "player": "Viktor Straka",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Štadión Jozefa Straku Dunajská Lužná",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928704",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e6d14e91f303353d73",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-09-27",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FC Nitra B",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "8",
+   "played": true,
+   "score": "0:1",
+   "goals": [
+    {
+     "min": "49",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "46",
+     "player": "Juraj Piršel",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "63",
+     "player": "Simon Bíro",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "68",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FC Nitra - náhradná hracia plocha-ihrisko č.1",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955496",
+   "detail": true
+  },
+  {
+   "id": "6a42e945e5a4847e6256f1cc",
+   "team": "u19-starsi-dorast",
+   "date": "2026-09-27",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FC ŠTK 1914 Šamorín",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "7",
+   "played": true,
+   "score": "6:2",
+   "goals": [
+    {
+     "min": "7",
+     "player": "Jakub Jakubec",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Jakub Jakubec",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "59",
+     "player": "Jakub Jakubec",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "63",
+     "player": "Matej Podhorský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "68",
+     "player": "Adam Kán",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "74",
+     "player": "Matúš Makky",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "76",
+     "player": "Oleksandr Doroshenko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "90",
+     "player": "Karol Havlík",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "79",
+     "player": "Tobias Hegedűs",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "81",
+     "player": "Nicolas Haško",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FC ŠTK 1914 Šamorín - plocha č.1",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929661",
+   "detail": true
+  },
+  {
+   "id": "6a4f461fd14e91f3033775b2",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-09-27",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FC Nitra B",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "8",
+   "played": true,
+   "score": "0:2",
+   "goals": [
+    {
+     "min": "34",
+     "player": "Jonáš Selecký",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "55",
+     "player": "Tomáš Horňák",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "53",
+     "player": "Matej Meluš",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "58",
+     "player": "Adrian Török",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FC Nitra - náhradná hracia plocha-ihrisko č.1",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955736",
+   "detail": true
+  },
+  {
+   "id": "6a441464e5a4847e623bb3cf",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-09-27",
+   "time": "12:30",
+   "home": false,
+   "opponent": "FC ŠTK 1914 Šamorín",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "7",
+   "played": true,
+   "score": "3:2",
+   "goals": [
+    {
+     "min": "12",
+     "player": "Michal Paprskár",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "24",
+     "player": "Lukáš Levák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "26",
+     "player": "Jakub Jobbágy",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "36",
+     "player": "Samko Duračka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "72",
+     "player": "Lukáš Levák",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "54",
+     "player": "Viliam Mikulec",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "54",
+     "player": "Eliáš Šido",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "61",
+     "player": "Mehmet Emir Canaslan",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "76",
+     "player": "Lukáš Kollár",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FC ŠTK 1914 Šamorín - plocha č.1",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930795",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e8d14e91f303354174",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-10-03",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK Nitra",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "9",
+   "played": true,
+   "score": "4:0",
+   "goals": [
+    {
+     "min": "15",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "17",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "35",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "53",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955509",
+   "detail": true
+  },
+  {
+   "id": "6a42e945e5a4847e6256f24d",
+   "team": "u19-starsi-dorast",
+   "date": "2026-10-03",
+   "time": "10:00",
+   "home": false,
+   "opponent": "MŠK Kysucké Nové Mesto",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "8",
+   "played": true,
+   "score": "3:1",
+   "goals": [
+    {
+     "min": "37",
+     "player": "Roman Hoferica",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "62",
+     "player": "Adam Pečner",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "69",
+     "player": "Matej Podhorský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "83",
+     "player": "Artúr Hudec",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "35",
+     "player": "Martin Frko",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "40",
+     "player": "Adrián Maruna",
+     "side": "opp",
+     "kind": "red"
+    },
+    {
+     "min": "44",
+     "player": "Michal Murin",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "47",
+     "player": "Daniel Páleník",
+     "side": "our",
+     "kind": "red"
+    },
+    {
+     "min": "49",
+     "player": "Samuel Chovanec",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "85",
+     "player": "Sebastián Tvrdý",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "MŠK Kysucké Nové Mesto - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929662",
+   "detail": true
+  },
+  {
+   "id": "6a4f461fd14e91f3033776ef",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-10-03",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FK Nitra",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "9",
+   "played": true,
+   "score": "2:4",
+   "goals": [
+    {
+     "min": "16",
+     "player": "Patrik Javornický",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "22",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "33",
+     "player": "Andreas Galaba",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "37",
+     "player": "Matej Mikelka",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "41",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "60",
+     "player": "Jakub Čulák",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955749",
+   "detail": true
+  },
+  {
+   "id": "6a441465e5a4847e623bb4af",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-10-03",
+   "time": "12:30",
+   "home": false,
+   "opponent": "MŠK Kysucké Nové Mesto",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "8",
+   "played": true,
+   "score": "2:0",
+   "goals": [
+    {
+     "min": "16",
+     "player": "Samuel Marián Štefanka",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "78",
+     "player": "Tobias Chupáč",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "60",
+     "player": "Michal Bálek",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "74",
+     "player": "Michal Smida",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "78",
+     "player": "Tobias Chupáč",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "MŠK Kysucké Nové Mesto - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930796",
+   "detail": true
+  },
+  {
+   "id": "6a3c437ae5a4847e6278e3dc",
+   "team": "a-muzstvo",
+   "date": "2026-10-03",
+   "time": "15:00",
+   "home": true,
+   "opponent": "MŠK Púchov",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "9",
+   "played": true,
+   "score": "1:2",
+   "goals": [
+    {
+     "min": "25",
+     "player": "Matej Obšivan",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "45",
+     "player": "Tomáš Digaňa",
+     "side": "opp",
+     "kind": "penalty"
+    },
+    {
+     "min": "91",
+     "player": "Šimon Leo Náhlik",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "22",
+     "player": "Štepán Marcaník",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "27",
+     "player": "Abass Bukunmi Adeyemi",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "56",
+     "player": "Tomáš Orolín",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "73",
+     "player": "Marián Tandara",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "75",
+     "player": "Marián Tandara",
+     "side": "opp",
+     "kind": "yellow-red"
+    },
+    {
+     "min": "75",
+     "player": "Ľuboslav Levai",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "76",
+     "player": "",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "81",
+     "player": "Timotej Vavrík",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "84",
+     "player": "Dominik Šnajder",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "85",
+     "player": "Timotej Vavrík",
+     "side": "opp",
+     "kind": "yellow-red"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928713",
+   "detail": true
+  },
+  {
+   "id": "6a4e2957d14e91f30379de21",
+   "team": "u10-pripravka",
+   "date": "2026-10-04",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FUTBAL - TTS TRENČÍN",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "6",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947953",
+   "detail": true
+  },
+  {
+   "id": "6a4e353ed14e91f3038f447f",
+   "team": "u11-pripravka",
+   "date": "2026-10-04",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FUTBAL - TTS TRENČÍN",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "6",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/948697",
+   "detail": true
+  },
+  {
+   "id": "6a4bd34c5b0f57d4f481e990",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-10-04",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK Lokomotíva Trnava B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "9",
+   "played": true,
+   "score": "0:1",
+   "goals": [
+    {
+     "min": "39",
+     "player": "Damián Tomašovič",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "33",
+     "player": "Tomáš Vido",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941462",
+   "detail": true
+  },
+  {
+   "id": "6a4e2892d14e91f303787bad",
+   "team": "u9-pripravka",
+   "date": "2026-10-04",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FUTBAL - TTS TRENČÍN",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "6",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947563",
+   "detail": true
+  },
+  {
+   "id": "6a4bd3685b0f57d4f4825fa6",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-10-04",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FK Lokomotíva Trnava B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "9",
+   "played": true,
+   "score": "1:6",
+   "goals": [
+    {
+     "min": "11",
+     "player": "Nikolas Valovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "13",
+     "player": "Matteo Železník",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "20",
+     "player": "Matteo Železník",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "26",
+     "player": "Michal Dendis",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "37",
+     "player": "Adam Pivoluska",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "50",
+     "player": "Peter Zvolenský",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "51",
+     "player": "Adam Moťovský",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942074",
+   "detail": true
+  },
+  {
+   "id": "6a3c437ae5a4847e6278e2b3",
+   "team": "a-muzstvo",
+   "date": "2026-10-09",
+   "time": "19:00",
+   "home": false,
+   "opponent": "Spartak Myjava",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "10",
+   "played": true,
+   "score": "5:0",
+   "goals": [
+    {
+     "min": "5",
+     "player": "Adam Řihák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "15",
+     "player": "Adam Řihák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "24",
+     "player": "Jakub Valík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "49",
+     "player": "Lukáš Slávik",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "63",
+     "player": "Filip Buchel",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "10",
+     "player": "Gabriel Halabrín",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "16",
+     "player": "Urban Mazanovský",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "20",
+     "player": "Alex Ďuriš",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "34",
+     "player": "Ales Jair Gonzalez Quiñonez",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "51",
+     "player": "Peter Vavruš",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Spartak  Myjava",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928721",
+   "detail": true
+  },
+  {
+   "id": "6a4e2950d14e91f30379cecf",
+   "team": "u10-pripravka",
+   "date": "2026-10-10",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK LR CRYSTAL",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "7",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "ŠK LR Crystal",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947959",
+   "detail": true
+  },
+  {
+   "id": "6a4e353fd14e91f3038f46e5",
+   "team": "u11-pripravka",
+   "date": "2026-10-10",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK LR CRYSTAL",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "7",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "ŠK LR Crystal",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/948703",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e7d14e91f30335403b",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-10-10",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK TEMPO Partizánske",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "10",
+   "played": true,
+   "score": "0:1",
+   "goals": [
+    {
+     "min": "46",
+     "player": "Mateo Madro",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Karola Jokla - náhradná hracia plocha",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955513",
+   "detail": true
+  },
+  {
+   "id": "6a4e2892d14e91f303787d34",
+   "team": "u9-pripravka",
+   "date": "2026-10-10",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK LR CRYSTAL",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "7",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "ŠK LR Crystal",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947569",
+   "detail": true
+  },
+  {
+   "id": "6a4f461fd14e91f303377801",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-10-10",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FK TEMPO Partizánske",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "10",
+   "played": true,
+   "score": "2:3",
+   "goals": [
+    {
+     "min": "16",
+     "player": "Nikolaj Tiščenko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "20",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "22",
+     "player": "Branko Krošlák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "30",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "35",
+     "player": "Ján Cibula",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Karola Jokla - náhradná hracia plocha",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955753",
+   "detail": true
+  },
+  {
+   "id": "6a4bd34d5b0f57d4f481eb7b",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-10-11",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK Nitra B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "10",
+   "played": true,
+   "score": "3:1",
+   "goals": [
+    {
+     "min": "7",
+     "player": "Július Fejes",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "35",
+     "player": "Daniel Myjavec",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "45",
+     "player": "Lucas Balaj",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "47",
+     "player": "Daniel Myjavec",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "68",
+     "player": "Marián Ščepko",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FK Nitra",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941466",
+   "detail": true
+  },
+  {
+   "id": "6a42e946e5a4847e6256f3c2",
+   "team": "u19-starsi-dorast",
+   "date": "2026-10-11",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK Nitra",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "9",
+   "played": true,
+   "score": "1:3",
+   "goals": [
+    {
+     "min": "22",
+     "player": "Samuel Drančák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "27",
+     "player": "Martin Janík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "69",
+     "player": "Matias Gondek",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "71",
+     "player": "Matias Gondek",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "10",
+     "player": "Samuel Drančák",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "11",
+     "player": "Tadeáš Albert",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "15",
+     "player": "Adam Medzay",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "44",
+     "player": "",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "44",
+     "player": "",
+     "side": "opp",
+     "kind": "yellow-red"
+    },
+    {
+     "min": "48",
+     "player": "Nicolas Haško",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "61",
+     "player": "Peter Dunár",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929677",
+   "detail": true
+  },
+  {
+   "id": "6a4bd36a5b0f57d4f4826550",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-10-11",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FK Nitra B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "10",
+   "played": true,
+   "score": "2:3",
+   "goals": [
+    {
+     "min": "1",
+     "player": "Maximilán Slávka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Matúš Hazda",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "31",
+     "player": "Samuel Košinár",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "48",
+     "player": "Jakub Konkuš",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Jakub Konkuš",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "FK Nitra",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942078",
+   "detail": true
+  },
+  {
+   "id": "6a441465e5a4847e623bb669",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-10-11",
+   "time": "13:00",
+   "home": true,
+   "opponent": "FK Nitra",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "9",
+   "played": true,
+   "score": "2:2",
+   "goals": [
+    {
+     "min": "9",
+     "player": "Simon Svečula",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "67",
+     "player": "Filip Chalupka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "75",
+     "player": "Denis Jakubík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "81",
+     "player": "Marek Janega",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "51",
+     "player": "Dávid Šiška",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930811",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e8d14e91f3033542e7",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-10-17",
+   "time": "09:00",
+   "home": true,
+   "opponent": "ŠKF Sereď",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "11",
+   "played": true,
+   "score": "4:0",
+   "goals": [
+    {
+     "min": "20",
+     "player": "Lukáš Bezek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "24",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "43",
+     "player": "Lukáš Bezek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "57",
+     "player": "Benjamin Peterka",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955524",
+   "detail": true
+  },
+  {
+   "id": "6a4e2950d14e91f30379ce56",
+   "team": "u10-pripravka",
+   "date": "2026-10-17",
+   "time": "10:00",
+   "home": false,
+   "opponent": "",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "8",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2950d14e91f30379ce56/"
+  },
+  {
+   "id": "6a4e353ed14e91f3038f44f8",
+   "team": "u11-pripravka",
+   "date": "2026-10-17",
+   "time": "10:00",
+   "home": false,
+   "opponent": "",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "8",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353ed14e91f3038f44f8/"
+  },
+  {
+   "id": "6a4e2892d14e91f303787d4b",
+   "team": "u9-pripravka",
+   "date": "2026-10-17",
+   "time": "10:00",
+   "home": false,
+   "opponent": "",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "8",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2892d14e91f303787d4b/"
+  },
+  {
+   "id": "6a4f461fd14e91f303377840",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-10-17",
+   "time": "10:45",
+   "home": true,
+   "opponent": "ŠKF Sereď",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "11",
+   "played": true,
+   "score": "6:3",
+   "goals": [
+    {
+     "min": "5",
+     "player": "Jonáš Selecký",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "6",
+     "player": "Michal Hrivnák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "13",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "30",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "32",
+     "player": "Kristián Švec",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "38",
+     "player": "Matias Schmidt",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "47",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "54",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955764",
+   "detail": true
+  },
+  {
+   "id": "6a3c437ae5a4847e6278e50a",
+   "team": "a-muzstvo",
+   "date": "2026-10-17",
+   "time": "14:30",
+   "home": true,
+   "opponent": "TJ Družstevník Veľké Ludince",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "11",
+   "played": true,
+   "score": "1:0",
+   "goals": [
+    {
+     "min": "23",
+     "player": "Peter Vavruš",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "2",
+     "player": "Abass Bukunmi Adeyemi",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "61",
+     "player": "Adam Bujna",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "63",
+     "player": "Nathaniel Joseph Noël",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "70",
+     "player": "Richard Žákech",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "90",
+     "player": "Nikolas Valo",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928728",
+   "detail": true
+  },
+  {
+   "id": "6a4bd34e5b0f57d4f481f2ea",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-10-18",
+   "time": "09:00",
+   "home": true,
+   "opponent": "ŠKF Sereď B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "11",
+   "played": true,
+   "score": "1:1",
+   "goals": [
+    {
+     "min": "9",
+     "player": "Tomáš Rehorčík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "54",
+     "player": "Lucas Balaj",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941473",
+   "detail": true
+  },
+  {
+   "id": "6a42e946e5a4847e6256f41f",
+   "team": "u19-starsi-dorast",
+   "date": "2026-10-18",
+   "time": "10:00",
+   "home": false,
+   "opponent": "PŠC Pezinok",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "10",
+   "played": true,
+   "score": "2:2",
+   "goals": [
+    {
+     "min": "7",
+     "player": "Lucas Hrabal",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "26",
+     "player": "Slavomír Škrabák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "58",
+     "player": "Peter Opatovský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "69",
+     "player": "Matej Jaššo",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "22",
+     "player": "Dominik Michalov",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Štadión PŠC Pezinok",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929679",
+   "detail": true
+  },
+  {
+   "id": "6a4bd36c5b0f57d4f4826deb",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-10-18",
+   "time": "10:45",
+   "home": true,
+   "opponent": "ŠKF Sereď B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "11",
+   "played": true,
+   "score": "0:5",
+   "goals": [
+    {
+     "min": "3",
+     "player": "Adam Šimko",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "7",
+     "player": "Marco Čelár",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "35",
+     "player": "Peter Valentovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "37",
+     "player": "Adam Šimko",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "57",
+     "player": "Peter Valentovič",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942085",
+   "detail": true
+  },
+  {
+   "id": "6a441465e5a4847e623bb6e2",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-10-18",
+   "time": "12:30",
+   "home": false,
+   "opponent": "PŠC Pezinok",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "10",
+   "played": true,
+   "score": "0:2",
+   "goals": [
+    {
+     "min": "24",
+     "player": "Marko Beňačka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "53",
+     "player": "Samko Duračka",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "78",
+     "player": "Filip Chalupka",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "79",
+     "player": "Dominik Kiripolský",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Štadión PŠC Pezinok",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930813",
+   "detail": true
+  },
+  {
+   "id": "6a4bd34c5b0f57d4f481eaec",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2026-10-24",
+   "time": "09:00",
+   "home": false,
+   "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "1",
+   "played": true,
+   "score": "1:4",
+   "goals": [
+    {
+     "min": "13",
+     "player": "Marco Šedovič",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "26",
+     "player": "Lucas Balaj",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "55",
+     "player": "Lucas Horváth",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "66",
+     "player": "Lucas Horváth",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "69",
+     "player": "Ákos Marcinkó",
+     "side": "opp",
+     "kind": "penalty"
+    }
+   ],
+   "cards": [
+    {
+     "min": "57",
+     "player": "Noel Dömötör",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "57",
+     "player": "Lucas Horváth",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "TJ Horné Saliby",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/941413",
+   "detail": true
+  },
+  {
+   "id": "6a4e2950d14e91f30379cf96",
+   "team": "u10-pripravka",
+   "date": "2026-10-24",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FC Slovan Hlohovec",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "9",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "FC Slovan",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947967",
+   "detail": true
+  },
+  {
+   "id": "6a4e354ed14e91f3038f7578",
+   "team": "u11-pripravka",
+   "date": "2026-10-24",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FC Slovan Hlohovec",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "9",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "FC Slovan",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/948711",
+   "detail": true
+  },
+  {
+   "id": "6a4e2892d14e91f303787bc6",
+   "team": "u9-pripravka",
+   "date": "2026-10-24",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FC Slovan Hlohovec",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "9",
+   "played": true,
+   "score": "0:0",
+   "goals": [],
+   "cards": [],
+   "venue": "FC Slovan",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/947577",
+   "detail": true
+  },
+  {
+   "id": "6a4bd3705b0f57d4f4827b8f",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2026-10-24",
+   "time": "10:45",
+   "home": false,
+   "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "1",
+   "played": true,
+   "score": "3:4",
+   "goals": [
+    {
+     "min": "2",
+     "player": "Ján Fábik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "12",
+     "player": "Konkoly Benett",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "17",
+     "player": "Konkoly Benett",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "47",
+     "player": "Olivér Hajdu",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "53",
+     "player": "Timotej Opet",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "54",
+     "player": "Tobias Bezek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Tobias Bezek",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "TJ Horné Saliby",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/942025",
+   "detail": true
+  },
+  {
+   "id": "6a3c437ae5a4847e6278e3e7",
+   "team": "a-muzstvo",
+   "date": "2026-10-24",
+   "time": "13:30",
+   "home": false,
+   "opponent": "FKM Nové Zámky",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "12",
+   "played": true,
+   "score": "2:0",
+   "goals": [
+    {
+     "min": "15",
+     "player": "Mário Baláž",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "70",
+     "player": "Michal Horodník",
+     "side": "opp",
+     "kind": "penalty"
+    }
+   ],
+   "cards": [
+    {
+     "min": "24",
+     "player": "Bravie Ayanda Sibanda",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "35",
+     "player": "Šimon Leo Náhlik",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "38",
+     "player": "Filip Majerník",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "47",
+     "player": "Marko Michalík",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "66",
+     "player": "Marko Michalík",
+     "side": "opp",
+     "kind": "yellow-red"
+    },
+    {
+     "min": "69",
+     "player": "Urban Mazanovský",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Štadión Ladislava Gancznera",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928738",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e8d14e91f303354245",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-10-25",
+   "time": "09:00",
+   "home": false,
+   "opponent": "ZFC 1939 Trenčín",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "12",
+   "played": true,
+   "score": "1:1",
+   "goals": [
+    {
+     "min": "6",
+     "player": "Lukáš Rojkovič",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Kevin Hanko",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "59",
+     "player": "Tomáš Ševčík",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "67",
+     "player": "Marco Masár",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "70",
+     "player": "Teo Majan",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "ihrisko Záblatie",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955530",
+   "detail": true
+  },
+  {
+   "id": "6a42e946e5a4847e6256f3db",
+   "team": "u19-starsi-dorast",
+   "date": "2026-10-25",
+   "time": "10:00",
+   "home": true,
+   "opponent": "OFK Dynamo Malženice",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "11",
+   "played": true,
+   "score": "2:2",
+   "goals": [
+    {
+     "min": "38",
+     "player": "Lukáš Spáčil",
+     "side": "opp",
+     "kind": "penalty"
+    },
+    {
+     "min": "45",
+     "player": "Daniel Páleník",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "82",
+     "player": "Kamil Dolnák",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "90",
+     "player": "Oleksandr Doroshenko",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "36",
+     "player": "Oliver Harmady",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "37",
+     "player": "Juraj Hladký",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "40",
+     "player": "Kamil Dolnák",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "74",
+     "player": "Adam Repáň",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "75",
+     "player": "Lukas Rajnic",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "90",
+     "player": "Dávid Hološka",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929692",
+   "detail": true
+  },
+  {
+   "id": "6a4f461fd14e91f3033779d3",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-10-25",
+   "time": "10:45",
+   "home": false,
+   "opponent": "ZFC 1939 Trenčín",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "12",
+   "played": true,
+   "score": "2:2",
+   "goals": [
+    {
+     "min": "4",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "37",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "38",
+     "player": "Jesse Soter Adi",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "42",
+     "player": "Jesse Soter Adi",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "ihrisko Záblatie",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955770",
+   "detail": true
+  },
+  {
+   "id": "6a441466e5a4847e623bbcd0",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-10-25",
+   "time": "12:30",
+   "home": true,
+   "opponent": "OFK Dynamo Malženice",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "11",
+   "played": true,
+   "score": "2:2",
+   "goals": [
+    {
+     "min": "27",
+     "player": "Lucas David Panák",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "39",
+     "player": "Marko Beňačka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "45",
+     "player": "Maksim Semenov",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "70",
+     "player": "Maksim Semenov",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "48",
+     "player": "Šimon Jesenický",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "66",
+     "player": "Alex Urban",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930826",
+   "detail": true
+  },
+  {
+   "id": "6a42e946e5a4847e6256f3c0",
+   "team": "u19-starsi-dorast",
+   "date": "2026-10-29",
+   "time": "10:00",
+   "home": false,
+   "opponent": "MŠK FOMAT Martin",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "12",
+   "played": true,
+   "score": "3:2",
+   "goals": [
+    {
+     "min": "5",
+     "player": "Filip Tóth",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "6",
+     "player": "Tomáš Švichký",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Nicolas Krovina",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "41",
+     "player": "Lucas Hrabal",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "45",
+     "player": "Nicolas Krovina",
+     "side": "opp",
+     "kind": "penalty"
+    }
+   ],
+   "cards": [
+    {
+     "min": "89",
+     "player": "Matej Adamovič",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Športový park Pltníky - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929696",
+   "detail": true
+  },
+  {
+   "id": "6a441465e5a4847e623bb9ae",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-10-29",
+   "time": "12:30",
+   "home": false,
+   "opponent": "MŠK FOMAT Martin",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "12",
+   "played": true,
+   "score": "7:4",
+   "goals": [
+    {
+     "min": "11",
+     "player": "Samuel Tretina",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "12",
+     "player": "Matej Rozvadský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "16",
+     "player": "Ján Zimányi",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "21",
+     "player": "Filip Chalupka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "40",
+     "player": "Michal Pánis",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "45",
+     "player": "Samuel Tretina",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "61",
+     "player": "Oliver Hanko",
+     "side": "opp",
+     "kind": "penalty"
+    },
+    {
+     "min": "64",
+     "player": "Matej Rozvadský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "70",
+     "player": "Alex Urban",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "77",
+     "player": "Jakub Važan",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "79",
+     "player": "Matej Marko",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "17",
+     "player": "",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "37",
+     "player": "Marko Beňačka",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "60",
+     "player": "Tobias Škrabák",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "68",
+     "player": "Samko Duračka",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "76",
+     "player": "Michal Pánis",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Športový park Pltníky - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930830",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e8d14e91f303354418",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-10-31",
+   "time": "09:00",
+   "home": true,
+   "opponent": "MŠK - Thermál Veľký Meder",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "13",
+   "played": true,
+   "score": "22:0",
+   "goals": [
+    {
+     "min": "6",
+     "player": "Benjamin Peterka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "9",
+     "player": "Tomáš Ševčík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "11",
+     "player": "Hugo Beňačka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "13",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "16",
+     "player": "Benjamin Peterka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "18",
+     "player": "Benjamin Peterka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "28",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "31",
+     "player": "Patrik Mikuš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "32",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "38",
+     "player": "Samuel Letko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "39",
+     "player": "Tomáš Ševčík",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "40",
+     "player": "Lukáš Rojkovič",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "43",
+     "player": "Makar Biriuk",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "46",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "47",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "53",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "55",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Lukáš Bezek",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "57",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "58",
+     "player": "Samuel Letko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "63",
+     "player": "Makar Biriuk",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "69",
+     "player": "Samuel Berlanský",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955539",
+   "detail": true
+  },
+  {
+   "id": "6a4f4620d14e91f303377e86",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-10-31",
+   "time": "10:45",
+   "home": true,
+   "opponent": "MŠK - Thermál Veľký Meder",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "13",
+   "played": true,
+   "score": "18:1",
+   "goals": [
+    {
+     "min": "3",
+     "player": "Mateo Masár",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "4",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "6",
+     "player": "Jonáš Selecký",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "10",
+     "player": "Jonáš Selecký",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "12",
+     "player": "Tibor Ollári",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "15",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "16",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "23",
+     "player": "Nikolaj Tiščenko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "25",
+     "player": "Nikolaj Tiščenko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "29",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "30",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "30",
+     "player": "Alex Valentino Klčo",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "34",
+     "player": "Filip Bučko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "46",
+     "player": "Tomáš Horňák",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "49",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "53",
+     "player": "Tomáš Horňák",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "56",
+     "player": "Jonáš Selecký",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "58",
+     "player": "Alex Valentino Klčo",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "60",
+     "player": "Dominik Bartoš",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955779",
+   "detail": true
+  },
+  {
+   "id": "6a3c437be5a4847e6278e8fc",
+   "team": "a-muzstvo",
+   "date": "2026-10-31",
+   "time": "13:00",
+   "home": true,
+   "opponent": "AS Trenčín B",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "13",
+   "played": true,
+   "score": "1:0",
+   "goals": [
+    {
+     "min": "57",
+     "player": "Alexej Mizerák",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "30",
+     "player": "Kevin Sondor",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "60",
+     "player": "Max Kubran",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "62",
+     "player": "Peter Vavruš",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "68",
+     "player": "Jaroslav Holp",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "79",
+     "player": "Šimon Leo Náhlik",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928743",
+   "detail": true
+  },
+  {
+   "id": "6a4f44e8d14e91f3033543d6",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-11-07",
+   "time": "09:00",
+   "home": false,
+   "opponent": "FKM Nové Zámky",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44e8d14e91f3033543d6/"
+  },
+  {
+   "id": "6a4f4620d14e91f303377cf9",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-11-07",
+   "time": "10:45",
+   "home": false,
+   "opponent": "FKM Nové Zámky",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4620d14e91f303377cf9/"
+  },
+  {
+   "id": "6a42e946e5a4847e6256f5a3",
+   "team": "u19-starsi-dorast",
+   "date": "2026-11-08",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK POHRONIE Žiar nad Hronom Dolná Ždaňa",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "13",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e946e5a4847e6256f5a3/"
+  },
+  {
+   "id": "6a3c437be5a4847e6278e8ae",
+   "team": "a-muzstvo",
+   "date": "2026-11-08",
+   "time": "13:00",
+   "home": false,
+   "opponent": "FK Beluša",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437be5a4847e6278e8ae/"
+  },
+  {
+   "id": "6a441465e5a4847e623bb902",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-11-08",
+   "time": "13:00",
+   "home": true,
+   "opponent": "FK POHRONIE Žiar nad Hronom Dolná Ždaňa",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "13",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441465e5a4847e623bb902/"
+  },
+  {
+   "id": "6a4f44e9d14e91f3033545ba",
+   "team": "u15-starsi-ziaci",
+   "date": "2026-11-14",
+   "time": "09:00",
+   "home": true,
+   "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 Macron | yoursport  ZsFZ",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44e9d14e91f3033545ba/"
+  },
+  {
+   "id": "6a42e946e5a4847e6256f575",
+   "team": "u19-starsi-dorast",
+   "date": "2026-11-14",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FC ViOn Zlaté Moravce - Vráble",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e946e5a4847e6256f575/"
+  },
+  {
+   "id": "6a4f4621d14e91f303378057",
+   "team": "u13-mladsi-ziaci",
+   "date": "2026-11-14",
+   "time": "10:45",
+   "home": true,
+   "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4621d14e91f303378057/"
+  },
+  {
+   "id": "6a441467e5a4847e623bc3a3",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-11-14",
+   "time": "12:30",
+   "home": false,
+   "opponent": "FC ViOn Zlaté Moravce - Vráble",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441467e5a4847e623bc3a3/"
+  },
+  {
+   "id": "6a3c437be5a4847e6278eaa1",
+   "team": "a-muzstvo",
+   "date": "2026-11-14",
+   "time": "13:00",
+   "home": true,
+   "opponent": "ŠK 1923 Gabčíkovo",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437be5a4847e6278eaa1/"
+  },
+  {
+   "id": "6a42e947e5a4847e6256f6e0",
+   "team": "u19-starsi-dorast",
+   "date": "2026-11-22",
+   "time": "10:00",
+   "home": true,
+   "opponent": "KFC Komárno futbal",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e947e5a4847e6256f6e0/"
+  },
+  {
+   "id": "6a441467e5a4847e623bc164",
+   "team": "u17-mladsi-dorast",
+   "date": "2026-11-22",
+   "time": "13:00",
+   "home": true,
+   "opponent": "KFC Komárno futbal",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441467e5a4847e623bc164/"
+  },
+  {
+   "id": "6a4f44e9d14e91f303354768",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-03-06",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK Beluša",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44e9d14e91f303354768/"
+  },
+  {
+   "id": "6a42e947e5a4847e6256f831",
+   "team": "u19-starsi-dorast",
+   "date": "2027-03-06",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FKM Karlova Ves Bratislava",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e947e5a4847e6256f831/"
+  },
+  {
+   "id": "6a4f4620d14e91f303377ed3",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-03-06",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FK Beluša",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4620d14e91f303377ed3/"
+  },
+  {
+   "id": "6a441466e5a4847e623bbc9d",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-03-06",
+   "time": "12:30",
+   "home": true,
+   "opponent": "FKM Karlova Ves Bratislava",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441466e5a4847e623bbc9d/"
+  },
+  {
+   "id": "6a3c437be5a4847e6278eb29",
+   "team": "a-muzstvo",
+   "date": "2027-03-06",
+   "time": "14:30",
+   "home": true,
+   "opponent": "MŠK Senec",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437be5a4847e6278eb29/"
+  },
+  {
+   "id": "6a4f44f1d14e91f303355b94",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-03-13",
+   "time": "10:00",
+   "home": false,
+   "opponent": "AFC Nové Mesto nad Váhom",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44f1d14e91f303355b94/"
+  },
+  {
+   "id": "6a42e947e5a4847e6256f8ca",
+   "team": "u19-starsi-dorast",
+   "date": "2027-03-13",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK Lokomotíva Trnava",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e947e5a4847e6256f8ca/"
+  },
+  {
+   "id": "6a4f4621d14e91f30337814b",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-03-13",
+   "time": "11:45",
+   "home": false,
+   "opponent": "AFC Nové Mesto nad Váhom",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4621d14e91f30337814b/"
+  },
+  {
+   "id": "6a441467e5a4847e623bc35b",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-03-13",
+   "time": "12:30",
+   "home": false,
+   "opponent": "FK Lokomotíva Trnava",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441467e5a4847e623bc35b/"
+  },
+  {
+   "id": "6a3c437be5a4847e6278eb27",
+   "team": "a-muzstvo",
+   "date": "2027-03-13",
+   "time": "14:30",
+   "home": true,
+   "opponent": "FC Nitra",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437be5a4847e6278eb27/"
+  },
+  {
+   "id": "6a4f44e9d14e91f30335495d",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-03-20",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalový klub Senica",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44e9d14e91f30335495d/"
+  },
+  {
+   "id": "6a42e947e5a4847e6256f81f",
+   "team": "u19-starsi-dorast",
+   "date": "2027-03-20",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK Spartak Dubnica nad Váhom",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e947e5a4847e6256f81f/"
+  },
+  {
+   "id": "6a4f4622d14e91f3033782aa",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-03-20",
+   "time": "11:45",
+   "home": true,
+   "opponent": "Futbalový klub Senica",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4622d14e91f3033782aa/"
+  },
+  {
+   "id": "6a441468e5a4847e623bc7c2",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-03-20",
+   "time": "12:30",
+   "home": true,
+   "opponent": "FK Spartak Dubnica nad Váhom",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441468e5a4847e623bc7c2/"
+  },
+  {
+   "id": "6a3c437ce5a4847e6278ecee",
+   "team": "a-muzstvo",
+   "date": "2027-03-20",
+   "time": "15:00",
+   "home": true,
+   "opponent": "FC Baník Prievidza",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437ce5a4847e6278ecee/"
+  },
+  {
+   "id": "6a42e947e5a4847e6256f89c",
+   "team": "u19-starsi-dorast",
+   "date": "2027-03-25",
+   "time": "13:00",
+   "home": false,
+   "opponent": "MŠK Púchov",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e947e5a4847e6256f89c/"
+  },
+  {
+   "id": "6a441467e5a4847e623bc0d1",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-03-25",
+   "time": "15:30",
+   "home": false,
+   "opponent": "MŠK Púchov",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441467e5a4847e623bc0d1/"
+  },
+  {
+   "id": "6a4f44eed14e91f303355704",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-03-27",
+   "time": "10:00",
+   "home": false,
+   "opponent": "PFK Piešťany",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44eed14e91f303355704/"
+  },
+  {
+   "id": "6a4f4622d14e91f30337843b",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-03-27",
+   "time": "11:45",
+   "home": false,
+   "opponent": "PFK Piešťany",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4622d14e91f30337843b/"
+  },
+  {
+   "id": "6a3c437ce5a4847e6278ee4d",
+   "team": "a-muzstvo",
+   "date": "2027-03-27",
+   "time": "15:00",
+   "home": true,
+   "opponent": "FK DAC 1904 Dunajská Streda B",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437ce5a4847e6278ee4d/"
+  },
+  {
+   "id": "6a4e2957d14e91f30379deae",
+   "team": "u10-pripravka",
+   "date": "2027-03-28",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalová škola Róberta Hanka",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "10",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2957d14e91f30379deae/"
+  },
+  {
+   "id": "6a4e353ed14e91f3038f4600",
+   "team": "u11-pripravka",
+   "date": "2027-03-28",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalová škola Róberta Hanka",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "10",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353ed14e91f3038f4600/"
+  },
+  {
+   "id": "6a4e2892d14e91f303787d7f",
+   "team": "u9-pripravka",
+   "date": "2027-03-28",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalová škola Róberta Hanka",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "10",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2892d14e91f303787d7f/"
+  },
+  {
+   "id": "6a4e2950d14e91f30379d060",
+   "team": "u10-pripravka",
+   "date": "2027-04-03",
+   "time": "10:00",
+   "home": false,
+   "opponent": "Futbalový klub Nová Dubnica",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "11",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2950d14e91f30379d060/"
+  },
+  {
+   "id": "6a4e353fd14e91f3038f469d",
+   "team": "u11-pripravka",
+   "date": "2027-04-03",
+   "time": "10:00",
+   "home": false,
+   "opponent": "Futbalový klub Nová Dubnica",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "11",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353fd14e91f3038f469d/"
+  },
+  {
+   "id": "6a4f44e9d14e91f303354a2f",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-04-03",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK Lokomotíva Trnava",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44e9d14e91f303354a2f/"
+  },
+  {
+   "id": "6a4bd34d5b0f57d4f481ef8a",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-04-03",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "12",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34d5b0f57d4f481ef8a/"
+  },
+  {
+   "id": "6a42e947e5a4847e6256f9de",
+   "team": "u19-starsi-dorast",
+   "date": "2027-04-03",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK Inter Bratislava",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e947e5a4847e6256f9de/"
+  },
+  {
+   "id": "6a4e2893d14e91f303787efc",
+   "team": "u9-pripravka",
+   "date": "2027-04-03",
+   "time": "10:00",
+   "home": false,
+   "opponent": "Futbalový klub Nová Dubnica",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "11",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2893d14e91f303787efc/"
+  },
+  {
+   "id": "6a4f4621d14e91f30337816a",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-04-03",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FK Lokomotíva Trnava",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4621d14e91f30337816a/"
+  },
+  {
+   "id": "6a4bd36e5b0f57d4f4827652",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-04-03",
+   "time": "11:45",
+   "home": true,
+   "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "12",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd36e5b0f57d4f4827652/"
+  },
+  {
+   "id": "6a441467e5a4847e623bc1cb",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-04-03",
+   "time": "12:30",
+   "home": true,
+   "opponent": "FK Inter Bratislava",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441467e5a4847e623bc1cb/"
+  },
+  {
+   "id": "6a3c437ce5a4847e6278edef",
+   "team": "a-muzstvo",
+   "date": "2027-04-03",
+   "time": "16:00",
+   "home": false,
+   "opponent": "FK Slovan Duslo Šaľa",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437ce5a4847e6278edef/"
+  },
+  {
+   "id": "6a4f44ead14e91f303354ab3",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-04-10",
+   "time": "10:00",
+   "home": true,
+   "opponent": "MFC SPARTAK Bánovce nad Bebravou",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44ead14e91f303354ab3/"
+  },
+  {
+   "id": "6a4bd34e5b0f57d4f481f095",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-04-10",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FC ViOn Zlaté Moravce - Vráble B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "13",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34e5b0f57d4f481f095/"
+  },
+  {
+   "id": "6a42e949e5a4847e6256fe1a",
+   "team": "u19-starsi-dorast",
+   "date": "2027-04-10",
+   "time": "10:00",
+   "home": false,
+   "opponent": "MŠK Senec",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e949e5a4847e6256fe1a/"
+  },
+  {
+   "id": "6a4f4623d14e91f303378750",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-04-10",
+   "time": "11:45",
+   "home": true,
+   "opponent": "MFC SPARTAK Bánovce nad Bebravou",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4623d14e91f303378750/"
+  },
+  {
+   "id": "6a4bd3705b0f57d4f4827e07",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-04-10",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FC ViOn Zlaté Moravce - Vráble B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "13",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd3705b0f57d4f4827e07/"
+  },
+  {
+   "id": "6a441468e5a4847e623bc615",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-04-10",
+   "time": "12:30",
+   "home": false,
+   "opponent": "MŠK Senec",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441468e5a4847e623bc615/"
+  },
+  {
+   "id": "6a4e2951d14e91f30379d29e",
+   "team": "u10-pripravka",
+   "date": "2027-04-11",
+   "time": "10:00",
+   "home": true,
+   "opponent": "ŠK Borovce",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "12",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2951d14e91f30379d29e/"
+  },
+  {
+   "id": "6a4e353fd14e91f3038f4847",
+   "team": "u11-pripravka",
+   "date": "2027-04-11",
+   "time": "10:00",
+   "home": true,
+   "opponent": "ŠK Borovce",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "12",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353fd14e91f3038f4847/"
+  },
+  {
+   "id": "6a4e2892d14e91f303787bd3",
+   "team": "u9-pripravka",
+   "date": "2027-04-11",
+   "time": "10:00",
+   "home": true,
+   "opponent": "ŠK Borovce",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "12",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2892d14e91f303787bd3/"
+  },
+  {
+   "id": "6a3c437ce5a4847e6278f09e",
+   "team": "a-muzstvo",
+   "date": "2027-04-11",
+   "time": "10:30",
+   "home": false,
+   "opponent": "FK Rača Bratislava",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437ce5a4847e6278f09e/"
+  },
+  {
+   "id": "6a4e2950d14e91f30379d27c",
+   "team": "u10-pripravka",
+   "date": "2027-04-17",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FUTBAL - TTS TRENČÍN",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "13",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2950d14e91f30379d27c/"
+  },
+  {
+   "id": "6a4e353fd14e91f3038f47c8",
+   "team": "u11-pripravka",
+   "date": "2027-04-17",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FUTBAL - TTS TRENČÍN",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "13",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353fd14e91f3038f47c8/"
+  },
+  {
+   "id": "6a4f44ead14e91f303354bbd",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-04-17",
+   "time": "10:00",
+   "home": false,
+   "opponent": "TJ Slovan Nitra-Chrenová",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "22",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44ead14e91f303354bbd/"
+  },
+  {
+   "id": "6a4bd34d5b0f57d4f481ed6d",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-04-17",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalový klub Senica B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34d5b0f57d4f481ed6d/"
+  },
+  {
+   "id": "6a42e948e5a4847e6256fa64",
+   "team": "u19-starsi-dorast",
+   "date": "2027-04-17",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC ŠTK 1914 Šamorín",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "22",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e948e5a4847e6256fa64/"
+  },
+  {
+   "id": "6a4e2892d14e91f303787cfc",
+   "team": "u9-pripravka",
+   "date": "2027-04-17",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FUTBAL - TTS TRENČÍN",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "13",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2892d14e91f303787cfc/"
+  },
+  {
+   "id": "6a4f4622d14e91f3033783dc",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-04-17",
+   "time": "11:45",
+   "home": false,
+   "opponent": "TJ Slovan Nitra-Chrenová",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "22",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4622d14e91f3033783dc/"
+  },
+  {
+   "id": "6a4bd3735b0f57d4f48286f7",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-04-17",
+   "time": "11:45",
+   "home": true,
+   "opponent": "Futbalový klub Senica B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd3735b0f57d4f48286f7/"
+  },
+  {
+   "id": "6a441468e5a4847e623bc5c6",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-04-17",
+   "time": "12:30",
+   "home": true,
+   "opponent": "FC ŠTK 1914 Šamorín",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "22",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441468e5a4847e623bc5c6/"
+  },
+  {
+   "id": "6a3c437ce5a4847e6278ed56",
+   "team": "a-muzstvo",
+   "date": "2027-04-18",
+   "time": "16:30",
+   "home": false,
+   "opponent": "KFC Komárno futbal B",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "22",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437ce5a4847e6278ed56/"
+  },
+  {
+   "id": "6a4f44eed14e91f30335580b",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-04-24",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC Nitra B",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "23",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44eed14e91f30335580b/"
+  },
+  {
+   "id": "6a4bd34e5b0f57d4f481f175",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-04-24",
+   "time": "10:00",
+   "home": false,
+   "opponent": "OFK Dynamo Malženice B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34e5b0f57d4f481f175/"
+  },
+  {
+   "id": "6a42e948e5a4847e6256fbdd",
+   "team": "u19-starsi-dorast",
+   "date": "2027-04-24",
+   "time": "10:00",
+   "home": true,
+   "opponent": "MŠK Kysucké Nové Mesto",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "23",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e948e5a4847e6256fbdd/"
+  },
+  {
+   "id": "6a4f4623d14e91f3033787e8",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-04-24",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FC Nitra B",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "23",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4623d14e91f3033787e8/"
+  },
+  {
+   "id": "6a4bd3745b0f57d4f482893e",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-04-24",
+   "time": "11:45",
+   "home": false,
+   "opponent": "OFK Dynamo Malženice B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd3745b0f57d4f482893e/"
+  },
+  {
+   "id": "6a441468e5a4847e623bc627",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-04-24",
+   "time": "12:30",
+   "home": true,
+   "opponent": "MŠK Kysucké Nové Mesto",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "23",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441468e5a4847e623bc627/"
+  },
+  {
+   "id": "6a3c437ce5a4847e6278f0ae",
+   "team": "a-muzstvo",
+   "date": "2027-04-24",
+   "time": "16:30",
+   "home": true,
+   "opponent": "OFK Dunajská Lužná",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "23",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437ce5a4847e6278f0ae/"
+  },
+  {
+   "id": "6a4e2951d14e91f30379d2bf",
+   "team": "u10-pripravka",
+   "date": "2027-04-25",
+   "time": "10:00",
+   "home": true,
+   "opponent": "ŠK LR CRYSTAL",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2951d14e91f30379d2bf/"
+  },
+  {
+   "id": "6a4e353fd14e91f3038f4864",
+   "team": "u11-pripravka",
+   "date": "2027-04-25",
+   "time": "10:00",
+   "home": true,
+   "opponent": "ŠK LR CRYSTAL",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353fd14e91f3038f4864/"
+  },
+  {
+   "id": "6a4e2892d14e91f303787e19",
+   "team": "u9-pripravka",
+   "date": "2027-04-25",
+   "time": "10:00",
+   "home": true,
+   "opponent": "ŠK LR CRYSTAL",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "14",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2892d14e91f303787e19/"
+  },
+  {
+   "id": "6a4e2950d14e91f30379d138",
+   "team": "u10-pripravka",
+   "date": "2027-05-01",
+   "time": "10:00",
+   "home": true,
+   "opponent": "",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2950d14e91f30379d138/"
+  },
+  {
+   "id": "6a4f44ead14e91f303354e2a",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-05-01",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK Nitra",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "24",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44ead14e91f303354e2a/"
+  },
+  {
+   "id": "6a4bd34e5b0f57d4f481f365",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-05-01",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC Nitra C",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34e5b0f57d4f481f365/"
+  },
+  {
+   "id": "6a42e948e5a4847e6256fc00",
+   "team": "u19-starsi-dorast",
+   "date": "2027-05-01",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK Nitra",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "24",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e948e5a4847e6256fc00/"
+  },
+  {
+   "id": "6a4e2892d14e91f303787d20",
+   "team": "u9-pripravka",
+   "date": "2027-05-01",
+   "time": "10:00",
+   "home": true,
+   "opponent": "",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2892d14e91f303787d20/"
+  },
+  {
+   "id": "6a4f4623d14e91f303378842",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-05-01",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FK Nitra",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "24",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4623d14e91f303378842/"
+  },
+  {
+   "id": "6a4bd3775b0f57d4f482911d",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-05-01",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FC Nitra C",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd3775b0f57d4f482911d/"
+  },
+  {
+   "id": "6a441468e5a4847e623bc7f4",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-05-01",
+   "time": "12:30",
+   "home": false,
+   "opponent": "FK Nitra",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "24",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441468e5a4847e623bc7f4/"
+  },
+  {
+   "id": "6a3c437ce5a4847e6278f0aa",
+   "team": "a-muzstvo",
+   "date": "2027-05-01",
+   "time": "17:00",
+   "home": false,
+   "opponent": "MŠK Púchov",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "24",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437ce5a4847e6278f0aa/"
+  },
+  {
+   "id": "6a4e353ed14e91f3038f453f",
+   "team": "u11-pripravka",
+   "date": "2027-05-02",
+   "time": "10:00",
+   "home": true,
+   "opponent": "",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "15",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353ed14e91f3038f453f/"
+  },
+  {
+   "id": "6a4f44f2d14e91f303355e16",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-05-08",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK TEMPO Partizánske",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "25",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44f2d14e91f303355e16/"
+  },
+  {
+   "id": "6a4bd34f5b0f57d4f481f591",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-05-08",
+   "time": "10:00",
+   "home": true,
+   "opponent": "AFC Nové Mesto nad Váhom B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34f5b0f57d4f481f591/"
+  },
+  {
+   "id": "6a42e949e5a4847e6257011b",
+   "team": "u19-starsi-dorast",
+   "date": "2027-05-08",
+   "time": "10:00",
+   "home": true,
+   "opponent": "PŠC Pezinok",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "25",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e949e5a4847e6257011b/"
+  },
+  {
+   "id": "6a4f4623d14e91f3033789aa",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-05-08",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FK TEMPO Partizánske",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "25",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4623d14e91f3033789aa/"
+  },
+  {
+   "id": "6a4bd3775b0f57d4f4829200",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-05-08",
+   "time": "11:45",
+   "home": true,
+   "opponent": "AFC Nové Mesto nad Váhom B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd3775b0f57d4f4829200/"
+  },
+  {
+   "id": "6a441469e5a4847e623bcb62",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-05-08",
+   "time": "12:30",
+   "home": true,
+   "opponent": "PŠC Pezinok",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "25",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441469e5a4847e623bcb62/"
+  },
+  {
+   "id": "6a3c437de5a4847e6278f2f9",
+   "team": "a-muzstvo",
+   "date": "2027-05-08",
+   "time": "17:00",
+   "home": true,
+   "opponent": "Spartak Myjava",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "25",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437de5a4847e6278f2f9/"
+  },
+  {
+   "id": "6a4e2952d14e91f30379d6ea",
+   "team": "u10-pripravka",
+   "date": "2027-05-09",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC Slovan Hlohovec",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2952d14e91f30379d6ea/"
+  },
+  {
+   "id": "6a4e353fd14e91f3038f4b17",
+   "team": "u11-pripravka",
+   "date": "2027-05-09",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC Slovan Hlohovec",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353fd14e91f3038f4b17/"
+  },
+  {
+   "id": "6a4e2892d14e91f303787cde",
+   "team": "u9-pripravka",
+   "date": "2027-05-09",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC Slovan Hlohovec",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "16",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2892d14e91f303787cde/"
+  },
+  {
+   "id": "6a4f44ebd14e91f30335503a",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-05-15",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠKF Sereď",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "26",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44ebd14e91f30335503a/"
+  },
+  {
+   "id": "6a4bd34f5b0f57d4f481f7c0",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-05-15",
+   "time": "10:00",
+   "home": false,
+   "opponent": "PFK Piešťany B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34f5b0f57d4f481f7c0/"
+  },
+  {
+   "id": "6a42e949e5a4847e6256fe1f",
+   "team": "u19-starsi-dorast",
+   "date": "2027-05-15",
+   "time": "10:00",
+   "home": false,
+   "opponent": "OFK Dynamo Malženice",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "26",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e949e5a4847e6256fe1f/"
+  },
+  {
+   "id": "6a4f4623d14e91f303378939",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-05-15",
+   "time": "11:45",
+   "home": false,
+   "opponent": "ŠKF Sereď",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "26",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4623d14e91f303378939/"
+  },
+  {
+   "id": "6a4bd37b5b0f57d4f4829c0d",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-05-15",
+   "time": "11:45",
+   "home": false,
+   "opponent": "PFK Piešťany B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd37b5b0f57d4f4829c0d/"
+  },
+  {
+   "id": "6a441468e5a4847e623bc82b",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-05-15",
+   "time": "12:30",
+   "home": false,
+   "opponent": "OFK Dynamo Malženice",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "26",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441468e5a4847e623bc82b/"
+  },
+  {
+   "id": "6a4e2951d14e91f30379d418",
+   "team": "u10-pripravka",
+   "date": "2027-05-15",
+   "time": "14:30",
+   "home": false,
+   "opponent": "Futbalová škola Róberta Hanka",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2951d14e91f30379d418/"
+  },
+  {
+   "id": "6a4e353fd14e91f3038f4974",
+   "team": "u11-pripravka",
+   "date": "2027-05-15",
+   "time": "14:30",
+   "home": false,
+   "opponent": "Futbalová škola Róberta Hanka",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353fd14e91f3038f4974/"
+  },
+  {
+   "id": "6a4e2893d14e91f303787ea1",
+   "team": "u9-pripravka",
+   "date": "2027-05-15",
+   "time": "14:30",
+   "home": false,
+   "opponent": "Futbalová škola Róberta Hanka",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "17",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2893d14e91f303787ea1/"
+  },
+  {
+   "id": "6a3c437de5a4847e6278f58a",
+   "team": "a-muzstvo",
+   "date": "2027-05-16",
+   "time": "17:00",
+   "home": false,
+   "opponent": "TJ Družstevník Veľké Ludince",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "26",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437de5a4847e6278f58a/"
+  },
+  {
+   "id": "6a3c437de5a4847e6278f4f8",
+   "team": "a-muzstvo",
+   "date": "2027-05-19",
+   "time": "17:00",
+   "home": true,
+   "opponent": "FKM Nové Zámky",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "27",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437de5a4847e6278f4f8/"
+  },
+  {
+   "id": "6a4f44ebd14e91f303354fa1",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-05-22",
+   "time": "10:00",
+   "home": true,
+   "opponent": "ZFC 1939 Trenčín",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "27",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44ebd14e91f303354fa1/"
+  },
+  {
+   "id": "6a4bd34f5b0f57d4f481f597",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-05-22",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FKM Nové Zámky B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34f5b0f57d4f481f597/"
+  },
+  {
+   "id": "6a42e949e5a4847e6256fe70",
+   "team": "u19-starsi-dorast",
+   "date": "2027-05-22",
+   "time": "10:00",
+   "home": true,
+   "opponent": "MŠK FOMAT Martin",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "27",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e949e5a4847e6256fe70/"
+  },
+  {
+   "id": "6a4f4623d14e91f303378b4e",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-05-22",
+   "time": "11:45",
+   "home": true,
+   "opponent": "ZFC 1939 Trenčín",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "27",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4623d14e91f303378b4e/"
+  },
+  {
+   "id": "6a4bd37b5b0f57d4f4829d9d",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-05-22",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FKM Nové Zámky B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd37b5b0f57d4f4829d9d/"
+  },
+  {
+   "id": "6a441469e5a4847e623bca66",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-05-22",
+   "time": "12:30",
+   "home": true,
+   "opponent": "MŠK FOMAT Martin",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "27",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a441469e5a4847e623bca66/"
+  },
+  {
+   "id": "6a4e2951d14e91f30379d3e0",
+   "team": "u10-pripravka",
+   "date": "2027-05-23",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalový klub Nová Dubnica",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2951d14e91f30379d3e0/"
+  },
+  {
+   "id": "6a4e353fd14e91f3038f49a6",
+   "team": "u11-pripravka",
+   "date": "2027-05-23",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalový klub Nová Dubnica",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353fd14e91f3038f49a6/"
+  },
+  {
+   "id": "6a4e2893d14e91f3037880de",
+   "team": "u9-pripravka",
+   "date": "2027-05-23",
+   "time": "10:00",
+   "home": true,
+   "opponent": "Futbalový klub Nová Dubnica",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "18",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2893d14e91f3037880de/"
+  },
+  {
+   "id": "6a3c437de5a4847e6278f313",
+   "team": "a-muzstvo",
+   "date": "2027-05-23",
+   "time": "10:30",
+   "home": false,
+   "opponent": "AS Trenčín B",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "28",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437de5a4847e6278f313/"
+  },
+  {
+   "id": "6a4e2951d14e91f30379d41b",
+   "team": "u10-pripravka",
+   "date": "2027-05-29",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK Borovce",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2951d14e91f30379d41b/"
+  },
+  {
+   "id": "6a4e353fd14e91f3038f49b6",
+   "team": "u11-pripravka",
+   "date": "2027-05-29",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK Borovce",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353fd14e91f3038f49b6/"
+  },
+  {
+   "id": "6a4f44ebd14e91f303354fb7",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-05-29",
+   "time": "10:00",
+   "home": false,
+   "opponent": "MŠK - Thermál Veľký Meder",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "28",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44ebd14e91f303354fb7/"
+  },
+  {
+   "id": "6a4bd3535b0f57d4f4820735",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-05-29",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK Lokomotíva Trnava B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd3535b0f57d4f4820735/"
+  },
+  {
+   "id": "6a42e949e5a4847e6256ff7a",
+   "team": "u19-starsi-dorast",
+   "date": "2027-05-29",
+   "time": "10:00",
+   "home": false,
+   "opponent": "FK POHRONIE Žiar nad Hronom Dolná Ždaňa",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "28",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e949e5a4847e6256ff7a/"
+  },
+  {
+   "id": "6a4e2893d14e91f303788174",
+   "team": "u9-pripravka",
+   "date": "2027-05-29",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK Borovce",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "19",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2893d14e91f303788174/"
+  },
+  {
+   "id": "6a4f4623d14e91f303378a93",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-05-29",
+   "time": "11:45",
+   "home": false,
+   "opponent": "MŠK - Thermál Veľký Meder",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "28",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4623d14e91f303378a93/"
+  },
+  {
+   "id": "6a4bd37e5b0f57d4f482a4d5",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-05-29",
+   "time": "11:45",
+   "home": false,
+   "opponent": "FK Lokomotíva Trnava B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd37e5b0f57d4f482a4d5/"
+  },
+  {
+   "id": "6a44146ae5a4847e623bd2f7",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-05-29",
+   "time": "12:30",
+   "home": false,
+   "opponent": "FK POHRONIE Žiar nad Hronom Dolná Ždaňa",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "28",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a44146ae5a4847e623bd2f7/"
+  },
+  {
+   "id": "6a3c437ee5a4847e6278f6a8",
+   "team": "a-muzstvo",
+   "date": "2027-05-29",
+   "time": "17:00",
+   "home": true,
+   "opponent": "FK Beluša",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "29",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437ee5a4847e6278f6a8/"
+  },
+  {
+   "id": "6a4f44ebd14e91f3033551a8",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-06-05",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FKM Nové Zámky",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "29",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44ebd14e91f3033551a8/"
+  },
+  {
+   "id": "6a4bd34f5b0f57d4f481f970",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-06-05",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FK Nitra B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34f5b0f57d4f481f970/"
+  },
+  {
+   "id": "6a42e949e5a4847e625701ba",
+   "team": "u19-starsi-dorast",
+   "date": "2027-06-05",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FC ViOn Zlaté Moravce - Vráble",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "29",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e949e5a4847e625701ba/"
+  },
+  {
+   "id": "6a4f4624d14e91f303378c6a",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-06-05",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FKM Nové Zámky",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "29",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4624d14e91f303378c6a/"
+  },
+  {
+   "id": "6a4bd37f5b0f57d4f482a72f",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-06-05",
+   "time": "11:45",
+   "home": true,
+   "opponent": "FK Nitra B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd37f5b0f57d4f482a72f/"
+  },
+  {
+   "id": "6a44146ae5a4847e623bd180",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-06-05",
+   "time": "12:30",
+   "home": true,
+   "opponent": "FC ViOn Zlaté Moravce - Vráble",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "29",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a44146ae5a4847e623bd180/"
+  },
+  {
+   "id": "6a3c437de5a4847e6278f49e",
+   "team": "a-muzstvo",
+   "date": "2027-06-05",
+   "time": "17:00",
+   "home": false,
+   "opponent": "ŠK 1923 Gabčíkovo",
+   "competition": "III. liga",
+   "part": "skupina Západ",
+   "round": "30",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437de5a4847e6278f49e/"
+  },
+  {
+   "id": "6a4e2951d14e91f30379d4f8",
+   "team": "u10-pripravka",
+   "date": "2027-06-06",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FUTBAL - TTS TRENČÍN",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2951d14e91f30379d4f8/"
+  },
+  {
+   "id": "6a4e353fd14e91f3038f4b18",
+   "team": "u11-pripravka",
+   "date": "2027-06-06",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FUTBAL - TTS TRENČÍN",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e353fd14e91f3038f4b18/"
+  },
+  {
+   "id": "6a4e2893d14e91f303787ea2",
+   "team": "u9-pripravka",
+   "date": "2027-06-06",
+   "time": "10:00",
+   "home": true,
+   "opponent": "FUTBAL - TTS TRENČÍN",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "20",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2893d14e91f303787ea2/"
+  },
+  {
+   "id": "6a4e2951d14e91f30379d4ec",
+   "team": "u10-pripravka",
+   "date": "2027-06-12",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK LR CRYSTAL",
+   "competition": "Prípravka  II. liga U10 Macron | yoursport  ZsFZ",
+   "part": "Prípravka  U10 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2951d14e91f30379d4ec/"
+  },
+  {
+   "id": "6a4e354fd14e91f3038f7805",
+   "team": "u11-pripravka",
+   "date": "2027-06-12",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK LR CRYSTAL",
+   "competition": "Prípravka  II. liga U11 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U11 macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e354fd14e91f3038f7805/"
+  },
+  {
+   "id": "6a4f44ebd14e91f30335511a",
+   "team": "u15-starsi-ziaci",
+   "date": "2027-06-12",
+   "time": "10:00",
+   "home": false,
+   "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo",
+   "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "II. liga  U15 macron | y*oursport  ZsFZ",
+   "round": "30",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44ebd14e91f30335511a/"
+  },
+  {
+   "id": "6a4bd34f5b0f57d4f481f819",
+   "team": "u15-starsi-ziaci-b",
+   "date": "2027-06-12",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠKF Sereď B",
+   "competition": "III. liga  U15  Macron | yoursport  ZsFZ",
+   "part": "III. liga U15 skupina \"B\"",
+   "round": "22",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd34f5b0f57d4f481f819/"
+  },
+  {
+   "id": "6a42e94ae5a4847e62570343",
+   "team": "u19-starsi-dorast",
+   "date": "2027-06-12",
+   "time": "10:00",
+   "home": false,
+   "opponent": "KFC Komárno futbal",
+   "competition": "II. LSD - U19",
+   "part": "II. liga starší dorast - Západ",
+   "round": "30",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e94ae5a4847e62570343/"
+  },
+  {
+   "id": "6a4e2893d14e91f30378808c",
+   "team": "u9-pripravka",
+   "date": "2027-06-12",
+   "time": "10:00",
+   "home": false,
+   "opponent": "ŠK LR CRYSTAL",
+   "competition": "Prípravka II. liga  U09 Macron | yoursport ZsFZ",
+   "part": "Prípravka  U09 Macron | yoursport  ZsFZ skupina \"B\"",
+   "round": "21",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4e2893d14e91f30378808c/"
+  },
+  {
+   "id": "6a4f4623d14e91f303378aae",
+   "team": "u13-mladsi-ziaci",
+   "date": "2027-06-12",
+   "time": "11:45",
+   "home": false,
+   "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo",
+   "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "II. liga  U13 macron | y*oursport  ZsFZ",
+   "round": "30",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4623d14e91f303378aae/"
+  },
+  {
+   "id": "6a4bd3815b0f57d4f482aaf0",
+   "team": "u13-mladsi-ziaci-b",
+   "date": "2027-06-12",
+   "time": "11:45",
+   "home": false,
+   "opponent": "ŠKF Sereď B",
+   "competition": "III. liga  U13 Macron | yoursport  ZsFZ",
+   "part": "III. liga U13 skupina \"B\"",
+   "round": "22",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a4bd3815b0f57d4f482aaf0/"
+  },
+  {
+   "id": "6a44146ae5a4847e623bd037",
+   "team": "u17-mladsi-dorast",
+   "date": "2027-06-12",
+   "time": "12:30",
+   "home": false,
+   "opponent": "KFC Komárno futbal",
+   "competition": "II. LMD - U17",
+   "part": "II. liga mladší dorast - Západ",
+   "round": "30",
+   "played": false,
+   "score": null,
+   "goals": [],
+   "cards": [],
+   "venue": "",
+   "url": "https://sportnet.sme.sk/futbalnet/z/6a44146ae5a4847e623bd037/"
+  }
+ ]
+}
