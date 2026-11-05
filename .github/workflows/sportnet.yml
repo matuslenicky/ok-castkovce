@@ -1,0 +1,77 @@
+# Výsledky zo Sportnetu každú hodinu: stiahne skóre, strelcov a karty (scripts/sportnet.mjs) a keď sa niečo zmenilo,
+# zostaví web a nasadí ho na gh-pages (scripts/deploy.mjs). Raz denne nasadí aj bez zmeny, aby sedel „dnes“ v rozpise.
+# Fotky (media/) nie sú v repozitári – obnovia sa z nasadeného webu na gh-pages (foto/, galerie/).
+# Ručné spustenie: Actions → Sportnet výsledky → Run workflow.
+name: Sportnet výsledky
+
+on:
+  schedule:
+    - cron: '17 * * * *'   # každú hodinu (UTC)
+    - cron: '5 3 * * *'    # denné obnovenie o 4:05/5:05 slovenského času
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: sportnet-deploy
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # posledný stiahnutý stav (detaily zápasov sa potom nesťahujú znova)
+      - uses: actions/cache/restore@v4
+        with:
+          path: data/sportnet.json
+          key: sportnet-${{ github.run_id }}
+          restore-keys: sportnet-
+
+      - name: Stiahnuť výsledky zo Sportnetu
+        id: sn
+        run: |
+          before=$(sha256sum data/sportnet.json | cut -d' ' -f1)
+          node scripts/sportnet.mjs
+          after=$(sha256sum data/sportnet.json | cut -d' ' -f1)
+          if [ "$before" != "$after" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event.schedule }}" = "5 3 * * *" ]; then
+            echo "deploy=1" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: data/sportnet.json
+          key: sportnet-${{ github.run_id }}
+
+      - name: Pripraviť gh-pages a fotky
+        if: steps.sn.outputs.deploy == '1'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch --depth 1 origin gh-pages
+          git worktree add -B gh-pages .pages FETCH_HEAD
+          mkdir -p media
+          cp -r .pages/foto media/foto-web
+          cp -r .pages/galerie media/galerie-web
+
+      - name: Zostaviť a nasadiť
+        if: steps.sn.outputs.deploy == '1'
+        env:
+          SKIP_SPORTNET: '1'
+          DEPLOY_MSG: Automatická aktualizácia výsledkov zo Sportnetu
+        run: node scripts/deploy.mjs
+
+      - name: Spustiť zostavenie GitHub Pages
+        if: steps.sn.outputs.deploy == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
