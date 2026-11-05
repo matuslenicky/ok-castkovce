@@ -6,6 +6,9 @@ const toastEl = document.getElementById('toast');
 const KEY = 'okc-admin-demo-v2';
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const clone = (o) => JSON.parse(JSON.stringify(o));
+// skutočná výška žltého pásu (úzky telefón, väčšie písmo) → lepiaca hlavička, lišta editora a scroll-padding sa posunú pod neho
+const demoBar = document.querySelector('.demo-bar');
+if (demoBar && 'ResizeObserver' in window) new ResizeObserver(() => document.documentElement.style.setProperty('--demo-h', demoBar.offsetHeight + 'px')).observe(demoBar);
 
 // ---- ikony (Lucide, ISC) ----
 const P = {
@@ -36,6 +39,7 @@ const P = {
   people: '<circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20a6 6 0 0 1 12 0M14 20a4.5 4.5 0 0 1 8 0"/>',
   history: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/>',
   eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12"/><circle cx="12" cy="12" r="3"/>',
+  star: '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
 };
 const ic = (n, cls = '') => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"${cls ? ` class="${cls}"` : ''}>${P[n]}</svg>`;
 const BALL = '<svg class="ball" viewBox="0 0 24 24" role="img" aria-label="gól"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#121317" stroke-width="1.6"/><path d="m12 6.2 5 3.6-1.9 5.9H8.9L7 9.8z" fill="#121317"/><path d="M12 6.2V2.5M17 9.8l3.5-1.2M15.1 15.7l2.2 3.1M8.9 15.7l-2.2 3.1M7 9.8 3.5 8.6" stroke="#121317" stroke-width="1.4"/></svg>';
@@ -43,16 +47,22 @@ const BALL = '<svg class="ball" viewBox="0 0 24 24" role="img" aria-label="gól"
 // ---- stav ukážky ----
 let D = null;
 let DRAFT = {}; // rozpracované zmeny obrazovky (súpiska, tréneri, partneri), kým sa neuložia
+let focusNext = null; // čo zamerať po prekreslení (selektor); inak ten istý prvok, inak nadpis – nikdy nie začiatok stránky
 const EMPTY = { logged: false, role: 'admin', roleTeam: 'u15-starsi-ziaci', edits: {}, news: [], players: {}, users: null, c: {}, log: [] };
 const S = load();
 function load() {
   try { return { ...clone(EMPTY), ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { return clone(EMPTY); }
 }
 function save() {
-  try { localStorage.setItem(KEY, JSON.stringify(S)); return true; } catch { toast('Ukážka je plná (veľa fotiek) – zmena platí len do obnovenia stránky'); return false; }
+  try { localStorage.setItem(KEY, JSON.stringify(S)); return true; } catch { toast('Pamäť ukážky v prehliadači je plná (veľa fotiek) – zmena platí len do obnovenia stránky', true); return false; }
 }
-let toastT;
-function toast(msg) { toastEl.textContent = msg; toastEl.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { toastEl.hidden = true; }, 3400); }
+let toastT, warnUntil = 0;
+// varovanie (warn) neprepíše bežné „uložené“, ktoré hneď nasleduje
+function toast(msg, warn = false) {
+  if (!warn && Date.now() < warnUntil) return;
+  if (warn) warnUntil = Date.now() + 5000;
+  toastEl.textContent = msg; toastEl.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { toastEl.hidden = true; }, warn ? 5000 : 3400);
+}
 // obsah: prepísané hodnoty sú v S.c, inak pôvodné z demo.json
 const get = (key, def) => (key in S.c ? clone(S.c[key]) : clone(def));
 function put(key, val, what, url) {
@@ -81,7 +91,8 @@ const ytId = (u) => { const m = String(u || '').match(/(?:youtu\.be\/|v=|embed\/
 const ago = (t) => { const min = Math.max(1, Math.round((Date.now() - (typeof t === 'number' ? t : Date.parse(t))) / 6e4)); return min < 60 ? `pred ${min} min` : min < 1440 ? `pred ${Math.round(min / 60)} h` : `pred ${Math.round(min / 1440)} d`; };
 const initials = (n) => String(n).split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join('').toUpperCase();
 const q = () => new URLSearchParams(location.hash.split('?')[1] || '');
-const plural = (n, a, b, c) => `${n} ${n === 1 ? a : n >= 2 && n <= 4 ? b : c}`;
+const pw = (n, a, b, c) => (n === 1 ? a : n >= 2 && n <= 4 ? b : c); // len tvar slova
+const plural = (n, a, b, c) => `${n} ${pw(n, a, b, c)}`;
 const slugify = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'polozka';
 const webLink = (url, t = 'Zobraziť na webe') => `<a class="link" href="../${esc(url)}" target="_blank" rel="noopener">${t}</a>`;
 const validUrl = (u) => !u || /^https:\/\/[^\s]+\.[^\s]+$/.test(u);
@@ -95,6 +106,7 @@ const ACCESS = {
   trener: ['home', 'zapasy', 'galerie', 'videa', 'timy', 'zmeny'],
   foto: ['home', 'zapasy', 'galerie', 'zmeny'],
 };
+if (!ROLES[S.role]) S.role = 'admin'; // stará alebo neznáma rola v localStorage
 const can = (sec) => !ACCESS[S.role] || ACCESS[S.role].includes(sec);
 const scopeTeam = () => (S.role === 'trener' ? S.roleTeam : '');
 const roleName = () => (S.role === 'admin' ? 'Správca webu' : `${ROLES[S.role][0]}${S.role === 'trener' ? ' ' + team(S.roleTeam).short : ''}`);
@@ -114,7 +126,7 @@ function shell(active, body) {
   const bottom = BOTTOM.filter(([, , , s]) => can(s)).concat(can('spravy') ? [] : [['#/galerie', 'Galérie', 'images', 'galerie']]);
   const moreActive = !bottom.some(([, , , s]) => s === active);
   return `<div class="shell">
-  <header class="top"><a class="top-brand" href="#/"><img src="../img/logo.svg" alt=""><b>OK Častkovce</b><span>Admin</span></a>
+  <header class="top${S.role !== 'admin' ? ' top--role' : ''}"><a class="top-brand" href="#/"><img src="../img/logo.svg" alt=""><b>OK Častkovce</b><span>Admin</span></a>
     <div class="top-user">${S.role !== 'admin' ? `<button class="role-pill" type="button" id="role-back">${ic('eye')}${esc(roleName())} · späť</button>` : '<span class="who">Správca webu</span>'}<span class="ava" aria-hidden="true">${esc(initials(roleName()))}</span></div></header>
   <nav class="side" aria-label="Administrácia">${side}<div class="sep"></div><a href="../" target="_blank" rel="noopener">${ic('globe')}Zobraziť web</a><a href="#/odhlasit">${ic('out')}Odhlásiť</a></nav>
   <main class="main" id="main">${body}</main>
@@ -152,9 +164,9 @@ const rte = (name, html, label) => `<div class="rte" data-rte="${name}">
     <button type="button" data-cmd="h3">Nadpis</button><button type="button" data-cmd="p">Odsek</button>
     <button type="button" data-cmd="bold" aria-label="Tučné"><b>B</b></button><button type="button" data-cmd="italic" aria-label="Kurzíva"><i>I</i></button>
     <button type="button" data-cmd="ul" aria-label="Zoznam s odrážkami">• Zoznam</button><button type="button" data-cmd="link">Odkaz</button>
-    <button type="button" data-cmd="img">Obrázok</button><button type="button" data-cmd="clear" aria-label="Zrušiť formátovanie">Bez formátu</button>
+    <button type="button" data-cmd="img">Obrázok</button><button type="button" data-cmd="clear" title="Zrušiť formátovanie">Bez formátu</button>
   </div>
-  <div class="rte-area prose" contenteditable="true" role="textbox" aria-multiline="true" aria-label="${esc(label)}">${sanitize(html)}</div>
+  <div class="rte-area prose" contenteditable="true" role="textbox" aria-multiline="true" aria-label="${esc(label)}">${sanitize(html).replace(/<(\/?)h3>/g, '<$1h2>')}</div>
   <div class="rte-link" hidden><input class="input" type="url" placeholder="https://… alebo mailto:…" aria-label="Adresa odkazu"><button class="btn btn--sm" type="button">Vložiť odkaz</button><button class="btn btn--ghost btn--sm" type="button" data-cancel>Zrušiť</button></div>
   <input type="file" accept="image/*" hidden tabindex="-1" aria-hidden="true">
 </div>`;
@@ -169,7 +181,8 @@ function bindRte(onChange) {
     box.querySelector('.rte-bar').addEventListener('click', (e) => {
       const b = e.target.closest('button[data-cmd]'); if (!b) return;
       const c = b.dataset.cmd; restore();
-      if (c === 'h3' || c === 'p') document.execCommand('formatBlock', false, c === 'h3' ? '<h3>' : '<p>');
+      // nadpis v texte = h2 (stránka má h1, staré texty s h3 sa pri otvorení zmenia na h2, aby nechýbala úroveň)
+      if (c === 'h3' || c === 'p') document.execCommand('formatBlock', false, c === 'h3' ? '<h2>' : '<p>');
       else if (c === 'ul') document.execCommand('insertUnorderedList');
       else if (c === 'clear') { document.execCommand('removeFormat'); document.execCommand('formatBlock', false, '<p>'); }
       else if (c === 'link') { keep(); linkBox.hidden = false; linkIn.value = ''; linkIn.focus(); return; }
@@ -183,6 +196,11 @@ function bindRte(onChange) {
       linkBox.hidden = true; restore(); document.execCommand('createLink', false, u); onChange?.();
     });
     linkBox.querySelector('[data-cancel]').addEventListener('click', () => { linkBox.hidden = true; restore(); });
+    // Enter vloží odkaz (inak by odoslal celý formulár a uložil stránku), Escape pole zavrie
+    linkBox.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && e.target === linkIn) { e.preventDefault(); linkBox.querySelector('.btn:not([data-cancel])').click(); }
+      else if (e.key === 'Escape') { e.preventDefault(); linkBox.querySelector('[data-cancel]').click(); }
+    });
     file.addEventListener('change', async () => { const f = file.files[0]; if (!f) return; const src = await thumb(f, 900).catch(() => null); file.value = ''; if (!src) return toast('Obrázok sa nepodarilo načítať'); restore(); document.execCommand('insertImage', false, src); onChange?.(); });
   });
 }
@@ -199,24 +217,25 @@ function thumb(file, max = 480) {
 }
 // mriežka fotiek s nahrávaním, odstránením a výberom titulnej (prvá = titulná)
 const photoGrid = (id, photos, label = 'fotky') => `<label class="drop">${ic('camera')}<b>Pridať ${label} z telefónu alebo počítača</b><span>Aj viac naraz. Zmenšia sa automaticky.</span><input type="file" accept="image/*" multiple data-grid="${id}"></label>
-  <div class="thumbs" id="${id}">${photos.map((u, i) => `<div class="thumb${String(u).startsWith('data:') ? ' thumb--new' : ''}"><img src="${esc(u)}" alt="Fotka ${i + 1}" loading="lazy">${i === 0 ? '<span class="star">titulná</span>' : `<button class="mk" type="button" data-cover="${i}" aria-label="Nastaviť fotku ${i + 1} ako titulnú">titulná</button>`}<button class="x" type="button" data-rm="${i}" aria-label="Odstrániť fotku ${i + 1}">${ic('x')}</button></div>`).join('')}</div>`;
+  <div class="thumbs" id="${id}">${photos.map((u, i) => `<div class="thumb${String(u).startsWith('data:') ? ' thumb--new' : ''}"><img src="${esc(u)}" alt="Fotka ${i + 1}" loading="lazy">${i === 0 ? '<span class="star">titulná</span>' : `<button class="mk" type="button" data-cover="${i}" aria-label="Nastaviť fotku ${i + 1} ako titulnú" title="Nastaviť ako titulnú">${ic('star')}</button>`}<button class="x" type="button" data-rm="${i}" aria-label="Odstrániť fotku ${i + 1}">${ic('x')}</button></div>`).join('')}</div>`;
 function bindGrid(id, photos, rerender) {
   document.querySelector(`[data-grid="${id}"]`)?.addEventListener('change', async (ev) => {
     const files = [...ev.target.files].slice(0, 24); if (!files.length) return;
     toast(`Spracúvam ${plural(files.length, 'fotku', 'fotky', 'fotiek')}…`);
     for (const f of files) { try { photos.push(await thumb(f)); } catch { /* nečitateľný súbor */ } }
-    rerender(); toast('Fotky pridané – nezabudnite uložiť');
+    rerender(); gridFocus(id); toast('Fotky pridané – nezabudnite uložiť');
   });
   document.getElementById(id)?.addEventListener('click', (ev) => {
     const rm = ev.target.closest('[data-rm]'), cv = ev.target.closest('[data-cover]');
-    if (rm) { photos.splice(+rm.dataset.rm, 1); rerender(); }
-    if (cv) { const [p] = photos.splice(+cv.dataset.cover, 1); photos.unshift(p); rerender(); toast('Titulná fotka zmenená'); }
+    if (rm) { const i = +rm.dataset.rm; photos.splice(i, 1); rerender(); gridFocus(id, photos.length ? `[data-rm="${Math.min(i, photos.length - 1)}"]` : ''); }
+    if (cv) { const [p] = photos.splice(+cv.dataset.cover, 1); photos.unshift(p); rerender(); gridFocus(id, '.thumb:first-child .x'); toast('Titulná fotka zmenená'); }
   });
 }
+const gridFocus = (id, sel = '') => (document.querySelector(sel ? `#${id} ${sel}` : '#_') || document.querySelector(`[data-grid="${id}"]`))?.focus();
 // zoznam ľudí / položiek s poradím (hore/dole), pridaním a odstránením
 const rowsEditor = (id, rows, fields, addLabel) => `<ol class="rows" id="${id}">${rows.map((r, i) => `<li class="erow">
   <div class="erow-f">${fields.map(([k, l, ph, t]) => `<label class="field field--in"><span>${l}</span><input class="input" ${t ? `type="${t}"` : ''} data-k="${k}" value="${esc(r[k] || '')}" placeholder="${esc(ph || '')}"></label>`).join('')}</div>
-  <div class="erow-a"><button class="ibtn" type="button" data-up="${i}" aria-label="Posunúť vyššie"${i === 0 ? ' disabled' : ''}>${ic('up')}</button><button class="ibtn" type="button" data-down="${i}" aria-label="Posunúť nižšie"${i === rows.length - 1 ? ' disabled' : ''}>${ic('down')}</button><button class="ibtn ibtn--x" type="button" data-del="${i}" aria-label="Odstrániť">${ic('x')}</button></div></li>`).join('')}</ol>
+  <div class="erow-a">${((n) => `<button class="ibtn" type="button" data-up="${i}" aria-label="Posunúť ${n} vyššie"${i === 0 ? ' disabled' : ''}>${ic('up')}</button><button class="ibtn" type="button" data-down="${i}" aria-label="Posunúť ${n} nižšie"${i === rows.length - 1 ? ' disabled' : ''}>${ic('down')}</button><button class="ibtn ibtn--x" type="button" data-del="${i}" aria-label="Odstrániť ${n}">${ic('x')}</button>`)(r.name ? esc(r.name) : `riadok ${i + 1}`)}</div></li>`).join('')}</ol>
   <button class="btn btn--ghost btn--sm" type="button" data-add="${id}">${ic('plus')}${addLabel}</button>`;
 function readRows(id) { return [...document.querySelectorAll(`#${id} > .erow`)].map((li) => Object.fromEntries([...li.querySelectorAll('[data-k]')].map((i) => [i.dataset.k, i.value.trim()]))); }
 function bindRows(id, getRows, setRows, rerender, blank) {
@@ -224,19 +243,22 @@ function bindRows(id, getRows, setRows, rerender, blank) {
   ol?.addEventListener('click', (e) => {
     const b = e.target.closest('button'); if (!b) return;
     const rows = readRows(id);
+    if (b.dataset.up || b.dataset.down) focusNext = moveFocus(id, rows.length, b.dataset.up ? +b.dataset.up - 1 : +b.dataset.down + 1, b.dataset.up ? 'up' : 'down');
     if (b.dataset.up) { const i = +b.dataset.up; [rows[i - 1], rows[i]] = [rows[i], rows[i - 1]]; }
     else if (b.dataset.down) { const i = +b.dataset.down; [rows[i + 1], rows[i]] = [rows[i], rows[i + 1]]; }
-    else if (b.dataset.del) rows.splice(+b.dataset.del, 1);
+    else if (b.dataset.del) { const i = +b.dataset.del; rows.splice(i, 1); focusNext = rows.length ? `#${id} > .erow:nth-child(${Math.min(i, rows.length - 1) + 1}) input` : `[data-add="${id}"]`; }
     else return;
     setRows(rows); rerender();
   });
-  document.querySelector(`[data-add="${id}"]`)?.addEventListener('click', () => { const rows = readRows(id); rows.push({ ...blank }); setRows(rows); rerender(); document.querySelector(`#${id} > .erow:last-child input`)?.focus(); });
+  document.querySelector(`[data-add="${id}"]`)?.addEventListener('click', () => { const rows = readRows(id); rows.push({ ...blank }); setRows(rows); focusNext = `#${id} > .erow:last-child input`; rerender(); });
 }
+// po posune ostane fokus na tom istom riadku na novom mieste (na krajoch na druhej šípke, ktorá nie je vypnutá)
+const moveFocus = (id, n, j, dir) => `#${id} [data-${dir === 'up' ? (j === 0 ? 'down' : 'up') : (j === n - 1 ? 'up' : 'down')}="${j}"]`;
 const dirtyState = () => { const s = document.getElementById('state'); if (s) s.innerHTML = '<b>Neuložené zmeny</b>nezabudnite uložiť'; };
 
 // ---- prihlásenie ----
 function vLogin(sent) {
-  app.innerHTML = `<div class="login"><div class="login-card">
+  app.innerHTML = `<main class="login"><div class="login-card">
   <img class="login-crest" src="../img/logo.svg" alt="">
   <h1>Administrácia webu</h1>
   ${sent ? `<div class="sent"><div class="sent-ic">${ic('mail')}</div><p class="lead">Na <b>${esc(sent)}</b> sme poslali prihlasovací odkaz. Otvorte ho v tomto telefóne alebo počítači.</p>
@@ -245,10 +267,11 @@ function vLogin(sent) {
   <form id="lf" novalidate><label class="field"><span>E-mail</span><input class="input" type="email" name="email" autocomplete="email" inputmode="email" placeholder="meno@okcastkovce.sk" required></label>
   <button class="btn btn--block" type="submit">${ic('mail')}Poslať prihlasovací odkaz</button></form>
   <p class="hint">Bez hesla: na e-mail príde jednorazový odkaz. Prístup pridáva správca webu.</p>`}
-</div></div>`;
+</div></main>`;
   if (sent) {
     document.getElementById('go').onclick = () => { S.logged = true; S.role = 'admin'; save(); location.hash = '#/'; route(); };
-    document.getElementById('again').onclick = () => vLogin();
+    document.getElementById('again').onclick = () => { vLogin(); document.querySelector('#lf input')?.focus(); };
+    document.getElementById('go').focus();
   } else {
     document.getElementById('lf').onsubmit = (e) => { e.preventDefault(); vLogin(e.target.email.value.trim() || 'spravca@okcastkovce.sk'); };
   }
@@ -266,9 +289,9 @@ function vHome() {
   <section class="card" aria-labelledby="sync-h"><div class="sync"><span class="sync-ic" id="syncic">${ic('refresh')}</span>
     <div><b id="sync-h">Výsledky zo Sportnetu sú aktuálne</b><span>Naposledy ${esc(ago(D.updated))} · ${D.teams.length} tímov · automaticky každú hodinu</span></div>
     <button class="btn btn--ghost btn--sm" id="sync" type="button">Aktualizovať</button></div></section>
-  <div class="stats"><div class="stat"><b>${played.length}</b><span>odohraných zápasov ${st ? esc(team(st).short) : 'v sezóne ' + esc(D.season)}</span></div>
-    <div class="stat"><b>${played.reduce((n, m) => n + m.goals.filter((g) => g.side === 'our').length, 0)}</b><span>gólov zo zápisov</span></div>
-    <div class="stat"><b>${S.log.length}</b><span>zmien v ukážke</span></div></div>
+  <div class="stats">${((goals) => `<div class="stat"><b>${played.length}</b><span>${pw(played.length, 'odohraný zápas', 'odohrané zápasy', 'odohraných zápasov')} ${st ? esc(team(st).short) : 'v sezóne ' + esc(D.season)}</span></div>
+    <div class="stat"><b>${goals}</b><span>${pw(goals, 'gól', 'góly', 'gólov')} zo zápisov</span></div>`)(played.reduce((n, m) => n + m.goals.filter((g) => g.side === 'our').length, 0))}
+    <div class="stat"><b>${S.log.length}</b><span>${pw(S.log.length, 'zmena', 'zmeny', 'zmien')} v ukážke</span></div></div>
   <div class="qa">${shortcuts.map(([h, l, i]) => `<a href="${h}">${ic(i)}${l}</a>`).join('')}</div>
   <div class="grid2">
   <section class="card" aria-labelledby="todo-h"><div class="card-h"><h2 id="todo-h">Čaká na doplnenie</h2><span class="count">posledné 3 týždne</span></div>
@@ -321,7 +344,7 @@ function vMatch(id) {
       : `<p class="empty">${s ? 'V zápise nie sú žiadne góly ani karty.' : 'V tejto kategórii sa výsledky nezapisujú (prípravky).'}</p>`}</section>` : '';
   const photos = [...(m.gallery?.thumbs || []), ...e.photos];
   return shell('zapasy', `${back('#/zapasy', 'Zápasy')}
-  <section class="mhead"><div class="mhead-meta">${esc(m.competition)}${m.part && !m.part.toLowerCase().startsWith(m.competition.toLowerCase().slice(0, 8)) ? ' · ' + esc(m.part) : ''}${m.round ? ` · ${esc(m.round)}. kolo` : ''}</div>
+  <section class="mhead"><h1 class="sr">${esc(hName)} – ${esc(aName)}</h1><div class="mhead-meta">${esc(m.competition)}${m.part && !m.part.toLowerCase().startsWith(m.competition.toLowerCase().slice(0, 8)) ? ' · ' + esc(m.part) : ''}${m.round ? ` · ${esc(m.round)}. kolo` : ''}</div>
     <div class="mhead-teams"><span class="mhead-team${m.home ? ' is-us' : ''}">${esc(hName)}</span>
       <span class="mhead-score">${m.score ? esc(m.score.replace(':', ' : ')) : esc(m.time || '–')}<small>${m.played ? (s ? 'koniec' : 'odohrané') : fmtD(m.date)}</small></span>
       <span class="mhead-team${m.home ? '' : ' is-us'}">${esc(aName)}</span></div>
@@ -358,9 +381,9 @@ function bindMatch(id) {
     toast(`Spracúvam ${plural(files.length, 'fotku', 'fotky', 'fotiek')}…`);
     const e = cur();
     for (const file of files) { try { e.photos.push(await thumb(file)); } catch { /* nečitateľný súbor */ } }
-    save(); route(); toast('Fotky pridané – nezabudnite zverejniť');
+    save(); focusNext = '#files'; route(); toast('Fotky pridané – nezabudnite zverejniť');
   });
-  document.getElementById('thumbs').addEventListener('click', (ev) => { const b = ev.target.closest('[data-rm]'); if (!b) return; cur().photos.splice(+b.dataset.rm, 1); save(); route(); });
+  document.getElementById('thumbs').addEventListener('click', (ev) => { const b = ev.target.closest('[data-rm]'); if (!b) return; const ph = cur().photos, i = +b.dataset.rm; ph.splice(i, 1); save(); focusNext = ph.length ? `#thumbs [data-rm="${Math.min(i, ph.length - 1)}"]` : '#files'; route(); });
   const store = (status) => {
     const e = cur();
     if (f.comment) e.comment = f.comment.value.trim();
@@ -379,7 +402,7 @@ const allNews = () => [...S.news, ...D.news.map((n) => ({ ...n, ...get('news:' +
 function vNews() {
   const all = allNews();
   return shell('spravy', `${head('Správy', plural(all.length, 'správa', 'správy', 'správ') + ' na webe', `<a class="btn btn--sm" href="#/spravy/nova">${ic('plus')}Nová</a>`)}
-  <section class="card"><ul class="list">${all.map((n) => `<li><a class="row" href="#/spravy/${encodeURIComponent(n.id)}">${n.img ? `<img class="nimg" src="${esc(n.img)}" alt="" loading="lazy">` : '<span class="nimg"></span>'}<span class="row-main"><span class="row-t">${esc(n.title)}</span><span class="row-s">${esc(fmtDY(n.date))}${String(n.id).startsWith('n') ? ' · nová' : ''}</span></span>${ic('chev', 'chev')}</a></li>`).join('')}</ul></section>`);
+  <section class="card">${all.length ? '' : '<p class="empty">Zatiaľ žiadne správy. Napíšte prvú.</p>'}<ul class="list">${all.map((n) => `<li><a class="row" href="#/spravy/${encodeURIComponent(n.id)}">${n.img ? `<img class="nimg" src="${esc(n.img)}" alt="" loading="lazy">` : '<span class="nimg"></span>'}<span class="row-main"><span class="row-t">${esc(n.title)}</span><span class="row-s">${esc(fmtDY(n.date))}${String(n.id).startsWith('n') ? ' · nová' : ''}</span></span>${ic('chev', 'chev')}</a></li>`).join('')}</ul></section>`);
 }
 function vNewsEdit(id) {
   const isNew = id === 'nova';
@@ -427,7 +450,7 @@ function vGalleries() {
   const all = allGals();
   return shell('galerie', `${head('Galérie', plural(all.length, 'galéria', 'galérie', 'galérií'), `<a class="btn btn--sm" href="#/galerie/nova">${ic('plus')}Nová</a>`)}
   <div class="gcards">${all.slice(0, 48).map((g) => `<a class="gcard" href="#/galerie/${encodeURIComponent(g.slug)}"><img src="${esc(g.photos?.[0] || g.cover)}" alt="" loading="lazy"><span><b>${esc(g.title)}</b><span>${esc(fmtDY(g.date))}${g.team ? ' · ' + esc(team(g.team).short) : ''} · ${plural(g.photos ? g.photos.length : g.count, 'fotka', 'fotky', 'fotiek')}</span></span></a>`).join('')}</div>
-  ${all.length > 48 ? `<p class="help">Zobrazených 48 najnovších z ${all.length}.</p>` : ''}`);
+  ${all.length ? '' : '<section class="card"><p class="empty">Zatiaľ žiadne galérie.</p></section>'}${all.length > 48 ? `<p class="help">Zobrazených 48 najnovších z ${all.length}.</p>` : ''}`);
 }
 function vGallery(slug) {
   const isNew = slug === 'nova';
@@ -478,7 +501,7 @@ function vVideos() {
     <label class="field"><span>Dátum</span><input class="input" type="date" name="date" value="${todayISO()}"></label>
     <button class="btn btn--block" type="submit">${ic('plus')}Pridať video</button></form></section>
   <section class="card"><div class="card-h"><h2>Na webe</h2><span class="count">${plural(list.length, 'video', 'videá', 'videí')}</span></div>
-  <ul class="list">${list.map((v, i) => `<li><div class="row"><img class="nimg" src="https://i.ytimg.com/vi/${encodeURIComponent(v.youtube)}/mqdefault.jpg" alt="" loading="lazy"><span class="row-main"><span class="row-t">${esc(v.title)}</span><span class="row-s">${esc(fmtDY(v.date))}</span></span><button class="ibtn ibtn--x" type="button" data-vdel="${i}" aria-label="Odstrániť video ${esc(v.title)}">${ic('x')}</button></div></li>`).join('')}</ul></section>`);
+  ${list.length ? '' : '<p class="empty">Zatiaľ žiadne videá.</p>'}<ul class="list">${list.map((v, i) => `<li><div class="row"><img class="nimg" src="https://i.ytimg.com/vi/${encodeURIComponent(v.youtube)}/mqdefault.jpg" alt="" loading="lazy"><span class="row-main"><span class="row-t">${esc(v.title)}</span><span class="row-s">${esc(fmtDY(v.date))}</span></span><button class="ibtn ibtn--x" type="button" data-vdel="${i}" aria-label="Odstrániť video ${esc(v.title)}">${ic('x')}</button></div></li>`).join('')}</ul></section>`);
 }
 function bindVideos() {
   const f = document.getElementById('vf'); if (!f) return;
@@ -490,7 +513,7 @@ function bindVideos() {
     const list = get('videos', D.videos); list.unshift({ id: 'v' + Date.now(), title, date: f.date.value || todayISO(), youtube: id });
     put('videos', list, `Nové video: ${title}`, 'video/'); route(); toast('Video pridané (ukážka)');
   };
-  document.querySelectorAll('[data-vdel]').forEach((b) => { b.onclick = () => { const list = get('videos', D.videos); const [v] = list.splice(+b.dataset.vdel, 1); put('videos', list, `Video odstránené: ${v.title}`, 'video/'); route(); toast('Video odstránené'); }; });
+  document.querySelectorAll('[data-vdel]').forEach((b) => { b.onclick = () => { const list = get('videos', D.videos), i = +b.dataset.vdel; const [v] = list.splice(i, 1); put('videos', list, `Video odstránené: ${v.title}`, 'video/'); focusNext = list.length ? `[data-vdel="${Math.min(i, list.length - 1)}"]` : '#vf [name="url"]'; route(); toast('Video odstránené'); }; });
 }
 
 // ---- tímy a súpisky ----
@@ -544,15 +567,19 @@ function vPlayers() {
 }
 function playerForm(pl, tm) {
   const x = S.players[pl.name] || {};
-  return `<section class="card" aria-labelledby="pf-h"><div class="card-h"><h2 id="pf-h">${esc(pl.name)}</h2><a class="link" href="#/hraci?tim=${tm}">Zavrieť</a></div>
+  return `<section class="card" aria-labelledby="pf-h"><div class="card-h"><h2 id="pf-h" tabindex="-1">${esc(pl.name)}</h2><a class="link" href="#/hraci?tim=${tm}">Zavrieť</a></div>
   <p class="sheet-note">Pri hráčoch mladších ako 18 rokov zverejnite údaje a fotku len so súhlasom rodiča alebo zákonného zástupcu.</p>
   <form id="pf" novalidate>${PF.map(([k, l, t]) => `<label class="field"><span>${l}</span><input class="input" type="${t}" name="${k}" value="${esc(x[k] || '')}"></label>`).join('')}
   <label class="check"><input type="checkbox" name="suhlas"${x.suhlas ? ' checked' : ''}><span>Mám súhlas rodiča alebo zákonného zástupcu so zverejnením týchto údajov a fotky.</span></label>
   <div class="mt"><button class="btn btn--block" type="submit" id="pfs"${x.suhlas ? '' : ' disabled'}>Uložiť profil</button></div></form></section>`;
 }
 function bindPlayers() {
+  // otvorenie profilu → fokus na formulár nad zoznamom; zatvorenie/uloženie → späť na riadok hráča
+  const prevHrac = prevHash.startsWith('#/hraci') ? new URLSearchParams(prevHash.split('?')[1] || '').get('hrac') : null, hrac = q().get('hrac');
+  if (hrac && hrac !== prevHrac) focusNext = '#pf-h';
+  else if (!hrac && prevHrac) focusNext = `#main a.row[href$="hrac=${encodeURIComponent(prevHrac)}"]`;
   const f = document.getElementById('pf'); if (!f) return;
-  const name = q().get('hrac');
+  const name = hrac;
   f.suhlas.addEventListener('change', () => { document.getElementById('pfs').disabled = !f.suhlas.checked; });
   f.onsubmit = (ev) => { ev.preventDefault(); if (!f.suhlas.checked) return; S.players[name] = Object.fromEntries([...PF.map(([k]) => [k, f[k].value.trim()]), ['suhlas', true]]); S.log.unshift({ t: Date.now(), what: `Profil hráča: ${name}`, url: '', who: roleName() }); save(); toast('Profil uložený (ukážka)'); location.hash = `#/hraci?tim=${q().get('tim')}`; };
 }
@@ -667,7 +694,7 @@ const shopData = () => get('shop', D.fanshop);
 function vShop() {
   const s = shopData();
   return shell('fanzona', `${head('Fanzóna', 'Produkty, ceny a fotky. Objednávky chodia e-mailom.', `<a class="btn btn--sm" href="#/produkt/novy">${ic('plus')}Nový</a>`)}
-  <section class="card"><ul class="list">${s.produkty.map((p) => `<li><a class="row" href="#/produkt/${encodeURIComponent(p.slug)}">${p.photos[0] ? `<img class="nimg nimg--sq" src="${esc(p.photos[0])}" alt="" loading="lazy">` : '<span class="nimg nimg--sq"></span>'}<span class="row-main"><span class="row-t">${esc(p.nazov)}</span><span class="row-s">${esc(p.cena)} € · ${esc(p.velkost || 'bez veľkostí')}</span>${p.vypredane ? '<span class="tags"><span class="tag tag--red">vypredané</span></span>' : ''}</span>${ic('chev', 'chev')}</a></li>`).join('')}</ul></section>
+  <section class="card">${s.produkty.length ? '' : '<p class="empty">Zatiaľ žiadne produkty.</p>'}<ul class="list">${s.produkty.map((p) => `<li><a class="row" href="#/produkt/${encodeURIComponent(p.slug)}">${p.photos[0] ? `<img class="nimg nimg--sq" src="${esc(p.photos[0])}" alt="" loading="lazy">` : '<span class="nimg nimg--sq"></span>'}<span class="row-main"><span class="row-t">${esc(p.nazov)}</span><span class="row-s">${esc(p.cena)} € · ${esc(p.velkost || 'bez veľkostí')}</span>${p.vypredane ? '<span class="tags"><span class="tag tag--red">vypredané</span></span>' : ''}</span>${ic('chev', 'chev')}</a></li>`).join('')}</ul></section>
   <section class="card"><form id="sof" novalidate><div class="card-h"><h2>Objednávky a poznámka</h2></div>
     <label class="field"><span>E-mail na objednávky</span><input class="input" type="email" name="email" value="${esc(s.email)}"></label>
     <label class="field"><span>Poznámka pod produktmi</span><input class="input" name="pozn" value="${esc(s.pozn)}"></label>
@@ -717,7 +744,7 @@ function bindProduct(slug) {
 function vPartners() {
   const list = (DRAFT.partners ||= get('partners', D.partners));
   return shell('partneri', `${head('Partneri', 'Logá v pätičke každej stránky, v poradí ako tu.')}
-  <section class="card"><ol class="rows" id="plist">${list.map((p, i) => `<li class="erow erow--logo"><span class="plogo${p.dark ? ' plogo--dark' : ''}"><img src="${esc(p.logo)}" alt=""></span>
+  <section class="card">${list.length ? '' : '<p class="empty">Zatiaľ žiadni partneri.</p>'}<ol class="rows" id="plist">${list.map((p, i) => `<li class="erow erow--logo"><span class="plogo${p.dark ? ' plogo--dark' : ''}"><img src="${esc(p.logo)}" alt=""></span>
     <div class="erow-f"><label class="field field--in"><span>Názov</span><input class="input" data-k="alt" value="${esc(p.alt)}"></label><label class="field field--in"><span>Odkaz na web partnera</span><input class="input" data-k="url" type="url" value="${esc(p.url)}" placeholder="https://…"></label>
     <label class="check check--s"><input type="checkbox" data-k="dark"${p.dark ? ' checked' : ''}><span>Svetlé logo (tmavé pozadie)</span></label></div>
     <div class="erow-a"><button class="ibtn" type="button" data-up="${i}" aria-label="Posunúť ${esc(p.alt)} vyššie"${i === 0 ? ' disabled' : ''}>${ic('up')}</button><button class="ibtn" type="button" data-down="${i}" aria-label="Posunúť ${esc(p.alt)} nižšie"${i === list.length - 1 ? ' disabled' : ''}>${ic('down')}</button><button class="ibtn ibtn--x" type="button" data-del="${i}" aria-label="Odstrániť ${esc(p.alt)}">${ic('x')}</button></div></li>`).join('')}</ol></section>
@@ -736,9 +763,10 @@ function bindPartners() {
   ol.addEventListener('click', (e) => {
     const b = e.target.closest('button'); if (!b) return;
     pull();
+    if (b.dataset.up || b.dataset.down) focusNext = moveFocus('plist', list.length, b.dataset.up ? +b.dataset.up - 1 : +b.dataset.down + 1, b.dataset.up ? 'up' : 'down');
     if (b.dataset.up) { const i = +b.dataset.up; [list[i - 1], list[i]] = [list[i], list[i - 1]]; }
     else if (b.dataset.down) { const i = +b.dataset.down; [list[i + 1], list[i]] = [list[i], list[i + 1]]; }
-    else if (b.dataset.del) list.splice(+b.dataset.del, 1);
+    else if (b.dataset.del) { const i = +b.dataset.del; list.splice(i, 1); focusNext = list.length ? `#plist > .erow:nth-child(${Math.min(i, list.length - 1) + 1}) input` : '#paf [name="alt"]'; }
     else return;
     DRAFT.dirty = true; route();
   });
@@ -752,7 +780,7 @@ function bindPartners() {
     const logo = await new Promise((ok) => { const r = new FileReader(); r.onload = () => ok(r.result); r.readAsDataURL(file); });
     if (logo.length > 400000) return toast('Logo je príliš veľké (max. ~300 KB)');
     pull(); list.push({ file: '', alt, url: f.url.value.trim(), dark: false, logo });
-    DRAFT.dirty = true; route(); toast('Partner pridaný – nezabudnite uložiť');
+    DRAFT.dirty = true; focusNext = '#plist > .erow:last-child input'; route(); toast('Partner pridaný – nezabudnite uložiť');
   };
 }
 
@@ -761,7 +789,7 @@ const defUsers = () => [{ email: 'spravca@okcastkovce.sk', role: 'admin', team: 
 function vUsers() {
   const users = S.users || defUsers();
   return shell('pouzivatelia', `${head('Používatelia', 'Kto môže web upravovať. Každý vidí len to, čo mu rola dovolí.')}
-  <section class="card"><ul class="list">${users.map((u, i) => `<li><div class="row"><span class="ava" aria-hidden="true">${esc(initials(u.email.replace(/@.*/, '').replace(/[._]/g, ' ')))}</span><span class="row-main"><span class="row-t">${esc(u.email)}${u.me ? ' (vy)' : ''}</span><span class="row-s">${esc(ROLES[u.role][0])}${u.team ? ' · ' + esc(team(u.team).short) : ''} – ${esc(ROLES[u.role][1])}</span></span>${u.me ? '' : `<span class="row-end"><button class="btn btn--ghost btn--sm" type="button" data-as="${i}" aria-label="Pozrieť administráciu ako ${esc(u.email)}">${ic('eye')}Pozrieť</button><button class="ibtn ibtn--x" type="button" data-del="${i}" aria-label="Odobrať ${esc(u.email)}">${ic('x')}</button></span>`}</div></li>`).join('')}</ul>
+  <section class="card"><ul class="list">${users.map((u, i) => `<li><div class="row urow"><span class="ava" aria-hidden="true">${esc(initials(u.email.replace(/@.*/, '').replace(/[._]/g, ' ')))}</span><span class="row-main"><span class="row-t">${esc(u.email)}${u.me ? ' (vy)' : ''}</span><span class="row-s">${esc(ROLES[u.role][0])}${u.team ? ' · ' + esc(team(u.team).short) : ''} – ${esc(ROLES[u.role][1])}</span></span>${u.me ? '' : `<span class="row-end"><button class="btn btn--ghost btn--sm" type="button" data-as="${i}" aria-label="Pozrieť administráciu ako ${esc(u.email)}">${ic('eye')}Pozrieť</button><button class="ibtn ibtn--x" type="button" data-del="${i}" aria-label="Odobrať ${esc(u.email)}">${ic('x')}</button></span>`}</div></li>`).join('')}</ul>
   <p class="help">„Pozrieť“ ukáže administráciu očami danej roly (len v ukážke).</p></section>
   <section class="card" aria-labelledby="inv-h"><div class="card-h"><h2 id="inv-h">Pozvať človeka</h2></div><form id="uf" novalidate>
     <label class="field"><span>E-mail</span><input class="input" type="email" name="email" required placeholder="meno@example.sk"></label>
@@ -778,7 +806,7 @@ function bindUsers() {
     if (f.role.value === 'trener' && !f.team.value) { f.team.focus(); return toast('Vyberte tím trénera'); }
     users.push({ email, role: f.role.value, team: f.role.value === 'trener' ? f.team.value : '' }); S.users = users; S.log.unshift({ t: Date.now(), what: `Pozvánka: ${email} (${ROLES[f.role.value][0]})`, url: '', who: roleName() }); save(); route(); toast(`Pozvánka pre ${email} (ukážka – neodoslaná)`);
   };
-  document.querySelectorAll('[data-del]').forEach((b) => { b.onclick = () => { users.splice(+b.dataset.del, 1); S.users = users; save(); route(); toast('Používateľ odobraný'); }; });
+  document.querySelectorAll('[data-del]').forEach((b) => { b.onclick = () => { const i = +b.dataset.del; users.splice(i, 1); S.users = users; save(); focusNext = users.length > 1 ? `[data-del="${Math.max(1, Math.min(i, users.length - 1))}"]` : '#uf [name="email"]'; route(); toast('Používateľ odobraný'); }; });
   document.querySelectorAll('[data-as]').forEach((b) => { b.onclick = () => { const u = users[+b.dataset.as]; S.role = u.role; S.roleTeam = u.team || S.roleTeam; save(); location.hash = '#/'; toast(`Teraz vidíte administráciu ako ${roleName()}`); }; });
 }
 
@@ -812,12 +840,24 @@ const ROUTES = [
   [/^#\/zmeny$/, 'zmeny', () => vLog()],
   [/^#\/viac$/, 'home', () => vMore()],
 ];
+let prevHash = '', renderedPath = null;
+// cesta k prvku v #app: pri prekreslení tej istej obrazovky má rovnakú štruktúru, takže fokus sa vráti na to isté miesto
+function domPath(el) {
+  if (!el || el === document.body || !app.contains(el)) return null;
+  const parts = [];
+  for (let n = el; n && n !== app; n = n.parentElement) {
+    if (n.id) { parts.unshift('#' + CSS.escape(n.id)); return parts.join(' > '); }
+    parts.unshift(`${n.tagName.toLowerCase()}:nth-child(${[...n.parentElement.children].indexOf(n) + 1})`);
+  }
+  return '#app > ' + parts.join(' > ');
+}
 function route() {
   if (!D) return;
   const h = location.hash || '#/';
-  if (h === '#/odhlasit') { S.logged = false; S.role = 'admin'; save(); history.replaceState(null, '', '#/'); return vLogin(); }
-  if (!S.logged) return vLogin();
+  if (h === '#/odhlasit') { S.logged = false; S.role = 'admin'; save(); history.replaceState(null, '', '#/'); renderedPath = null; return vLogin(); }
+  if (!S.logged) { renderedPath = null; return vLogin(); }
   const path = h.split('?')[0];
+  const keep = path === renderedPath ? domPath(document.activeElement) : null;
   const r = ROUTES.find(([re]) => re.test(path)) || ROUTES[0];
   const arg = decodeURIComponent((path.match(r[0]) || [])[1] || '');
   if (!can(r[1])) app.innerHTML = denied();
@@ -826,6 +866,13 @@ function route() {
   document.getElementById('role-back')?.addEventListener('click', () => { S.role = 'admin'; save(); location.hash = '#/pouzivatelia'; toast('Späť v role správcu'); });
   const sync = document.getElementById('sync');
   if (sync) sync.onclick = () => { const i = document.getElementById('syncic'); i.classList.add('is-spin'); sync.disabled = true; setTimeout(() => { i.classList.remove('is-spin'); sync.disabled = false; toast('Sportnet: všetko aktuálne, žiadne nové výsledky'); }, 1400); };
+  // fokus: určený cieľ › ten istý prvok › nadpis obrazovky (nová obrazovka = nadpis, čítačka ho prečíta)
+  const want = focusNext || keep; focusNext = null;
+  const el = want && document.querySelector(want), h1 = app.querySelector('h1');
+  if (el && !el.disabled && el.getClientRects().length) el.focus();
+  else if (h1) { h1.tabIndex = -1; h1.focus({ preventScroll: true }); }
+  if (h1) document.title = `${h1.textContent.trim()} · Administrácia OK Častkovce`;
+  renderedPath = path; prevHash = h;
 }
 let lastPath = '';
 window.addEventListener('hashchange', () => { const p = location.hash.split('?')[0]; if (p !== lastPath) DRAFT = {}; route(); if (p !== lastPath) { window.scrollTo(0, 0); lastPath = p; } });
