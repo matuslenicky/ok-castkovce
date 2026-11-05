@@ -23,103 +23,201 @@ RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:zapas-427@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd3715b0f57d4f48282b4@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260816T114500
 DURATION:PT2H
 SUMMARY:U13 B: OK Častkovce – FC ViOn Zlaté Moravce - Vráble B 6:3
-DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas\nBartoš 2\, Bezek\,
-  Klčo 2\, Fábik
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas\nGóly: Ján Fábik\
+ , Alex Valentino Klčo 2\, Dominik Bartoš 2\, Tobias Bezek
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-428@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd3745b0f57d4f48289b2@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260823T114500
 DURATION:PT2H
-SUMMARY:U13 B: FK Senica B – OK Častkovce 5:3
-DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nBezek\, Fábik 2
+SUMMARY:U13 B: Futbalový klub Senica B – OK Častkovce 5:3
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nGóly: Tobias Bezek\,
+  Ján Fábik 2
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-397@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd35b5b0f57d4f482275d@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260830T114500
 DURATION:PT2H
 SUMMARY:U13 B: OK Častkovce – OFK Dynamo Malženice B 3:0
-DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas\nKlčo\, Bartoš\, 
- Šimek
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas\nGóly: Alex Valenti
+ no Klčo\, Dominik Bartoš\, Tomáš Šimek
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-430@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd35f5b0f57d4f4823a59@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260906T114500
 DURATION:PT2H
 SUMMARY:U13 B: FC Nitra C – OK Častkovce 5:3
-DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nGašpar\, Šimek\, Sl
- ávka
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nGóly: Richard  Gašp
+ ar Klčo\, Tomáš Šimek\, Maximilán Slávka
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-431@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd35f5b0f57d4f4823c00@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260913T114500
 DURATION:PT2H
-SUMMARY:U13 B: AFC Nové Mesto nad Váhom – OK Častkovce 2:0
+SUMMARY:U13 B: AFC Nové Mesto nad Váhom B – OK Častkovce 2:0
 DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-432@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd3655b0f57d4f4825142@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260920T114500
 DURATION:PT2H
-SUMMARY:U13 B: OK Častkovce – PFK Piešťany 1:5
-DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas\nBartoš
+SUMMARY:U13 B: OK Častkovce – PFK Piešťany B 1:5
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas\nGóly: Dominik Bart
+ oš
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-433@okcastkovce.sk
-DTSTAMP:20261105T113601Z
-DTSTART;TZID=Europe/Bratislava:20260927T114500
+UID:zapas-6a4bd3655b0f57d4f4825400@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20260926T114500
 DURATION:PT2H
-SUMMARY:U13 B: FKM Nové Zámky – OK Častkovce 5:3
-DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nBartoš\, Slávka\, C
- arvalho
+SUMMARY:U13 B: FKM Nové Zámky B – OK Častkovce 5:3
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nGóly: Dominik Barto
+ š\, Maximilán Slávka\, Filipe Soares De Carvalho
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-434@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd3685b0f57d4f4825fa6@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20261004T114500
 DURATION:PT2H
 SUMMARY:U13 B: OK Častkovce – FK Lokomotíva Trnava B 1:6
-DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas\nDendis
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas\nGóly: Michal Dendi
+ s
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-435@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd36a5b0f57d4f4826550@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20261011T114500
 DURATION:PT2H
 SUMMARY:U13 B: FK Nitra B – OK Častkovce 2:3
-DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nSlávka\, M.Hazda\, K
- ošinár
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nGóly: Maximilán Sl
+ ávka\, Matúš Hazda\, Samuel Košinár
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-437@okcastkovce.sk
-DTSTAMP:20261105T113601Z
-DTSTART;TZID=Europe/Bratislava:20261018T114500
+UID:zapas-6a4bd36c5b0f57d4f4826deb@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20261018T104500
 DURATION:PT2H
 SUMMARY:U13 B: OK Častkovce – ŠKF Sereď B 0:5
 DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-436@okcastkovce.sk
-DTSTAMP:20261105T113601Z
-DTSTART;TZID=Europe/Bratislava:20261024T114500
+UID:zapas-6a4bd3705b0f57d4f4827b8f@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20261024T104500
 DURATION:PT2H
-SUMMARY:U13 B: FA Matúšova zem Horné Saliby/Tomášikovo – OK Častko
- vce 3:4
-DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nFábik\, Opet\, Bezek
-  2
+SUMMARY:U13 B: Futbalová Akadémia Matúšova zem Horné Saliby/Tomášik
+ ovo B – OK Častkovce 3:4
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku\nGóly: Ján Fábik\, 
+ Timotej Opet\, Tobias Bezek 2
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd36e5b0f57d4f4827652@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270403T114500
+DURATION:PT2H
+SUMMARY:U13 B: OK Častkovce – Futbalová Akadémia Matúšova zem Horn
+ é Saliby/Tomášikovo B
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd3705b0f57d4f4827e07@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270410T114500
+DURATION:PT2H
+SUMMARY:U13 B: FC ViOn Zlaté Moravce - Vráble B – OK Častkovce
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd3735b0f57d4f48286f7@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270417T114500
+DURATION:PT2H
+SUMMARY:U13 B: OK Častkovce – Futbalový klub Senica B
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd3745b0f57d4f482893e@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270424T114500
+DURATION:PT2H
+SUMMARY:U13 B: OFK Dynamo Malženice B – OK Častkovce
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd3775b0f57d4f482911d@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270501T114500
+DURATION:PT2H
+SUMMARY:U13 B: OK Častkovce – FC Nitra C
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd3775b0f57d4f4829200@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270508T114500
+DURATION:PT2H
+SUMMARY:U13 B: OK Častkovce – AFC Nové Mesto nad Váhom B
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd37b5b0f57d4f4829c0d@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270515T114500
+DURATION:PT2H
+SUMMARY:U13 B: PFK Piešťany B – OK Častkovce
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd37b5b0f57d4f4829d9d@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270522T114500
+DURATION:PT2H
+SUMMARY:U13 B: OK Častkovce – FKM Nové Zámky B
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd37e5b0f57d4f482a4d5@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270529T114500
+DURATION:PT2H
+SUMMARY:U13 B: FK Lokomotíva Trnava B – OK Častkovce
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd37f5b0f57d4f482a72f@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270605T114500
+DURATION:PT2H
+SUMMARY:U13 B: OK Častkovce – FK Nitra B
+DESCRIPTION:III. liga U13 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd3815b0f57d4f482aaf0@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270612T114500
+DURATION:PT2H
+SUMMARY:U13 B: ŠKF Sereď B – OK Častkovce
+DESCRIPTION:III. liga U13 skupina "B"\nZápas vonku
 END:VEVENT
 END:VCALENDAR

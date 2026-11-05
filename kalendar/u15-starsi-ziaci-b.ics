@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:zapas-121@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20250831T103000
 DURATION:PT2H
 SUMMARY:U15 B: FK Bradlan Brezová pod Bradlom – OK Častkovce 0:8
@@ -33,7 +33,7 @@ DESCRIPTION:Zápas vonku\nŠevčík\, Mišík\, Peterka 2\, Šedovič M.\,
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-123@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20250914T103000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – OŠK Bošáca 25:0
@@ -43,7 +43,7 @@ LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-124@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20250921T103000
 DURATION:PT2H
 SUMMARY:U15 B: TJ Slovan Rovnosť Krajné – OK Častkovce 1:7
@@ -51,7 +51,7 @@ DESCRIPTION:Zápas vonku\nŠedovič 3\, Ševčík 2\, Peterka 2
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-125@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20250928T103000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – MFK Stará Turá B 5:1
@@ -60,7 +60,7 @@ LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-126@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20251005T103000
 DURATION:PT2H
 SUMMARY:U15 B: Spartak Myjava B – OK Častkovce 0:5
@@ -68,7 +68,7 @@ DESCRIPTION:Zápas vonku\nŠevčík 2\, Balaj 2\, Peterka
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-128@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20251019T103000
 DURATION:PT2H
 SUMMARY:U15 B: TJ Iskra Moravské Lieskové – OK Častkovce 1:9
@@ -77,7 +77,7 @@ DESCRIPTION:Zápas vonku\nHorváth 2\, Peterka 3\, Šedovič 2\, Ševčík
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-127@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20251023T170000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – TJ Družstevník Hrádok 6:0
@@ -86,7 +86,7 @@ LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-129@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20251104T160000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – OFK Čachtice 17:1
@@ -95,7 +95,7 @@ LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-275@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260419T103000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – Spartak Myjava B 7:4
@@ -105,7 +105,7 @@ LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-276@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260426T103000
 DURATION:PT2H
 SUMMARY:U15 B: TJ Družstevník Hrádok – OK Častkovce 3:5
@@ -113,7 +113,7 @@ DESCRIPTION:Zápas vonku\nHorváth\, Beňačka 3\, Peterka
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-277@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260503T103000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – TJ Iskra Moravské Lieskové 13:0
@@ -123,7 +123,7 @@ LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-278@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260510T103000
 DURATION:PT2H
 SUMMARY:U15 B: OFK Čachtice – OK Častkovce 4:13
@@ -132,7 +132,7 @@ DESCRIPTION:Zápas vonku\nLíška\, Masár Marco\, Orsava\, Masár Mateo\,
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-279@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260517T103000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – FK Bradlan Brezová pod Bradlom 15:1
@@ -142,7 +142,7 @@ LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-280@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260531T103000
 DURATION:PT2H
 SUMMARY:U15 B: OFK Bošáca – OK Častkovce 0:10
@@ -151,7 +151,7 @@ DESCRIPTION:Zápas vonku\nOrsáva\, Ševčík\, Mišík 2\, Horváth\, Pet
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-281@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260607T103000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – TJ Slovan Rovnosť Krajné 5:2
@@ -160,108 +160,209 @@ LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
 UID:zapas-282@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260614T103000
 DURATION:PT2H
 SUMMARY:U15 B: MFK Stará Turá B – OK Častkovce 3:4
 DESCRIPTION:Zápas vonku\nRojkovič\, Horváth\, Orsáva 2
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-396@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd34c5b0f57d4f481e750@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260816T100000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – FC ViOn Zlaté Moravce - Vráble B 5:1
-DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas\nMasár P. Andrísek
- \, Balaj\, Orihel\, Horváth
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas\nGóly: Filip Orihel
+ \, Sebastián Andrísek\, Lucas Horváth\, Lucas Balaj\, Peter Masár
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-395@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd34c5b0f57d4f481e78b@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260823T100000
 DURATION:PT2H
-SUMMARY:U15 B: FK Senica B – OK Častkovce 1:4
-DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nMasár\, Vaňovič\, 
- Nosko (vl.)\, Balaj
+SUMMARY:U15 B: Futbalový klub Senica B – OK Častkovce 1:4
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nGóly: Peter Masár\,
+  Eliáš Vaňovič\, Lucas Balaj
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-429@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd34c5b0f57d4f481e972@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260830T100000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – OFK Dynamo Malženice B 1:3
-DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas\nKudlej
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas\nGóly: Filip Kudlej
+  · Karty: Lucas Balaj (ŽK)
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-398@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd34c5b0f57d4f481eadd@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260906T100000
 DURATION:PT2H
 SUMMARY:U15 B: FC Nitra C – OK Častkovce 1:3
-DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nBalaj\, Mišík\, Hor
- váth
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nGóly: Lucas Balaj\, 
+ Oliver Mišík\, Lucas Horváth
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-399@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd34d5b0f57d4f481ed85@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260913T100000
 DURATION:PT2H
-SUMMARY:U15 B: AFC Nové Mesto nad Váhom – OK Častkovce 2:1
-DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nKudlej
+SUMMARY:U15 B: AFC Nové Mesto nad Váhom B – OK Častkovce 2:1
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nGóly: Filip Kudlej
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-400@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd34c5b0f57d4f481e980@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20260920T100000
 DURATION:PT2H
-SUMMARY:U15 B: OK Častkovce – PFK Piešťany 2:2
-DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas\nHorváth 2
+SUMMARY:U15 B: OK Častkovce – PFK Piešťany B 2:2
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas\nGóly: Lucas Horvá
+ th 2
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-401@okcastkovce.sk
-DTSTAMP:20261105T113601Z
-DTSTART;TZID=Europe/Bratislava:20260927T100000
+UID:zapas-6a4bd3515b0f57d4f482010f@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20260926T100000
 DURATION:PT2H
 SUMMARY:U15 B: FKM Nové Zámky B – OK Častkovce 0:10
-DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nHorváth\, Vido 2\, B
- ohovic\, Mišík 2\, Andrísek\, Kudlej 2\, Orihel
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nGóly: Lucas Horváth
+ \, Tomáš Vido 2\, Alex Bohovic\, Oliver Mišík 2\, Sebastián Andríse
+ k\, Filip Kudlej 2\, Filip Orihel
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-402@okcastkovce.sk
-DTSTAMP:20261105T113601Z
+UID:zapas-6a4bd34c5b0f57d4f481e990@okcastkovce.sk
+DTSTAMP:20261105T120137Z
 DTSTART;TZID=Europe/Bratislava:20261004T100000
 DURATION:PT2H
 SUMMARY:U15 B: OK Častkovce – FK Lokomotíva Trnava B 0:1
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas\nKarty: Tomáš Vido
+  (ŽK)
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34d5b0f57d4f481eb7b@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20261011T100000
+DURATION:PT2H
+SUMMARY:U15 B: FK Nitra B – OK Častkovce 3:1
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nGóly: Lucas Balaj ·
+  Karty: Marián Ščepko (ŽK)
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34e5b0f57d4f481f2ea@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20261018T090000
+DURATION:PT2H
+SUMMARY:U15 B: OK Častkovce – ŠKF Sereď B 1:1
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas\nGóly: Lucas Balaj
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34c5b0f57d4f481eaec@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20261024T090000
+DURATION:PT2H
+SUMMARY:U15 B: Futbalová Akadémia Matúšova zem Horné Saliby/Tomášik
+ ovo B – OK Častkovce 1:4
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nGóly: Marco Šedovi
+ č\, Lucas Balaj\, Lucas Horváth 2 · Karty: Lucas Horváth (ŽK)
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34d5b0f57d4f481ef8a@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270403T100000
+DURATION:PT2H
+SUMMARY:U15 B: OK Častkovce – Futbalová Akadémia Matúšova zem Horn
+ é Saliby/Tomášikovo B
 DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-403@okcastkovce.sk
-DTSTAMP:20261105T113601Z
-DTSTART;VALUE=DATE:20261011
-SUMMARY:U15 B: FK Nitra B – OK Častkovce 3:1
-DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nBalaj
+UID:zapas-6a4bd34e5b0f57d4f481f095@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270410T100000
+DURATION:PT2H
+SUMMARY:U15 B: FC ViOn Zlaté Moravce - Vráble B – OK Častkovce
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-404@okcastkovce.sk
-DTSTAMP:20261105T113601Z
-DTSTART;TZID=Europe/Bratislava:20261018T100000
+UID:zapas-6a4bd34d5b0f57d4f481ed6d@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270417T100000
 DURATION:PT2H
-SUMMARY:U15 B: OK Častkovce – ŠKF Sereď 1:1
-DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas\nBalaj
+SUMMARY:U15 B: OK Častkovce – Futbalový klub Senica B
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas
 LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
 END:VEVENT
 BEGIN:VEVENT
-UID:zapas-405@okcastkovce.sk
-DTSTAMP:20261105T113601Z
-DTSTART;TZID=Europe/Bratislava:20261024T100000
+UID:zapas-6a4bd34e5b0f57d4f481f175@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270424T100000
 DURATION:PT2H
-SUMMARY:U15 B: FA Matúšova zem Horné Saliby/Tomášikovo B – OK Čast
- kovce 1:4
-DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku\nŠedovič\, Balaj\, H
- orváth 2
+SUMMARY:U15 B: OFK Dynamo Malženice B – OK Častkovce
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34e5b0f57d4f481f365@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270501T100000
+DURATION:PT2H
+SUMMARY:U15 B: OK Častkovce – FC Nitra C
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34f5b0f57d4f481f591@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270508T100000
+DURATION:PT2H
+SUMMARY:U15 B: OK Častkovce – AFC Nové Mesto nad Váhom B
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34f5b0f57d4f481f7c0@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270515T100000
+DURATION:PT2H
+SUMMARY:U15 B: PFK Piešťany B – OK Častkovce
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34f5b0f57d4f481f597@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270522T100000
+DURATION:PT2H
+SUMMARY:U15 B: OK Častkovce – FKM Nové Zámky B
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd3535b0f57d4f4820735@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270529T100000
+DURATION:PT2H
+SUMMARY:U15 B: FK Lokomotíva Trnava B – OK Častkovce
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34f5b0f57d4f481f970@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270605T100000
+DURATION:PT2H
+SUMMARY:U15 B: OK Častkovce – FK Nitra B
+DESCRIPTION:III. liga U15 skupina "B"\nDomáci zápas
+LOCATION:OK ČASTKOVCE\, Ihrisko\, 916 27 Častkovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a4bd34f5b0f57d4f481f819@okcastkovce.sk
+DTSTAMP:20261105T120137Z
+DTSTART;TZID=Europe/Bratislava:20270612T100000
+DURATION:PT2H
+SUMMARY:U15 B: ŠKF Sereď B – OK Častkovce
+DESCRIPTION:III. liga U15 skupina "B"\nZápas vonku
 END:VEVENT
 END:VCALENDAR
