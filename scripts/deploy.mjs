@@ -12,6 +12,12 @@ const BASE = process.env.BASE_PATH || '/ok-castkovce/';
 const run = (cmd, args, opts = {}) => execFileSync(cmd, args, { cwd: ROOT, stdio: 'inherit', ...opts });
 const out = (cmd, args, cwd = ROOT) => execFileSync(cmd, args, { cwd, encoding: 'utf8' }).trim();
 
+// 0. čerstvé výsledky zo Sportnetu: ručné nasadenie nesmie prepísať novšie výsledky z automatickej hodinovej aktualizácie
+//    (.github/workflows/sportnet.yml ich stiahne sám a spúšťa nasadenie so SKIP_SPORTNET=1)
+if (!process.env.SKIP_SPORTNET) {
+  try { run(process.execPath, ['scripts/sportnet.mjs']); } catch { console.warn('Sportnet nie je dostupný – nasadzujem s uloženými výsledkami'); }
+}
+
 // 1. zostavenie s cestou projektu na github.io (týka sa 404.html)
 run(process.execPath, ['build.js'], { env: { ...process.env, BASE_PATH: BASE } });
 
@@ -26,6 +32,10 @@ if (!fs.existsSync(path.join(PAGES, '.git'))) {
   }
 }
 
+// gh-pages sa mohla medzitým zmeniť (automatická aktualizácia výsledkov): začať od jej stavu na GitHube, inak push zlyhá
+run('git', ['fetch', '-q', ...(process.env.CI ? ['--depth', '1'] : []), 'origin', 'gh-pages'], { cwd: PAGES });
+run('git', ['reset', '-q', '--hard', 'FETCH_HEAD'], { cwd: PAGES });
+
 // 3. obsah = presne dist/
 for (const f of fs.readdirSync(PAGES)) if (f !== '.git') fs.rmSync(path.join(PAGES, f), { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, 'dist'), PAGES, { recursive: true });
@@ -35,11 +45,11 @@ fs.writeFileSync(path.join(PAGES, '.nojekyll'), '');
 const src = out('git', ['rev-parse', '--short', 'HEAD']);
 run('git', ['add', '-A'], { cwd: PAGES });
 if (out('git', ['status', '--porcelain'], PAGES)) {
-  run('git', ['commit', '-q', '-m', `Nasadenie webu zo zdroja ${src}`], { cwd: PAGES });
+  run('git', ['commit', '-q', '-m', process.env.DEPLOY_MSG || `Nasadenie webu zo zdroja ${src}`], { cwd: PAGES });
   run('git', ['push', '-u', 'origin', 'gh-pages'], { cwd: PAGES });
 } else {
   console.log('gh-pages je aktuálna, nič na nasadenie');
 }
 
-// 5. lokálny náhľad zase s koreňovou cestou
-run(process.execPath, ['build.js'], { env: { ...process.env, BASE_PATH: '' } });
+// 5. lokálny náhľad zase s koreňovou cestou (na GitHub Actions netreba)
+if (!process.env.CI) run(process.execPath, ['build.js'], { env: { ...process.env, BASE_PATH: '' } });

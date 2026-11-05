@@ -19,7 +19,34 @@ const fan = rd('fanzona.json');
 const privacy = rd('ochrana-sukromia.json', { body: '' });
 const doplnky = rd('doplnky.json', { timy: {} });
 const foto = rd('foto.json', { obrazky: {} });
-const matches = rd('zapasy.json', []);
+// zápasy: aktuálna sezóna tímov na Sportnete z data/sportnet.json (scripts/sportnet.mjs: skóre, strelci, karty, každú hodinu
+// cez GitHub Actions), staršie sezóny a tímy mimo Sportnetu (U7) zo starého webu (data/zapasy.json)
+const matches = mergeSportnet(rd('zapasy.json', []), rd('sportnet.json', null));
+function mergeSportnet(old, sn) {
+  if (!sn?.matches?.length) return old;
+  const covered = new Set(Object.keys(sn.teams || {}));
+  const start = `${String(sn.season).slice(0, 4)}-07-01`;
+  const clean = (s) => String(s || '').replace(/\s+/g, ' ').replace('y*oursport', 'yoursport').replace(/macron/, 'Macron').trim();
+  // súťaž ako na starom webe: pri mládeži názov skupiny („II. liga starší dorast - Západ“), pri A-mužstve „III. liga – skupina Západ“
+  const league = (m) => { const c = clean(m.competition), p = clean(m.part); return /cup/i.test(c) ? c : /liga|prípravka/i.test(p) ? p : p ? `${c} – ${p}` : c || null; };
+  const kept = old.filter((m) => !(covered.has(m.team) && m.date >= start));
+  const fromSn = sn.matches.map((m) => ({
+    id: m.id, team: m.team, date: m.date, time: m.time, opponent: m.opponent, home: m.home, league: league(m),
+    score: m.played ? m.score : null, note: sportnetNote(m), goals: m.goals || [], cards: m.cards || [], venue: m.venue || '', sportnet: m.url || null,
+  }));
+  return [...kept, ...fromSn].sort((a, b) => (a.date + (a.time || '')).localeCompare(b.date + (b.time || '')));
+}
+// riadok pod výsledkom: naši strelci (s počtom) a naše karty zo zápisu o stretnutí
+function sportnetNote(m) {
+  const by = new Map();
+  for (const g of m.goals || []) if (g.side === 'our' && g.kind !== 'own' && g.player) by.set(g.player, (by.get(g.player) || 0) + 1);
+  const og = (m.goals || []).filter((g) => g.side === 'opp' && g.kind === 'own').length;
+  const goals = [...by].map(([p, n]) => (n > 1 ? `${p} ${n}` : p));
+  if (og) goals.push(og > 1 ? `vlastné góly súpera ${og}` : 'vlastný gól súpera');
+  const KIND = { yellow: 'ŽK', red: 'ČK', 'yellow-red': '2. ŽK' };
+  const cards = (m.cards || []).filter((c) => c.side === 'our' && c.player).map((c) => `${c.player} (${KIND[c.kind] || 'karta'})`);
+  return [goals.length ? `Góly: ${goals.join(', ')}` : '', cards.length ? `Karty: ${cards.join(', ')}` : ''].filter(Boolean).join(' · ') || null;
+}
 const news = rd('spravy.json', []).sort((a, b) => b.date.localeCompare(a.date));
 const videos = rd('videa.json', []).sort((a, b) => b.date.localeCompare(a.date));
 const partneri = rd('partneri.json', { partneri: [] }).partneri;
@@ -68,7 +95,8 @@ function pairMatch(title, date) {
   return c.length === 1 ? c[0] : null;
 }
 for (const g of gals) {
-  const m = g.matchId ? matches.find((x) => x.id === g.matchId) : g.date ? pairMatch(g.title, g.date) : null;
+  // matchId zo starého rozpisu; aktuálna sezóna je zo Sportnetu (iné id) -> tím a dátum, inak súper do 7 dní
+  const m = (g.matchId && matches.find((x) => x.id === g.matchId)) || (g.team && g.date && matches.find((x) => x.team === g.team && x.date === g.date && x.score)) || (g.date ? pairMatch(g.title, g.date) : null);
   if (m && !m.gal) m.gal = `fotogaleria/${g.slug}/`;
 }
 for (const v of videos) { const m = pairMatch(v.title, v.date); if (m && !m.yt) { m.yt = v.youtube; m.ytTitle = v.title; } }
@@ -591,8 +619,10 @@ function goalsFor(t, player, season) {
   const people = (t.roster || []).flatMap((g) => g.title === 'Hráči' ? g.people : []);
   const key = (p) => { const w = norm(p.name).split(' '); return { sur: w[w.length - 1], first: w[0] }; };
   const hits = [];
-  for (const m of teamMatches(t.slug).filter((x) => x.score && x.note && x.date >= season)) {
-    for (const s of scorers(m.note)) {
+  // zápasy zo Sportnetu majú strelcov s celým menom (m.goals), staršie zo starého webu len poznámku „Janík 3, Opatovský“
+  const fromGoals = (m) => { const by = new Map(); for (const g of m.goals) if (g.side === 'our' && g.kind !== 'own' && g.player) by.set(g.player, (by.get(g.player) || 0) + 1); return [...by].map(([name, n]) => ({ words: norm(name).split(' ').filter(Boolean), raw: name, n })); };
+  for (const m of teamMatches(t.slug).filter((x) => x.score && (x.goals?.length || x.note) && x.date >= season)) {
+    for (const s of m.goals ? fromGoals(m) : scorers(m.note)) {
       const fits = (p) => { const k = key(p); if (!s.words.includes(k.sur)) return false; const other = s.words.filter((w) => w !== k.sur); return !other.length || other.some((w) => w === k.first || (w.length === 1 && k.first.startsWith(w))); };
       const all = people.filter(fits);
       if (all.length === 1 && all[0] === player) hits.push({ m, n: s.n });

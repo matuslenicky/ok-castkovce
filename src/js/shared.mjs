@@ -208,7 +208,7 @@ export function matchRow(m, { crest, teamLabel, today, root = '' }) {
   return `<li class="mrow${s ? ' mrow--' + s.res : ''}" data-team="${esc(m.team)}" data-ha="${m.home ? 'h' : 'a'}">
   <p class="mrow-date"><b>${fmtDay(m.date)}</b> ${fmtDate(m.date)}${teamLabel ? `<span class="mrow-team">${esc(teamLabel)}</span>` : ''}</p>
   <div class="mrow-main">${h}${mid}${a}</div>
-  <p class="mrow-meta"><span>${m.home ? 'Doma' : 'Vonku'}${m.league ? ` · ${esc(m.league)}` : ''}</span>${m.note ? `<span class="mrow-note">${esc(m.note)}</span>` : ''}${media}</p>
+  <p class="mrow-meta"><span>${m.home ? 'Doma' : 'Vonku'}${m.league ? ` · ${esc(m.league)}` : ''}</span>${m.note ? `<span class="mrow-note">${String(m.note).split(' · ').map(esc).join('<br>')}</span>` : ''}${media}</p>
 </li>`;
 }
 
