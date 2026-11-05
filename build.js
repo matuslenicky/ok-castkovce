@@ -894,11 +894,41 @@ function writeAdminDemo() {
     return p.photo ? R + p.photo.replace(/^\//, '') : null;
   };
   const rosters = Object.fromEntries(teams.map((t) => [t.slug, (t.roster || []).filter((g) => /hráči/i.test(g.title)).flatMap((g) => g.people).map((p) => ({ name: p.name, number: p.number || '', photo: photoOf(p) }))]));
+  const fixImg = (h) => String(h || '').replace(/src="\/img\//g, `src="${R}img/`);
+  const picUrl = (key, w = 800) => { const f = foto.obrazky?.[key]; return f ? `${R}foto/${key}-${f.widths.find((x) => x >= w) || f.widths.at(-1)}.webp` : null; };
+  const { _zdroj, sportnet: _sn, ...infoOut } = info;
+  const shop = rd('fanshop.json', { produkty: [] }), shopFoto = rd('fanshop-foto.json', {});
   const demo = {
     updated: sn?.updated || new Date().toISOString(), season: sn?.season || '',
     teams: teams.filter((t) => !sn || sn.teams[t.slug]).map((t) => ({ slug: t.slug, short: t.short, sub: t.sub })),
     matches: list, rosters,
-    news: news.map((n) => ({ id: n.id, title: n.title, date: n.date, img: newsImage(n, R) })),
+    news: news.map((n) => ({ id: n.id, title: n.title, date: n.date, img: newsImage(n, R), excerpt: n.excerpt || '', body: fixImg(n.body) })),
+    // všetok ďalší obsah webu, ktorý sa v administrácii dá upraviť (kostra a vzhľad nie)
+    info: infoOut,
+    allTeams: teams.map((t) => ({
+      slug: t.slug, short: t.short, sub: t.sub, league: t.league || '', url: t.url, photo: picUrl('tim-' + t.slug),
+      groups: (t.roster || []).map((g) => ({ title: g.title, people: g.people.map((p) => ({ name: p.name, number: p.number || '', role: p.tag || p.position || '', photo: photoOf(p) })) })),
+    })),
+    coaches: treneri,
+    pages: {
+      stadion: { title: 'Štadión', url: 'klub/stadion/', html: fixImg(klub.pages.stadion) },
+      historia: { title: 'História', url: 'klub/historia/', html: fixImg(klub.pages.historia) },
+      'vedenie-klubu': { title: 'Vedenie klubu', url: 'klub/vedenie-klubu/', html: fixImg(klub.pages['vedenie-klubu']) },
+      'prenajom-umelej-travy': { title: 'Prenájom umelej trávy', url: 'klub/prenajom-umelej-travy/', html: fixImg(klub.pages['prenajom-umelej-travy']) },
+      predajna: { title: 'Fanzóna – predajňa na štadióne', url: 'fanzona/', html: '<p>Počas zápasov prvého mužstva funguje predajňa suvenírov priamo na futbalovom štadióne.</p><h3>Otváracie hodiny nášho FANSHOP</h3><p>pondelok – nedeľa: 12.00 – 20.00 h</p><h3>Otváracie hodiny FANSHOP na štadióne</h3><p>v čase zápasov prvého mužstva</p>' },
+      'ochrana-sukromia': { title: 'Ochrana súkromia', url: 'ochrana-sukromia/', html: fixImg(privacy.body) },
+    },
+    home: {
+      ocenenie: info.ocenenie || '', hero: picUrl('hero', 1200),
+      heroChoices: gals.filter((g) => g.files?.length).slice(0, 12).map((g) => galCover(g, R)),
+      promoFan: { title: '„Obleč sa ako pravý fanúšik!“', text: 'Kúpou produktov podporuješ mladé talenty v našom klube.', img: `${R}img/fan-mikina.jpg` },
+      promoRent: { title: 'Prenájom umelej trávy', text: 'V prípade záujmu o rezervácie a cenník umelej trávy kontaktujte:' },
+      stadion: { title: 'Areál v Častkovciach', text: 'Areál futbalového štadióna v Častkovciach tvoria dve zatrávnené ihriská. Hlavná hracia trávnatá plocha, vedľajšia hracia trávnatá plocha a jedno multifunkčné ihrisko s umelým trávnikom a mantinelmi.', img: picUrl('stadion-dron', 1200) },
+    },
+    galleries: gals.filter((g) => g.files?.length).map((g) => ({ slug: g.slug, title: g.title, date: g.date || '', team: g.team || '', count: g.files.length, url: `fotogaleria/${g.slug}/`, cover: galCover(g, R), thumbs: g.files.slice(0, 12).map((f) => galImg(g, f, R, true)) })),
+    videos: videos.map((v) => ({ id: v.id, title: v.title, date: v.date, youtube: v.youtube })),
+    fanshop: { pozn: shop.pozn || '', email: info.email, produkty: (shop.produkty || []).map((p) => ({ slug: p.slug, nazov: p.nazov, cena: p.cena, farba: p.farba || '', velkost: p.velkost || '', photos: (shopFoto[p.slug] || []).map((f) => `${R}img/fanshop/${f.subor}.webp`) })) },
+    partners: partneri.map((p) => ({ file: p.file, alt: p.alt, dark: !!p.tmave, url: p.url || '', logo: `${R}img/${partnerSrc(p.file)}` })),
   };
   fs.writeFileSync(path.join(OUT, 'admin', 'demo.json'), JSON.stringify(demo));
 }
