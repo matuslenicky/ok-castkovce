@@ -40,7 +40,7 @@ const todo = all.filter((f) => (!want || want.test(f.path)) && /^image\/|^applic
 let done = 0, skipped = 0;
 async function get(f) {
   const dest = path.join(OUT, safe(f.path));
-  if (!dest.startsWith(OUT)) throw new Error('cesta mimo priečinka: ' + f.path);
+  if (!dest.startsWith(OUT + path.sep)) throw new Error('cesta mimo priečinka: ' + f.path);
   if (fs.existsSync(dest) && (!f.size || fs.statSync(dest).size === f.size)) { skipped++; return; }
   for (let i = 0; i < 3; i++) {
     const r = await fetch(`https://drive.usercontent.google.com/download?id=${encodeURIComponent(f.id)}&export=download&confirm=t`).catch(() => null);

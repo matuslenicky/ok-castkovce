@@ -30,7 +30,7 @@ http.createServer((req, res) => {
   try { p = decodeURIComponent(url.pathname); } catch { res.writeHead(400); res.end(); return; } // zlé %xx
   if (p.endsWith('/')) p += 'index.html';
   const file = path.resolve(path.join(root, p));
-  if (!file.startsWith(root)) { res.writeHead(403); res.end(); return; }
+  if (!file.startsWith(root + path.sep)) { res.writeHead(403); res.end(); return; } // aj súrodenec „dist2“ je mimo
   fs.readFile(file, (err, buf) => {
     if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('404'); return; }
     const ext = path.extname(file).toLowerCase();
@@ -39,7 +39,9 @@ http.createServer((req, res) => {
     let body = buf;
     if (ext === '.html' && !url.searchParams.has('nolr')) {
       const s = buf.toString('utf8');
-      body = Buffer.from(s.includes('</body>') ? s.replace('</body>', snippet + '</body>') : s + snippet);
+      // živé obnovovanie je inline skript: lokálne sa CSP vynechá (s ?nolr, napr. pri audite, ostáva ako na webe)
+      const t = s.replace(/<meta http-equiv="Content-Security-Policy"[^>]*>\n?/, '');
+      body = Buffer.from(t.includes('</body>') ? t.replace('</body>', snippet + '</body>') : t + snippet);
     }
     // textové súbory gzipom ako na skutočnom hostingu (GitHub Pages), aby Lighthouse meral reálne veľkosti
     if (/\.(html|css|m?js|svg|json)$/.test(ext) && /\bgzip\b/.test(req.headers['accept-encoding'] || '')) {

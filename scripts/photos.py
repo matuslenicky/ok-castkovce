@@ -79,7 +79,8 @@ for team_dir in sorted((SRC / 'hraci').glob('*')) if (SRC / 'hraci').exists() el
         key = f'hrac-{team_dir.name}-{_slug(name)}'
         im = ImageOps.exif_transpose(Image.open(f)).convert('RGB')
         widths = []
-        for w in (320, 640):
+        # 450: súpiska na telefóne s 3× displejom (karta ~172 px) by inak brala celých 600 px (build.js ROSTER_SIZES)
+        for w in (320, 450, 640):
             ww = min(w, im.width)  # súbor aj srcset podľa skutočnej šírky (karty majú 600 px)
             w = ww
             dst_w, dst_j = OUT / f'{key}-{w}.webp', OUT / f'{key}-{w}.jpg'
@@ -94,5 +95,5 @@ for team_dir in sorted((SRC / 'hraci').glob('*')) if (SRC / 'hraci').exists() el
         obr[key] = {'widths': widths, 'w': min(widths[-1], im.width), 'h': round(im.height * min(widths[-1], im.width) / im.width), 'alt': name, 'zdroj': f'hraci/{team_dir.name}/{f.name}'}
         im.close()
 
-fj.write_text(json.dumps({'_zdroj': 'fotky od fotografa (Disk Google klubu), spracúva scripts/photos.py', 'obrazky': obr}, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+fj.write_text(json.dumps({'_zdroj': 'fotky od fotografa (Disk Google klubu), spracúva scripts/photos.py', 'obrazky': obr}, ensure_ascii=False, indent=1) + '\n', encoding='utf-8', newline='\n')
 print('fotiek:', len(obr), '· nových súborov:', made)

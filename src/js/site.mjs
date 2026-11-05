@@ -318,8 +318,10 @@ if (vdlg && vdlg.showModal) {
 // a „najbližší zápas“, „tento týždeň“, formu a zoznamy prepočíta k dnešku. Keď sa nič nezmenilo, nič neprekresľuje.
 const ROOT = document.documentElement.dataset.root || './';
 const CREST = `${ROOT}img/logo.svg`;
+// nastavenie databázy je dátový blok <script type="application/json" id="okc-db"> (nie inline skript, aby ho CSP nemusela povoliť)
+const dbConfig = () => { try { return JSON.parse(document.getElementById('okc-db')?.textContent || 'null'); } catch { return null; } };
 async function loadMatches() {
-  const db = window.OKC_DB;
+  const db = dbConfig();
   if (db && db.url && db.key && !new URLSearchParams(location.search).has('nodb')) {
     const r = await fetch(`${db.url}/rest/v1/zapasy?select=id,tim,datum,cas,super,doma,liga,skore,poznamka&order=datum.asc,cas.asc`, { headers: { apikey: db.key, Authorization: `Bearer ${db.key}` } });
     if (r.ok) return { matches: (await r.json()).map((m) => ({ id: m.id, team: m.tim, date: m.datum, time: m.cas, opponent: m.super, home: m.doma, league: m.liga, score: m.skore, note: m.poznamka })) };

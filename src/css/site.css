@@ -435,6 +435,11 @@ svg[aria-hidden] { flex: none; }
 .prose img { width: 100%; margin: 1.6em 0; border-radius: var(--radius); }
 .prose a { color: var(--red-d); font-weight: 600; text-underline-offset: 3px; padding-block: 2px; } /* plocha ≥ 24 px aj pri odkaze v samostatnom odseku; riadok (1.65) sa nemení */
 .prose b, .prose strong { font-weight: 700; }
+/* tabuľky v texte (Ochrana súkromia): na telefóne sa posúva len tabuľka, nie stránka (obal z build.js proseTables) */
+.table-wrap { max-width: 100%; overflow-x: auto; margin: 0 0 1.4em; overscroll-behavior-x: contain; }
+.prose table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
+.prose td, .prose th { padding: 10px 12px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+.prose tr:first-child td { background: var(--tint); font-weight: 700; }
 .prose--facts { display: grid; gap: 0 40px; max-width: none; }
 @media (min-width: 800px) { .prose--facts { grid-template-columns: 260px 1fr; } .prose--facts h3 { grid-column: 1; } .prose--facts p { grid-column: 2; } }
 .prose--facts h3 { margin: 0; padding: 18px 0 6px; font-size: 17px; color: var(--red-d); letter-spacing: .1em; }

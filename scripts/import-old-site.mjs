@@ -31,6 +31,7 @@ async function localImg(src) {
   const rel = p.replace(/^\/(img\/)?public\//, '').replace(/^\/theme\/img\//, 'theme/');
   if (images.has(p)) return images.get(p);
   const dest = path.join(ARCH, ...rel.split('/'));
+  if (!path.resolve(dest).startsWith(ARCH + path.sep)) return src; // „..“ v ceste zo starého webu by zapísalo mimo src/img/archiv
   const url = `/img/archiv/${rel}`;
   images.set(p, url);
   if (!fs.existsSync(dest)) {
@@ -229,6 +230,7 @@ async function roster(html) {
       fs.mkdirSync(dir, { recursive: true });
       for (const f of g.files) {
         const dest = path.join(dir, f);
+        if (!path.resolve(dest).startsWith(MEDIA + path.sep)) continue; // názov súboru zo starého webu mimo media/galerie
         if (fs.existsSync(dest)) continue;
         try { fs.writeFileSync(dest, await get(encodeURI(`/img${g.path}/${f}`) + '?size=lg', 'buf')); }
         catch (e) { console.warn('  chýba', g.slug, f, e.message); }

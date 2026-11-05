@@ -25,7 +25,8 @@ let ok = 0, fail = 0;
 for (const g of gals) {
   const dir = path.join(MEDIA, g.slug);
   fs.mkdirSync(dir, { recursive: true });
-  const missing = g.files.filter((f) => !fs.existsSync(path.join(dir, f)));
+  // názov galérie alebo súboru zo starého webu nesmie viesť mimo media/galerie („..“)
+  const missing = g.files.filter((f) => path.resolve(dir, f).startsWith(MEDIA + path.sep) && !fs.existsSync(path.join(dir, f)));
   if (!missing.length) continue;
   for (const f of missing) {
     try {

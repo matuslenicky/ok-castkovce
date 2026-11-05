@@ -1,5 +1,6 @@
 // Generátor statického webu OK Častkovce: data/*.json + src/ -> dist/
 // node build.js            (dátum „dnes“ pre zápasy = dnešok; TODAY=2026-11-03 node build.js ho prepíše)
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -206,6 +207,14 @@ function proseImgs(html, R, { firstPriority = true } = {}) {
   });
 }
 
+// tabuľky v texte (Ochrana súkromia) sú širšie než telefón: posúva sa len obal tabuľky (html/body majú overflow-x: clip,
+// bez obalu by sa tabuľka orezala); obal je región s fokusom, aby sa dal posúvať aj klávesnicou
+const proseTables = (html) => html.replace(/<table>([\s\S]*?)<\/table>/g, (_, t) => {
+  const first = (t.match(/<t[dh]>([\s\S]*?)<\/t[dh]>/) || [])[1] || '';
+  const label = first.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  return `<div class="table-wrap" role="region" tabindex="0" aria-label="Tabuľka${label ? `: ${esc(label)}` : ''}"><table>${t}</table></div>`;
+});
+
 // ---- ikony -------------------------------------------------------------------------------------
 const I = {
   fb: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg>',
@@ -239,6 +248,18 @@ const NAV = [
 ];
 const tel = (n) => 'tel:' + n.replace(/^0/, '+421').replace(/\s+/g, '');
 
+// Content-Security-Policy (GitHub Pages nedovolí hlavičky, preto <meta>): skripty a štýly len z webu, jediný inline skript
+// HEAD_JS povolený hashom, iframe len YouTube bez cookies, fetch len na vlastné dáta (+ Supabase, keď je nastavený).
+// V <meta> nefunguje frame-ancestors (ochrana pred vložením do rámca) – tá pôjde až cez hlavičky na vlastnej doméne.
+const HEAD_JS = `(function(d){d.classList.add('js');if(/[?&](kategoria|kde)=/.test(location.search)){d.classList.add('js-filtering');setTimeout(function(){d.classList.remove('js-filtering')},3000)}})(document.documentElement)`;
+const sha256 = (s) => `'sha256-${crypto.createHash('sha256').update(s, 'utf8').digest('base64')}'`;
+const CONNECT = ["'self'", ...(config.supabase?.url ? [new URL(config.supabase.url).origin] : [])];
+const CSP = [
+  "default-src 'none'", `script-src 'self' ${sha256(HEAD_JS)}`, "style-src 'self'", "style-src-attr 'unsafe-inline'",
+  "img-src 'self' data:", "font-src 'self'", `connect-src ${CONNECT.join(' ')}`, 'frame-src https://www.youtube-nocookie.com',
+  "base-uri 'none'", "form-action 'none'", "object-src 'none'",
+].join('; ');
+
 function layout({ route, title, desc, body, active }) {
   const depth = route.split('/').filter(Boolean).length;
   const R = depth ? '../'.repeat(depth) : './';
@@ -254,11 +275,13 @@ function layout({ route, title, desc, body, active }) {
     '@context': 'https://schema.org', '@type': 'SportsClub', name: info.nazov, legalName: info.pravnyNazov, sport: 'Futbal',
     email: info.email, telephone: info.telefon, address: { '@type': 'PostalAddress', streetAddress: info.adresa[0], postalCode: '916 27', addressLocality: 'Častkovce', addressCountry: 'SK' },
     sameAs: [info.facebook, info.instagram], logo: canon ? canon + 'img/logo.svg' : undefined,
-  })}</script>`;
+  }).replace(/</g, '\\u003c')}</script>`;
   return `<!doctype html>
 <html lang="sk" data-root="${R}"${config.ukazka ? ' class="has-demo"' : ''}>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="${CSP}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(fullTitle)}</title>
 <meta name="description" content="${esc(desc || `${info.nazov} – futbalový klub z Častkoviec. Zápasy, výsledky, súpisky, mládež, správy a fotogaléria.`)}">
@@ -270,7 +293,7 @@ ${config.noindex ? '<meta name="robots" content="noindex">\n' : ''}${canon ? `<l
 <link rel="preload" href="${R}fonts/barlow-condensed-800i.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="${R}fonts/barlow-400.woff" as="font" type="font/woff" crossorigin>
 ${/<(b|strong)\b/.test(body) ? `<link rel="preload" href="${R}fonts/barlow-700.woff" as="font" type="font/woff" crossorigin>\n` : ''}<link rel="stylesheet" href="${R}css/site.css">
-<script>(function(d){d.classList.add('js');if(/[?&](kategoria|kde)=/.test(location.search)){d.classList.add('js-filtering');setTimeout(function(){d.classList.remove('js-filtering')},3000)}})(document.documentElement)</script>
+<script>${HEAD_JS}</script>
 <script type="module" src="${R}js/site.mjs"></script>
 ${ld}</head>
 <body>
@@ -311,7 +334,7 @@ ${partneri.length ? `<section class="partners" aria-labelledby="partneri-h"><div
   </div>
   <div class="ftr-bar"><div class="wrap ftr-bar-in"><span>© ${new Date().getFullYear()} ${esc(info.nazov.toUpperCase())}</span><a href="${R}ochrana-sukromia/">Ochrana súkromia</a></div></div>
 </footer>
-${config.supabase?.url ? `<script>window.OKC_DB=${JSON.stringify({ url: config.supabase.url, key: config.supabase.key, crest: R + 'img/logo.svg' })}</script>` : ''}
+${config.supabase?.url ? `<script type="application/json" id="okc-db">${JSON.stringify({ url: config.supabase.url, key: config.supabase.key, crest: R + 'img/logo.svg' }).replace(/</g, '\\u003c')}</script>` : ''}
 </body>
 </html>
 `;
@@ -413,7 +436,7 @@ add('', {
 <section class="sec mc" aria-labelledby="mc-h">
   <div class="wrap">
     ${secHead('Zápasy', 'mc-h', ['zapasy/', 'Všetky zápasy'], R)}
-    <div class="tabs" role="tablist" aria-label="Kategória">${tabTeams.map((t, i) => `<button type="button" role="tab" id="tab-${t.slug}" aria-controls="mc-${t.slug}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>${esc(t.short)}</button>`).join('')}</div>
+    ${tabTeams.length ? `<div class="tabs" role="tablist" aria-label="Kategória">${tabTeams.map((t, i) => `<button type="button" role="tab" id="tab-${t.slug}" aria-controls="mc-${t.slug}" aria-selected="${i === 0}"${i ? ' tabindex="-1"' : ''}>${esc(t.short)}</button>`).join('')}</div>` : '<p class="empty">Zápasy zatiaľ nie sú zverejnené.</p>'}
     ${tabTeams.map((t, i) => `<div class="mc-panel" role="tabpanel" id="mc-${t.slug}" aria-labelledby="tab-${t.slug}"${i ? ' hidden' : ''}>
       <div class="mc-grid" role="region" tabindex="0" aria-label="Zápasy ${esc(t.short)}" data-team="${t.slug}">${matchCentre(teamMatches(t.slug), TODAY, crestUrl(R), R)}</div>
       <div class="team-bar"><div data-form="${t.slug}">${formHTML(teamMatches(t.slug), TODAY)}</div><a class="more" href="${R}${t.url}">${t.isA ? 'A-mužstvo' : esc(t.short)}${I.arrow}</a></div>
@@ -523,6 +546,9 @@ const staffCard = (name) => {
   const last = parts.pop();
   return `<li class="player"><div class="player-img"><span class="ph-player" aria-hidden="true"></span></div><p class="player-n"><span>${esc(parts.join(' '))}</span> <b>${esc(last)}</b></p></li>`;
 };
+// súpiska: na telefóne 2 stĺpce po ~172 px; s 3× displejom (iPhone) by prehliadač bral 600 px, 450 px (2,6×) stačí.
+// Vedenie má okrúhlu fotku 64 px zväčšenú 1,9× (site.css .roster--staff) -> ~122 px.
+const ROSTER_SIZES = '(max-width: 699.98px) and (min-resolution: 2.5dppx) 150px, (max-width: 699.98px) and (-webkit-min-device-pixel-ratio: 2.5) 150px, (min-width: 1100px) 240px, (min-width: 700px) 30vw, 46vw';
 function rosterHtml(t, R) {
   if (!t.roster || !t.roster.length) {
     const sk = treneri.find((s) => s.timy.includes(t.slug));
@@ -533,8 +559,9 @@ function rosterHtml(t, R) {
     const parts = p.name.split(' ');
     const last = parts.pop();
     const key = p.foto || null;
-    const photo = key && hasPic(key) ? pic(key, R, { sizes: '(min-width: 1100px) 240px, (min-width: 700px) 30vw, 46vw', alt: p.name })
-      : p.photo ? cardImg(R + p.photo.replace(/^\//, ''), R, { sizes: '(min-width: 1100px) 240px, (min-width: 700px) 30vw, 46vw', alt: p.name })
+    const sizes = g.title === 'Vedenie' ? '122px' : ROSTER_SIZES;
+    const photo = key && hasPic(key) ? pic(key, R, { sizes, alt: p.name })
+      : p.photo ? cardImg(R + p.photo.replace(/^\//, ''), R, { sizes, alt: p.name })
         : `<span class="ph-player" aria-hidden="true"></span>`;
     const role = p.tag && ROLE[p.tag] ? ROLE[p.tag] : p.position || '';
     const inner = `<div class="player-img${key && hasPic(key) ? ' player-img--card' : ''}">${photo}${p.number ? `<span class="player-no">${esc(p.number)}</span>` : ''}</div>
@@ -552,9 +579,10 @@ const NAT = { SVK: 'Slovensko', Slovensko: 'Slovensko', CZE: 'Česko', UKR: 'Ukr
 // zjednodušená vlajka SR (trikolóra so štítom), ostatné len text
 const FLAG_SVK = '<svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="2" fill="#fff"/><rect y="2" width="9" height="2" fill="#0b4ea2"/><rect y="4" width="9" height="2" fill="#ee1c25"/><path d="M2.1 1.3h2.3v1.9c0 1-.6 1.6-1.15 1.9-.55-.3-1.15-.9-1.15-1.9z" fill="#ee1c25" stroke="#fff" stroke-width=".18"/><path d="M3.25 1.7v2.1M2.75 2.25h1M2.6 2.8h1.3" stroke="#fff" stroke-width=".22"/><path d="M2.15 3.75c.3-.25.6-.25.75 0 .2-.3.5-.3.7 0 .15-.25.45-.25.75 0-.2.6-.6.95-1.1 1.2-.5-.25-.9-.6-1.1-1.2z" fill="#0b4ea2"/></svg>';
 // strelci z poznámky zápasu: „Janík 3, Opatovský Peter, Vavruš D.“ -> [{slová, počet}]
+// starý web píše aj „gól: …“/„Góly: …“, „Pažitka3“, „Šedovič T.2“; vlastný gól súpera „Vyskoč (vl.)“ nie je gól nášho hráča
 function scorers(note) {
-  return String(note || '').split(',').map((s) => s.replace(/\(.*?\)/g, '').trim()).filter(Boolean).map((s) => {
-    const m = s.match(/^(.*?)\s+(\d+)$/);
+  return String(note || '').replace(/^\s*g[óo]ly?\s*:\s*/i, '').split(',').map((s) => s.trim()).filter((s) => s && !/\(\s*vl\b/i.test(s)).map((s) => s.replace(/\(.*?\)/g, '').trim()).filter(Boolean).map((s) => {
+    const m = s.match(/^(.*?)\s*(\d+)$/);
     const name = m ? m[1] : s;
     return { words: norm(name).split(' ').filter(Boolean), raw: name, n: m ? Number(m[2]) : 1 };
   });
@@ -839,7 +867,7 @@ add('fanzona/', {
 add('ochrana-sukromia/', {
   title: 'Ochrana súkromia', active: '',
   body: (R) => `${pageHero({ kicker: info.pravnyNazov, title: 'Ochrana súkromia', R, crumbs: [[null, 'Ochrana súkromia']] })}
-<section class="sec sec--first"><div class="wrap"><div class="prose">${privacy.body}</div></div></section>`,
+<section class="sec sec--first"><div class="wrap"><div class="prose">${proseTables(privacy.body.replace(/href="\/(?!\/)/g, `href="${klub.source || 'https://okcastkovce.sk'}/`))}</div></div></section>`,
 });
 
 add('404/', {
@@ -871,9 +899,11 @@ for (const p of pages) {
 }
 // GitHub Pages: 404 v koreni (absolútne cesty, lebo sa zobrazuje na ľubovoľnej adrese)
 const BASE = process.env.BASE_PATH || config.basePath || '/'; // nasadenie na GitHub Pages: BASE_PATH=/ok-castkovce/ (scripts/deploy.mjs)
-const notFound = fs.readFileSync(path.join(OUT, '404', 'index.html'), 'utf8').replace(/(href|src)="(\.\.\/)+/g, `$1="${BASE}`);
+const notFound = fs.readFileSync(path.join(OUT, '404', 'index.html'), 'utf8').replace(/(href|src|data-root)="(\.\.\/)+/g, `$1="${BASE}`);
 fs.writeFileSync(path.join(OUT, '404.html'), notFound);
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
+// vetva gh-pages (scripts/deploy.mjs): git na Windowse (core.autocrlf) by v .ics zmenil CRLF na LF, RFC 5545 chce CRLF
+fs.writeFileSync(path.join(OUT, '.gitattributes'), '*.ics -text\n');
 
 // rozpis pre prehliadač: web si „dnes“ prepočíta sám, aj keď sa dlho nezostavuje (site.mjs)
 fs.mkdirSync(path.join(OUT, 'data'), { recursive: true });
