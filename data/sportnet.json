@@ -1,7 +1,7 @@
 {
  "source": "Sportnet / Futbalnet",
  "season": "2026/2027",
- "updated": "2026-11-05T10:30:42.302Z",
+ "updated": "2026-11-17T15:32:51.200Z",
  "teams": {
   "a-muzstvo": "6a293936225470a9be3bbc40",
   "u19-starsi-dorast": "6a2e66f8e4bf121524404b4d",
@@ -663,7 +663,7 @@
      "min": "87",
      "player": "Nikolas Valo",
      "side": "our",
-     "kind": "goal"
+     "kind": "own"
     }
    ],
    "cards": [
@@ -799,7 +799,7 @@
      "min": "40",
      "player": "Jakub Nosko",
      "side": "opp",
-     "kind": "goal"
+     "kind": "own"
     },
     {
      "min": "61",
@@ -2211,7 +2211,7 @@
      "min": "19",
      "player": "Michal Dendis",
      "side": "our",
-     "kind": "goal"
+     "kind": "own"
     },
     {
      "min": "24",
@@ -2474,7 +2474,7 @@
      "min": "24",
      "player": "Michal Dendis",
      "side": "our",
-     "kind": "goal"
+     "kind": "own"
     },
     {
      "min": "30",
@@ -6142,12 +6142,32 @@
    "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
    "part": "II. liga  U15 Macron | yoursport  ZsFZ",
    "round": "14",
-   "played": false,
-   "score": null,
+   "played": true,
+   "score": "0:0",
    "goals": [],
-   "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44e8d14e91f3033543d6/"
+   "cards": [
+    {
+     "min": "29",
+     "player": "Marco Masár",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "32",
+     "player": "Maxim Juhász",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "41",
+     "player": "Martin Kolarovszki",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "štadión na Sihoti Nové Zámky",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955547",
+   "detail": true
   },
   {
    "id": "6a4f4620d14e91f303377cf9",
@@ -6159,12 +6179,38 @@
    "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
    "part": "II. liga  U13 macron | y*oursport  ZsFZ",
    "round": "14",
-   "played": false,
-   "score": null,
-   "goals": [],
+   "played": true,
+   "score": "1:3",
+   "goals": [
+    {
+     "min": "11",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "penalty"
+    },
+    {
+     "min": "19",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "26",
+     "player": "Nikolaj Tiščenko",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "47",
+     "player": "Matej Hatala",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
    "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4620d14e91f303377cf9/"
+   "venue": "štadión na Sihoti Nové Zámky",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955787",
+   "detail": true
   },
   {
    "id": "6a42e946e5a4847e6256f5a3",
@@ -6176,12 +6222,38 @@
    "competition": "II. LSD - U19",
    "part": "II. liga starší dorast - Západ",
    "round": "13",
-   "played": false,
-   "score": null,
-   "goals": [],
+   "played": true,
+   "score": "3:1",
+   "goals": [
+    {
+     "min": "3",
+     "player": "Lucas Hrabal",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "9",
+     "player": "Michal Murin",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "42",
+     "player": "Michal Murin",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "65",
+     "player": "Frederik Ďurček",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
    "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e946e5a4847e6256f5a3/"
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929707",
+   "detail": true
   },
   {
    "id": "6a3c437be5a4847e6278e8ae",
@@ -6193,12 +6265,81 @@
    "competition": "III. liga",
    "part": "skupina Západ",
    "round": "14",
-   "played": false,
-   "score": null,
-   "goals": [],
-   "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437be5a4847e6278e8ae/"
+   "played": true,
+   "score": "3:2",
+   "goals": [
+    {
+     "min": "1",
+     "player": "Roman Gašpar",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "42",
+     "player": "Filip Koritina",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "50",
+     "player": "Peter Vavruš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "65",
+     "player": "Adam Gáborík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "73",
+     "player": "Michal Hrenák",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "37",
+     "player": "Marek Kvašay",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "54",
+     "player": "Patrik Krčula",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "57",
+     "player": "Alex Ďuriš",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "75",
+     "player": "Ales Jair Gonzalez Quiñonez",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "78",
+     "player": "Dominik Martišiak",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "90",
+     "player": "Peter Vavruš",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "TJ Kovo Beluša",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928755",
+   "detail": true
   },
   {
    "id": "6a441465e5a4847e623bb902",
@@ -6210,29 +6351,82 @@
    "competition": "II. LMD - U17",
    "part": "II. liga mladší dorast - Západ",
    "round": "13",
-   "played": false,
-   "score": null,
-   "goals": [],
-   "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a441465e5a4847e623bb902/"
+   "played": true,
+   "score": "1:1",
+   "goals": [
+    {
+     "min": "40",
+     "player": "Marcel Kapusta",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "65",
+     "player": "Alex Urban",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "27",
+     "player": "Marek Janega",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "75",
+     "player": "Jakub Chlpek",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "78",
+     "player": "Marko Beňačka",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930841",
+   "detail": true
   },
   {
    "id": "6a4f44e9d14e91f3033545ba",
    "team": "u15-starsi-ziaci",
    "date": "2026-11-14",
-   "time": "09:00",
+   "time": "09:20",
    "home": true,
    "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo",
    "competition": "II. liga  U15  Macron | yoursport  ZsFZ",
    "part": "II. liga  U15 Macron | yoursport  ZsFZ",
    "round": "15",
-   "played": false,
-   "score": null,
-   "goals": [],
+   "played": true,
+   "score": "3:0",
+   "goals": [
+    {
+     "min": "4",
+     "player": "Mateo Madro",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "10",
+     "player": "Daniel Podolský",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "68",
+     "player": "Lukáš Rojkovič",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
    "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f44e9d14e91f3033545ba/"
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955554",
+   "detail": true
   },
   {
    "id": "6a42e946e5a4847e6256f575",
@@ -6244,29 +6438,106 @@
    "competition": "II. LSD - U19",
    "part": "II. liga starší dorast - Západ",
    "round": "14",
-   "played": false,
-   "score": null,
-   "goals": [],
-   "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a42e946e5a4847e6256f575/"
+   "played": true,
+   "score": "3:0",
+   "goals": [
+    {
+     "min": "12",
+     "player": "David Antalovič",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "35",
+     "player": "Kristián Števík",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "57",
+     "player": "Samuel Ebube Henrie Okolie",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "20",
+     "player": "Adrián Gálik",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "71",
+     "player": "Alexander Teplanský",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FC ViOn Zlaté Moravce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/929713",
+   "detail": true
   },
   {
    "id": "6a4f4621d14e91f303378057",
    "team": "u13-mladsi-ziaci",
    "date": "2026-11-14",
-   "time": "10:45",
+   "time": "11:05",
    "home": true,
    "opponent": "Futbalová Akadémia Matúšova zem Horné Saliby/Tomášikovo",
    "competition": "II. liga  U13 Macron | yoursport  ZsFZ",
    "part": "II. liga  U13 macron | y*oursport  ZsFZ",
    "round": "15",
-   "played": false,
-   "score": null,
-   "goals": [],
+   "played": true,
+   "score": "4:3",
+   "goals": [
+    {
+     "min": "2",
+     "player": "Jonáš Selecký",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "19",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "20",
+     "player": "Nikolas Masarik",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "44",
+     "player": "Dominik Pelikán",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "48",
+     "player": "Peter Berecký",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "57",
+     "player": "Ábel Rosta",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "59",
+     "player": "Alex Valentino Klčo",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
    "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a4f4621d14e91f303378057/"
+   "venue": "Futbalový štadión Častkovce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/5/zapas/955794",
+   "detail": true
   },
   {
    "id": "6a441467e5a4847e623bc3a3",
@@ -6278,12 +6549,87 @@
    "competition": "II. LMD - U17",
    "part": "II. liga mladší dorast - Západ",
    "round": "14",
-   "played": false,
-   "score": null,
-   "goals": [],
-   "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a441467e5a4847e623bc3a3/"
+   "played": true,
+   "score": "7:3",
+   "goals": [
+    {
+     "min": "18",
+     "player": "Alex Paulov",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "19",
+     "player": "Tomáš Kazik",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "35",
+     "player": "Samko Duračka",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "51",
+     "player": "Matej Kúsek",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "65",
+     "player": "Šimon Urban",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "66",
+     "player": "Šimon Urban",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "68",
+     "player": "Alex Urban",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "71",
+     "player": "Alex Urban",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "78",
+     "player": "Marco Mihalička",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "79",
+     "player": "Richard Varga",
+     "side": "opp",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "49",
+     "player": "Oliver Mikuš",
+     "side": "our",
+     "kind": "red"
+    },
+    {
+     "min": "78",
+     "player": "Matej Pozor",
+     "side": "our",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "FC ViOn Zlaté Moravce - UT",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/930847",
+   "detail": true
   },
   {
    "id": "6a3c437be5a4847e6278eaa1",
@@ -6295,12 +6641,63 @@
    "competition": "III. liga",
    "part": "skupina Západ",
    "round": "15",
-   "played": false,
-   "score": null,
-   "goals": [],
-   "cards": [],
-   "venue": "",
-   "url": "https://sportnet.sme.sk/futbalnet/z/6a3c437be5a4847e6278eaa1/"
+   "played": true,
+   "score": "4:1",
+   "goals": [
+    {
+     "min": "15",
+     "player": "Peter Vavruš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "44",
+     "player": "Tomáš Lénárth",
+     "side": "opp",
+     "kind": "goal"
+    },
+    {
+     "min": "52",
+     "player": "Peter Vavruš",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "78",
+     "player": "Patrik Majkút",
+     "side": "our",
+     "kind": "goal"
+    },
+    {
+     "min": "93",
+     "player": "Patrik Majkút",
+     "side": "our",
+     "kind": "goal"
+    }
+   ],
+   "cards": [
+    {
+     "min": "16",
+     "player": "Viktor Bertalan",
+     "side": "opp",
+     "kind": "yellow"
+    },
+    {
+     "min": "46",
+     "player": "Nikolas Valo",
+     "side": "our",
+     "kind": "yellow"
+    },
+    {
+     "min": "84",
+     "player": "Mátyás Pósfay",
+     "side": "opp",
+     "kind": "yellow"
+    }
+   ],
+   "venue": "Futbalový štadión Častkovce",
+   "url": "https://sportnet.sme.sk/futbalnet/z/1/zapas/928758",
+   "detail": true
   },
   {
    "id": "6a42e947e5a4847e6256f6e0",

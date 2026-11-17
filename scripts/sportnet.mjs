@@ -99,7 +99,7 @@ for (const t of current) {
       details++;
       const ev = d.protocol?.events || [];
       const side = (teamId) => (teamId === t._id ? 'our' : 'opp');
-      row.goals = ev.filter((e) => e.eventType === 'goal').map((e) => ({ min: minute(e.eventTime), player: e.player?.name || '', side: side(e.team), kind: e.type === 'goal_own' ? 'own' : e.type === 'goal_penalty' ? 'penalty' : 'goal' }));
+      row.goals = ev.filter((e) => e.eventType === 'goal').map((e) => ({ min: minute(e.eventTime), player: e.player?.name || '', side: side(e.team), kind: e.type === 'dropped' || e.type === 'goal_own' ? 'own' : e.type === 'goal_penalty' ? 'penalty' : 'goal' }));
       row.cards = ev.filter((e) => CARD[e.eventType]).map((e) => ({ min: minute(e.eventTime), player: e.player?.name || '', side: side(e.team), kind: CARD[e.eventType] }));
       if (Array.isArray(d.score) && d.score.length === 2) row.score = `${d.score[0]}:${d.score[1]}`;
       row.venue = d.sportGround?.name || '';
